@@ -1,5 +1,5 @@
 // Shared live/offline synthesis: no samples, network requests, or master-volume jumps.
-export const soundDurations={letter:.2,key:.032,wrong:.12,correct:.45,round:.6,day:.9};
+export const soundDurations={letter:.2,hint:.18,key:.032,wrong:.12,correct:.45,round:.6,day:.9};
 const pentatonic=[698.456,783.991,880,1046.502,1174.659,1396.913,1567.982,1760,2093.005];
 export function synthesize(c,kind,t=c.currentTime,index=0){
  if(!(kind in soundDurations))return;
@@ -25,6 +25,8 @@ export function synthesize(c,kind,t=c.currentTime,index=0){
  };
  if(kind==='letter'){
   pluck(pentatonic[Math.min(pentatonic.length-1,Math.max(0,Math.floor(index)))],0,.2,.145);
+ }else if(kind==='hint'){
+  tone(523.251,0,.18,Math.pow(10,-24/20));
  }else if(kind==='key'){
   click(0,.028,.015);tone(240,0,.032,.008,135);
  }else if(kind==='wrong'){

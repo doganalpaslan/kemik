@@ -89,7 +89,7 @@ Clarkson ve Whipple, BodyParts3D’nin sakrum ve koksiksi tek “Sacrum” etike
 
 Bu tablo güncel kapsamdır; önceki 200 kemik / 51 birim bilgisi tarihçedir. Her numara tek erişkin kemiğidir. Sağ ve sol ayrı satırlardır. Kaynak adları manifestteki İngilizce adlarla birebir verilir; sağ = right, sol = left. Sternumun üç parçası toplam **bir** kemik sayılır. Sakrum ve koksiks de birer erişkin kemiktir. 80 aksiyal + 126 appendiküler = **206**. Dişler sayılmaz. Patella ve os pisiforme dahildir; diğer değişken sesamoidler (halluks altındakiler dahil), sutural ve aksesuar kemikler standart 206 sayımına dahil değildir.
 
-İstenen örtüşmeli ek dersler (costa prima, birinci taraklar, parmak sıraları) yeni fiziksel kemik eklemez. `costae spuriae` bu oyunda 8–10 vurgusudur; anatomik üst sınıf 8–12'yi, dolayısıyla fluctuantes'i de kapsar.
+İstenen örtüşmeli ek dersler (costa prima, birinci taraklar, parmak sıraları) yeni fiziksel kemik eklemez. `costae spuriae` 8–12. çiftleri vurgular; 11–12. çiftler ayrıca `costae fluctuantes` biriminde sorulur.
 
 ### Kafatası · 28 kemik
 
@@ -174,10 +174,10 @@ Bu tablo güncel kapsamdır; önceki 200 kemik / 51 birim bilgisi tarihçedir. H
 | 72 | left ninth rib | 8391 | costae spuriae · `false-ribs` |
 | 73 | right tenth rib | 8445 | costae spuriae · `false-ribs` |
 | 74 | left tenth rib | 8472 | costae spuriae · `false-ribs` |
-| 75 | right eleventh rib | 8531 | costae fluctuantes · `floating-ribs` |
-| 76 | left eleventh rib | 8532 | costae fluctuantes · `floating-ribs` |
-| 77 | right twelfth rib | 8533 | costae fluctuantes · `floating-ribs` |
-| 78 | left twelfth rib | 8534 | costae fluctuantes · `floating-ribs` |
+| 75 | right eleventh rib | 8531 | costae spuriae · `false-ribs`; costae fluctuantes · `floating-ribs` |
+| 76 | left eleventh rib | 8532 | costae spuriae · `false-ribs`; costae fluctuantes · `floating-ribs` |
+| 77 | right twelfth rib | 8533 | costae spuriae · `false-ribs`; costae fluctuantes · `floating-ribs` |
+| 78 | left twelfth rib | 8534 | costae spuriae · `false-ribs`; costae fluctuantes · `floating-ribs` |
 | 79 | sacrum | 16202 | os sacrum · `sacrum` |
 | 80 | coccyx (segmented from FMA16202) | 20229 | os coccygis · `coccyx` |
 
@@ -328,11 +328,11 @@ Kontrol: 11 Kasım 2026. `assets/bones.js` içindeki `source` anahtarı ve BITTI
 | TA | [FIPAT/IFAA TA98, Ossa](https://ifaa.unifr.ch/Public/EntryPage/TA98%20Tree/TA98%20EN/02%20TA98%20EN.htm): vertebra prominens, manubrium sterni, corpus sterni, processus xiphoideus, kaburga grupları, üç os cuneiforme ve phalanx proximalis/media/distalis; [işitme organı TA98](https://ifaa.unifr.ch/Public/EntryPage/TA98%20Tree/TA98%20EN/15.3.02%20TA98%20EN.htm): malleus/incus/stapes. I, tarak grubunun birinci kemiğini belirten Roma rakamıdır. İstenen “os metacarpi I / os metatarsi I” oyun adları korunur; TA tekil biçimleri “os metacarpale / os metatarsale”dir (bu biçimler de yanıt olarak kabul edilir). |
 | skull | [OpenStax 7.2 The Skull](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull): kafatası ve hyoid ilişkileri; ayrıntılar için yukarıdaki GVSU/NCBI kaynakları. |
 | spine | [OpenStax 7.3 The Vertebral Column](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column): C1, C2, C3–C6, C7'nin uzun diken çıkıntısı, göğüs/bel omurları, sakrum ve koksiks. |
-| thorax | [OpenStax 7.4 The Thoracic Cage](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage): sternumun üç parçası, klavikula ve kaburga bağlantıları, kısa/geniş birinci kaburga; gerçek 1–7, yalancı üst sınıf 8–12 ve yüzen 11–12. Oyun istenen özel ders için spuriae'de yalnız 8–10'u vurgular. |
+| thorax | [OpenStax 7.4 The Thoracic Cage](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage): sternumun üç parçası, klavikula ve kaburga bağlantıları, kısa/geniş birinci kaburga; gerçek 1–7, yalancı üst sınıf 8–12 ve yüzen 11–12. Oyunda spuriae 8–12, fluctuantes 11–12 olarak vurgulanır. |
 | shoulder | [OpenStax 8.1 The Pectoral Girdle](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle): klavikula ve skapula. |
 | upper | [OpenStax 8.2 Bones of the Upper Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb): tarak I, yakın/orta/uzak el falanks sıraları, başparmakta orta falanksın yokluğu; karpal ayrıntıları için [NCBI Hand Carpal Bones](https://www.ncbi.nlm.nih.gov/books/NBK535382/). |
 | pelvis | [OpenStax 8.3 The Pelvic Girdle and Pelvis](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis): os coxae. |
-| lower | [OpenStax 8.4 Bones of the Lower Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb): üç ayrı kama kemiği ve tarak ilişkileri; tarak I, ayak yakın/orta/uzak falanksları ve başparmakta orta falanksın yokluğu. |
+| lower | [OpenStax 8.4 Bones of the Lower Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb): üç ayrı çivi kemiği ve tarak ilişkileri; tarak I, ayak yakın/orta/uzak falanksları ve başparmakta orta falanksın yokluğu. |
 | ear | [OpenStax 14.1 Sensory Perception, Audition](https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception): çekiç sapı–zar ilişkisi, örsün iki komşusu, üzengi tabanı–oval pencere ilişkisi. |
 | kök | [Zeren, Anatomi Sözlüğü](https://iupress.istanbul.edu.tr/tr/book/anatomi-sozlugu-ve-turk-anatomi-terimleri/home), alfabetik Latince bölüm; [Dictionary of Anatomical Latin](https://anatomical-latin.com/?page_id=54). Yeni kökler: cuneus=kama, manubrium=sap, corpus=gövde, xiphos=kılıç, prominens=çıkıntı yapan, verus=gerçek, spurius=yalancı, fluctuans=yüzen, primus=birinci, phalanx=sıra, meta=ötesi, malleus=çekiç, incus=örs, stapes=üzengi. |
 | model | [Z-Anatomy kaynak/lisans](https://github.com/LluisV/Z-Anatomy), CC BY-SA 4.0. Altı gerçek kulak kemikçiği ağı ve dönüşümün ayrıntıları [model bilgisi](assets/model/ATTRIBUTION.md), tekrar üretim tarifi `scripts/ossicles-alignment.json`. |

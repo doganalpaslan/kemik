@@ -1,4 +1,4 @@
-import * as THREE from './vendor/three.module.min.js';
+import * as THREE from './vendor/three.module.min.js?v=b663924-20261110T215259906Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -13,16 +13,16 @@ export async function createSkull(canvas){
  const light=new THREE.DirectionalLight(0xffffff,1.6);light.position.set(-3,5,6);scene.add(light);
  const gray=new THREE.ShaderMaterial({
   transparent:true,depthWrite:false,side:THREE.DoubleSide,forceSinglePass:false,
-  uniforms:{edgeFade:{value:false},viewSize:{value:new THREE.Vector2()}},
+  uniforms:{edgeFade:{value:false},viewSize:{value:new THREE.Vector2()},viewOrigin:{value:new THREE.Vector2()}},
   vertexShader:`varying vec3 surfaceNormal;
    void main(){surfaceNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-  fragmentShader:`uniform bool edgeFade;uniform vec2 viewSize;varying vec3 surfaceNormal;
+  fragmentShader:`uniform bool edgeFade;uniform vec2 viewSize;uniform vec2 viewOrigin;varying vec3 surfaceNormal;
    void main(){
     float rim=pow(1.0-abs(normalize(surfaceNormal).z),2.0);
     // Neutral grey faces, darker and more opaque at grazing angles.
     vec3 tint=mix(vec3(0.18),vec3(0.075),rim);
     float alpha=mix(0.30,0.48,rim);
-    if(edgeFade){vec2 p=(gl_FragCoord.xy/viewSize-0.5)*2.0;alpha*=1.0-smoothstep(0.65,1.0,length(p));}
+    if(edgeFade){vec2 p=((gl_FragCoord.xy-viewOrigin)/viewSize-0.5)*2.0;alpha*=1.0-smoothstep(0.65,1.0,length(p));}
     gl_FragColor=vec4(tint,alpha);
     #include <colorspace_fragment>
    }`
@@ -30,14 +30,15 @@ export async function createSkull(canvas){
  // Opacity stays one; the transparent queue allows this solid target to render
  // after both glass passes. Depth testing still preserves the target's own shape.
  const red=new THREE.MeshStandardMaterial({color:0xd0103a,roughness:.58,metalness:0,transparent:true,opacity:1});
- const response=await fetch('assets/model/manifest.json?v=aaa2564-0037');if(!response.ok)throw Error('Model dizini yüklenemedi');const manifest=await response.json();
+ const halo=new THREE.Mesh(new THREE.RingGeometry(.87,1,64),new THREE.MeshBasicMaterial({color:0xd0103a,transparent:true,opacity:.8,depthTest:false,depthWrite:false}));halo.renderOrder=3;halo.visible=false;scene.add(halo);
+ const response=await fetch('assets/model/manifest.json'+new URL(import.meta.url).search);if(!response.ok)throw Error('Model dizini yüklenemedi');const manifest=await response.json();
  const cache=new Map();let request=0,running=true,lastId='',activeBone,angle=0,targetAngle=0,tilt=.08,targetTilt=.08,frame,mainCenter=new THREE.Vector3(),closeCenter=new THREE.Vector3(),mainSize=100,closeSize=50,ready=false,mainBox=new THREE.Box3(),closeBox=new THREE.Box3(),closeSide=0,closeTargets=[];
  const camera=new THREE.OrthographicCamera(-200,200,200,-200,.1,5000);camera.position.set(0,0,2000);camera.lookAt(0,0,0);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const observer=new ResizeObserver(()=>{const {width,height}=canvas.getBoundingClientRect();renderer.setSize(width,height,false);closeRenderer.setSize(closeCanvas.clientWidth,closeCanvas.clientHeight,false)});observer.observe(canvas);
  async function load(region){
   if(cache.has(region)){const v=cache.get(region);cache.delete(region);cache.set(region,v);return v;}
-  const res=await fetch(`assets/model/${region==='skull'?'skull':region}.bin?v=aaa2564-0037`);if(!res.ok)throw Error('Bölge yüklenemedi');const buffer=await res.arrayBuffer(),group=new THREE.Group();
+  const res=await fetch(`assets/model/${region==='skull'?'skull':region}.bin`+new URL(import.meta.url).search);if(!res.ok)throw Error('Bölge yüklenemedi');const buffer=await res.arrayBuffer(),group=new THREE.Group();
   const entries=manifest.filter(m=>m.region===region);
   // Bring the paired hands/feet together without changing their internal anatomical relationships.
   const sideCenters={};
@@ -79,8 +80,8 @@ export async function createSkull(canvas){
     m.userData.closeVisible=!closeSide||Math.abs(x)<3||Math.sign(x)===closeSide;
    }
    closeTargets=targets.filter(m=>m.userData.closeVisible);
-   if(b.region==='ossicles'){mainCenter.copy(closeCenter);mainBox.copy(closeBox).expandByScalar(30);}
-   if(b.region==='knee'){mainCenter.copy(closeCenter);mainSize=150;}
+   if(b.region==='ossicles'){mainCenter.lerp(closeCenter,.35);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(180,180,180));}
+   if(b.region==='knee'){mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(230,210,160));}
    for(const [k,g] of cache){if(cache.size<=5)break;if(!groups.includes(g)){cache.delete(k);g.traverse(m=>m.geometry?.dispose());}}
    targetAngle=(b.angle||.25)+(r===2?Math.PI:0);targetTilt=(b.tilt||0)+(['foot'].includes(b.region)?-.55:.08);
    angle=targetAngle;tilt=targetTilt;canvas.dataset.loading='false';loading.hidden=true;ready=true;
@@ -107,7 +108,7 @@ export async function createSkull(canvas){
     }}
     pivot.position.set(-(minX+maxX)/2,-(minY+maxY)/2,0);
     scale=Math.max((maxY-minY)/2,(maxX-minX)/2/(vw/vh))*2.0;
-   }else if(activeBone.region!=='knee'){
+   }else{
     let extentX=0,extentY=0;
     for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z]){
      point.set(x,y,z).sub(centerForFit).applyEuler(rotation);extentX=Math.max(extentX,Math.abs(point.x));extentY=Math.max(extentY,Math.abs(point.y));
@@ -117,14 +118,16 @@ export async function createSkull(canvas){
    camera.left=-scale*vw/vh;camera.right=scale*vw/vh;camera.top=scale;camera.bottom=-scale;camera.updateProjectionMatrix();
    root.position.copy(center).multiplyScalar(-1);pivot.rotation.set(t,a,0);
    for(const g of root.children)for(const m of g.children)m.visible=!close||m.userData.closeVisible;
-   gray.uniforms.edgeFade.value=close;
-   output.getDrawingBufferSize(gray.uniforms.viewSize.value);
+   gray.uniforms.edgeFade.value=close||['ossicles','knee'].includes(activeBone.region);
+   const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
+   halo.visible=!close&&activeBone.region==='ossicles';
+   if(halo.visible){const p=closeCenter.clone().sub(center).applyEuler(rotation).add(pivot.position);halo.position.set(p.x,p.y,1500);halo.scale.setScalar(8*2*scale/vh);}
    output.render(scene,camera);
   }
-  view(w*(mobile?.02:.16),10,w*(mobile?.74:.62),h-20,angle+drift,tilt,mainSize,mainCenter,false);
+  view(w*(mobile?.02:.16),10,w*(mobile?.74:.62),h-20,(activeBone.region==='ossicles'?Math.PI/2:angle)+drift,tilt,mainSize,mainCenter,false);
   view(0,0,closeCanvas.clientWidth,closeCanvas.clientHeight,angle+Math.PI*.65+(reduced?0:now*.00008),tilt-.18,closeSize,closeCenter,true);
  }
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.querySelector('#loading').hidden=false;document.querySelector('#loading').textContent='Görüntü durdu. Sayfayı yenileyerek devam edebilirsiniz.';});
  frame=requestAnimationFrame(draw);
- return {setBone,dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();red.dispose();renderer.dispose();closeRenderer.dispose();closeCanvas.remove();}};
+ return {setBone,dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();red.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer.dispose();closeCanvas.remove();}};
 }

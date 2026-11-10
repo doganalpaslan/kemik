@@ -881,7 +881,7 @@ export const bones = [
   "trAliases": [],
   "aliases": [],
   "angle": 0.3,
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "lower",
   "source": "lower"
  },
@@ -899,7 +899,7 @@ export const bones = [
   "trAliases": [],
   "aliases": [],
   "angle": 0.3,
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "lower",
   "source": "lower"
  },
@@ -912,7 +912,7 @@ export const bones = [
    "24500",
    "24501"
   ],
-  "fact": "Navicula, küçük kayık demektir; aşık kemiği ile kama kemikleri arasındadır.",
+  "fact": "Navicula, küçük kayık demektir; aşık kemiği ile çivi kemikleri arasındadır.",
   "clue": "ayağın iç yanında, aşık kemiğinin önünde",
   "trAliases": [
    "ayak kayık kemiği"
@@ -1114,7 +1114,7 @@ export const bones = [
  {
   "id": "false-ribs",
   "latin": "costae spuriae",
-  "tr": "yalancı kaburgalar (8–10)",
+  "tr": "yalancı kaburgalar (8–12)",
   "region": "trunk",
   "meshes": [
    "8283",
@@ -1122,10 +1122,14 @@ export const bones = [
    "8364",
    "8391",
    "8445",
-   "8472"
+   "8472",
+   "8531",
+   "8532",
+   "8533",
+   "8534"
   ],
-  "clue": "üstteki kaburganın kıkırdağına katılan üç çift",
-  "fact": "Spuriae, yalancı demektir; burada 8–10. çiftler gösterilir, 11–12 ayrıca yüzen kaburgalar olarak sorulur.",
+  "clue": "kıkırdağı doğrudan göğüs kemiğine ulaşmayan beş çift",
+  "fact": "Spuriae, yalancı demektir; 8–10. çiftler üstteki kıkırdağa katılır, 11–12 yüzen kaburgalardır.",
   "level": 2,
   "aliases": [],
   "trAliases": [],
@@ -1174,13 +1178,13 @@ export const bones = [
  {
   "id": "cuneiform-medial",
   "latin": "os cuneiforme mediale",
-  "tr": "iç kama kemiği",
+  "tr": "iç çivi kemiği",
   "region": "foot",
   "meshes": [
    "24521",
    "24522"
   ],
-  "clue": "sandal kemiğinin önünde, birinci ayak tarağının gerisinde",
+  "clue": "ayak sandal kemiğinin önünde, birinci ayak tarağının gerisinde",
   "fact": "Cuneus, kama demektir; birinci ayak tarağı kemiğiyle eklem yapar.",
   "level": 3,
   "aliases": [],
@@ -1192,13 +1196,13 @@ export const bones = [
  {
   "id": "cuneiform-intermediate",
   "latin": "os cuneiforme intermedium",
-  "tr": "ara kama kemiği",
+  "tr": "ara çivi kemiği",
   "region": "foot",
   "meshes": [
    "24523",
    "24524"
   ],
-  "clue": "sandal kemiğinin önünde, ikinci ayak tarağının gerisinde",
+  "clue": "ayak sandal kemiğinin önünde, ikinci ayak tarağının gerisinde",
   "fact": "Cuneus, kama demektir; ikinci ayak tarağı kemiğiyle eklem yapar.",
   "level": 3,
   "aliases": [],
@@ -1210,13 +1214,13 @@ export const bones = [
  {
   "id": "cuneiform-lateral",
   "latin": "os cuneiforme laterale",
-  "tr": "dış kama kemiği",
+  "tr": "dış çivi kemiği",
   "region": "foot",
   "meshes": [
    "24525",
    "24526"
   ],
-  "clue": "sandal kemiğinin önünde, üçüncü ayak tarağının gerisinde",
+  "clue": "ayak sandal kemiğinin önünde, üçüncü ayak tarağının gerisinde",
   "fact": "Cuneus, kama demektir; üçüncü ayak tarağı kemiğiyle eklem yapar.",
   "level": 3,
   "aliases": [],
@@ -1476,5 +1480,5 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js";
+export {dailyBones,roundBones} from "./curriculum.js?v=b663924-20261110T215259906Z";
 export const answerAliases=(b,mode)=>{const list=mode==='latin'?[b.latin,...b.aliases,b.latin.replace(/^(os|ossa) /,'')]:[b.tr,...b.trAliases||[]];return [...new Set(list.flatMap(s=>mode==='tr'?[s,s.replace(/\s+(kemiği|kemikleri|kemik)$/u,'')]:[s]).map(normalize))];};
