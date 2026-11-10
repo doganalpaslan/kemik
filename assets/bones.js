@@ -1480,5 +1480,5 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=b663924-20261110T215259906Z";
+export {dailyBones,roundBones} from "./curriculum.js?v=88a2f45-20261110T220532222Z";
 export const answerAliases=(b,mode)=>{const list=mode==='latin'?[b.latin,...b.aliases,b.latin.replace(/^(os|ossa) /,'')]:[b.tr,...b.trAliases||[]];return [...new Set(list.flatMap(s=>mode==='tr'?[s,s.replace(/\s+(kemiği|kemikleri|kemik)$/u,'')]:[s]).map(normalize))];};

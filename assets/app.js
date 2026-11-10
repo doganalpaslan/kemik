@@ -1,9 +1,9 @@
-import {startPWA,resetProgress} from './pwa.js?v=b663924-20261110T215259906Z';
-import {regions,levels,dailyBones,roundBones,recordGrade,progressFor,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=b663924-20261110T215259906Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=b663924-20261110T215259906Z';
-import {createSkull} from './skull.js?v=b663924-20261110T215259906Z';
-import {notesForDay} from './study.js?v=b663924-20261110T215259906Z';
-import {GameSound} from './sound.js?v=b663924-20261110T215259906Z';
+import {startPWA,resetProgress} from './pwa.js?v=88a2f45-20261110T220532222Z';
+import {regions,levels,dailyBones,roundBones,recordGrade,progressFor,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=88a2f45-20261110T220532222Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=88a2f45-20261110T220532222Z';
+import {createSkull} from './skull.js?v=88a2f45-20261110T220532222Z';
+import {notesForDay} from './study.js?v=88a2f45-20261110T220532222Z';
+import {GameSound} from './sound.js?v=88a2f45-20261110T220532222Z';
 await startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -136,7 +136,8 @@ function renderResults(){
  for(const summary of dueSummary(progress,state.units,date))add('p',`${summary.days===1?'Yarın':summary.days+' gün sonra'}: ${summary.count} kemik`,'due-summary');
  const miles=add('div','','milestones');for(const [text,achieved] of [['Günü tamamla',true],['3. turu hatasız bitir',!state.round3Errors&&!Object.keys(state.hints||{}).some(k=>k.startsWith('2:'))],['Aralıklı tekrar planlandı',true]]){const p=add('div','',null,miles);add('span','★',achieved?'achieved':'pending',p);p.append(document.createTextNode(text))}
  const regional=progressFor(prefs.region,progress),whole=progressFor('all',progress);
- add('p',`${regions.find(r=>r.id===prefs.region).label}: ${regional.count} / ${regional.total} öğrenildi · Tüm iskelet: ${whole.count} / ${whole.total} · Seviye: ${levels[regional.level]}`,'curriculum-progress');
+ const wholeProgress=prefs.region==='all'?'':` · Tüm iskelet: ${whole.count} / ${whole.total}`;
+ add('p',`${regions.find(r=>r.id===prefs.region).label}: ${regional.count} / ${regional.total} öğrenildi${wholeProgress} · Seviye: ${levels[regional.level]}`,'curriculum-progress');
  add('h4','Bildiklerin');const grid=add('div','','result-grid');for(const b of dayUnits()){const card=add('article','','result-card',grid);add('h3',display(name(b)),null,card);add('p',b.fact,null,card);const grades=state.grades?.[b.id]||{},missed=grades[2]==='again',retry=Object.values(grades).includes('again');add('p',missed?'3. turda kaçırıldı, yarın tekrar':retry?'ipucuyla, yarın tekrar':'ilk denemede',retry?'score retry':'score',card)}
  add('h4','Sınav için');for(const note of notesForDay(dayUnits()))add('p',note.text,'study-note');
  const button=add('button','Sonuçları kopyala','primary');button.onclick=async()=>{try{await navigator.clipboard.writeText(`Günün kemiği · ${date}\n8 kemik · 3 tur · %${accuracy} doğruluk\n${streak()} günlük seri`);button.textContent='Kopyalandı.'}catch{button.textContent='Kopyalama kullanılamıyor.'}};

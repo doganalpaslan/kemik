@@ -1,4 +1,4 @@
-import * as THREE from './vendor/three.module.min.js?v=b663924-20261110T215259906Z';
+import * as THREE from './vendor/three.module.min.js?v=88a2f45-20261110T220532222Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -117,7 +117,12 @@ export async function createSkull(canvas){
    }
    camera.left=-scale*vw/vh;camera.right=scale*vw/vh;camera.top=scale;camera.bottom=-scale;camera.updateProjectionMatrix();
    root.position.copy(center).multiplyScalar(-1);pivot.rotation.set(t,a,0);
-   for(const g of root.children)for(const m of g.children)m.visible=!close||m.userData.closeVisible;
+   for(const g of root.children){
+    // At middle-ear scale the surrounding skull stacks into a dark mass.
+    // Keep the other ossicles as glass context in the close view.
+    g.visible=!close||activeBone.region!=='ossicles'||g===cache.get('ossicles');
+    for(const m of g.children)m.visible=!close||m.userData.closeVisible;
+   }
    gray.uniforms.edgeFade.value=close||['ossicles','knee'].includes(activeBone.region);
    const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
    halo.visible=!close&&activeBone.region==='ossicles';
