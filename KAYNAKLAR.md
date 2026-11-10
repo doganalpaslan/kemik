@@ -1,0 +1,338 @@
+# Anatomi ve terminoloji kaynakları
+
+Kontrol tarihi: 10 Kasım 2026. Oyun açıklamaları kaynaklardan Türkçe olarak yeniden yazıldı. Çift kemikler birlikte sorulur. v1 kaynakları aşağıda korunmuştur; v2 kapsamı ve ek kaynaklar sonraki bölümlerdedir.
+
+- OpenStax, Anatomy and Physiology 2e, 7.2 The Skull: https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull
+  Frontal kemiğin orbita tavanı, parietal kemiklerin sagittal sütürü, occipital kemikte foramen magnum, temporal kemikte iç kulak, sfenoid kemikte sella turcica, ethmoid kemiğin cribriform laminası; yüz kemikleri ve 22 kemik sayımı.
+- Grand Valley State University, Introduction to Human Osteology, Bones of the Skull: https://pressbooks.gvsu.edu/introhumanosteology/chapter/bones-of-the-skull/
+  Maxilla, mandibula, zygomaticum, lacrimale, palatinum, vomer ve inferior concha ilişkileri.
+- FIPAT / IFAA, Terminologia Anatomica, Ossa: https://ifaa.unifr.ch/Public/EntryPage/TA98%20Tree/TA98%20EN/02%20TA98%20EN.htm
+  Latince kemik adları.
+- NCBI Bookshelf, Anatomy, Head and Neck, Skull: https://www.ncbi.nlm.nih.gov/books/NBK499834/
+- NCBI Bookshelf, Anatomy, Sphenoid Bone: https://www.ncbi.nlm.nih.gov/books/NBK544308/
+- NCBI Bookshelf, Anatomy, Head and Neck, Ethmoid Bone: https://www.ncbi.nlm.nih.gov/books/NBK544328/
+- Anatomical nomenclature in ophthalmology, Arquivos Brasileiros de Oftalmologia: https://aboonline.org.br/details/1360/pt-BR
+  Yunanca ethmos ve ilgili adlandırma kökleri.
+- Pirogov University, English–Latin Vocabulary: https://pirogov-university.com/fileadmin/templates/DOC/Courses/General_Medicine/GM36E_Latin_Language/English-Latin_Vocabulary.pdf
+  Latince terminoloji kökleri, paries ve maxilla dahil.
+- Dictionary of Anatomical Latin, anatomik Latince sözlüğü: https://anatomical-latin.com/?page_id=54
+  Açıklamalarda kullanılan frons, paries, tempora, occiput, mandere, nasus, lacrima, palatum, concha, vomer ve Yunanca sphen, ethmos, zygon kökleri için ek başvuru.
+
+Etimolojiler sözcük kökünü açıklar; gelişimsel veya klinik bir neden ileri sürmez. Temporal kemiğin adı için saçların ağarması gibi tartışmalı köken öyküleri kullanılmadı. Mandibula için işitme kemikçiklerini göz ardı eden “başın tek hareketli kemiği” genellemesi yerine temporomandibular eklem ilişkisi kullanıldı.
+
+## v2: tüm iskelet, Türkçe adlar ve eş anlamlılar
+
+51 soru birimi, işitme kemikçikleri dışındaki 200 erişkin iskelet kemiğini kapsar. Sternum üç kaynak parçasından birleştirilir. Dişler yalnızca kafatası bağlamıdır. Birimlerin tam Türkçe ve Latince listesi `BITTI.md`, kabul edilen eş anlamlıları `assets/bones.js` içindedir.
+
+Türkçe adlar için kullanılan doğrudan erişilebilir basılı anatomi kaynağı:
+
+- **Zeki Zeren, Anatomi Sözlüğü ve Türk Anatomi Terimleri**, İstanbul Üniversitesi Yayınları, 1959 baskısının Cumhuriyet’in 100. Yılı Kitaplığı sayısal yayımı. [Üniversite yayın sayfası](https://iupress.istanbul.edu.tr/tr/book/anatomi-sozlugu-ve-turk-anatomi-terimleri/home), [tam kitap PDF](https://cdn.istanbul.edu.tr/file/JTA6CLJ8T5/1BCE75A2ED2F431D8271BC0117902A1D). PDF sayfaları 207–220: baş, omurga ve uzuv kemikleri; 216: el bileği; 220: ayak. Alfabetik Latince bölümde kök anlamları da bulunur. Tarihî yazım güncel Türkçe imlaya uyarlandı. Kitaptaki sandal, piramit, nohut, yamuk, yamuksu, başlı, çengel, kamış ve aşık karşılıkları kontrol edildi. Eski kitaplarda geçen “sapan” yazımı kullanılmadı; sahibin açık düzeltmesi gereği vomer **saban kemiği** olarak düzeltildi.
+- [Ankara Üniversitesi, Skeleton Axiale](https://acikders.ankara.edu.tr/pluginfile.php/1225/mod_resource/content/2/SKELETON%20AXIALE.pdf): atlas, axis, boyun/göğüs/bel omurları, sakrum, koksiks ve göğüs kafesi.
+- [Ankara Üniversitesi, Cingulum Pectorale](https://acikders.ankara.edu.tr/pluginfile.php/1221/mod_resource/content/2/CINGULUM%20PECTORALE.pdf): kürek ve köprücük kemiği.
+- [MEB, Hareket Sistemi Radyolojik Anatomisi II](https://megep.meb.gov.tr/mte_program_modul/moduller_pdf/Hareket%20Sistemi%20Radyolojik%20Anatomisi%20Ii.pdf), basılı s. 9–10: sekiz el bileği kemiğinin Türkçe karşılıkları ve sırası. Sandal/kayık, piramit/üç köşeli, nohut/bezelye farklılıkları eş anlamlı olarak kabul edilir.
+- [MEB, Ortopedik Protez ve Ortez Terminolojisi](https://megep.meb.gov.tr/mte_program_modul/moduller_pdf/Ortopedik%20Protez%20Ve%20Ortez%20Terminolojisi.pdf), basılı s. 7: sağrı, göğüs, köprücük, kol, döner, kürek ve dirsek kemiği.
+- [Namık Kemal Üniversitesi, Ön Kol Kemiği](https://fened-c.web.nku.edu.tr/On_Kol_Kemigi): radius için döner kemik ve önkolun dış yanı karşılığı.
+
+Türk Anatomi ve Klinik Anatomi Derneği Türkçe terminoloji baskısının ve Arıncı & Elhan kitabının tam metinleri bu çalışmada doğrudan incelenemedi; incelenmiş gibi kaynak gösterilmedi. Zeren’in basılı anatomi sözlüğü ve yukarıdaki üniversite/MEB ders kaynakları kullanıldı. Kullanım farkı bulunan karşılıklar `BITTI.md` içindeki **Hekim kontrolü gereken adlar** bölümünde açıkça ayrıldı.
+
+## v2 açıklamalarının anatomik dayanakları
+
+Önceki kafatası kaynakları geçerlidir. Yeni açıklamalar için:
+
+| Birimler | Doğrudan başvuru |
+| --- | --- |
+| Dil kemiği ve kafatası ilişkileri | [OpenStax 7.2, The Skull](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull) |
+| Atlas, axis, C3–C7, T1–T12, L1–L5, sakrum, koksiks | [OpenStax 7.3, The Vertebral Column](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column) |
+| Sternum ve kaburgalar | [OpenStax 7.4, The Thoracic Cage](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage) |
+| Köprücük ve kürek | [OpenStax 8.1, The Pectoral Girdle](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle) |
+| Humerus, radius, ulna, el tarak ve parmakları | [OpenStax 8.2, Bones of the Upper Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb) |
+| Sekiz ayrı karpal kemiğin eklemleri ve büyüklükleri | [NCBI, Hand Carpal Bones](https://www.ncbi.nlm.nih.gov/books/NBK535382/) |
+| Kalça kemiğinin üç bileşeni | [OpenStax 8.3, The Pelvic Girdle and Pelvis](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis) |
+| Uyluk, patella, tibia, fibula, tarsal, tarak ve parmaklar | [OpenStax 8.4, Bones of the Lower Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb) |
+| Kök anlamları | Zeren, alfabetik Latince bölüm; [Dictionary of Anatomical Latin](https://anatomical-latin.com/?page_id=54) |
+
+Etimoloji satırları adın kök anlamını verir; kökeni tartışmalı sözcüklerde hayalî bir hikâye anlatılmaz. Scapula, humerus ve talus için doğrudan Latince anlam/ad belirtilir. Her açıklamaya tek temel anatomi bilgisi eşlik eder.
+
+## “Sınav için” notları ve kaynak eşlemesi
+
+`assets/study.js` içindeki `source` anahtarı aşağıdaki tabloyla eşleşir. Notlar yalnızca ilgili birimlerden en az biri o gün soruluyorsa seçilir; her gün 2–3 not gösterilir.
+
+| Anahtar | Desteklenen bilgi ve kaynak |
+| --- | --- |
+| pterion | Pterion, orta meningeal arterin ön dalı ve epidural kanama: [kadavra çalışması](https://pubmed.ncbi.nlm.nih.gov/40445416/), [NCBI Skull](https://www.ncbi.nlm.nih.gov/books/NBK499834/) |
+| nasal | En sık yüz kırığı: [MedlinePlus](https://medlineplus.gov/ency/article/000061.htm) |
+| mandible | Boyun/kondil kırığı, kapanış değerlendirmesi: [NCBI Mandible Fracture](https://www.ncbi.nlm.nih.gov/books/NBK507705/) |
+| scaphoid | Bel kırığı, retrograd kanlanma ve proksimal avasküler nekroz: [Royal Children’s Hospital kılavuzu](https://www.rch.org.au/clinicalguide/guideline_index/fractures/Scaphoid_Fractures_%E2%80%93_Emergency_Management/) |
+| humerus | Cerrahi boyun kırığı ve aksiller sinir: [NCBI Proximal Humerus Fracture](https://www.ncbi.nlm.nih.gov/books/NBK470346/) |
+| radius | Açık el üzerine düşme: [Merck Manual](https://www.merckmanuals.com/professional/injuries-poisoning/fractures/distal-radius-fractures) |
+| spine | Osteoporotik kompresyon kırığı: [NCBI Vertebral Compression Fractures](https://www.ncbi.nlm.nih.gov/books/NBK448171/) |
+| puncture | Erişkinde L3–L4 / L4–L5: [Merck Manual, Lumbar Puncture](https://www.merckmanuals.com/professional/neurologic-disorders/neurologic-tests-and-procedures/lumbar-puncture) |
+| ribs | Kaburga kırığına pnömotoraks eşliği: [NCBI Rib Fracture](https://ncbi.nlm.nih.gov/books/NBK541020/) |
+| femur | Yaşlılarda düşük enerjili düşme ve boyun kırığı: [NCBI Femoral Neck Fractures](https://www.ncbi.nlm.nih.gov/books/NBK537347/) |
+| fibula | Fibula boynu ve ortak fibular sinir: [NCBI Peroneal Nerve Injury](https://www.ncbi.nlm.nih.gov/books/NBK549859/) |
+| calcaneus | Aksiyel yük ve eşlik eden omurga kırığı: [NCBI Calcaneus Fractures](https://www.ncbi.nlm.nih.gov/books/NBK430861/) |
+| carpal | Karpal tünel ve median sinir: [NCBI Hand Carpal Bones](https://www.ncbi.nlm.nih.gov/books/NBK535382/) |
+| lunate | Kienböck ve lunatum kanlanması: [AAOS OrthoInfo](https://www.orthoinfo.org/en/diseases--conditions/kienbocks-disease/) |
+| hamate | Ulnar sinir bulguları ve kavrama: [Hamate kırıkları derlemesi](https://pmc.ncbi.nlm.nih.gov/articles/PMC11569506/) |
+| clavicle | Komşu damar/sinir ve göğüs yaralanmaları: [NCBI Clavicle Fracture](https://www.ncbi.nlm.nih.gov/books/NBK507892/) |
+| patella | Ekstansör mekanizma değerlendirmesi: [NCBI Patella Fractures](https://www.ncbi.nlm.nih.gov/books/NBK513330/) |
+| foot-arches | Yük dağılımı, kemerler ve pes planus: [OpenStax 8.4](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb) |
+| skull-base | BOS rinoresi/otoresi: [NCBI Basilar Skull Fractures](https://www.ncbi.nlm.nih.gov/books/NBK470175/) |
+| cervical-injury | Servikal travma ve omurilik: [NCBI Cervical Spine Fractures](https://www.ncbi.nlm.nih.gov/books/NBK448129/) |
+| orbital | Çift görme ve hareket kısıtlılığı: [American Academy of Ophthalmology](https://www.aao.org/eyenet/article/orbital-floor-fractures) |
+
+## Kaynak modelde sakrum / koksiks sınırı
+
+Clarkson ve Whipple, BodyParts3D’nin sakrum ve koksiksi tek “Sacrum” etiketi altında birleştirdiğini belgeliyor: [Variation in the representation of human anatomy within digital resources, 2018, Şekil 5](https://pmc.ncbi.nlm.nih.gov/articles/PMC6371295/). Bu oyunda FMA16202 ağının görünen sakrokoksigeal birleşiminde iki alt ağ ayrıldı. Bölme yöntemi ve sınırın hekim tarafından kontrol edilmesi gereği `assets/model/ATTRIBUTION.md` ve `BITTI.md` içinde yazılıdır.
+
+## Task 8 · standart 206 erişkin kemiği eşlemesi
+
+Bu tablo güncel kapsamdır; önceki 200 kemik / 51 birim bilgisi tarihçedir. Her numara tek erişkin kemiğidir. Sağ ve sol ayrı satırlardır. Kaynak adları manifestteki İngilizce adlarla birebir verilir; sağ = right, sol = left. Sternumun üç parçası toplam **bir** kemik sayılır. Sakrum ve koksiks de birer erişkin kemiktir. 80 aksiyal + 126 appendiküler = **206**. Dişler sayılmaz. Patella ve os pisiforme dahildir; diğer değişken sesamoidler (halluks altındakiler dahil), sutural ve aksesuar kemikler standart 206 sayımına dahil değildir.
+
+İstenen örtüşmeli ek dersler (costa prima, birinci taraklar, parmak sıraları) yeni fiziksel kemik eklemez. `costae spuriae` bu oyunda 8–10 vurgusudur; anatomik üst sınıf 8–12'yi, dolayısıyla fluctuantes'i de kapsar.
+
+### Kafatası · 28 kemik
+
+| No | Standart kemik / kaynak adı | Kaynak kimliği | Kapsayan soru birimi (Latin · id) |
+| ---: | --- | --- | --- |
+| 1 | occipital bone | 52735 | os occipitale · `occipital` |
+| 2 | frontal bone | 52734 | os frontale · `frontal` |
+| 3 | sphenoid bone | 52736 | os sphenoidale · `sphenoid` |
+| 4 | ethmoid | 52740 | os ethmoidale · `ethmoid` |
+| 5 | vomer | 9710 | vomer · `vomer` |
+| 6 | mandible | 52748 | mandibula · `mandible` |
+| 7 | right temporal bone | 52738 | os temporale · `temporal` |
+| 8 | left temporal bone | 52739 | os temporale · `temporal` |
+| 9 | right parietal bone | 52788 | os parietale · `parietal` |
+| 10 | left parietal bone | 52789 | os parietale · `parietal` |
+| 11 | right zygomatic bone | 52892 | os zygomaticum · `zygomatic` |
+| 12 | left zygomatic bone | 52893 | os zygomaticum · `zygomatic` |
+| 13 | right lacrimal bone | 53645 | os lacrimale · `lacrimal` |
+| 14 | left lacrimal bone | 53646 | os lacrimale · `lacrimal` |
+| 15 | right nasal bone | 53647 | os nasale · `nasal` |
+| 16 | left nasal bone | 53648 | os nasale · `nasal` |
+| 17 | right maxilla | 53649 | maxilla · `maxilla` |
+| 18 | left maxilla | 53650 | maxilla · `maxilla` |
+| 19 | right palatine bone | 53655 | os palatinum · `palatine` |
+| 20 | left palatine bone | 53656 | os palatinum · `palatine` |
+| 21 | right inferior nasal concha | 54737 | concha nasalis inferior · `concha` |
+| 22 | left inferior nasal concha | 54738 | concha nasalis inferior · `concha` |
+| 23 | right malleus | z-malleus-r | malleus · `malleus` |
+| 24 | left malleus | z-malleus-l | malleus · `malleus` |
+| 25 | right incus | z-incus-r | incus · `incus` |
+| 26 | left incus | z-incus-l | incus · `incus` |
+| 27 | right stapes | z-stapes-r | stapes · `stapes` |
+| 28 | left stapes | z-stapes-l | stapes · `stapes` |
+
+### Omurga ve göğüs · 52 kemik
+
+| No | Standart kemik / kaynak adı | Kaynak kimliği | Kapsayan soru birimi (Latin · id) |
+| ---: | --- | --- | --- |
+| 29 | hyoid bone | 52749 | os hyoideum · `hyoid` |
+| 30 | atlas | 12519 | atlas · `atlas` |
+| 31 | axis | 12520 | axis · `axis` |
+| 32 | seventh cervical vertebra | 12525 | vertebra prominens · `c7` |
+| 33 | third cervical vertebra | 12521 | vertebrae cervicales · `cervical` |
+| 34 | fourth cervical vertebra | 12522 | vertebrae cervicales · `cervical` |
+| 35 | fifth cervical vertebra | 12523 | vertebrae cervicales · `cervical` |
+| 36 | sixth cervical vertebra | 12524 | vertebrae cervicales · `cervical` |
+| 37 | ninth thoracic vertebra | 10014 | vertebrae thoracicae · `thoracic` |
+| 38 | tenth thoracic vertebra | 10037 | vertebrae thoracicae · `thoracic` |
+| 39 | eleventh thoracic vertebra | 10059 | vertebrae thoracicae · `thoracic` |
+| 40 | twelfth thoracic vertebra | 10081 | vertebrae thoracicae · `thoracic` |
+| 41 | first thoracic vertebra | 9165 | vertebrae thoracicae · `thoracic` |
+| 42 | second thoracic vertebra | 9187 | vertebrae thoracicae · `thoracic` |
+| 43 | third thoracic vertebra | 9209 | vertebrae thoracicae · `thoracic` |
+| 44 | fourth thoracic vertebra | 9248 | vertebrae thoracicae · `thoracic` |
+| 45 | fifth thoracic vertebra | 9922 | vertebrae thoracicae · `thoracic` |
+| 46 | sixth thoracic vertebra | 9945 | vertebrae thoracicae · `thoracic` |
+| 47 | seventh thoracic vertebra | 9968 | vertebrae thoracicae · `thoracic` |
+| 48 | eighth thoracic vertebra | 9991 | vertebrae thoracicae · `thoracic` |
+| 49 | first lumbar vertebra | 13072 | vertebrae lumbales · `lumbar` |
+| 50 | second lumbar vertebra | 13073 | vertebrae lumbales · `lumbar` |
+| 51 | third lumbar vertebra | 13074 | vertebrae lumbales · `lumbar` |
+| 52 | fourth lumbar vertebra | 13075 | vertebrae lumbales · `lumbar` |
+| 53 | fifth lumbar vertebra | 13076 | vertebrae lumbales · `lumbar` |
+| 54 | sternum (manubrium + corpus + processus xiphoideus) | 7486 / 7487 / 7488 | manubrium sterni · `manubrium`; corpus sterni · `sternal-body`; processus xiphoideus · `xiphoid` |
+| 55 | right first rib | 7857 | costae verae · `true-ribs`; costa prima · `first-rib` |
+| 56 | right second rib | 7882 | costae verae · `true-ribs` |
+| 57 | right third rib | 7909 | costae verae · `true-ribs` |
+| 58 | right fourth rib | 7957 | costae verae · `true-ribs` |
+| 59 | left first rib | 7987 | costae verae · `true-ribs`; costa prima · `first-rib` |
+| 60 | left second rib | 8012 | costae verae · `true-ribs` |
+| 61 | left third rib | 8039 | costae verae · `true-ribs` |
+| 62 | right fifth rib | 8066 | costae verae · `true-ribs` |
+| 63 | left fifth rib | 8093 | costae verae · `true-ribs` |
+| 64 | left fourth rib | 8148 | costae verae · `true-ribs` |
+| 65 | right sixth rib | 8175 | costae verae · `true-ribs` |
+| 66 | left sixth rib | 8202 | costae verae · `true-ribs` |
+| 67 | right seventh rib | 8229 | costae verae · `true-ribs` |
+| 68 | left seventh rib | 8256 | costae verae · `true-ribs` |
+| 69 | right eighth rib | 8283 | costae spuriae · `false-ribs` |
+| 70 | left eighth rib | 8310 | costae spuriae · `false-ribs` |
+| 71 | right ninth rib | 8364 | costae spuriae · `false-ribs` |
+| 72 | left ninth rib | 8391 | costae spuriae · `false-ribs` |
+| 73 | right tenth rib | 8445 | costae spuriae · `false-ribs` |
+| 74 | left tenth rib | 8472 | costae spuriae · `false-ribs` |
+| 75 | right eleventh rib | 8531 | costae fluctuantes · `floating-ribs` |
+| 76 | left eleventh rib | 8532 | costae fluctuantes · `floating-ribs` |
+| 77 | right twelfth rib | 8533 | costae fluctuantes · `floating-ribs` |
+| 78 | left twelfth rib | 8534 | costae fluctuantes · `floating-ribs` |
+| 79 | sacrum | 16202 | os sacrum · `sacrum` |
+| 80 | coccyx (segmented from FMA16202) | 20229 | os coccygis · `coccyx` |
+
+### Üst ekstremite · 64 kemik
+
+| No | Standart kemik / kaynak adı | Kaynak kimliği | Kapsayan soru birimi (Latin · id) |
+| ---: | --- | --- | --- |
+| 81 | right clavicle | 13322 | clavicula · `clavicle` |
+| 82 | left clavicle | 13323 | clavicula · `clavicle` |
+| 83 | right scapula | 13395 | scapula · `scapula` |
+| 84 | left scapula | 13396 | scapula · `scapula` |
+| 85 | right humerus | 23130 | humerus · `humerus` |
+| 86 | left humerus | 23131 | humerus · `humerus` |
+| 87 | right radius | 23464 | radius · `radius` |
+| 88 | left radius | 23465 | radius · `radius` |
+| 89 | right ulna | 23467 | ulna · `ulna` |
+| 90 | left ulna | 23468 | ulna · `ulna` |
+| 91 | right scaphoid | 24435 | os scaphoideum · `scaphoid` |
+| 92 | left scaphoid | 24436 | os scaphoideum · `scaphoid` |
+| 93 | right lunate | 24437 | os lunatum · `lunate` |
+| 94 | left lunate | 24438 | os lunatum · `lunate` |
+| 95 | right triquetral | 24439 | os triquetrum · `triquetral` |
+| 96 | left triquetral | 24440 | os triquetrum · `triquetral` |
+| 97 | right pisiform | 24441 | os pisiforme · `pisiform` |
+| 98 | left pisiform | 24442 | os pisiforme · `pisiform` |
+| 99 | right trapezium | 24443 | os trapezium · `trapezium` |
+| 100 | left trapezium | 24444 | os trapezium · `trapezium` |
+| 101 | right trapezoid | 23725 | os trapezoideum · `trapezoid` |
+| 102 | left trapezoid | 24445 | os trapezoideum · `trapezoid` |
+| 103 | right capitate | 24446 | os capitatum · `capitate` |
+| 104 | left capitate | 24447 | os capitatum · `capitate` |
+| 105 | right hamate | 24448 | os hamatum · `hamate` |
+| 106 | left hamate | 24449 | os hamatum · `hamate` |
+| 107 | right first metacarpal bone | 24464 | ossa metacarpi · `metacarpals`; os metacarpi I · `hand-metacarpal-1` |
+| 108 | left first metacarpal bone | 24465 | ossa metacarpi · `metacarpals`; os metacarpi I · `hand-metacarpal-1` |
+| 109 | right second metacarpal bone | 24466 | ossa metacarpi · `metacarpals` |
+| 110 | left second metacarpal bone | 24467 | ossa metacarpi · `metacarpals` |
+| 111 | right third metacarpal bone | 24468 | ossa metacarpi · `metacarpals` |
+| 112 | left third metacarpal bone | 24469 | ossa metacarpi · `metacarpals` |
+| 113 | right fourth metacarpal bone | 24470 | ossa metacarpi · `metacarpals` |
+| 114 | left fourth metacarpal bone | 24471 | ossa metacarpi · `metacarpals` |
+| 115 | right fifth metacarpal bone | 24472 | ossa metacarpi · `metacarpals` |
+| 116 | left fifth metacarpal bone | 24473 | ossa metacarpi · `metacarpals` |
+| 117 | middle phalanx of left index finger | 23938 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 118 | middle phalanx of left middle finger | 23940 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 119 | middle phalanx of left ring finger | 23942 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 120 | middle phalanx of left little finger | 23944 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 121 | distal phalanx of left thumb | 23951 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 122 | distal phalanx of left index finger | 23953 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 123 | distal phalanx of left middle finger | 23955 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 124 | distal phalanx of left ring finger | 23957 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 125 | distal phalanx of left little finger | 23959 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 126 | proximal phalanx of right thumb | 24450 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 127 | proximal phalanx of right index finger | 24451 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 128 | proximal phalanx of right middle finger | 24452 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 129 | proximal phalanx of right ring finger | 24453 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 130 | proximal phalanx of right little finger | 24454 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 131 | middle phalanx of right index finger | 24455 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 132 | middle phalanx of right middle finger | 24456 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 133 | middle phalanx of right ring finger | 24457 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 134 | middle phalanx of right little finger | 24458 | phalanges manus · `hand-phalanges`; phalanx media · `hand-phalanx-middle` |
+| 135 | distal phalanx of right thumb | 24459 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 136 | distal phalanx of right index finger | 24460 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 137 | distal phalanx of right middle finger | 24461 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 138 | distal phalanx of right ring finger | 24462 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 139 | distal phalanx of right little finger | 24463 | phalanges manus · `hand-phalanges`; phalanx distalis · `hand-phalanx-distal` |
+| 140 | proximal phalanx of left thumb | 65470 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 141 | proximal phalanx of left little finger | 66791 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 142 | proximal phalanx of left middle finger | 71908 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 143 | proximal phalanx of left index finger | 71915 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+| 144 | proximal phalanx of left ring finger | 71916 | phalanges manus · `hand-phalanges`; phalanx proximalis · `hand-phalanx-proximal` |
+
+### Alt ekstremite · 62 kemik
+
+| No | Standart kemik / kaynak adı | Kaynak kimliği | Kapsayan soru birimi (Latin · id) |
+| ---: | --- | --- | --- |
+| 145 | right hip bone | 16586 | os coxae · `hip` |
+| 146 | left hip bone | 16587 | os coxae · `hip` |
+| 147 | right femur | 24474 | femur · `femur` |
+| 148 | left femur | 24475 | femur · `femur` |
+| 149 | right patella | 24486 | patella · `patella` |
+| 150 | left patella | 24487 | patella · `patella` |
+| 151 | right tibia | 24477 | tibia · `tibia` |
+| 152 | left tibia | 24478 | tibia · `tibia` |
+| 153 | right fibula | 24480 | fibula · `fibula` |
+| 154 | left fibula | 24481 | fibula · `fibula` |
+| 155 | right talus | 24482 | talus · `talus` |
+| 156 | left talus | 24483 | talus · `talus` |
+| 157 | right calcaneus | 24497 | calcaneus · `calcaneus` |
+| 158 | left calcaneus | 24498 | calcaneus · `calcaneus` |
+| 159 | navicular bone of right foot | 24500 | os naviculare · `navicular` |
+| 160 | navicular bone of left foot | 24501 | os naviculare · `navicular` |
+| 161 | right cuboid bone | 24528 | os cuboideum · `cuboid` |
+| 162 | left cuboid bone | 24529 | os cuboideum · `cuboid` |
+| 163 | right medial cuneiform bone | 24521 | os cuneiforme mediale · `cuneiform-medial` |
+| 164 | left medial cuneiform bone | 24522 | os cuneiforme mediale · `cuneiform-medial` |
+| 165 | right intermediate cuneiform bone | 24523 | os cuneiforme intermedium · `cuneiform-intermediate` |
+| 166 | left intermediate cuneiform bone | 24524 | os cuneiforme intermedium · `cuneiform-intermediate` |
+| 167 | right lateral cuneiform bone | 24525 | os cuneiforme laterale · `cuneiform-lateral` |
+| 168 | left lateral cuneiform bone | 24526 | os cuneiforme laterale · `cuneiform-lateral` |
+| 169 | right first metatarsal bone | 24507 | ossa metatarsi · `metatarsals`; os metatarsi I · `foot-metatarsal-1` |
+| 170 | left first metatarsal bone | 24508 | ossa metatarsi · `metatarsals`; os metatarsi I · `foot-metatarsal-1` |
+| 171 | right second metatarsal bone | 24509 | ossa metatarsi · `metatarsals` |
+| 172 | left second metatarsal bone | 24510 | ossa metatarsi · `metatarsals` |
+| 173 | right third metatarsal bone | 24511 | ossa metatarsi · `metatarsals` |
+| 174 | left third metatarsal bone | 24512 | ossa metatarsi · `metatarsals` |
+| 175 | right fourth metatarsal bone | 24513 | ossa metatarsi · `metatarsals` |
+| 176 | left fourth metatarsal bone | 24514 | ossa metatarsi · `metatarsals` |
+| 177 | right fifth metatarsal bone | 24515 | ossa metatarsi · `metatarsals` |
+| 178 | left fifth metatarsal bone | 24516 | ossa metatarsi · `metatarsals` |
+| 179 | middle phalanx of right little toe | 230986 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 180 | middle phalanx of left little toe | 230988 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 181 | proximal phalanx of right second toe | 32634 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 182 | proximal phalanx of left second toe | 32635 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 183 | proximal phalanx of right third toe | 32636 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 184 | proximal phalanx of left third toe | 32637 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 185 | proximal phalanx of right fourth toe | 32638 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 186 | proximal phalanx of left fourth toe | 32639 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 187 | proximal phalanx of right little toe | 32640 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 188 | proximal phalanx of left little toe | 32641 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 189 | middle phalanx of right second toe | 32642 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 190 | middle phalanx of left second toe | 32643 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 191 | middle phalanx of right third toe | 32644 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 192 | middle phalanx of left third toe | 32645 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 193 | middle phalanx of right fourth toe | 32646 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 194 | middle phalanx of left fourth toe | 32647 | phalanges pedis · `foot-phalanges`; phalanx media · `foot-phalanx-middle` |
+| 195 | distal phalanx of right big toe | 32650 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 196 | distal phalanx of left big toe | 32651 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 197 | distal phalanx of right second toe | 32652 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 198 | distal phalanx of left second toe | 32653 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 199 | distal phalanx of right third toe | 32654 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 200 | distal phalanx of left third toe | 32655 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 201 | distal phalanx of right fourth toe | 32656 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 202 | distal phalanx of left fourth toe | 32657 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 203 | distal phalanx of right little toe | 32658 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 204 | distal phalanx of left little toe | 32659 | phalanges pedis · `foot-phalanges`; phalanx distalis · `foot-phalanx-distal` |
+| 205 | proximal phalanx of right big toe | 43253 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+| 206 | proximal phalanx of left big toe | 43254 | phalanges pedis · `foot-phalanges`; phalanx proximalis · `foot-phalanx-proximal` |
+
+**Sonuç: 206 / 206 eşlendi; eksik kemik veya eksik model yok.** Otomatik kapsam testi manifestteki dişleri ve sternumun ek iki parçasını sayımdan çıkarıp her kemik için en az bir soru birimi doğrular.
+
+## Task 8 · ders kaynak dizini
+
+Kontrol: 11 Kasım 2026. `assets/bones.js` içindeki `source` anahtarı ve BITTI.md'deki her ders satırı aşağıdaki doğrudan kaynağa gider. Bilgiler Türkçe yeniden yazıldı; “kök” sütunu önceki Zeren sözlüğü / Anatomical Latin kaynağını belirtir. Açıklayıcı Türkçe adların güncel tercihleri hekim kontrolü listesinde ayrıdır.
+
+| Anahtar | Doğrudan kaynak ve kapsam |
+| --- | --- |
+| TA | [FIPAT/IFAA TA98, Ossa](https://ifaa.unifr.ch/Public/EntryPage/TA98%20Tree/TA98%20EN/02%20TA98%20EN.htm): vertebra prominens, manubrium sterni, corpus sterni, processus xiphoideus, kaburga grupları, üç os cuneiforme ve phalanx proximalis/media/distalis; [işitme organı TA98](https://ifaa.unifr.ch/Public/EntryPage/TA98%20Tree/TA98%20EN/15.3.02%20TA98%20EN.htm): malleus/incus/stapes. I, tarak grubunun birinci kemiğini belirten Roma rakamıdır. İstenen “os metacarpi I / os metatarsi I” oyun adları korunur; TA tekil biçimleri “os metacarpale / os metatarsale”dir (bu biçimler de yanıt olarak kabul edilir). |
+| skull | [OpenStax 7.2 The Skull](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull): kafatası ve hyoid ilişkileri; ayrıntılar için yukarıdaki GVSU/NCBI kaynakları. |
+| spine | [OpenStax 7.3 The Vertebral Column](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column): C1, C2, C3–C6, C7'nin uzun diken çıkıntısı, göğüs/bel omurları, sakrum ve koksiks. |
+| thorax | [OpenStax 7.4 The Thoracic Cage](https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage): sternumun üç parçası, klavikula ve kaburga bağlantıları, kısa/geniş birinci kaburga; gerçek 1–7, yalancı üst sınıf 8–12 ve yüzen 11–12. Oyun istenen özel ders için spuriae'de yalnız 8–10'u vurgular. |
+| shoulder | [OpenStax 8.1 The Pectoral Girdle](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle): klavikula ve skapula. |
+| upper | [OpenStax 8.2 Bones of the Upper Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb): tarak I, yakın/orta/uzak el falanks sıraları, başparmakta orta falanksın yokluğu; karpal ayrıntıları için [NCBI Hand Carpal Bones](https://www.ncbi.nlm.nih.gov/books/NBK535382/). |
+| pelvis | [OpenStax 8.3 The Pelvic Girdle and Pelvis](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis): os coxae. |
+| lower | [OpenStax 8.4 Bones of the Lower Limb](https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb): üç ayrı kama kemiği ve tarak ilişkileri; tarak I, ayak yakın/orta/uzak falanksları ve başparmakta orta falanksın yokluğu. |
+| ear | [OpenStax 14.1 Sensory Perception, Audition](https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception): çekiç sapı–zar ilişkisi, örsün iki komşusu, üzengi tabanı–oval pencere ilişkisi. |
+| kök | [Zeren, Anatomi Sözlüğü](https://iupress.istanbul.edu.tr/tr/book/anatomi-sozlugu-ve-turk-anatomi-terimleri/home), alfabetik Latince bölüm; [Dictionary of Anatomical Latin](https://anatomical-latin.com/?page_id=54). Yeni kökler: cuneus=kama, manubrium=sap, corpus=gövde, xiphos=kılıç, prominens=çıkıntı yapan, verus=gerçek, spurius=yalancı, fluctuans=yüzen, primus=birinci, phalanx=sıra, meta=ötesi, malleus=çekiç, incus=örs, stapes=üzengi. |
+| model | [Z-Anatomy kaynak/lisans](https://github.com/LluisV/Z-Anatomy), CC BY-SA 4.0. Altı gerçek kulak kemikçiği ağı ve dönüşümün ayrıntıları [model bilgisi](assets/model/ATTRIBUTION.md), tekrar üretim tarifi `scripts/ossicles-alignment.json`. |
