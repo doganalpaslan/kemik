@@ -47,13 +47,8 @@ export const clinicalNotes=[
  },
  {
   "ids": [
-   "atlas",
-   "axis",
-   "cervical", "c7",
    "thoracic",
-   "lumbar",
-   "sacrum",
-   "coccyx"
+   "lumbar"
   ],
   "text": "Osteoporoz, omur gövdelerinde kompresyon kırıklarına yatkınlığı artırır.",
   "source": "spine"
@@ -111,7 +106,7 @@ export const clinicalNotes=[
    "metacarpals",
    "hand-phalanges", "hand-metacarpal-1", "hand-phalanx-proximal", "hand-phalanx-middle", "hand-phalanx-distal"
   ],
-  "text": "El bileği kemiklerinin oluşturduğu karpal tünelden median sinir geçer; sıkışması karpal tünel sendromuna yol açabilir.",
+  "text": "Karpal oluğu el bileği kemikleri, çatısını retinaculum flexorum oluşturur; içinden n. medianus geçer ve sıkışması karpal tünel sendromuna yol açar.",
   "source": "carpal"
  },
  {
@@ -125,7 +120,7 @@ export const clinicalNotes=[
   "ids": [
    "hamate"
   ],
-  "text": "Çengel kemiği kırıklarında ulnar sinir dağılımında uyuşma ve kavrama gücünde azalma görülebilir.",
+  "text": "Çengel kemiğinin çengeli (hamulus) kırılırsa Guyon kanalındaki n. ulnaris etkilenebilir; yüzük ve serçe parmakta uyuşma ve kavrama gücünde azalma görülebilir.",
   "source": "hamate"
  },
  {

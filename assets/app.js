@@ -1,14 +1,16 @@
-import {startPWA,resetProgress} from './pwa.js?v=88a2f45-20261110T220532222Z';
-import {regions,levels,dailyBones,roundBones,recordGrade,progressFor,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=88a2f45-20261110T220532222Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=88a2f45-20261110T220532222Z';
-import {createSkull} from './skull.js?v=88a2f45-20261110T220532222Z';
-import {notesForDay} from './study.js?v=88a2f45-20261110T220532222Z';
-import {GameSound} from './sound.js?v=88a2f45-20261110T220532222Z';
-await startPWA();
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent} from './game-logic.js?v=6478201-20261110T230808604Z';
+import {startPWA,resetProgress} from './pwa.js?v=6478201-20261110T230808604Z';
+import {regions,levels,dailyBones,roundBones,recordGrade,progressFor,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=6478201-20261110T230808604Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=6478201-20261110T230808604Z';
+import {BASE_URL} from './config.js?v=6478201-20261110T230808604Z';
+import {notesForDay} from './study.js?v=6478201-20261110T230808604Z';
+import {GameSound} from './sound.js?v=6478201-20261110T230808604Z';
+const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
-function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
-function write(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{$('#storage-note').textContent='Tarayıcı depolaması kullanılamıyor. İlerlemeniz bu oturumda korunur.'}}
+const memory=new Map();
+function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??memory.get(key)??fallback}catch{return memory.get(key)??fallback}}
+function write(key,value){memory.set(key,value);try{localStorage.setItem(key,JSON.stringify(value))}catch{$('#storage-note').textContent='Tarayıcı depolaması kullanılamıyor. İlerlemeniz bu oturumda korunur.'}}
 let date=localDate();let prefs={...read('gk2:preferences',{upper:false,sound:true}),mode:'latin'};
 const fresh=()=>({round:0,index:0,typed:'',done:false,errors:0,keystrokes:0,correctKeys:0,attempts:0,first:0,misses:{},round3Misses:{},hints:{},between:false,questionErrors:0,round3Errors:0,started:Date.now(),elapsed:0});
 prefs.region=regions.some(r=>r.id===prefs.region)?prefs.region:'all';
@@ -25,7 +27,69 @@ function loadDay(){
 }
 let state=loadDay();
 const dayUnits=()=>state.units.map(id=>bones.find(b=>b.id===id));
+let route='/',skullStarted=false;
 let skull,busy=false,submitted=false,timer=null;const sound=new GameSound(prefs.sound);
+const systemTheme=matchMedia('(prefers-color-scheme: dark)');
+prefs.keyboard=prefs.keyboard==='phone'?'phone':'game';
+function paintPreferences(){
+ const dark=prefs.theme?prefs.theme==='dark':systemTheme.matches;
+ document.documentElement.dataset.theme=dark?'dark':'light';
+ document.querySelector('meta[name="theme-color"]').content=dark?'#1b1a19':'#e9e7e3';
+ $('#theme').setAttribute('aria-pressed',String(dark));$('#theme').textContent=dark?'☀':'☾';
+ skull?.setTheme(dark);
+ const phone=prefs.keyboard==='phone';document.body.classList.toggle('phone-mode',phone);
+ $('#keyboard-mode').setAttribute('aria-pressed',String(phone));
+ $('#keyboard-mode').setAttribute('aria-label',`Klavye: ${phone?'Telefon klavyesi':'Oyun klavyesi'}`);
+ $('#keyboard-mode').title=phone?'Telefon klavyesi':'Oyun klavyesi';
+ $('#phone-input').disabled=!phone;fitViewport();
+ $('#answer').setAttribute('aria-label',phone?'Kemik adını telefon klavyesiyle yazmak için dokunun.':'Kemik adını ekran klavyesiyle veya fiziksel klavyeyle yazın.');
+}
+function focusAnswer(){if(state.done||route!=='/oyun')return;(prefs.keyboard==='phone'?$('#phone-input'):$('#answer')).focus({preventScroll:true})}
+$('#theme').onclick=()=>{prefs.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';save();paintPreferences()};
+systemTheme.addEventListener('change',()=>{if(!prefs.theme)paintPreferences()});
+$('#keyboard-mode').onclick=()=>{prefs.keyboard=prefs.keyboard==='phone'?'game':'phone';save();paint();focusAnswer()};
+// Keep a sentinel before the caret so iOS emits backward deletion even after
+// each committed text batch has been consumed. The game owns the answer value.
+const phoneInput=$('#phone-input'),sentinel='\u200b';let composing=false,pendingComposition=null;
+function resetPhoneInput(){phoneInput.value=sentinel;phoneInput.setSelectionRange(1,1)}
+function insertPhoneText(text){for(const letter of (text||'').normalize('NFC'))if(letter!==sentinel)act(letter)}
+resetPhoneInput();
+phoneInput.addEventListener('beforeinput',e=>{
+ if(e.isComposing||composing||pendingComposition||!e.cancelable)return;
+ if(e.inputType==='deleteContentBackward'){e.preventDefault();act('Backspace');resetPhoneInput()}
+ else if(e.inputType==='insertLineBreak'||e.inputType==='insertParagraph'){e.preventDefault();act('Enter');resetPhoneInput()}
+ else if(e.inputType==='insertText'&&e.data!==null){e.preventDefault();insertPhoneText(e.data);resetPhoneInput()}
+});
+phoneInput.addEventListener('input',e=>{
+ if(e.isComposing||composing)return;
+ // Fallback for engines that only deliver input (paste, dictation, replacement).
+ const value=phoneInput.value.replaceAll(sentinel,'');
+ pendingComposition=null;
+ if(e.inputType==='deleteContentBackward')act('Backspace');else if(['insertLineBreak','insertParagraph'].includes(e.inputType))act('Enter');else insertPhoneText(value);
+ resetPhoneInput();
+});
+phoneInput.addEventListener('compositionstart',()=>{composing=true});
+phoneInput.addEventListener('compositionend',e=>{
+ composing=false;const pending=pendingComposition={text:e.data};
+ // Safari and Chromium place the final input on different sides of
+ // compositionend. Consume the committed batch once after either ordering.
+ queueMicrotask(()=>{if(pendingComposition!==pending)return;pendingComposition=null;insertPhoneText(phoneInput.value.replaceAll(sentinel,'')||pending.text);resetPhoneInput()});
+});
+$('#answer').addEventListener('focus',()=>{if(prefs.keyboard==='phone')focusAnswer()});
+document.addEventListener('pointerdown',e=>{
+ if(route!=='/oyun'||prefs.keyboard!=='phone'||state.done||$('#instructions').open||e.target.closest('button,a,input,nav,dialog'))return;
+ if(e.target.closest('#answer-area')||e.clientY>=(visualViewport?.height||innerHeight)/2){e.preventDefault();focusAnswer()}
+});
+// iOS resizes the visual viewport rather than 100vh when its keyboard opens.
+function fitViewport(){
+ const v=window.visualViewport,h=v?.height||innerHeight;
+ document.documentElement.style.setProperty('--viewport-height',`${h}px`);
+ document.documentElement.style.setProperty('--viewport-top',`${v?.offsetTop||0}px`);
+ document.body.classList.toggle('system-keyboard-open',prefs.keyboard==='phone'&&innerHeight-h>120);
+}
+window.visualViewport?.addEventListener('resize',fitViewport);
+window.visualViewport?.addEventListener('scroll',fitViewport);
+window.addEventListener('resize',fitViewport);fitViewport();
 for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>sound.unlock(),{capture:true});
 const queue=()=>{state.queues??={};return state.queues[state.round]??=roundBones(date,state.round,dayUnits()).map(b=>({id:b.id,practice:false}));};
 const current=()=>bones.find(b=>b.id===queue()[state.index].id);
@@ -39,13 +103,16 @@ function streak(){const s=read('gk2:streak',{count:0,last:null});return s.last&&
 function paint(){
  $('#region-label').textContent=regions.find(r=>r.id===prefs.region)[matchMedia('(max-width:600px)').matches?'short':'label'];
  document.querySelectorAll('[data-region]').forEach(el=>el.setAttribute('aria-selected',String(el.dataset.region===prefs.region)));
+ $('#region').setAttribute('aria-label',`Vücut bölgesi: ${$('#region-label').textContent}`);
  $('#date').textContent=new Date(date+'T12:00:00').toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});$('#date').dateTime=date;
  $('#streak').textContent=streak();$('#case').setAttribute('aria-pressed',String(prefs.upper));$('#case').setAttribute('aria-label',prefs.upper?'Küçük harf kullan':'Büyük harf kullan');
  $('#sound').textContent=prefs.sound?'Ses açık':'Ses kapalı';$('#sound').setAttribute('aria-pressed',String(prefs.sound));
- $('#game').hidden=state.done;$('#results').hidden=!state.done;
- if(state.done){renderResults();return}
- $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between;
- if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?'Sekizi de toz oldu. Şimdi adlar kayboluyor. İlk harf ve bir ipucu kalıyor.':'Bir tur daha kaldı. Şimdi ezberden, öbür taraftan hatırlayın.';$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
+ paintPreferences();
+ $('#game').hidden=route!=='/oyun'||state.done;$('#results').hidden=route!=='/oyun'||!state.done;
+ if(route!=='/oyun'){if(route==='/')homePaint();return;}
+ if(state.done){$('#phone-input').blur();renderResults();return}
+ $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between||prefs.keyboard==='phone';
+ if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?'Sekiz kemiği gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.':'Şimdi ipucu yok. Kemikler öbür taraftan, ezberden.';$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
  const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;write('gk2:curriculum:v8',progress);$('#round').textContent=`Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
  renderAnswer();$('#translation').textContent=state.round===1?b.clue:state.round===0?b.tr:'';
  $('#explanation').textContent=state.round===0||submitted?b.fact:'';
@@ -57,8 +124,8 @@ function hintTarget(){return aliases(current()).find(a=>a.startsWith(normalize(s
 function revealHint(){
  if(state.round===0||state.done||state.between||busy)return;
  if(!aliases(current()).some(a=>a.startsWith(normalize(state.typed)))){$('#feedback').textContent='Önce yanlış harfi silin.';return}
- const target=hintTarget(),old=questionHint(),start=Math.max(state.typed.length,old?.until||0);
- let until=start;while(until<target.length){until++;if(target[until-1]!==' ')break}
+ const target=hintTarget(),old=questionHint(),offset=answerOffset(target,state.typed),start=Math.max(offset,old?.until||0);
+ const until=nextHintUntil(target,state.round,offset,old?.until||0);
  if(until===start)return;
  (state.hints??={})[questionKey()]={count:(old?.count||0)+1,until};
  $('#feedback').textContent='';sound.play('hint');save();renderAnswer();
@@ -67,13 +134,12 @@ function renderAnswer(){
  const b=current(),out=$('#answer'),previous=out.dataset.typed||'';let target=name(b);const matched=aliases(b).find(a=>a.startsWith(normalize(state.typed)));if(state.typed&&matched&&matched!==normalize(target))target=matched;out.dataset.typed=state.typed;out.replaceChildren();out.classList.toggle('long',target.length>22||state.typed.length>22);
  const typed=state.typed;let prefix='';
  for(let i=0;i<typed.length;i++){prefix+=typed[i];const span=document.createElement('span');span.className=i>=previous.length&&typed.startsWith(previous)?'letter':'settled';if(!aliases(b).some(a=>a.startsWith(normalize(prefix))))span.classList.add('wrong');span.textContent=display(typed[i]);out.append(span)}
- let hint='';if(!submitted){if(state.round===0)hint=target.slice(typed.length);if(state.round===1){hint=typed.length===0?target[0]+'·'.repeat(Math.max(3,target.length-1)):'·'.repeat(Math.max(0,target.length-typed.length));}if(state.round===2&&typed.length===0)hint='';}
- const revealed=questionHint();if(!submitted&&state.round>0&&revealed){const n=Math.max(0,revealed.until-typed.length);hint=target.slice(typed.length,typed.length+n)+(state.round===1?'·'.repeat(Math.max(0,target.length-typed.length-n)):'');}
+ const hint=submitted?'':answerHint(target,state.round,answerOffset(target,typed),questionHint()?.until||0);
  $('#hint').hidden=state.round===0;$('#hint').disabled=submitted;
  const ghost=document.createElement('span');ghost.className='ghost';ghost.textContent=display(hint);
  const caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');if(!submitted)out.append(caret);out.append(ghost);
  const ready=aliases(b).includes(normalize(typed));document.querySelector('[data-key="Enter"]')?.classList.toggle('ready',ready);
- out.setAttribute('aria-valuetext',`${display(typed)}${hint?' '+display(hint):''}`);
+ out.setAttribute('aria-description',`${display(typed)}${hint?' '+display(hint):''}`);
 }
 function buildKeyboard(){
  const tr=true;const rows=[
@@ -84,14 +150,14 @@ function buildKeyboard(){
  [{label:'',key:'none',width:'spacer'},{label:'boşluk',key:' ',width:'space'},{label:'',key:'none',width:'spacer'}]
  ];
  const keyboard=$('#keyboard');keyboard.replaceChildren();keyboard.classList.toggle('turkish',tr);
- for(const row of rows){const el=document.createElement('div');el.className='keyrow';for(const item of row){const k=typeof item==='string'?{label:prefs.upper?item.toLocaleUpperCase('tr-TR'):item,key:item}:item;const button=document.createElement('button');button.type='button';button.className='key '+(k.width||'');button.textContent=k.label;button.dataset.key=k.key;button.tabIndex=k.key==='none'?-1:0;button.setAttribute('aria-label',k.key===' '?'Boşluk':k.key==='Tab'?(state.round===0?'Sıradaki sözcük':'İpucu getir'):k.key==='Backspace'?'Son harfi sil':k.key==='Enter'?'Yanıtı gönder':k.label);if(k.key==='none')button.setAttribute('aria-hidden','true');if(k.key==='CapsLock'&&prefs.upper)button.classList.add('mod-on');el.append(button)}keyboard.append(el)}
+ for(const row of rows){const el=document.createElement('div');el.className='keyrow';for(const item of row){const k=typeof item==='string'?{label:prefs.upper?item.toLocaleUpperCase('tr-TR'):item,key:item}:item;const button=document.createElement('button');button.type='button';button.className='key '+(k.width||'');button.textContent=k.label;button.dataset.key=k.key;button.tabIndex=k.key==='none'?-1:0;button.setAttribute('aria-label',k.key===' '?'Boşluk':k.key==='Tab'?(state.round===0?'tab · Sıradaki sözcük':'tab · İpucu getir'):k.key==='Backspace'?'Son harfi sil':k.key==='Enter'?'gir · Yanıtı gönder':k.label);if(k.key==='none')button.setAttribute('aria-hidden','true');if(k.key==='CapsLock'&&prefs.upper)button.classList.add('mod-on');el.append(button)}keyboard.append(el)}
  document.querySelector('[data-key="Enter"]').classList.toggle('ready',aliases(current()).includes(normalize(state.typed)));
 }
 function pressFeedback(key){for(const el of document.querySelectorAll('.key'))if(el.dataset.key===key||el.dataset.key.toLocaleLowerCase('tr-TR')===key.toLocaleLowerCase('tr-TR')){el.classList.add('pressed');setTimeout(()=>el.classList.remove('pressed'),110)}}
 function noteMiss(){progress.history??={};const h=progress.history[current().id]??={};h.missed=date;}
 function wrong(message){sound.play('wrong');if(prefs.sound)navigator.vibrate?.(15);$('#feedback').textContent=message;const el=$('#answer-area');el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
 function act(key){
- if(state.done||busy)return;if(state.between){if(key==='Enter')startRound();return}sound.unlock();pressFeedback(key);
+ if(route!=='/oyun'||state.done||busy)return;if(state.between){if(key==='Enter')startRound();return}sound.unlock();pressFeedback(key);
  if(key==='Shift'||key==='CapsLock'){prefs.upper=!prefs.upper;save();paint();return}
  if(key==='Backspace'){state.typed=state.typed.slice(0,-1);sound.play('key');$('#feedback').textContent='';save();renderAnswer();return}
  if(key==='Enter'){submit();return}
@@ -113,22 +179,22 @@ function submit(){
   state.grades??={};if(!practice){const grades=state.grades[current().id]??={};grades[state.round]=hints||errors?'again':'good';if(hints||errors)state.queues[state.round]=reinsert(queue(),state.index);}
   state.answered[receipt]=true;}save();
  }
- busy=true;submitted=true;sound.play('correct');$('#feedback').textContent='Doğru.';state.first+=!isPractice()&&!state.questionErrors&&!questionHint()?.count?1:0;state.typed=name(current());paint();
+ busy=true;submitted=true;sound.play('correct');$('#feedback').textContent='Doğru.';state.first+=state.round>0&&!isPractice()&&!state.questionErrors&&!questionHint()?.count?1:0;state.typed=name(current());paint();
  timer=setTimeout(()=>{submitted=false;$('#game').classList.add(state.index===queue().length-1?'dissolving':'transitioning');timer=setTimeout(()=>{next();$('#game').classList.remove('transitioning','dissolving');},state.index===queue().length-1?540:220)},700);
 }
 function next(){
  state.typed='';state.questionErrors=0;state.index++;if(state.index===queue().length){state.lastRoundSize=queue().length;state.index=0;state.round++;if(state.round<3){state.between=true;sound.play('round');}if(state.round===3){state.round=2;state.index=queue().length-1;state.done=true;sound.play('day');state.elapsed=Date.now()-state.started;const s=read('gk2:streak',{last:null,count:0});if(s.last!==date)write('gk2:streak',{last:date,count:s.last&&dayNumber(date)-dayNumber(s.last)===1?s.count+1:1});}}
  busy=false;$('#feedback').textContent='';save();paint();
 }
-function startRound(){if(!state.between)return;state.between=false;save();paint();$('#answer').focus({preventScroll:true});}
+function startRound(){if(!state.between)return;state.between=false;save();paint();focusAnswer();}
 $('#next-round').onclick=startRound;
-$('#hint').onclick=()=>act('Tab');
+$('#hint').onclick=()=>{act('Tab');if(prefs.keyboard==='phone')focusAnswer()};
 function renderResults(){
- const total=state.keystrokes||1,accuracy=Math.round(state.correctKeys/total*100),first=Math.round(state.first/24*100),wpm=Math.round(state.correctKeys/5/Math.max(state.elapsed/60000,.1));const host=$('#results');host.replaceChildren();
+ const total=state.keystrokes||1,accuracy=Math.round(state.correctKeys/total*100),first=firstTryPercent(state),wpm=Math.round(state.correctKeys/5/Math.max(state.elapsed/60000,.1));const host=$('#results');host.replaceChildren();
  const add=(tag,text,cls,parent=host)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;parent.append(el);return el};
  add('p',`Gün tamamlandı · ${date}`,'eyebrow');add('h2','Bugünün sekiz kemiğini üç turda çalıştınız.');
  const nextDue=dueSummary(progress,state.units,date)[0];
- const nextLabel=nextDue?(nextDue.days===1?'Yarın':`${nextDue.days} gün sonra`):'—';
+ const nextLabel=nextDue?(nextDue.days===1?'Yarın':`${nextDue.days} gün sonra`):'Planlanmadı';
  const stats=add('div','','stats');for(const [label,val] of [['İlk denemede',`%${first}`],['Sonraki tekrar',nextLabel],['Kelime/dk · isabet',`${wpm} · %${accuracy}`]]){const item=add('div','',null,stats);add('small',label,null,item);add('strong',val,null,item)}
  const again=dayUnits().filter(b=>Object.values(state.grades?.[b.id]||{}).includes('again'));
  add('h4',`Tekrar: ${again.length} kemik yarın geri gelecek`);
@@ -138,12 +204,13 @@ function renderResults(){
  const regional=progressFor(prefs.region,progress),whole=progressFor('all',progress);
  const wholeProgress=prefs.region==='all'?'':` · Tüm iskelet: ${whole.count} / ${whole.total}`;
  add('p',`${regions.find(r=>r.id===prefs.region).label}: ${regional.count} / ${regional.total} öğrenildi${wholeProgress} · Seviye: ${levels[regional.level]}`,'curriculum-progress');
- add('h4','Bildiklerin');const grid=add('div','','result-grid');for(const b of dayUnits()){const card=add('article','','result-card',grid);add('h3',display(name(b)),null,card);add('p',b.fact,null,card);const grades=state.grades?.[b.id]||{},missed=grades[2]==='again',retry=Object.values(grades).includes('again');add('p',missed?'3. turda kaçırıldı, yarın tekrar':retry?'ipucuyla, yarın tekrar':'ilk denemede',retry?'score retry':'score',card)}
+ const reviewTitle=add('h4','Bildiklerin');reviewTitle.id='review-cards';reviewTitle.tabIndex=-1;const grid=add('div','','result-grid');for(const b of dayUnits()){const card=add('article','','result-card',grid);add('h3',display(name(b)),null,card);add('p',b.fact,null,card);const status=resultStatus(state,b.id);add('p',status,status==='ilk denemede'?'score':'score retry',card)}
  add('h4','Sınav için');for(const note of notesForDay(dayUnits()))add('p',note.text,'study-note');
- const button=add('button','Sonuçları kopyala','primary');button.onclick=async()=>{try{await navigator.clipboard.writeText(`Günün kemiği · ${date}\n8 kemik · 3 tur · %${accuracy} doğruluk\n${streak()} günlük seri`);button.textContent='Kopyalandı.'}catch{button.textContent='Kopyalama kullanılamıyor.'}};
+ const button=add('button','Sonuçları paylaş','primary');button.onclick=()=>shareResults(button,accuracy);
+ const review=add('button','Tekrar gözden geçir','text-button');review.onclick=reviewDay;
 }
 $('#keyboard').addEventListener('click',e=>{const button=e.target.closest('[data-key]');if(button)act(button.dataset.key)});
-document.addEventListener('keydown',e=>{if($('#instructions').open||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.closest('nav')||e.target.closest('#results')||e.target.closest('footer')||e.target.closest('#install-hint'))return;if(e.key==='Tab'){if(state.round>0&&!state.done&&!state.between){e.preventDefault();act('Tab')}return}if(e.key===' '||e.key==='Enter'||e.key==='Backspace'||e.key.length===1){e.preventDefault();act(e.key)}});
+document.addEventListener('keydown',e=>{if(route!=='/oyun'||document.querySelector('dialog[open]'))return;if(e.target===$('#phone-input')){if(e.key==='Enter'&&!e.isComposing){e.preventDefault();act('Enter')}return}if(e.isComposing||$('#instructions').open||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.closest('nav')||e.target.closest('#results')||e.target.closest('footer')||e.target.closest('#install-hint'))return;if(e.key==='Tab')return;if(e.target.closest('a,button,select,textarea,input')&&['Enter',' '].includes(e.key))return;if(e.key===' '||e.key==='Enter'||e.key==='Backspace'||e.key.length===1){e.preventDefault();act(e.key)}});
 const regionButton=$('#region'),regionMenu=$('#region-menu');
 for(const r of regions){const option=document.createElement('button');option.type='button';option.role='option';option.dataset.region=r.id;option.textContent=r.label;option.onclick=()=>{
  clearTimeout(timer);if(busy){submitted=false;next();}save();prefs.region=r.id;state=loadDay();busy=false;submitted=false;
@@ -154,13 +221,70 @@ regionButton.onclick=()=>{regionMenu.hidden=!regionMenu.hidden;regionButton.setA
 document.addEventListener('click',e=>{if(!e.target.closest('.region-picker')){regionMenu.hidden=true;regionButton.setAttribute('aria-expanded','false');}});
 regionMenu.addEventListener('keydown',e=>{const options=[...regionMenu.children],i=options.indexOf(document.activeElement);if(e.key==='Escape'){regionMenu.hidden=true;regionButton.setAttribute('aria-expanded','false');regionButton.focus();}if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();options[e.key==='Home'?0:e.key==='End'?options.length-1:(i+(e.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}});
 window.addEventListener('resize',()=>{$('#region-label').textContent=regions.find(r=>r.id===prefs.region)[innerWidth<=600?'short':'label'];});
-$('#case').onclick=()=>{prefs.upper=!prefs.upper;save();paint();if(!state.done)$('#answer').focus({preventScroll:true})};
-$('#sound').onclick=()=>{prefs.sound=!prefs.sound;sound.enabled=prefs.sound;sound.unlock();save();paint();if(!state.done)$('#answer').focus({preventScroll:true})};
+$('#case').onclick=()=>{prefs.upper=!prefs.upper;save();paint();if(!state.done)focusAnswer()};
+$('#sound').onclick=()=>{prefs.sound=!prefs.sound;sound.enabled=prefs.sound;sound.unlock();save();paint();if(!state.done)focusAnswer()};
 $('#help').onclick=()=>{$('#reset-confirmation').hidden=true;$('#reset-progress').hidden=false;$('#instructions').showModal()};
 $('#reset-progress').onclick=()=>{$('#reset-progress').hidden=true;$('#reset-confirmation').hidden=false;$('#cancel-reset').focus()};
 $('#cancel-reset').onclick=()=>{$('#reset-confirmation').hidden=true;$('#reset-progress').hidden=false;$('#reset-progress').focus()};
 $('#confirm-reset').onclick=()=>{if(resetProgress()){clearTimeout(timer);location.reload()}};
-$('#close-help').onclick=$('#start').onclick=()=>{$('#instructions').close();$('#answer').focus({preventScroll:true})};
-function checkDay(){if(date!==localDate()){clearTimeout(timer);save();date=localDate();state=loadDay();save();busy=false;submitted=false;$('#game').classList.remove('transitioning','dissolving');paint()}}
+$('#close-help').onclick=$('#start').onclick=()=>{$('#instructions').close();focusAnswer()};
+function checkDay(){if(date!==localDate()){clearTimeout(timer);save();date=localDate();state=loadDay();save();busy=false;submitted=false;$('#game').classList.remove('transitioning','dissolving');paint();if(route==='/'){homePaint();skull?.setBone(heroBone(),0)}}}
 setInterval(checkDay,30000);document.addEventListener('visibilitychange',checkDay);
-save();paint();createSkull($('#skull')).then(view=>{skull=view;$('#loading').hidden=true;paint();document.body.dataset.ready='true'}).catch(error=>{console.error(error);$('#loading').classList.add('error');$('#loading').textContent='3B model yüklenemedi. WebGL destekli bir tarayıcıda sayfayı yenileyin.';document.body.dataset.ready='error'});
+async function shareResults(button,accuracy){
+ const text=`Günün kemiği · ${date}\n8 kemik · 3 tur · %${accuracy} doğruluk\n${streak()} günlük seri\n${BASE_URL}`;
+ try{if(navigator.share){await navigator.share({title:'Günün kemiği',text});return}}catch(e){if(e.name==='AbortError')return}
+ try{await navigator.clipboard.writeText(text);button.textContent='Bağlantıyla birlikte kopyalandı.'}catch{const input=document.createElement('textarea');input.value=text;input.setAttribute('aria-label','Paylaşılacak sonuç');button.after(input);input.focus();input.select();button.textContent='Metni seçip kopyalayabilirsiniz.'}
+}
+function reviewDay(){location.hash='/oyun';requestAnimationFrame(()=>{renderResults();$('#review-cards')?.focus();$('#review-cards')?.scrollIntoView({behavior:'instant'});});}
+$('#review-day').onclick=reviewDay;
+const stage=$('#stage');
+function homePaint(){
+ const started=state.round>0||state.index>0||!!state.typed;
+ $('#home-status').textContent=state.done?'Bugün tamamlandı · yarın yeni kemikler':started?'Kaldığınız yer hazır.':'Bugünün sekiz kemiği hazır.';
+ $('#home-start').textContent=state.done?'Bugünün sonuçlarını gör':started?`Devam et · Tur ${state.round+1} · ${state.index+1} / ${queue().length}`:'Bugünün kemiklerine başla';
+ $('#review-day').hidden=!state.done;
+ const tomorrow=new Date(date+'T12:00:00');tomorrow.setDate(tomorrow.getDate()+1);const next=tomorrow.toLocaleDateString('sv-SE');
+ const due=Object.values(progress.cards||{}).filter(c=>c.box>0&&c.due<=next).length;
+ $('#home-stats').textContent=`${streak()} günlük seri · Yarın tekrar: ${due} kemik`;
+ const whole=progressFor('all',progress);$('#home-progress').textContent=`${whole.count} / ${whole.total} öğrenildi`;$('#learned-progress').value=whole.count;$('#learned-progress').max=whole.total;
+ $('#home-regions').replaceChildren();for(const r of regions.filter(r=>r.id!=='all')){const p=progressFor(r.id,progress),a=document.createElement('button');a.textContent=`${r.label} · ${p.count} / ${p.total}`;a.onclick=()=>{regionMenu.querySelector(`[data-region="${r.id}"]`).click();location.hash='/oyun'};$('#home-regions').append(a)}
+}
+function syncSettings(){for(const [id,value] of Object.entries({sound:prefs.sound?'on':'off',theme:prefs.theme||'system',keyboard:prefs.keyboard,case:prefs.upper?'upper':'lower',region:prefs.region}))$(`#setting-${id}`).value=value;}
+for(const r of regions){const o=document.createElement('option');o.value=r.id;o.textContent=r.label;$('#setting-region').append(o)}
+for(const id of ['sound','theme','keyboard','case','region'])$(`#setting-${id}`).onchange=e=>{
+ const v=e.target.value;
+ if(id==='region'){regionMenu.querySelector(`[data-region="${v}"]`).click();return}
+ if(id==='sound'){prefs.sound=v==='on';sound.enabled=prefs.sound}
+ if(id==='theme'){if(v==='system')delete prefs.theme;else prefs.theme=v}
+ if(id==='keyboard')prefs.keyboard=v;if(id==='case')prefs.upper=v==='upper';save();paintPreferences();
+};
+$('#settings-reset').append($('#reset-area'));
+$('#home-help').onclick=()=>$('#instructions').showModal();
+function heroBone(){return dayUnits().find(b=>b.region==='skull')||dailyBones(date,'skull',progress)[0]}
+function applyRoute(focus=true){
+ const requested=location.hash.slice(1)||'/';route=['/','/oyun','/ayarlar','/hakkinda'].includes(requested)?requested:'/';
+ document.body.dataset.route=route;
+ $('#home').hidden=route!=='/';$('#settings').hidden=route!=='/ayarlar';$('#about').hidden=route!=='/hakkinda';
+ $('#home-link').hidden=route==='/';$('.topbar nav').hidden=route!=='/oyun';
+ $('#phone-input').blur();$('#home-model').append(...(route==='/'?[stage]:[]));if(route==='/oyun')$('#game').prepend(stage);
+ if(route==='/'){homePaint();skull?.setBone(heroBone(),0)}
+ if(route==='/ayarlar'){syncSettings();$('#reset-confirmation').hidden=true;$('#reset-progress').hidden=false}
+ paint();
+ if(focus){const title=$(route==='/'?'#home-title':route==='/ayarlar'?'#settings-title':route==='/hakkinda'?'#about-title':'#answer');title?.focus({preventScroll:true})}
+ if(route==='/'||route==='/oyun')loadRenderer();
+}
+async function loadRenderer(){
+ if(skullStarted)return;skullStarted=true;
+ // Two frames let the useful home content paint before parsing Three.js.
+ requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
+ await pwaReady;const {createSkull}=await import('./skull.js?v=6478201-20261110T230808604Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
+}
+window.addEventListener('hashchange',()=>applyRoute());
+const steps=[['Tur 1 · Gör ve yaz','Kırmızı kemiği inceleyin. Adını görerek yazın.','frontal'],['Tur 2 · İlk harf ve ipucu','İlk harften hatırlayın. Gerekirse ipucu isteyin.','f…'],['Tur 3 · Ezberden, öbür taraftan','Kemiği farklı açıdan tanıyın. Adını bu kez ezberden yazın.','…']];let onboardingStep=0;
+function onboardingPaint(){const [title,copy,example]=steps[onboardingStep];$('#onboarding-title').textContent=title;$('#onboarding-copy').textContent=copy;$('#onboarding-example').textContent=example;$('#onboarding-count').textContent=`${onboardingStep+1} / 3`;$('#onboarding-next').textContent=onboardingStep===2?'Hazırım':'Sonraki'}
+function closeOnboarding(){write('gk2:onboarded',true);$('#onboarding').close();$('#home-start').focus()}
+$('#onboarding-next').onclick=()=>{if(onboardingStep===2)closeOnboarding();else{onboardingStep++;onboardingPaint()}};$('#onboarding-skip').onclick=closeOnboarding;
+$('#onboarding').addEventListener('cancel',e=>{e.preventDefault();closeOnboarding()});
+save();applyRoute(false);document.body.dataset.shellReady='true';
+if(!read('gk2:onboarded',false)){onboardingPaint();$('#onboarding').showModal()}

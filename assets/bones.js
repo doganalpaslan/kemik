@@ -88,7 +88,7 @@ export const bones = [
  {
   "id": "sphenoid",
   "latin": "os sphenoidale",
-  "tr": "kama kemiği",
+  "tr": "temel kemik",
   "aliases": [
    "sphenoidale",
    "sphenoid"
@@ -339,19 +339,23 @@ export const bones = [
  },
  {
   "id": "cervical",
-  "tr": "boyun omurları",
+  "tr": "boyun omurları (C1–C7)",
   "latin": "vertebrae cervicales",
   "region": "neck",
   "meshes": [
+   "12519",
+   "12520",
    "12521",
    "12522",
    "12523",
-   "12524"
+   "12524",
+   "12525"
   ],
-  "fact": "Cervix, boyun demektir; burada C3–C6 omurları birlikte gösterilir.",
-  "clue": "üçüncü ile altıncı boyun omurları",
+  "fact": "Cervix, boyun demektir; yedi boyun omuru vardır.",
+  "clue": "boyundaki yedi omur",
   "trAliases": [
-   "servikal omurlar"
+   "servikal omurlar",
+   "boyun omurları"
   ],
   "aliases": [],
   "angle": 0.3,
@@ -598,7 +602,7 @@ export const bones = [
    "24439",
    "24440"
   ],
-  "fact": "Triquetrus, üç köşeli demektir; bezelye kemiği ön yüzüyle eklem yapar.",
+  "fact": "Triquetrus, üç köşeli demektir; avuç yüzü bezelye kemiğiyle eklem yapar.",
   "clue": "el bileğinin yakın sırasında, serçe parmak tarafında",
   "trAliases": [
    "üçgen kemik",
@@ -912,7 +916,7 @@ export const bones = [
    "24500",
    "24501"
   ],
-  "fact": "Navicula, küçük kayık demektir; aşık kemiği ile çivi kemikleri arasındadır.",
+  "fact": "Navicula, küçük kayık demektir; aşık kemiği ile kamamsı kemikler arasındadır.",
   "clue": "ayağın iç yanında, aşık kemiğinin önünde",
   "trAliases": [
    "ayak kayık kemiği"
@@ -1056,7 +1060,7 @@ export const bones = [
    "7487"
   ],
   "clue": "göğüs kemiğinin uzun orta bölümü",
-  "fact": "Corpus, gövde demektir; üçüncü ile yedinci kaburgaların kıkırdakları bu bölüme bağlanır.",
+  "fact": "Corpus, gövde demektir; ikinci kaburga kıkırdağının alt yarısı ile 3.–7. kaburga kıkırdakları bu bölüme bağlanır.",
   "level": 2,
   "aliases": [],
   "trAliases": [],
@@ -1178,7 +1182,7 @@ export const bones = [
  {
   "id": "cuneiform-medial",
   "latin": "os cuneiforme mediale",
-  "tr": "iç çivi kemiği",
+  "tr": "iç yan kamamsı kemik",
   "region": "foot",
   "meshes": [
    "24521",
@@ -1196,7 +1200,7 @@ export const bones = [
  {
   "id": "cuneiform-intermediate",
   "latin": "os cuneiforme intermedium",
-  "tr": "ara çivi kemiği",
+  "tr": "ara kamamsı kemik",
   "region": "foot",
   "meshes": [
    "24523",
@@ -1214,7 +1218,7 @@ export const bones = [
  {
   "id": "cuneiform-lateral",
   "latin": "os cuneiforme laterale",
-  "tr": "dış çivi kemiği",
+  "tr": "dış yan kamamsı kemik",
   "region": "foot",
   "meshes": [
    "24525",
@@ -1252,8 +1256,8 @@ export const bones = [
  },
  {
   "id": "hand-phalanx-proximal",
-  "latin": "phalanx proximalis",
-  "tr": "el parmaklarının yakın falanksları",
+  "latin": "phalanges proximales manus",
+  "tr": "el: yakın falankslar",
   "region": "hand",
   "meshes": [
    "24450",
@@ -1270,7 +1274,10 @@ export const bones = [
   "clue": "el parmaklarında tarağa komşu ilk sıra",
   "fact": "Phalanx, sıra demektir; yakın falankslar tarak kemikleriyle eklem yapar.",
   "level": 2,
-  "aliases": [],
+  "aliases": [
+   "phalanges proximales",
+   "phalanx proximalis"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "upper",
@@ -1278,8 +1285,8 @@ export const bones = [
  },
  {
   "id": "hand-phalanx-middle",
-  "latin": "phalanx media",
-  "tr": "el parmaklarının orta falanksları",
+  "latin": "phalanges mediae manus",
+  "tr": "el: orta falankslar",
   "region": "hand",
   "meshes": [
    "23938",
@@ -1291,10 +1298,13 @@ export const bones = [
    "24457",
    "24458"
   ],
-  "clue": "el parmaklarında başparmak dışında, iki uç sıra arasındaki kemikler",
+  "clue": "el parmaklarında başparmak dışında, yakın ve uzak sıra arasındaki kemikler",
   "fact": "Phalanx, sıra demektir; başparmakta orta falanks bulunmaz.",
   "level": 3,
-  "aliases": [],
+  "aliases": [
+   "phalanges mediae",
+   "phalanx media"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "upper",
@@ -1302,8 +1312,8 @@ export const bones = [
  },
  {
   "id": "hand-phalanx-distal",
-  "latin": "phalanx distalis",
-  "tr": "el parmaklarının uç falanksları",
+  "latin": "phalanges distales manus",
+  "tr": "el: uzak falankslar",
   "region": "hand",
   "meshes": [
    "23951",
@@ -1320,7 +1330,10 @@ export const bones = [
   "clue": "el parmaklarında parmak uçlarındaki son sıra",
   "fact": "Phalanx, sıra demektir; uzak falankslar parmak uçlarını oluşturur.",
   "level": 2,
-  "aliases": [],
+  "aliases": [
+   "phalanges distales",
+   "phalanx distalis"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "upper",
@@ -1349,8 +1362,8 @@ export const bones = [
  },
  {
   "id": "foot-phalanx-proximal",
-  "latin": "phalanx proximalis",
-  "tr": "ayak parmaklarının yakın falanksları",
+  "latin": "phalanges proximales pedis",
+  "tr": "ayak: yakın falankslar",
   "region": "foot",
   "meshes": [
    "32634",
@@ -1367,7 +1380,10 @@ export const bones = [
   "clue": "ayak parmaklarında tarağa komşu ilk sıra",
   "fact": "Phalanx, sıra demektir; yakın falankslar tarak kemikleriyle eklem yapar.",
   "level": 2,
-  "aliases": [],
+  "aliases": [
+   "phalanges proximales",
+   "phalanx proximalis"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "lower",
@@ -1375,8 +1391,8 @@ export const bones = [
  },
  {
   "id": "foot-phalanx-middle",
-  "latin": "phalanx media",
-  "tr": "ayak parmaklarının orta falanksları",
+  "latin": "phalanges mediae pedis",
+  "tr": "ayak: orta falankslar",
   "region": "foot",
   "meshes": [
    "230986",
@@ -1388,10 +1404,13 @@ export const bones = [
    "32646",
    "32647"
   ],
-  "clue": "ayak parmaklarında başparmak dışında, iki uç sıra arasındaki kemikler",
+  "clue": "ayak parmaklarında başparmak dışında, yakın ve uzak sıra arasındaki kemikler",
   "fact": "Phalanx, sıra demektir; başparmakta orta falanks bulunmaz.",
   "level": 3,
-  "aliases": [],
+  "aliases": [
+   "phalanges mediae",
+   "phalanx media"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "lower",
@@ -1399,8 +1418,8 @@ export const bones = [
  },
  {
   "id": "foot-phalanx-distal",
-  "latin": "phalanx distalis",
-  "tr": "ayak parmaklarının uç falanksları",
+  "latin": "phalanges distales pedis",
+  "tr": "ayak: uzak falankslar",
   "region": "foot",
   "meshes": [
    "32650",
@@ -1417,7 +1436,10 @@ export const bones = [
   "clue": "ayak parmaklarında parmak uçlarındaki son sıra",
   "fact": "Phalanx, sıra demektir; uzak falankslar parmak uçlarını oluşturur.",
   "level": 2,
-  "aliases": [],
+  "aliases": [
+   "phalanges distales",
+   "phalanx distalis"
+  ],
   "trAliases": [],
   "angle": 0.3,
   "curriculumRegion": "lower",
@@ -1480,5 +1502,5 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=88a2f45-20261110T220532222Z";
+export {dailyBones,roundBones} from "./curriculum.js?v=6478201-20261110T230808604Z";
 export const answerAliases=(b,mode)=>{const list=mode==='latin'?[b.latin,...b.aliases,b.latin.replace(/^(os|ossa) /,'')]:[b.tr,...b.trAliases||[]];return [...new Set(list.flatMap(s=>mode==='tr'?[s,s.replace(/\s+(kemiği|kemikleri|kemik)$/u,'')]:[s]).map(normalize))];};

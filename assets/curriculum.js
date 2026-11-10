@@ -1,4 +1,4 @@
-import {bones,dayNumber} from './bones.js?v=88a2f45-20261110T220532222Z';
+import {bones,dayNumber} from './bones.js?v=6478201-20261110T230808604Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const levels=['','kolay','orta','zor'];
 export const poolFor=region=>bones.filter(b=>region==='all'||b.curriculumRegion===region);
