@@ -1,7 +1,7 @@
-import * as THREE from './vendor/three.module.min.js?v=7a098ad-20261111T101211286Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=7a098ad-20261111T101211286Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=7a098ad-20261111T101211286Z';
-// Region files are loaded on demand. At most five decoded regions stay in GPU memory.
+import * as THREE from './vendor/three.module.min.js?v=2d5a341-20261111T153630630Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=2d5a341-20261111T153630630Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=2d5a341-20261111T153630630Z';
+// Region files are loaded on demand. Inactive decoded regions are evicted beyond five; the active context stays loaded.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
  renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0xfaf9f6,0);
@@ -73,15 +73,15 @@ export async function createSkull(canvas){
  async function setBone(b,r){
   if(lastId===`${b.id}:${r}`)return;lastId=`${b.id}:${r}`;activeBone=b;ready=false;const token=++request;canvas.dataset.loading='true';canvas.dataset.bone=b.id;
   canvas.parentElement.classList.toggle('landmark-stage',b.module==='landmarks');
-  const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent=b.module==='muscles'?'Kaslar yükleniyor.':'Kemikler yükleniyor.';
+  const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent='Anatomi modeli yükleniyor.';
   try{
    const profile=b.region?.startsWith('muscles-z-')?headNeckProfiles[headNeckGroup(b.id)]:null;
-   const regions=profile?[...profile.regions,b.region]:b.module==='muscles'?[b.context,b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='landmarks'?'landmarks':b.module==='muscles')));if(token!==request)return;disposeLandmark(landmarkOverlay);landmarkOverlay=null;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
+   const regions=profile?[...profile.regions,b.region]:b.context?[...(b.contextRegions||[b.context]),b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='landmarks'||b.contextRegions?'landmarks':!!b.context)));if(token!==request)return;disposeLandmark(landmarkOverlay);landmarkOverlay=null;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
    const whole=new THREE.Box3(),target=new THREE.Box3();
-   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.module==='muscles'&&m.userData.kind==='muscle'?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
+   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.context&&['muscle','nerve','vessel'].includes(m.userData.kind)?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
    if(target.isEmpty())throw Error('Hedef ağı bulunamadı');
    whole.getCenter(mainCenter);target.getCenter(closeCenter);mainBox.copy(whole);closeBox.copy(target);
-   if(b.module==='muscles'){
+   if(b.context){
     const extent=target.getSize(new THREE.Vector3()),minimum=profile?profile.minimum:b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context];
     mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(Math.max(extent.x*1.4,minimum),Math.max(extent.y*1.4,minimum),Math.max(extent.z*1.4,minimum)));
    }
@@ -104,18 +104,28 @@ export async function createSkull(canvas){
     m.userData.closeVisible=!closeSide||Math.abs(x)<3||Math.sign(x)===closeSide;
    }
    closeTargets=targets.filter(m=>m.userData.closeVisible);
+   // Long thin structures need a local detail view, while the main view keeps
+   // their full source course. Fit existing vertices around the middle segment.
+   const detail=b.contextRegions&&closeBox.getSize(new THREE.Vector3()).y>250;
+   canvas.dataset.closeDetail=String(!!detail);
+   for(const m of closeTargets){
+    const p=m.geometry.attributes.position;
+    const subset=detail?m.userData.fitIndices.filter(i=>Math.abs(p.getY(i)-closeCenter.y)<65):null;
+    m.userData.closeFitIndices=subset?.length>10?subset:m.userData.fitIndices;
+   }
+
    if(b.region==='ossicles'){mainCenter.lerp(closeCenter,.35);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(180,180,180));}
    if(b.region==='knee'){mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(230,210,160));}
    for(const [k,g] of cache){if(cache.size<=5)break;if(!groups.includes(g)){cache.delete(k);g.traverse(m=>m.geometry?.dispose());}}
    targetAngle=(b.angle||.25)+(r===2?Math.PI:0);targetTilt=(b.tilt||0)+(['foot','muscles-foot'].includes(b.region)?-.55:.08);
    angle=targetAngle;tilt=targetTilt;closeAngle=angle+.55;
-   if(b.module==='muscles'){
+   if(b.context){
     // Pick an oblique view with a broad target silhouette. A fixed side angle
     // can turn thin muscles (pectoralis, sartorius, deep back) edge-on.
     let best=-Infinity;const point=new THREE.Vector3();
     for(const offset of [.45,-.45,.75,-.75,1.05,-1.05]){
      const rotation=new THREE.Euler(tilt-.18,angle+offset,0);let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-     for(const m of closeTargets)for(const i of m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(closeCenter).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
+     for(const m of closeTargets)for(const i of m.userData.closeFitIndices||m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(closeCenter).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
      const score=(maxX-minX)*(maxY-minY);if(score>best){best=score;closeAngle=angle+offset;}
     }
    }
@@ -132,7 +142,7 @@ export async function createSkull(canvas){
    canvas.dataset.contextGroup=profile?headNeckGroup(b.id):'';canvas.dataset.contextMeshes=meshes.filter(m=>m.userData.contextVisible&&!b.meshes.includes(m.name)&&m.userData.kind!=='muscle').map(m=>m.name).join(',');
    canvas.dataset.loading='false';loading.hidden=true;ready=true;
    document.querySelector('.model-note').textContent=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
-   canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:b.module==='muscles'?'Sorulan kas kırmızı renkle gösteriliyor.':'Sorulan kemik kırmızı renkle gösteriliyor.');
+   canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:'Sorulan yapı kırmızı renkle gösteriliyor.');
   }catch(error){if(token!==request)return;console.error(error);loading.hidden=false;lastId='';loading.textContent='Model yüklenemedi. Ad ve ipuçlarıyla devam edebilirsiniz. Yenilemek için sayfayı tekrar açın.';canvas.dataset.loading='error';}
  }
  let lastFrame=0,landmarkCloseTilt=0;
@@ -148,7 +158,7 @@ export async function createSkull(canvas){
     // Fit the actual projected vertices, not a rotated axis-aligned box, which
     // excessively shrinks oblique wrists/feet. Refit during the turn as well.
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-    for(const m of closeTargets){const p=m.geometry.attributes.position;for(const i of m.userData.fitIndices){
+    for(const m of closeTargets){const p=m.geometry.attributes.position;for(const i of m.userData.closeFitIndices||m.userData.fitIndices){
      point.fromBufferAttribute(p,i).sub(center).applyEuler(rotation);
      minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
     }}
@@ -178,7 +188,7 @@ export async function createSkull(canvas){
    }
    if(activeBone.module==='landmarks'){
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-    for(const m of closeTargets)for(const i of m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(center).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
+    for(const m of closeTargets)for(const i of m.userData.closeFitIndices||m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(center).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
     if(landmarkOverlay.userData.targetBounds){const b=landmarkOverlay.userData.targetBounds;
      for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){point.set(x,y,z).sub(center).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
     }
@@ -186,15 +196,15 @@ export async function createSkull(canvas){
     for(const m of landmarkOverlay.children)if(m.userData.leader)m.visible=show;
     if(!close){canvas.dataset.targetPixels=String(pixels);canvas.dataset.leaderVisible=String(show);}
    }
-   gray.uniforms.edgeFade.value=activeBone.module==='muscles'||close||['ossicles','knee'].includes(activeBone.region);
+   gray.uniforms.edgeFade.value=!!activeBone.context||close||['ossicles','knee'].includes(activeBone.region);
    const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
    for(const material of [faint,contextGlass,eyeballGlass]){material.uniforms.edgeFade.value=gray.uniforms.edgeFade.value;material.uniforms.viewSize.value.copy(gray.uniforms.viewSize.value);material.uniforms.viewOrigin.value.copy(gray.uniforms.viewOrigin.value);}
-   halo.visible=Boolean(!close&&(activeBone.region==='ossicles'||activeBone.closeCamera));
+   halo.visible=Boolean(!close&&(activeBone.region==='ossicles'||activeBone.closeCamera&&!activeBone.contextRegions));
    if(halo.visible){const p=closeCenter.clone().sub(center).applyEuler(rotation).add(pivot.position);halo.position.set(p.x,p.y,1500);halo.scale.setScalar(8*2*scale/vh);}
    output.render(scene,camera);
   }
   view(home?0:w*(mobile?.02:.16),10,home?w:w*(mobile?.74:.62),h-20,(activeBone.region==='ossicles'?Math.PI/2:angle)+drift,tilt,mainSize,mainCenter,false);
-  if(!home)view(0,0,closeCanvas.clientWidth,closeCanvas.clientHeight,(['muscles','landmarks'].includes(activeBone.module)?closeAngle:angle+Math.PI*.65)+(reduced?0:['muscles','landmarks'].includes(activeBone.module)?Math.sin(now*.00008)*.10:now*.00008),activeBone.module==='landmarks'?landmarkCloseTilt:tilt-.18,closeSize,closeCenter,true);
+  if(!home)view(0,0,closeCanvas.clientWidth,closeCanvas.clientHeight,((activeBone.context||activeBone.module==='landmarks')?closeAngle:angle+Math.PI*.65)+(reduced?0:(activeBone.context||activeBone.module==='landmarks')?Math.sin(now*.00008)*.10:now*.00008),activeBone.module==='landmarks'?landmarkCloseTilt:tilt-.18,closeSize,closeCenter,true);
  }
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.querySelector('#loading').hidden=false;document.querySelector('#loading').textContent='Görüntü durdu. Sayfayı yenileyerek devam edebilirsiniz.';});
  frame=requestAnimationFrame(draw);

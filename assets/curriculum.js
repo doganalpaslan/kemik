@@ -1,12 +1,6 @@
-import {muscles} from './muscles.js?v=7a098ad-20261111T101211286Z';
-import {bones,dayNumber} from './bones.js?v=7a098ad-20261111T101211286Z';
-export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
-export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
-// Landmark definitions and patches are separate chunks; muscle-only startup never imports them.
-export const landmarks=[];
-let landmarkLoad;
-export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-lower.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-trunk.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-skull.js?v=7a098ad-20261111T101211286Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
-export const unitsFor=module=>module==='muscles'?muscles:[...bones,...landmarks];
+import {bones,dayNumber} from './bones.js?v=2d5a341-20261111T153630630Z';
+import {getModule,unitsFor,regionsFor,landmarks} from './module-registry.js?v=2d5a341-20261111T153630630Z';
+export {moduleRegistry,modules,getModule,loadModule,regions,muscleRegions,regionsFor,unitsFor,landmarks,loadLandmarks} from './module-registry.js?v=2d5a341-20261111T153630630Z';
 export function stageStatus(parent,stage,progress={}){
  const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);
  const skullBones=bones.filter(b=>b.curriculumRegion==='skull');
@@ -27,7 +21,6 @@ export function ladderFor(region,progress={}){
  const parents=bones.filter(b=>region==='all'||b.curriculumRegion===region),learned=learnedIds(progress);
  return {bones:{count:parents.filter(b=>learned.has(b.id)).length,total:parents.length},parents:[...parents,...(region==='skull'||region==='all'?[{id:'skull-regions',latin:'Kafatası bölgeleri · kemiklerin %50’si öğrenilince'}]:[])].filter(b=>landmarks.some(l=>l.parentBone===b.id)).map(b=>({id:b.id,latin:b.latin,steps:[1,2,3].map(n=>({stage:n,...stageStatus(b.id,n,progress)}))})),steps:[1,2,3].map(stage=>{const pool=landmarks.filter(b=>b.stage===stage&&(region==='all'||b.curriculumRegion===region));return {stage,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,open:pool.filter(b=>stageStatus(b.parentBone,stage,progress).open).length};})};
 }
-export const regionsFor=module=>module==='muscles'?muscleRegions:regions;
 export const levels=['','kolay','orta','zor'];
 export const poolFor=(region,module='bones')=>unitsFor(module).filter(b=>region==='all'||b.curriculumRegion===region);
 export const intervals={1:1,2:3,3:7,4:14,5:30};
@@ -43,9 +36,9 @@ function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
 export function shuffle(items,seed){const a=[...items];let n=hash(seed);for(let i=a.length-1;i>0;i--){n=(Math.imul(n,1664525)+1013904223)>>>0;const j=n%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 export function dailyBones(date,region='all',progress={},module='bones'){
  const cards=progress.cards||{},card=b=>cards[b.id];
- const pool=poolFor(region,module).filter(b=>module==='muscles'||!b.parentBone||card(b)?.box>0||stageStatus(b.parentBone,b.stage,progress).open);
+ const pool=poolFor(region,module).filter(b=>!getModule(module).staged||!b.parentBone||card(b)?.box>0||stageStatus(b.parentBone,b.stage,progress).open);
  const order=(a,b)=>(a.stage||0)-(b.stage||0)||a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
- if(module!=='muscles'){
+ if(getModule(module).staged){
   const due=pool.filter(b=>card(b)?.box>0&&card(b).due<=date).sort((a,b)=>card(a).due.localeCompare(card(b).due)||order(a,b));
   const highestOverride=parent=>Math.max(0,...[1,2,3].filter(n=>progress.unlocks?.[`${parent}:${n}`]));
   const fresh=pool.filter(b=>!card(b)?.box&&(b.parentBone?b.stage>=highestOverride(b.parentBone):highestOverride(b.id)===0)).sort(order);

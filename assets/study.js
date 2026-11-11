@@ -1,4 +1,4 @@
-import {notesForMuscles} from './muscle-study.js?v=7a098ad-20261111T101211286Z';
+import {notesForMuscles} from './muscle-study.js?v=2d5a341-20261111T153630630Z';
 // Note-to-source mapping: KAYNAKLAR.md. Only notes linked to today’s question units are shown.
 export const clinicalNotes=[
  {
@@ -183,4 +183,4 @@ export const clinicalNotes=[
   "source": "orbital"
  }
 ];
-export function notesForDay(bones){if(bones[0]?.module==='muscles')return notesForMuscles(bones);const ids=new Set(bones.map(b=>b.id));return clinicalNotes.filter(n=>n.ids.some(id=>ids.has(id))).slice(0,3);}
+export function notesForDay(bones){if(bones[0]?.module==='muscles')return notesForMuscles(bones);if(bones[0]?.sourceURLs)return bones.slice(0,3).map(b=>({text:`${b.latin}: ${b.fact}`,url:b.sourceURLs[0]}));const ids=new Set(bones.map(b=>b.id));return clinicalNotes.filter(n=>n.ids.some(id=>ids.has(id))).slice(0,3);}

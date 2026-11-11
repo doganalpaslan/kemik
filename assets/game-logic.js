@@ -1,4 +1,4 @@
-import {normalize} from './bones.js?v=7a098ad-20261111T101211286Z';
+import {normalize} from './bones.js?v=2d5a341-20261111T153630630Z';
 
 // A complete alias waits for Enter if it could still become a longer alias.
 export function shouldAutoSubmit(typed,aliases){
@@ -14,7 +14,7 @@ export function answerOffset(target,typed){
 }
 // Automatic clues never count as a requested hint.
 export function initialMask(target){
- if(/^(os|ossa|phalanges|m\.|mm\.) /.test(target))return target.split(' ').map((word,i)=>i===0?word:word[0]+'·'.repeat(word.length-1)).join(' ');
+ if(/^(os|ossa|phalanges|m\.|mm\.|n\.|nn\.|a\.|aa\.|v\.|vv\.|r\.|rr\.) /.test(target))return target.split(' ').map((word,i)=>i===0?word:word[0]+'·'.repeat(word.length-1)).join(' ');
  return target[0]+'·'.repeat(target.length-1);
 }
 export function answerHint(target,round,typedLength=0,until=0){
