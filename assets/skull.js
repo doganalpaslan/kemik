@@ -1,6 +1,6 @@
-import * as THREE from './vendor/three.module.min.js?v=2a71b56-20261111T074743391Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=2a71b56-20261111T074743391Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=2a71b56-20261111T074743391Z';
+import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T090133238Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=4665a6d-20261111T090133238Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=4665a6d-20261111T090133238Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -163,9 +163,8 @@ export async function createSkull(canvas){
     }
     scale=Math.max(extentY,extentX/(vw/vh))*1.12;
    }
-   // The narrow second canvas must magnify broad fossae/ridges too, even if
-   // that means showing a central portion of a long landmark instead of fitting it all.
-   if(activeBone.module==='landmarks'){if(close)scale=Math.min(scale,primaryScale*.45);else primaryScale=scale;}
+   // Keep the whole landmark and surrounding bone visible in the inset.
+   if(activeBone.module==='landmarks'){if(close)scale=Math.max(scale,primaryScale*.6);else primaryScale=scale;}
    camera.left=-scale*vw/vh;camera.right=scale*vw/vh;camera.top=scale;camera.bottom=-scale;camera.updateProjectionMatrix();
    root.position.copy(center).multiplyScalar(-1);pivot.rotation.set(t,a,0);
    for(const g of root.children){

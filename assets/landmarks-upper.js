@@ -1,4 +1,4 @@
-// FIPAT TA2 terms; source anchors: Z-Anatomy, CC BY-SA 4.0. See KAYNAKLAR.md.
+// v26: audited terminology, analytic per-fragment paint.
 export const landmarks = [
  {
   "id": "landmark-1169",
@@ -21,9 +21,9 @@ export const landmarks = [
   "clue": "clavicula · göğüs kemiği ucu",
   "fact": "Sternumun manubriumu ile eklem yapar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1169; Z-Anatomy Startup.blend: Sternal end.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1169; Z-Anatomy Startup.blend: Sternal end.j; yapilar-denetim.md applied (v25)",
   "ta2": 1169,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Sternal end.j",
@@ -31,9 +31,11 @@ export const landmarks = [
     12,
     12,
     12
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1174",
@@ -56,9 +58,9 @@ export const landmarks = [
   "clue": "clavicula · akromiyon ucu",
   "fact": "Acromion ile akromiyoklaviküler eklemi oluşturur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1174; Z-Anatomy Startup.blend: Acromial end.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1174; Z-Anatomy Startup.blend: Acromial end.j; yapilar-denetim.md applied (v25)",
   "ta2": 1174,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Acromial end.j",
@@ -66,9 +68,11 @@ export const landmarks = [
     12,
     9,
     12
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1177",
@@ -89,9 +93,9 @@ export const landmarks = [
   "clue": "clavicula · koni biçimli tümsek",
   "fact": "Ligamentum conoideum bu tümseğe tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1177; Z-Anatomy Startup.blend: Conoid tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1177; Z-Anatomy Startup.blend: Conoid tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1177,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Conoid tubercle.j",
@@ -99,9 +103,11 @@ export const landmarks = [
     7,
     5,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1178",
@@ -122,9 +128,9 @@ export const landmarks = [
   "clue": "clavicula · trapezoid çizgi",
   "fact": "Ligamentum trapezoideum için tutunma alanıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1178; Z-Anatomy Startup.blend: Trapezoid line.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1178; Z-Anatomy Startup.blend: Trapezoid line.j; yapilar-denetim.md applied (v25)",
   "ta2": 1178,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Trapezoid line.j",
@@ -132,9 +138,11 @@ export const landmarks = [
     12,
     5,
     6
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1171",
@@ -157,9 +165,9 @@ export const landmarks = [
   "clue": "clavicula · kostoklaviküler bağ izi",
   "fact": "Birinci kosta ile klavikulayı bağlayan bağ burada tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1171; Z-Anatomy Startup.blend: Impression for costoclavicular ligament.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1171; Z-Anatomy Startup.blend: Impression for costoclavicular ligament.j; yapilar-denetim.md applied (v25)",
   "ta2": 1171,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Impression for costoclavicular ligament.j",
@@ -167,9 +175,11 @@ export const landmarks = [
     12,
     5,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1152",
@@ -192,9 +202,9 @@ export const landmarks = [
   "clue": "scapula · omuz çıkıntısı",
   "fact": "Deltoid ve trapez kaslarının tutunmasına katılır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1152; Z-Anatomy Startup.blend: Acromion.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1152; Z-Anatomy Startup.blend: Acromion.j; yapilar-denetim.md applied (v25)",
   "ta2": 1152,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Acromion.j",
@@ -202,9 +212,11 @@ export const landmarks = [
     23,
     12,
     20
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1159",
@@ -227,9 +239,9 @@ export const landmarks = [
   "clue": "scapula · karga gagası çıkıntısı",
   "fact": "Kısa biseps başı ve korakobrakiyal kas buradan başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1159; Z-Anatomy Startup.blend: Coracoid process.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1159; Z-Anatomy Startup.blend: Coracoid process.j; yapilar-denetim.md applied (v25)",
   "ta2": 1159,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Coracoid process.j",
@@ -237,9 +249,11 @@ export const landmarks = [
     20,
     21,
     20
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1162",
@@ -264,9 +278,9 @@ export const landmarks = [
   "clue": "scapula · eklem çukuru",
   "fact": "Humerus başıyla omuz eklemini oluşturur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1162; Z-Anatomy Startup.blend: Glenoid fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1162; Z-Anatomy Startup.blend: Glenoid fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1162,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Glenoid fossa.j",
@@ -274,9 +288,11 @@ export const landmarks = [
     10,
     19,
     18
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1147",
@@ -297,9 +313,9 @@ export const landmarks = [
   "clue": "scapula · kürek kemiği dikeni",
   "fact": "Arka yüzü supraspinöz ve infraspinöz çukurlara ayırır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1147; Z-Anatomy Startup.blend: Spine of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1147; Z-Anatomy Startup.blend: Spine of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1147,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Spine of scapula.j",
@@ -307,9 +323,11 @@ export const landmarks = [
     65,
     18,
     23
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1150",
@@ -330,9 +348,9 @@ export const landmarks = [
   "clue": "scapula · diken üstü çukuru",
   "fact": "Musculus supraspinatus bu çukurdan başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1150; Z-Anatomy Startup.blend: Supraspinous fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1150; Z-Anatomy Startup.blend: Supraspinous fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1150,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Supraspinous fossa.j",
@@ -340,9 +358,11 @@ export const landmarks = [
     38,
     22,
     16
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1151",
@@ -363,9 +383,9 @@ export const landmarks = [
   "clue": "scapula · diken altı çukuru",
   "fact": "Musculus infraspinatus bu çukurdan başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1151; Z-Anatomy Startup.blend: Infraspinous fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1151; Z-Anatomy Startup.blend: Infraspinous fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1151,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Infraspinous fossa.j",
@@ -373,9 +393,11 @@ export const landmarks = [
     39,
     46,
     16
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1145",
@@ -396,9 +418,9 @@ export const landmarks = [
   "clue": "scapula · kürek altı çukuru",
   "fact": "Ön yüzde musculus subscapularis için başlangıç alanıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1145; Z-Anatomy Startup.blend: Subscapular fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1145; Z-Anatomy Startup.blend: Subscapular fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1145,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Subscapular fossa.j",
@@ -406,9 +428,11 @@ export const landmarks = [
     40,
     55,
     14
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1163",
@@ -431,9 +455,9 @@ export const landmarks = [
   "clue": "scapula · eklem üstü tümseği",
   "fact": "Bisepsin uzun başı bu bölgeden başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1163; Z-Anatomy Startup.blend: Supraglenoid tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1163; Z-Anatomy Startup.blend: Supraglenoid tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1163,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Supraglenoid tubercle.j",
@@ -441,9 +465,11 @@ export const landmarks = [
     6,
     6,
     6
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1164",
@@ -466,9 +492,9 @@ export const landmarks = [
   "clue": "scapula · eklem altı tümseği",
   "fact": "Trisepsin uzun başı bu bölgeden başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1164; Z-Anatomy Startup.blend: Infraglenoid tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1164; Z-Anatomy Startup.blend: Infraglenoid tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1164,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Infraglenoid tubercle.j",
@@ -476,9 +502,11 @@ export const landmarks = [
     7,
     9,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1167",
@@ -501,9 +529,9 @@ export const landmarks = [
   "clue": "scapula · alt açı",
   "fact": "Kürek kemiğinin alt ucunu oluşturur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1167; Z-Anatomy Startup.blend: Inferior angle of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1167; Z-Anatomy Startup.blend: Inferior angle of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1167,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Inferior angle of scapula.j",
@@ -511,9 +539,11 @@ export const landmarks = [
     11,
     15,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1156",
@@ -536,9 +566,9 @@ export const landmarks = [
   "clue": "scapula · üst açı",
   "fact": "Levator scapulae üst açı ve komşu medial kenara tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1156; Z-Anatomy Startup.blend: Superior angle of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1156; Z-Anatomy Startup.blend: Superior angle of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1156,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Superior angle of scapula.j",
@@ -546,9 +576,11 @@ export const landmarks = [
     12,
     14,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1155",
@@ -571,9 +603,9 @@ export const landmarks = [
   "clue": "scapula · medial kenar",
   "fact": "Romboid kaslar bu kenarın arka tarafına tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1155; Z-Anatomy Startup.blend: Medial border of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1155; Z-Anatomy Startup.blend: Medial border of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1155,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Medial border of scapula.j",
@@ -581,9 +613,11 @@ export const landmarks = [
     9,
     64,
     12
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1166",
@@ -606,9 +640,9 @@ export const landmarks = [
   "clue": "scapula · lateral kenar",
   "fact": "Teres minor bu kenarın arka yüzündeki alandan başlar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1166; Z-Anatomy Startup.blend: Lateral border of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1166; Z-Anatomy Startup.blend: Lateral border of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1166,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Lateral border of scapula.j",
@@ -616,9 +650,11 @@ export const landmarks = [
     15,
     52,
     12
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1165",
@@ -639,9 +675,9 @@ export const landmarks = [
   "clue": "scapula · kürek kemiği boynu",
   "fact": "Glenoid çukuru kürek kemiği gövdesine bağlayan dar bölgedir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1165; Z-Anatomy Startup.blend: Neck of scapula.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1165; Z-Anatomy Startup.blend: Neck of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1165,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Neck of scapula.j",
@@ -649,9 +685,11 @@ export const landmarks = [
     17,
     23,
     20
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1149",
@@ -675,9 +713,9 @@ export const landmarks = [
   "clue": "scapula · spinoglenoid çentik",
   "fact": "Supraskapular sinir bu bölgeden infraspinöz çukura geçer.",
   "shape": "edge",
-  "source": "FIPAT TA2 (2019), Part 2, 1149; Z-Anatomy Startup.blend: Spinoglenoid notch.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1149; Z-Anatomy Startup.blend: Spinoglenoid notch.j; yapilar-denetim.md applied (v25)",
   "ta2": 1149,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Spinoglenoid notch.j",
@@ -685,9 +723,11 @@ export const landmarks = [
     9,
     9,
     9
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1181",
@@ -708,9 +748,9 @@ export const landmarks = [
   "clue": "humerus · kol kemiği başı",
   "fact": "Glenoid çukurla eklemleşir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1181; Z-Anatomy Startup.blend: Head of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1181; Z-Anatomy Startup.blend: Head of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1181,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Head of humerus.j",
@@ -718,9 +758,11 @@ export const landmarks = [
     24,
     25,
     24
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1182",
@@ -743,9 +785,9 @@ export const landmarks = [
   "clue": "humerus · anatomik boyun",
   "fact": "Başın eklem yüzünü çevreleyen dar sınırdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1182; Z-Anatomy Startup.blend: Anatomical neck of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1182; Z-Anatomy Startup.blend: Anatomical neck of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1182,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Anatomical neck of humerus.j",
@@ -753,9 +795,11 @@ export const landmarks = [
     24,
     9,
     23
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1183",
@@ -778,9 +822,9 @@ export const landmarks = [
   "clue": "humerus · cerrahi boyun",
   "fact": "Kırıklarında nervus axillaris risk altındadır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1183; Z-Anatomy Startup.blend: Surgical neck of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1183; Z-Anatomy Startup.blend: Surgical neck of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1183,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Surgical neck of humerus.j",
@@ -788,9 +832,11 @@ export const landmarks = [
     25,
     12,
     23
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1184",
@@ -813,9 +859,9 @@ export const landmarks = [
   "clue": "humerus · büyük tümsek",
   "fact": "Supraspinatus, infraspinatus ve teres minor tendonları tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1184; Z-Anatomy Startup.blend: Greater tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1184; Z-Anatomy Startup.blend: Greater tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1184,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Greater tubercle.j",
@@ -823,9 +869,11 @@ export const landmarks = [
     14,
     20,
     15
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1185",
@@ -848,9 +896,9 @@ export const landmarks = [
   "clue": "humerus · küçük tümsek",
   "fact": "Subscapularis tendonu buraya tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1185; Z-Anatomy Startup.blend: Lesser tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1185; Z-Anatomy Startup.blend: Lesser tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1185,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Lesser tubercle.j",
@@ -858,9 +906,11 @@ export const landmarks = [
     10,
     14,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1186",
@@ -883,9 +933,9 @@ export const landmarks = [
   "clue": "humerus · tümsekler arası oluk",
   "fact": "Bisepsin uzun başının tendonu bu oluktan geçer.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1186; Z-Anatomy Startup.blend: Intertubercular sulcus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1186; Z-Anatomy Startup.blend: Intertubercular sulcus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1186,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Intertubercular sulcus.j",
@@ -893,9 +943,11 @@ export const landmarks = [
     7,
     33,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1193",
@@ -916,9 +968,9 @@ export const landmarks = [
   "clue": "humerus · deltoid pürtüklülüğü",
   "fact": "Deltoid kasının sonlanma alanıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1193; Z-Anatomy Startup.blend: Deltoid tuberosity.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1193; Z-Anatomy Startup.blend: Deltoid tuberosity.j; yapilar-denetim.md applied (v25)",
   "ta2": 1193,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Deltoid tuberosity.j",
@@ -926,9 +978,11 @@ export const landmarks = [
     13,
     29,
     12
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1197",
@@ -952,9 +1006,9 @@ export const landmarks = [
   "clue": "humerus · radial sinir oluğu",
   "fact": "Radial sinir ve derin kol atardamarı bu bölgede seyreder.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1197; Z-Anatomy Startup.blend: Radial groove.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1197; Z-Anatomy Startup.blend: Radial groove.j; yapilar-denetim.md applied (v25)",
   "ta2": 1197,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Radial groove.j",
@@ -962,9 +1016,11 @@ export const landmarks = [
     15,
     35,
     9
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1207",
@@ -987,9 +1043,9 @@ export const landmarks = [
   "clue": "humerus · iç epikondil",
   "fact": "Önkol fleksörlerinin ortak başlangıç tendonunu taşır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1207; Z-Anatomy Startup.blend: Medial epicondyle of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1207; Z-Anatomy Startup.blend: Medial epicondyle of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1207,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Medial epicondyle of humerus.j",
@@ -997,9 +1053,11 @@ export const landmarks = [
     12,
     14,
     13
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1209",
@@ -1022,9 +1080,9 @@ export const landmarks = [
   "clue": "humerus · dış epikondil",
   "fact": "Önkol ekstansörlerinin ortak başlangıç tendonunu taşır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1209; Z-Anatomy Startup.blend: Lateral epicondyle of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1209; Z-Anatomy Startup.blend: Lateral epicondyle of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1209,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Lateral epicondyle of humerus.j",
@@ -1032,9 +1090,11 @@ export const landmarks = [
     13,
     16,
     14
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1202",
@@ -1057,9 +1117,9 @@ export const landmarks = [
   "clue": "humerus · kol kemiği başçığı",
   "fact": "Radius başı ile eklemleşir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1202; Z-Anatomy Startup.blend: Capitulum of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1202; Z-Anatomy Startup.blend: Capitulum of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1202,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Capitulum of humerus.j",
@@ -1067,9 +1127,11 @@ export const landmarks = [
     12,
     13,
     13
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1203",
@@ -1090,9 +1152,9 @@ export const landmarks = [
   "clue": "humerus · kol kemiği makarası",
   "fact": "Ulnanın makara çentiği ile eklemleşir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1203; Z-Anatomy Startup.blend: Trochlea of humerus.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1203; Z-Anatomy Startup.blend: Trochlea of humerus.j; yapilar-denetim.md applied (v25)",
   "ta2": 1203,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Trochlea of humerus.j",
@@ -1100,9 +1162,11 @@ export const landmarks = [
     16,
     15,
     16
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1204",
@@ -1123,9 +1187,9 @@ export const landmarks = [
   "clue": "humerus · olekranon çukuru",
   "fact": "Dirsek ekstansiyonunda olekranonu kabul eder.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1204; Z-Anatomy Startup.blend: Olecranon fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1204; Z-Anatomy Startup.blend: Olecranon fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1204,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Olecranon fossa.j",
@@ -1133,9 +1197,11 @@ export const landmarks = [
     14,
     17,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1205",
@@ -1156,9 +1222,9 @@ export const landmarks = [
   "clue": "humerus · koronoid çukuru",
   "fact": "Dirsek fleksiyonunda ulnanın koronoid çıkıntısını kabul eder.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1205; Z-Anatomy Startup.blend: Coronoid fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1205; Z-Anatomy Startup.blend: Coronoid fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1205,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Coronoid fossa.j",
@@ -1166,9 +1232,11 @@ export const landmarks = [
     11,
     13,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1206",
@@ -1189,9 +1257,9 @@ export const landmarks = [
   "clue": "humerus · radial çukur",
   "fact": "Dirsek fleksiyonunda radius başının ön kenarını kabul eder.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1206; Z-Anatomy Startup.blend: Radial fossa.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1206; Z-Anatomy Startup.blend: Radial fossa.j; yapilar-denetim.md applied (v25)",
   "ta2": 1206,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Radial fossa.j",
@@ -1199,9 +1267,11 @@ export const landmarks = [
     9,
     10,
     6
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1208",
@@ -1224,9 +1294,9 @@ export const landmarks = [
   "clue": "humerus · ulnar sinir oluğu",
   "fact": "Ulnar sinir medial epikondilin arkasından geçer.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1208; Z-Anatomy Startup.blend: Groove for ulnar nerve.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1208; Z-Anatomy Startup.blend: Groove for ulnar nerve.j; yapilar-denetim.md applied (v25)",
   "ta2": 1208,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Groove for ulnar nerve.j",
@@ -1234,9 +1304,11 @@ export const landmarks = [
     7,
     12,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1187",
@@ -1259,9 +1331,9 @@ export const landmarks = [
   "clue": "humerus · büyük tümsek ibiği",
   "fact": "Pectoralis major bu ibiğe tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1187; Z-Anatomy Startup.blend: Crest of greater tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1187; Z-Anatomy Startup.blend: Crest of greater tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1187,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Crest of greater tubercle.j",
@@ -1269,9 +1341,11 @@ export const landmarks = [
     8,
     30,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1188",
@@ -1294,9 +1368,9 @@ export const landmarks = [
   "clue": "humerus · küçük tümsek ibiği",
   "fact": "Teres major bu ibiğe tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1188; Z-Anatomy Startup.blend: Crest of lesser tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1188; Z-Anatomy Startup.blend: Crest of lesser tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1188,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Crest of lesser tubercle.j",
@@ -1304,9 +1378,11 @@ export const landmarks = [
     8,
     27,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1211",
@@ -1327,9 +1403,9 @@ export const landmarks = [
   "clue": "radius · ışın kemiği başı",
   "fact": "Humerus başçığı ve ulna ile eklemleşir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1211; Z-Anatomy Startup.blend: Head of radius.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1211; Z-Anatomy Startup.blend: Head of radius.j; yapilar-denetim.md applied (v25)",
   "ta2": 1211,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Head of radius.j",
@@ -1337,9 +1413,11 @@ export const landmarks = [
     13,
     11,
     13
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1214",
@@ -1360,9 +1438,9 @@ export const landmarks = [
   "clue": "radius · ışın kemiği boynu",
   "fact": "Başın hemen distalindeki dar bölgedir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1214; Z-Anatomy Startup.blend: Neck of radius.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1214; Z-Anatomy Startup.blend: Neck of radius.j; yapilar-denetim.md applied (v25)",
   "ta2": 1214,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Neck of radius.j",
@@ -1370,9 +1448,11 @@ export const landmarks = [
     10,
     12,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "part"
  },
  {
   "id": "landmark-1216",
@@ -1395,9 +1475,9 @@ export const landmarks = [
   "clue": "radius · ışın kemiği pürtüklülüğü",
   "fact": "Biseps tendonu buraya tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1216; Z-Anatomy Startup.blend: Radial tuberosity.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1216; Z-Anatomy Startup.blend: Radial tuberosity.j; yapilar-denetim.md applied (v25)",
   "ta2": 1216,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Radial tuberosity.j",
@@ -1405,9 +1485,11 @@ export const landmarks = [
     9,
     15,
     9
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1225",
@@ -1430,9 +1512,9 @@ export const landmarks = [
   "clue": "radius · radial stiloid çıkıntı",
   "fact": "El bileğinin başparmak tarafındaki çıkıntıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1225; Z-Anatomy Startup.blend: Radial styloid process.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1225; Z-Anatomy Startup.blend: Radial styloid process.j; yapilar-denetim.md applied (v25)",
   "ta2": 1225,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Radial styloid process.j",
@@ -1440,9 +1522,11 @@ export const landmarks = [
     9,
     14,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1226",
@@ -1467,9 +1551,9 @@ export const landmarks = [
   "clue": "radius · sırt tümseği",
   "fact": "Extensor pollicis longus tendonu bu tümseğin çevresinde yön değiştirir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1226; Z-Anatomy Startup.blend: Dorsal radial tubercle.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1226; Z-Anatomy Startup.blend: Dorsal radial tubercle.j; yapilar-denetim.md applied (v25)",
   "ta2": 1226,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Dorsal radial tubercle.j",
@@ -1477,9 +1561,11 @@ export const landmarks = [
     6,
     10,
     6
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1228",
@@ -1502,9 +1588,9 @@ export const landmarks = [
   "clue": "radius · ulnar çentik",
   "fact": "Distal radyoulnar eklemde ulna başıyla eklemleşir.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1228; Z-Anatomy Startup.blend: Ulnar notch.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1228; Z-Anatomy Startup.blend: Ulnar notch.j; yapilar-denetim.md applied (v25)",
   "ta2": 1228,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Ulnar notch.j",
@@ -1512,9 +1598,11 @@ export const landmarks = [
     7,
     11,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1212",
@@ -1537,9 +1625,9 @@ export const landmarks = [
   "clue": "radius · radius başının eklem çukurcuğu",
   "fact": "Radius başının üstündeki çukur humerus başçığını karşılar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1212; Z-Anatomy Startup.blend: Articular facet of head of radius.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1212; Z-Anatomy Startup.blend: Articular facet of head of radius.j; yapilar-denetim.md applied (v25)",
   "ta2": 1212,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Articular facet of head of radius.j",
@@ -1547,9 +1635,11 @@ export const landmarks = [
     10,
     5,
     10
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1213",
@@ -1572,9 +1662,9 @@ export const landmarks = [
   "clue": "radius · radius başının eklem çevresi",
   "fact": "Anüler bağ içinde dönerek pronasyon ve supinasyona katılır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1213; Z-Anatomy Startup.blend: Articular circumference of head of radius.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1213; Z-Anatomy Startup.blend: Articular circumference of head of radius.j; yapilar-denetim.md applied (v25)",
   "ta2": 1213,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Articular circumference of head of radius.j",
@@ -1582,9 +1672,11 @@ export const landmarks = [
     13,
     6,
     13
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1231",
@@ -1605,9 +1697,9 @@ export const landmarks = [
   "clue": "ulna · dirsek çıkıntısı",
   "fact": "Triseps tendonu buraya tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1231; Z-Anatomy Startup.blend: Olecranon.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1231; Z-Anatomy Startup.blend: Olecranon.j; yapilar-denetim.md applied (v25)",
   "ta2": 1231,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Olecranon.j",
@@ -1615,9 +1707,11 @@ export const landmarks = [
     15,
     22,
     16
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1232",
@@ -1641,9 +1735,9 @@ export const landmarks = [
   "clue": "ulna · koronoid çıkıntı",
   "fact": "Dirsek ekleminin ön kemik desteğine katılır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1232; Z-Anatomy Startup.blend: Coronoid process of ulna.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1232; Z-Anatomy Startup.blend: Coronoid process of ulna.j; yapilar-denetim.md applied (v25)",
   "ta2": 1232,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Coronoid process of ulna.j",
@@ -1651,9 +1745,11 @@ export const landmarks = [
     12,
     13,
     13
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1235",
@@ -1661,7 +1757,7 @@ export const landmarks = [
   "tr": "makara çentiği",
   "aliases": [
    "incisura trochlearis ulnae",
-   "incisura semilunaris"
+   "incisura semilunaris ulnae"
   ],
   "parentBone": "ulna",
   "parentLatin": "ulna",
@@ -1677,9 +1773,9 @@ export const landmarks = [
   "clue": "ulna · makara çentiği",
   "fact": "Humerus makarası ile eklemleşen geniş çentiktir.",
   "shape": "edge",
-  "source": "FIPAT TA2 (2019), Part 2, 1235; Z-Anatomy Startup.blend: Trochlear notch.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1235; Z-Anatomy Startup.blend: Trochlear notch.j; yapilar-denetim.md applied (v25)",
   "ta2": 1235,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Trochlear notch.j",
@@ -1687,9 +1783,11 @@ export const landmarks = [
     15,
     22,
     15
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1234",
@@ -1712,9 +1810,9 @@ export const landmarks = [
   "clue": "ulna · radial çentik",
   "fact": "Radius başının eklem çevresini karşılar.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1234; Z-Anatomy Startup.blend: Radial notch.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1234; Z-Anatomy Startup.blend: Radial notch.j; yapilar-denetim.md applied (v25)",
   "ta2": 1234,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Radial notch.j",
@@ -1722,9 +1820,11 @@ export const landmarks = [
     7,
     10,
     9
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1233",
@@ -1745,9 +1845,9 @@ export const landmarks = [
   "clue": "ulna · dirsek kemiği pürtüklülüğü",
   "fact": "Brachialis kası buraya tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1233; Z-Anatomy Startup.blend: Tuberosity of ulna.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1233; Z-Anatomy Startup.blend: Tuberosity of ulna.j; yapilar-denetim.md applied (v25)",
   "ta2": 1233,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Tuberosity of ulna.j",
@@ -1755,9 +1855,11 @@ export const landmarks = [
     10,
     17,
     9
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1245",
@@ -1778,9 +1880,9 @@ export const landmarks = [
   "clue": "ulna · dirsek kemiği başı",
   "fact": "Distal radyoulnar eklemin ulna tarafını oluşturur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1245; Z-Anatomy Startup.blend: Head of ulna.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1245; Z-Anatomy Startup.blend: Head of ulna.j; yapilar-denetim.md applied (v25)",
   "ta2": 1245,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Head of ulna.j",
@@ -1788,9 +1890,11 @@ export const landmarks = [
     11,
     12,
     11
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "surface"
  },
  {
   "id": "landmark-1247",
@@ -1813,9 +1917,9 @@ export const landmarks = [
   "clue": "ulna · ulnar stiloid çıkıntı",
   "fact": "El bileğinin küçük parmak tarafındaki kemik çıkıntıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1247; Z-Anatomy Startup.blend: Ulnar styloid process.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1247; Z-Anatomy Startup.blend: Ulnar styloid process.j; yapilar-denetim.md applied (v25)",
   "ta2": 1247,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Ulnar styloid process.j",
@@ -1823,9 +1927,11 @@ export const landmarks = [
     7,
     11,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1238",
@@ -1848,9 +1954,9 @@ export const landmarks = [
   "clue": "ulna · supinator ibiği",
   "fact": "Supinator kası için başlangıç alanıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1238; Z-Anatomy Startup.blend: Supinator crest.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1238; Z-Anatomy Startup.blend: Supinator crest.j; yapilar-denetim.md applied (v25)",
   "ta2": 1238,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Supinator crest.j",
@@ -1858,9 +1964,11 @@ export const landmarks = [
     7,
     25,
     8
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "band"
  },
  {
   "id": "landmark-1260",
@@ -1883,9 +1991,9 @@ export const landmarks = [
   "clue": "os hamatum · çengelli kemiğin çengeli",
   "fact": "Guyon kanalının lateral sınırına katılır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1260; Z-Anatomy Startup.blend: Hook of hamate bone.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1260; Z-Anatomy Startup.blend: Hook of hamate bone.j; yapilar-denetim.md applied (v25)",
   "ta2": 1260,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Hook of hamate bone.j",
@@ -1893,9 +2001,11 @@ export const landmarks = [
     6,
     10,
     7
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1251",
@@ -1918,9 +2028,9 @@ export const landmarks = [
   "clue": "os scaphoideum · kayık kemiği tümseği",
   "fact": "Fleksör retinakulumun radial tutunma noktalarındandır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1251; Z-Anatomy Startup.blend: Tubercle of scaphoid bone.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1251; Z-Anatomy Startup.blend: Tubercle of scaphoid bone.j; yapilar-denetim.md applied (v25)",
   "ta2": 1251,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Tubercle of scaphoid bone.j",
@@ -1928,9 +2038,11 @@ export const landmarks = [
     6,
     8,
     6
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1256",
@@ -1953,9 +2065,9 @@ export const landmarks = [
   "clue": "os trapezium · trapez kemiği tümseği",
   "fact": "Fleksör retinakulum bu tümseğe tutunur.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1256; Z-Anatomy Startup.blend: Tubercle of trapezium bone.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1256; Z-Anatomy Startup.blend: Tubercle of trapezium bone.j; yapilar-denetim.md applied (v25)",
   "ta2": 1256,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Tubercle of trapezium bone.j",
@@ -1963,9 +2075,11 @@ export const landmarks = [
     5,
     7,
     5
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  },
  {
   "id": "landmark-1270",
@@ -1987,12 +2101,12 @@ export const landmarks = [
    "24468",
    "24469"
   ],
-  "clue": "ossa metacarpi · üçüncü el tarağı kemiğinin stiloid çıkıntısı",
+  "clue": "os tertium metacarpi · üçüncü el tarağı kemiğinin stiloid çıkıntısı",
   "fact": "Üçüncü metakarp tabanının dorsoradial çıkıntısıdır.",
   "shape": "patch",
-  "source": "FIPAT TA2 (2019), Part 2, 1270; Z-Anatomy Startup.blend: Styloid process of third metacarpal bone.j",
+  "source": "FIPAT TA2 (2019), Part 2, 1270; Z-Anatomy Startup.blend: Styloid process of third metacarpal bone.j; yapilar-denetim.md applied (v25)",
   "ta2": 1270,
-  "turkishSource": "Türkçe açıklayıcı karşılık; Türkçe TA / Arıncı-Elhan baskısıyla hekim doğrulaması bekliyor.",
+  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
   "placement": {
    "method": "z-anchor-surface-patch",
    "object": "Styloid process of third metacarpal bone.j",
@@ -2000,8 +2114,10 @@ export const landmarks = [
     5,
     7,
     5
-   ]
+   ],
+   "segmentation": "analytic-primitives-v26"
   },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
+  "anatomicalType": "projection"
  }
 ];
