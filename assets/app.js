@@ -1,10 +1,10 @@
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent} from './game-logic.js?v=6129f71-20261111T001948551Z';
-import {startPWA,resetProgress} from './pwa.js?v=6129f71-20261111T001948551Z';
-import {regionsFor,unitsFor,levels,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=6129f71-20261111T001948551Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=6129f71-20261111T001948551Z';
-import {BASE_URL} from './config.js?v=6129f71-20261111T001948551Z';
-import {notesForDay} from './study.js?v=6129f71-20261111T001948551Z';
-import {GameSound} from './sound.js?v=6129f71-20261111T001948551Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=0a46de7-20261111T070253742Z';
+import {startPWA,resetProgress} from './pwa.js?v=0a46de7-20261111T070253742Z';
+import {regionsFor,unitsFor,levels,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=0a46de7-20261111T070253742Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=0a46de7-20261111T070253742Z';
+import {BASE_URL} from './config.js?v=0a46de7-20261111T070253742Z';
+import {notesForDay} from './study.js?v=0a46de7-20261111T070253742Z';
+import {GameSound} from './sound.js?v=0a46de7-20261111T070253742Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -48,18 +48,30 @@ function paintPreferences(){
  $('#keyboard-mode').setAttribute('aria-pressed',String(phone));
  $('#keyboard-mode').setAttribute('aria-label',`Klavye: ${phone?'Telefon klavyesi':'Oyun klavyesi'}`);
  $('#keyboard-mode').title=phone?'Telefon klavyesi':'Oyun klavyesi';
+ $('#keyboard-switch').textContent=phone?'Oyun klavyesine dön':'Telefon klavyesiyle yaz';
+ $('#keyboard-switch').setAttribute('aria-pressed',String(phone));
  $('#phone-input').disabled=!phone;fitViewport();
  $('#answer').setAttribute('aria-label',phone?`${noun()} adını telefon klavyesiyle yazmak için dokunun.`:`${noun()} adını ekran klavyesiyle veya fiziksel klavyeyle yazın.`);
 }
 function focusAnswer(){if(state.done||route!=='/oyun')return;(prefs.keyboard==='phone'?$('#phone-input'):$('#answer')).focus({preventScroll:true})}
 $('#theme').onclick=()=>{prefs.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';save();paintPreferences()};
 systemTheme.addEventListener('change',()=>{if(!prefs.theme)paintPreferences()});
-$('#keyboard-mode').onclick=()=>{prefs.keyboard=prefs.keyboard==='phone'?'game':'phone';save();paint();focusAnswer()};
+function toggleKeyboard(){
+ prefs.keyboard=prefs.keyboard==='phone'?'game':'phone';
+ // Keep focus in this user gesture: iOS will not open its keyboard after a timer.
+ phoneInput.disabled=prefs.keyboard!=='phone';focusAnswer();save();paint();
+}
+$('#keyboard-mode').onclick=toggleKeyboard;
+$('#keyboard-switch').onclick=toggleKeyboard;
 // Keep a sentinel before the caret so iOS emits backward deletion even after
 // each committed text batch has been consumed. The game owns the answer value.
 const phoneInput=$('#phone-input'),sentinel='\u200b';let composing=false,pendingComposition=null;
 function resetPhoneInput(){phoneInput.value=sentinel;phoneInput.setSelectionRange(1,1)}
-function insertPhoneText(text){for(const letter of (text||'').normalize('NFC'))if(letter!==sentinel)act(letter)}
+// Treat replacement/composition text as one commit, never accept its middle.
+function insertPhoneText(text){
+ for(const letter of (text||'').normalize('NFC'))if(letter!==sentinel)act(letter,false);
+ autoSubmit();
+}
 resetPhoneInput();
 phoneInput.addEventListener('beforeinput',e=>{
  if(e.isComposing||composing||pendingComposition||!e.cancelable)return;
@@ -85,7 +97,7 @@ phoneInput.addEventListener('compositionend',e=>{
 $('#answer').addEventListener('focus',()=>{if(prefs.keyboard==='phone')focusAnswer()});
 document.addEventListener('pointerdown',e=>{
  if(route!=='/oyun'||prefs.keyboard!=='phone'||state.done||$('#instructions').open||e.target.closest('button,a,input,nav,dialog'))return;
- if(e.target.closest('#answer-area')||e.clientY>=(visualViewport?.height||innerHeight)/2){e.preventDefault();focusAnswer()}
+ if(e.target.closest('#answer-area')||e.clientY>=(window.visualViewport?.height||innerHeight)/2){e.preventDefault();focusAnswer()}
 });
 // iOS resizes the visual viewport rather than 100vh when its keyboard opens.
 function fitViewport(){
@@ -121,6 +133,7 @@ function paint(){
  if(route!=='/oyun'){if(route==='/')homePaint();return;}
  if(state.done){$('#phone-input').blur();renderResults();return}
  $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between||prefs.keyboard==='phone';
+ $('#keyboard-switch').hidden=!!state.between;
  if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?`${state.units.length} ${noun()}ı gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${prefs.module==='muscles'?'Kaslar':'Kemikler'} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
  const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;write(progressKey(),progress);$('#round').textContent=`Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
  renderAnswer();$('#translation').textContent=state.round===1?b.clue:state.round===0?b.tr:'';
@@ -168,7 +181,10 @@ for(const event of ['pointerup','pointercancel','touchend','touchcancel','keyup'
 window.addEventListener('blur',clearPressed);
 function noteMiss(){progress.history??={};const h=progress.history[current().id]??={};h.missed=date;}
 function wrong(message){sound.play('wrong');if(prefs.sound)navigator.vibrate?.(15);$('#feedback').textContent=message;const el=$('#answer-area');el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
-function act(key){
+function autoSubmit(){
+ if(route==='/oyun'&&!state.done&&!state.between&&!busy&&!composing&&!pendingComposition&&shouldAutoSubmit(state.typed,aliases(current())))submit();
+}
+function act(key,auto=true){
  if(route!=='/oyun'||state.done||busy)return;if(state.between){if(key==='Enter')startRound();return}sound.unlock();pressFeedback(key);
  if(key==='Shift'||key==='CapsLock'){prefs.upper=!prefs.upper;save();paint();return}
  if(key==='Backspace'){state.typed=state.typed.slice(0,-1);sound.play('key');$('#feedback').textContent='';save();renderAnswer();return}
@@ -178,9 +194,10 @@ function act(key){
  state.typed+=key;state.keystrokes++;
  const okay=aliases(current()).some(a=>a.startsWith(normalize(state.typed)));
  if(okay){state.correctKeys++;if(key!==' ')sound.play('letter',state.typed.length-1);$('#feedback').textContent='';}else{state.errors++;state.questionErrors=(state.questionErrors||0)+1;if(state.round===2){state.round3Errors=(state.round3Errors||0)+1;(state.round3Misses??={})[current().id]=true;}state.misses[current().id]=(state.misses[current().id]||0)+1;noteMiss();wrong('Bu harfi kontrol edin. Sil tuşuyla düzeltebilirsiniz.');}
- save();renderAnswer();
+ save();renderAnswer();if(auto)autoSubmit();
 }
 function submit(){
+ if(busy)return;
  if(!state.typed.trim()){wrong(`Önce ${prefs.module==='muscles'?'kasın':'kemiğin'} adını yazın.`);return}
  state.attempts++;
  if(!aliases(current()).includes(normalize(state.typed))){state.questionErrors=(state.questionErrors||0)+1;if(state.round===2){state.round3Errors=(state.round3Errors||0)+1;(state.round3Misses??={})[current().id]=true;}state.misses[current().id]=(state.misses[current().id]||0)+1;noteMiss();wrong(`Bu ${prefs.module==='muscles'?'kasın':'kemiğin'} adını yeniden deneyin.`);save();return}
@@ -222,7 +239,7 @@ function renderResults(){
  const review=add('button','Tekrar gözden geçir','text-button');review.onclick=reviewDay;
 }
 $('#keyboard').addEventListener('click',e=>{const button=e.target.closest('[data-key]');if(button)act(button.dataset.key)});
-document.addEventListener('keydown',e=>{if(route!=='/oyun'||document.querySelector('dialog[open]'))return;if(e.target===$('#phone-input')){if(e.key==='Enter'&&!e.isComposing){e.preventDefault();act('Enter')}return}if(e.isComposing||$('#instructions').open||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.closest('nav')||e.target.closest('#results')||e.target.closest('footer')||e.target.closest('#install-hint'))return;if(e.key==='Tab')return;if(e.target.closest('a,button,select,textarea,input')&&['Enter',' '].includes(e.key))return;if(e.key===' '||e.key==='Enter'||e.key==='Backspace'||e.key.length===1){e.preventDefault();act(e.key)}});
+document.addEventListener('keydown',e=>{if(route!=='/oyun'||document.querySelector('dialog[open]'))return;if(e.target===$('#phone-input')){if(e.key==='Enter'&&!e.isComposing&&!composing&&!pendingComposition){e.preventDefault();act('Enter')}return}if(e.isComposing||$('#instructions').open||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.closest('nav')||e.target.closest('#results')||e.target.closest('footer')||e.target.closest('#install-hint'))return;if(e.key==='Tab')return;if(e.target.closest('a,button,select,textarea,input')&&['Enter',' '].includes(e.key))return;if(e.key===' '||e.key==='Enter'||e.key==='Backspace'||e.key.length===1){e.preventDefault();act(e.key)}});
 const regionButton=$('#region'),regionMenu=$('#region-menu');
 function rebuildRegions(){regionMenu.replaceChildren();$('#setting-region').replaceChildren();for(const r of regions){const o=document.createElement('option');o.value=r.id;o.textContent=r.label;$('#setting-region').append(o);const option=document.createElement('button');option.type='button';option.role='option';option.dataset.region=r.id;option.textContent=r.label;option.onclick=()=>{
  clearTimeout(timer);if(busy){submitted=false;next();}save();prefs.region=r.id;state=loadDay();busy=false;submitted=false;
@@ -309,11 +326,11 @@ async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=6129f71-20261111T001948551Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=0a46de7-20261111T070253742Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());
-const steps=[['Tur 1 · Gör ve yaz','Kırmızı kemiği inceleyin. Adını görerek yazın.','os frontale'],['Tur 2 · İlk harf ve ipucu','İlk harften hatırlayın. Gerekirse ipucu isteyin.','os f…'],['Tur 3 · Ezberden, öbür taraftan','Kemiği farklı açıdan tanıyın. Adını bu kez ezberden yazın.','…']];let onboardingStep=0;
+const steps=[['Tur 1 · Gör ve yaz','Kırmızı yapıyı inceleyin. Adını görerek yazın. Doğru yazınca kendiliğinden geçer.','os frontale'],['Tur 2 · İlk harf ve ipucu','İlk harften hatırlayın. Gerekirse ipucu isteyin.','os f…'],['Tur 3 · Ezberden, öbür taraftan','Kemiği farklı açıdan tanıyın. Adını bu kez ezberden yazın.','…']];let onboardingStep=0;
 function onboardingPaint(){const [title,copy,example]=steps[onboardingStep];$('#onboarding-title').textContent=title;$('#onboarding-copy').textContent=copy;$('#onboarding-example').textContent=example;$('#onboarding-count').textContent=`${onboardingStep+1} / 3`;$('#onboarding-next').textContent=onboardingStep===2?'Hazırım':'Sonraki'}
 function closeOnboarding(){write('gk2:onboarded',true);$('#onboarding').close();$('#home-start').focus()}
 $('#onboarding-next').onclick=()=>{if(onboardingStep===2)closeOnboarding();else{onboardingStep++;onboardingPaint()}};$('#onboarding-skip').onclick=closeOnboarding;

@@ -1502,7 +1502,7 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=6129f71-20261111T001948551Z";
+export {dailyBones,roundBones} from "./curriculum.js?v=0a46de7-20261111T070253742Z";
 export function answerAliases(b,mode){
  let list;
  if(mode==='latin'&&b.module==='muscles'){

@@ -1,4 +1,10 @@
-import {normalize} from './bones.js?v=6129f71-20261111T001948551Z';
+import {normalize} from './bones.js?v=0a46de7-20261111T070253742Z';
+
+// A complete alias waits for Enter if it could still become a longer alias.
+export function shouldAutoSubmit(typed,aliases){
+ const answer=normalize(typed),accepted=aliases.map(normalize);
+ return answer.length>0&&accepted.includes(answer)&&!accepted.some(alias=>alias.length>answer.length&&alias.startsWith(answer));
+}
 
 // Match the answer's whitespace normalization while retaining a typed word boundary.
 // Raw input length would skip ghost letters after repeated spaces.

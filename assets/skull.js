@@ -1,5 +1,5 @@
-import * as THREE from './vendor/three.module.min.js?v=6129f71-20261111T001948551Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=6129f71-20261111T001948551Z';
+import * as THREE from './vendor/three.module.min.js?v=0a46de7-20261111T070253742Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=0a46de7-20261111T070253742Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
