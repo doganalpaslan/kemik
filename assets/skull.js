@@ -1,6 +1,6 @@
-import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T094636456Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=4665a6d-20261111T094636456Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=4665a6d-20261111T094636456Z';
+import * as THREE from './vendor/three.module.min.js?v=7a098ad-20261111T101211286Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=7a098ad-20261111T101211286Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=7a098ad-20261111T101211286Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -131,7 +131,7 @@ export async function createSkull(canvas){
    }else{gray.uniforms.skullCut.value=100000;contextGlass.uniforms.skullCut.value=100000;boneMaterial.onBeforeCompile=()=>{};boneMaterial.customProgramCacheKey=()=> 'uncut';boneMaterial.needsUpdate=true;delete canvas.dataset.landmarkSide;delete canvas.dataset.landmarkTriangles;delete canvas.dataset.parentMesh;}
    canvas.dataset.contextGroup=profile?headNeckGroup(b.id):'';canvas.dataset.contextMeshes=meshes.filter(m=>m.userData.contextVisible&&!b.meshes.includes(m.name)&&m.userData.kind!=='muscle').map(m=>m.name).join(',');
    canvas.dataset.loading='false';loading.hidden=true;ready=true;
-   document.querySelector('.model-note').textContent=b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
+   document.querySelector('.model-note').textContent=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
    canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:b.module==='muscles'?'Sorulan kas kırmızı renkle gösteriliyor.':'Sorulan kemik kırmızı renkle gösteriliyor.');
   }catch(error){if(token!==request)return;console.error(error);loading.hidden=false;lastId='';loading.textContent='Model yüklenemedi. Ad ve ipuçlarıyla devam edebilirsiniz. Yenilemek için sayfayı tekrar açın.';canvas.dataset.loading='error';}
  }
@@ -179,6 +179,9 @@ export async function createSkull(canvas){
    if(activeBone.module==='landmarks'){
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
     for(const m of closeTargets)for(const i of m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(center).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
+    if(landmarkOverlay.userData.targetBounds){const b=landmarkOverlay.userData.targetBounds;
+     for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){point.set(x,y,z).sub(center).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
+    }
     const pixels=Math.max(maxX-minX,maxY-minY)*vh/(2*scale),show=pixels<24;
     for(const m of landmarkOverlay.children)if(m.userData.leader)m.visible=show;
     if(!close){canvas.dataset.targetPixels=String(pixels);canvas.dataset.leaderVisible=String(show);}

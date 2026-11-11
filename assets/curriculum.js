@@ -1,11 +1,11 @@
-import {muscles} from './muscles.js?v=4665a6d-20261111T094636456Z';
-import {bones,dayNumber} from './bones.js?v=4665a6d-20261111T094636456Z';
+import {muscles} from './muscles.js?v=7a098ad-20261111T101211286Z';
+import {bones,dayNumber} from './bones.js?v=7a098ad-20261111T101211286Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
 // Landmark definitions and patches are separate chunks; muscle-only startup never imports them.
 export const landmarks=[];
 let landmarkLoad;
-export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-lower.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-trunk.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-skull.js?v=4665a6d-20261111T094636456Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
+export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-lower.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-trunk.js?v=7a098ad-20261111T101211286Z'),import('./landmarks-skull.js?v=7a098ad-20261111T101211286Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
 export const unitsFor=module=>module==='muscles'?muscles:[...bones,...landmarks];
 export function stageStatus(parent,stage,progress={}){
  const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);

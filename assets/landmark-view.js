@@ -1,5 +1,5 @@
-import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T094636456Z';
-import {regionDistance} from './landmark-primitives.js?v=4665a6d-20261111T094636456Z';
+import * as THREE from './vendor/three.module.min.js?v=7a098ad-20261111T101211286Z';
+import {regionDistance} from './landmark-primitives.js?v=7a098ad-20261111T101211286Z';
 const patches={};
 // Only the current target's 1–6 primitives are uploaded. Float texture headers:
 // center/type, radii/point count, normal/cosine, base plane, then path points.
@@ -95,6 +95,9 @@ export async function landmarkView(b,round,meshes,red,boneMaterial,glass,isCurre
  for(const m of overlay.children){m.userData.contextVisible=!b.reviewOnly;m.userData.closeVisible=!b.reviewOnly;if(b.reviewOnly)m.userData.leader=false;}
  if(b.reviewOnly){indices.length=0;for(let i=0;i<position.count;i++)if(new THREE.Vector3().fromBufferAttribute(position,i).distanceTo(center)<20)indices.push(i);}
  surface.userData.fitIndices=[...new Set(indices)];
+ // Sparse source vertices can underestimate an analytic surface patch's width.
+ // Its authored bounds also include the interior of triangles crossed by the mask.
+ if(b.curriculumRegion==='skull'&&indices.length<6)overlay.userData.targetBounds=bounds;
  if(data.opening){
   const points=data.opening.fill.map(p=>new THREE.Vector3(...p)),middle=new THREE.Vector3();points.forEach(p=>middle.add(p));middle.divideScalar(points.length);
   const vertices=[];for(let i=0;i<points.length;i++)vertices.push(...middle,...points[i],...points[(i+1)%points.length]);
