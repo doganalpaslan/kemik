@@ -343,3 +343,60 @@ Kontrol: 11 Kasım 2026. `assets/bones.js` içindeki `source` anahtarı ve BITTI
 - Latince sıra adları ve el/ayak ayrımı: [FIPAT, TA2, Part 2](https://fipat.library.dal.ca/wp-content/uploads/2020/09/FIPAT-TA2-Part-2.pdf). Soru tek kemiği değil sırayı vurguladığından **phalanges proximales/mediae/distales manus/pedis** kullanılır. El/ayak eki olmadan çoğul ve eski tekil biçimler de yanıtta kabul edilir.
 - `vertebrae cervicales` birimi C1–C7’nin yedisini vurgular; atlas, axis ve vertebra prominens dersleriyle örtüşür. Bu örtüşme 206 fiziksel kemik sayısını değiştirmez. `assets/curriculum.js` birimleri `bones.js` üzerinden alır; seçim ve eski kimlik göçü korunur.
 - Triquetrumun avuç yüzü pisiformla eklem yapar. Corpus sterni, ikinci kaburga kıkırdağının alt yarısıyla ve 3.–7. kıkırdaklarla ilişkilidir. Klinik kaynak eşlemesindeki `carpal` notu kemik oluğu ile retinaculum flexorum çatısını ayırır; `hamate` notu hamulus kırığı/Guyon kanalı/n. ulnaris ilişkisini belirtir. `spine` osteoporoz notu yalnız `thoracic` ve `lumbar` birimlerine bağlanır; atlasın omur gövdesi yoktur.
+
+## Task 17 · Kaslar (178 ders birimi)
+
+Kontrol: 11 Kasım 2026. `assets/muscles.js` ve düzenlenebilir `scripts/data/muscles.tsv` birim başına konum ipucu ve kısa işlev, innervasyon veya tutunma bilgisi içerir. Bunlar kaynak metinden alıntı değil, Türkçe çalışma özetleridir. Düzeyler pedagojik sıralamadır: yüzeyel/temel kaslar 1, başlıca derin kaslar 2, küçük veya ayrıntılı kaslar 3. Tam liste ve grup kapsamları `BITTI.md` içindedir. Task 18 ile göz, dil, damak, yutak, larinks ve pelvis tabanında kaynak mesh bulunan dersler eklendi. Güncel toplam 203; mesh bulunamayan 24 istek ve vocalis parçası BITTI.md içinde açıkça listelenir.
+
+### Terminoloji ve Türkçe adlar
+
+- **FIPAT, Terminologia Anatomica, 2nd ed. (2019), IFAA tarafından 2020'de kabul edilen TA2, Part II, Chapter 4, Systema musculare**, basılı s. 73–98: [resmî PDF](https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf). Latince yanıtlar TA2 terimleri veya TA2'nin Latince eş anlamlı sütununda korunan ve Türkiye'de öğretilen TA biçimleridir (ör. `musculus flexor carpi radialis`). `m.` / `mm.` gösterim kısaltmasıdır. `musculus` / `musculi` ile ve öneksiz yanıt kabul edilir. Birden çok alt grubu içeren intertransversarii cervicis/lumborum, öğretim grubu etiketi olarak kullanılır; alt grupları kapsam tablosunda ayrılır.
+- **Ankara Üniversitesi Açık Ders, ACL101 Anatomi, 4-Kaslar**, [ders sayfası](https://acikders.ankara.edu.tr/mod/resource/view.php?forceview=1&id=71068), [41 sayfalık açık ders PDF](https://acikders.ankara.edu.tr/pluginfile.php/90469/mod_resource/content/1/4-Kaslar.pdf): kasların temel adlandırılması, mimik/çiğneme, gövde ve ekstremite grupları. Bu ders tıp fakültesinin ayrıntılı diseksiyon müfredatı yerine geçmez.
+- **Zeki Zeren, Anatomi Sözlüğü ve Türk Anatomi Terimleri**, İstanbul Üniversitesi, 1959: [üniversite yayını](https://iupress.istanbul.edu.tr/tr/book/anatomi-sozlugu-ve-turk-anatomi-terimleri/home). Önceki kemik modülünde kullanılan Türkçe kök karşılıkları korundu. Bu görevde kitabın bütün kas maddeleri tek tek doğrulanmadı; yeni Türkçe satırlar açıklayıcı güncel karşılıklardır. Standart Türkçe terim olduğu ayrıca doğrulanmayan karşılıklar `BITTI.md` **Hekim kontrolü** bölümünde açıkça işaretlidir. Arıncı–Elhan veya başka kapalı ders kitabı okunmuş gibi gösterilmez.
+
+### Birimlerin anatomi bilgileri için kaynak eşlemesi
+
+| `source` / kapsam | Doğrudan kaynaklar |
+| --- | --- |
+| muscles-head · 41 baş ve yüz birimi | [StatPearls, Facial Muscles](https://www.ncbi.nlm.nih.gov/books/NBK493209/); [OpenStax A&P 2e 11.3](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back), mimik ve çiğneme tabloları |
+| muscles-neck · 21 boyun birimi | [StatPearls, Neck](https://www.ncbi.nlm.nih.gov/books/NBK542313/); [Neck Movements](https://www.ncbi.nlm.nih.gov/books/NBK557555/); OpenStax 11.3, hyoid ve boyun kasları |
+| muscles-back · 30 sırt birimi | [StatPearls, Back](https://www.ncbi.nlm.nih.gov/books/NBK539746/); OpenStax 11.3, derin sırt kasları; TA2'nin erector spinae / transversospinales alt grup listeleri |
+| muscles-chest · 15 göğüs ve karın duvarı birimi | [OpenStax 11.4, Axial Muscles of the Abdominal Wall and Thorax](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax); [OpenStax 11.5](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs), pektoral kuşak |
+| muscles-upper · 40 üst ekstremite birimi | OpenStax 11.5; [StatPearls, Shoulder Muscles](https://www.ncbi.nlm.nih.gov/books/NBK534836/); [Hand Muscles](https://www.ncbi.nlm.nih.gov/books/NBK537229/); [Hand Intrinsic Muscles](https://www.ncbi.nlm.nih.gov/books/NBK539810/) |
+| muscles-lower · 53 alt ekstremite birimi | [OpenStax 11.6, Pelvic Girdle and Lower Limbs](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs); [StatPearls, Foot and Ankle](https://www.ncbi.nlm.nih.gov/books/NBK546698/) |
+
+### Kaslar · “Sınav için” kaynakları
+
+`assets/muscle-study.js` notu, yalnız ilgili kas o gün sorulmuşsa gösterir; başka klinik eşleşme yoksa o günün iki kasına ait kaynaklı anatomi bilgisi özetlenir.
+
+| Anahtar | Desteklenen bilgi ve kaynak |
+| --- | --- |
+| rotator-cuff | Supraspinatus, infraspinatus, teres minor, subscapularis ve stabilizasyon: [StatPearls, Rotator Cuff](https://www.ncbi.nlm.nih.gov/books/NBK441844/) |
+| erb | C5–C6 üst trunkus, omuz ve dirsek hareket kaybı: [StatPearls, Erb Palsy](https://www.ncbi.nlm.nih.gov/books/NBK513260/) |
+| foot-drop | Dorsifleksör zayıflığı, L5 ve fibular sinir ilişkisi: [StatPearls, Foot Drop](https://www.ncbi.nlm.nih.gov/books/NBK554393/) |
+| compartment | Fasya içi basınç, kas/sinir perfüzyonu ve akut durum: [StatPearls, Acute Compartment Syndrome](https://www.ncbi.nlm.nih.gov/books/NBK448124/) |
+| winged-scapula | Serratus anterior ve uzun torasik sinir: [StatPearls, Winged Scapula](https://www.ncbi.nlm.nih.gov/books/NBK541005/) |
+| trendelenburg | Kalça abduktorları ve karşı pelvisin düşmesi: [StatPearls, Trendelenburg Gait](https://www.ncbi.nlm.nih.gov/books/NBK541094/) |
+| hand | İntrinsik kaslar ve ulnar sinir/Froment: [StatPearls, Hand Intrinsic Muscles](https://www.ncbi.nlm.nih.gov/books/NBK539810/) |
+
+### Kasların 3D kaynağı ve dönüşümler
+
+BodyParts3D 3.0 / DBCLS, [resmî proje](https://lifesciencedb.jp/bp3d/), [CC BY-SA 2.1 Japan](https://creativecommons.org/licenses/by-sa/2.1/jp/). İndirilen kaynak aynası ve her birimin kaynak parça kimlikleri `scripts/muscle-recipe.json` içindedir: [STL arşivi](https://github.com/Kevin-Mattheus-Moerman/BodyParts3D/tree/main/assets/BodyParts3D_data/stl). **413 kaynak ağından 178 ders**, 11 tembel yüklenen bölge ikilisi; 4200 indekse (~1400 üçgen) kadar meshoptimizer sadeleştirmesi, float32 koordinatlar ve uint16 indeksler. Bazı çift kas grupları kaynakta tek ağdır; yakın görünümün tek taraf seçebilmesi için sagittal düzlemde üçgen gruplarına ayrılır. Kemiklerle aynı kaynak koordinatları kullanılır; iki el/ayağın yatay yer değişimi bütün bölgeye aynı uygulanır. Ana görünümde iki taraf, yakın görünümde bir taraf gösterilir; diyafram ve orbicularis oris gibi orta hat yapıları bütün kalır. Kaynak katmanlarında bazı kas tutunmaları kısmen örtüşebilir; cam bağlam görüntüsü bu nedenle diseksiyon veya kesin tutunma ölçümü yerine geçmez.
+
+
+## Task 18 · Denetim ve yeni kasların kaynakları
+
+Yöneticinin onayladığı [kas denetimi](inceleme/kas-denetim.md) tüm düzeltmelerin doğrudan uygulama girdisidir; tablodaki cümleler aynen aktarıldı. Orada belirtilen Kenhub, OMÜ, Doktor.net, FIPAT ve Arıncı–Elhan aktarımı yöneticinin denetim kaynaklarıdır; kapalı kitabın bu oturumda okunduğu iddia edilmez. Erb notu supinasyon kaybını da içerir: [StatPearls, Erb Palsy](https://www.ncbi.nlm.nih.gov/books/NBK513260/).
+
+| Yeni dersler / `source` | Anatomi ve terminoloji kaynağı |
+| --- | --- |
+| Altı göz hareket kası ve levator palpebrae superioris · muscles-head | [Eye Extraocular Muscles](https://www.ncbi.nlm.nih.gov/books/NBK519565/); [Neuroscience, Actions and Innervation of Extraocular Muscles](https://www.ncbi.nlm.nih.gov/books/NBK10793/) |
+| Genioglossus ve hyoglossus · muscles-head | [Tongue](https://www.ncbi.nlm.nih.gov/books/NBK507782/); [Genioglossus](https://www.ncbi.nlm.nih.gov/books/NBK545141/); [OpenStax 11.3](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back) |
+| Palatopharyngeus, üç konstriktör ve stylopharyngeus · muscles-head | OpenStax 11.3, yutma kasları tablosu; TA2 Part II 2126–2131 ve 2176–2191 |
+| Cricothyreoideus, cricoarytenoideus posterior/lateralis, thyreoarytenoideus ve arytenoideus transversus · muscles-head | [Laryngeal Muscles](https://www.ncbi.nlm.nih.gov/books/NBK545265/); [Larynx and Cricoarytenoid](https://www.ncbi.nlm.nih.gov/books/NBK538307/); TA2 2192–2205 |
+| Quadriceps femoris, iliopsoas, triceps surae · muscles-lower | [OpenStax 11.6](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs); TA2 alt ekstremite listesi |
+| Levator ani, coccygeus, sphincter ani externus · muscles-perineum | [Perineal Body](https://www.ncbi.nlm.nih.gov/books/NBK537345/); [OpenStax 11.4](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax); TA2 2399–2429 |
+
+Yeni kayıtlar `sourceURLs` ile doğrudan anatomi kaynağını, `source` ile bu tabloyu gösterir. Yanıtların ana terimleri ve eski yazımları [resmî FIPAT TA2 Part II](https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf) ile karşılaştırıldı: lateral rektus ve iki oblikte **bulbi oculi**, larinkste **thyreo-**, konstriktörlerde **constrictor superior/medius/inferior pharyngis** kullanılır; istekteki kısa/eski yazımlar da kabul edilir. Coccygeus için ischiococcygeus eş adı korunur. Levator ani içinde puborectalis, TA2'nin puboanalis eş adı olarak öğretilir. Türkçe yeni adlar açıklayıcı çalışma karşılıklarıdır.
+
+Geometri kaynakları ve her parçanın özgün nesne adı `scripts/muscle-recipe.json`, çözümleme sonucu `scripts/data/additional-muscles.json` ve lisans/dönüşüm ayrıntısı [model atfı](assets/model/ATTRIBUTION.md) içindedir. BodyParts3D türevleri CC BY-SA 2.1 Japan, Z-Anatomy türevleri CC BY-SA 4.0'dır. Model bulunamayan istekler oynanabilir kapsama sayılmaz.

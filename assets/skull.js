@@ -1,4 +1,4 @@
-import * as THREE from './vendor/three.module.min.js?v=6478201-20261110T230808604Z';
+import * as THREE from './vendor/three.module.min.js?v=c8cdc56-20261111T001212431Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -30,38 +30,52 @@ export async function createSkull(canvas){
  });
  // Opacity stays one; the transparent queue allows this solid target to render
  // after both glass passes. Depth testing still preserves the target's own shape.
+ const faint=gray.clone();faint.fragmentShader=faint.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.13);');
  const red=new THREE.MeshStandardMaterial({color:0xd0103a,roughness:.58,metalness:0,transparent:true,opacity:1});
  const halo=new THREE.Mesh(new THREE.RingGeometry(.87,1,64),new THREE.MeshBasicMaterial({color:0xd0103a,transparent:true,opacity:.8,depthTest:false,depthWrite:false}));halo.renderOrder=3;halo.visible=false;scene.add(halo);
  const response=await fetch('assets/model/manifest.json'+new URL(import.meta.url).search);if(!response.ok)throw Error('Model dizini yüklenemedi');const manifest=await response.json();
- const cache=new Map();let request=0,running=true,lastId='',activeBone,angle=0,targetAngle=0,tilt=.08,targetTilt=.08,frame,mainCenter=new THREE.Vector3(),closeCenter=new THREE.Vector3(),mainSize=100,closeSize=50,ready=false,mainBox=new THREE.Box3(),closeBox=new THREE.Box3(),closeSide=0,closeTargets=[];
+ const cache=new Map();let request=0,running=true,lastId='',activeBone,angle=0,targetAngle=0,tilt=.08,targetTilt=.08,frame,mainCenter=new THREE.Vector3(),closeCenter=new THREE.Vector3(),mainSize=100,closeSize=50,ready=false,mainBox=new THREE.Box3(),closeBox=new THREE.Box3(),closeSide=0,closeTargets=[],closeAngle=0;
  const camera=new THREE.OrthographicCamera(-200,200,200,-200,.1,5000);camera.position.set(0,0,2000);camera.lookAt(0,0,0);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const observer=new ResizeObserver(()=>{const {width,height}=canvas.getBoundingClientRect();renderer.setSize(width,height,false);closeRenderer?.setSize(closeCanvas.clientWidth,closeCanvas.clientHeight,false)});observer.observe(canvas);
- async function load(region){
-  if(cache.has(region)){const v=cache.get(region);cache.delete(region);cache.set(region,v);return v;}
+ async function load(region,anatomical=false){
+  const cacheKey=region+(anatomical?':anatomical':'');
+  if(cache.has(cacheKey)){const v=cache.get(cacheKey);cache.delete(cacheKey);cache.set(cacheKey,v);return v;}
   const res=await fetch(`assets/model/${region==='skull'?'skull':region}.bin`+new URL(import.meta.url).search);if(!res.ok)throw Error('Bölge yüklenemedi');const buffer=await res.arrayBuffer(),group=new THREE.Group();
   const entries=manifest.filter(m=>m.region===region);
   // Bring the paired hands/feet together without changing their internal anatomical relationships.
   const sideCenters={};
-  if(region==='hand'||region==='foot')for(const side of [-1,1]){const box=new THREE.Box3();for(const item of entries){const p=new Float32Array(buffer,item.offset,item.vertices*3);for(let i=0;i<p.length;i+=3)if(Math.sign(p[i])===side)box.expandByPoint(new THREE.Vector3(p[i],p[i+1],p[i+2]));}sideCenters[side]=box.getCenter(new THREE.Vector3()).x;}
+  if(!anatomical&&(region==='hand'||region==='foot'))for(const side of [-1,1]){const box=new THREE.Box3();for(const item of entries){const p=new Float32Array(buffer,item.offset,item.vertices*3);for(let i=0;i<p.length;i+=3)if(Math.sign(p[i])===side)box.expandByPoint(new THREE.Vector3(p[i],p[i+1],p[i+2]));}sideCenters[side]=box.getCenter(new THREE.Vector3()).x;}
   for(const item of entries){
    const source=new Float32Array(buffer,item.offset,item.vertices*3),points=new Float32Array(source.length);
-   for(let i=0;i<source.length;i+=3){let x=source[i];if(sideCenters[Math.sign(x)]!==undefined)x=x-sideCenters[Math.sign(x)]+Math.sign(x)*(region==='hand'?65:75);points[i]=x;points[i+1]=source[i+2];points[i+2]=-source[i+1];}
+   for(let i=0;i<source.length;i+=3){let x=source[i];if(anatomical&&(region.endsWith('hand')||region.endsWith('foot'))){const center=region.endsWith('hand')?270:100;x=x-Math.sign(x)*center+Math.sign(x)*(region.endsWith('hand')?65:75);}if(sideCenters[Math.sign(x)]!==undefined)x=x-sideCenters[Math.sign(x)]+Math.sign(x)*(region==='hand'?65:75);points[i]=x;points[i+1]=source[i+2];points[i+2]=-source[i+1];}
    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(points,3));g.setIndex(new THREE.BufferAttribute(new Uint16Array(buffer,item.offset+source.byteLength,item.indices),1));g.computeVertexNormals();g.computeBoundingBox();
-   const mesh=new THREE.Mesh(g,gray);mesh.name=item.id;group.add(mesh);
+   const add=geometry=>{const mesh=new THREE.Mesh(geometry,gray);mesh.name=item.id;mesh.userData.kind=item.kind;mesh.userData.fitIndices=[...new Set(geometry.index.array)];group.add(mesh);};
+   // BP3D stores some paired groups in one mesh. Split their triangles at the
+   // sagittal plane so the second view can select a single anatomical side.
+   if(item.kind==='muscle'&&!['13295','46841'].includes(item.id)&&g.boundingBox.min.x< -2&&g.boundingBox.max.x>2&&Math.abs(g.boundingBox.getCenter(new THREE.Vector3()).x)<2){
+    const sides=[[],[]],index=g.index.array;
+    for(let i=0;i<index.length;i+=3){const x=(points[index[i]*3]+points[index[i+1]*3]+points[index[i+2]*3])/3;sides[x<0?0:1].push(index[i],index[i+1],index[i+2]);}
+    for(const indices of sides)if(indices.length){const part=g.clone();part.setIndex(indices);part.computeBoundingBox();const bounds=new THREE.Box3();for(const i of indices)bounds.expandByPoint(new THREE.Vector3().fromBufferAttribute(part.attributes.position,i));part.boundingBox=bounds;add(part);}
+    g.dispose();
+   }else add(g);
   }
-  cache.set(region,group);
+  cache.set(cacheKey,group);
   return group;
  }
  async function setBone(b,r){
   if(lastId===`${b.id}:${r}`)return;lastId=`${b.id}:${r}`;activeBone=b;ready=false;const token=++request;canvas.dataset.loading='true';canvas.dataset.bone=b.id;
-  const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent='Kemikler yükleniyor.';
+  const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent=b.module==='muscles'?'Kaslar yükleniyor.':'Kemikler yükleniyor.';
   try{
-   const regions=b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(load));if(token!==request)return;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
+   const regions=b.module==='muscles'?[b.context,b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='muscles')));if(token!==request)return;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
    const whole=new THREE.Box3(),target=new THREE.Box3();
-   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?red:gray;m.renderOrder=active?2:0;whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
-   if(target.isEmpty())throw Error('Kemik ağı bulunamadı');
+   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?red:b.module==='muscles'&&m.userData.kind==='muscle'?faint:gray;m.renderOrder=active?2:0;whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
+   if(target.isEmpty())throw Error('Hedef ağı bulunamadı');
    whole.getCenter(mainCenter);target.getCenter(closeCenter);mainBox.copy(whole);closeBox.copy(target);
+   if(b.module==='muscles'){
+    const extent=target.getSize(new THREE.Vector3()),minimum=b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context];
+    mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(Math.max(extent.x*1.4,minimum),Math.max(extent.y*1.4,minimum),Math.max(extent.z*1.4,minimum)));
+   }
    const size=whole.getSize(new THREE.Vector3());mainSize=Math.max(size.y,size.x,size.z)*.56;
    // For long paired limbs, provide a full regional context in the main view.
    const ts=target.getSize(new THREE.Vector3());closeSize=Math.max(ts.x,ts.y,ts.z)*.65;
@@ -84,10 +98,21 @@ export async function createSkull(canvas){
    if(b.region==='ossicles'){mainCenter.lerp(closeCenter,.35);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(180,180,180));}
    if(b.region==='knee'){mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(230,210,160));}
    for(const [k,g] of cache){if(cache.size<=5)break;if(!groups.includes(g)){cache.delete(k);g.traverse(m=>m.geometry?.dispose());}}
-   targetAngle=(b.angle||.25)+(r===2?Math.PI:0);targetTilt=(b.tilt||0)+(['foot'].includes(b.region)?-.55:.08);
-   angle=targetAngle;tilt=targetTilt;canvas.dataset.loading='false';loading.hidden=true;ready=true;
-   document.querySelector('.model-note').textContent=b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
-   canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:'Sorulan kemik kırmızı renkle gösteriliyor.');
+   targetAngle=(b.angle||.25)+(r===2?Math.PI:0);targetTilt=(b.tilt||0)+(['foot','muscles-foot'].includes(b.region)?-.55:.08);
+   angle=targetAngle;tilt=targetTilt;closeAngle=angle+.55;
+   if(b.module==='muscles'){
+    // Pick an oblique view with a broad target silhouette. A fixed side angle
+    // can turn thin muscles (pectoralis, sartorius, deep back) edge-on.
+    let best=-Infinity;const point=new THREE.Vector3();
+    for(const offset of [.45,-.45,.75,-.75,1.05,-1.05]){
+     const rotation=new THREE.Euler(tilt-.18,angle+offset,0);let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+     for(const m of closeTargets)for(const i of m.userData.fitIndices){point.fromBufferAttribute(m.geometry.attributes.position,i).sub(closeCenter).applyEuler(rotation);minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);}
+     const score=(maxX-minX)*(maxY-minY);if(score>best){best=score;closeAngle=angle+offset;}
+    }
+   }
+   canvas.dataset.loading='false';loading.hidden=true;ready=true;
+   document.querySelector('.model-note').textContent=b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
+   canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:b.module==='muscles'?'Sorulan kas kırmızı renkle gösteriliyor.':'Sorulan kemik kırmızı renkle gösteriliyor.');
   }catch(error){if(token!==request)return;console.error(error);loading.hidden=false;lastId='';loading.textContent='Model yüklenemedi. Ad ve ipuçlarıyla devam edebilirsiniz. Yenilemek için sayfayı tekrar açın.';canvas.dataset.loading='error';}
  }
  let lastFrame=0;
@@ -103,7 +128,7 @@ export async function createSkull(canvas){
     // Fit the actual projected vertices, not a rotated axis-aligned box, which
     // excessively shrinks oblique wrists/feet. Refit during the turn as well.
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-    for(const m of closeTargets){const p=m.geometry.attributes.position;for(let i=0;i<p.count;i++){
+    for(const m of closeTargets){const p=m.geometry.attributes.position;for(const i of m.userData.fitIndices){
      point.fromBufferAttribute(p,i).sub(center).applyEuler(rotation);
      minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
     }}
@@ -122,18 +147,19 @@ export async function createSkull(canvas){
     // At middle-ear scale the surrounding skull stacks into a dark mass.
     // Keep the other ossicles as glass context in the close view.
     g.visible=!close||activeBone.region!=='ossicles'||g===cache.get('ossicles');
-    for(const m of g.children)m.visible=!close||m.userData.closeVisible;
+    for(const m of g.children)m.visible=(!close||m.userData.closeVisible)&&(!activeBone.hideContext||activeBone.meshes.includes(m.name));
    }
-   gray.uniforms.edgeFade.value=close||['ossicles','knee'].includes(activeBone.region);
+   gray.uniforms.edgeFade.value=activeBone.module==='muscles'||close||['ossicles','knee'].includes(activeBone.region);
    const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
-   halo.visible=!close&&activeBone.region==='ossicles';
+   faint.uniforms.edgeFade.value=gray.uniforms.edgeFade.value;faint.uniforms.viewSize.value.copy(gray.uniforms.viewSize.value);faint.uniforms.viewOrigin.value.copy(gray.uniforms.viewOrigin.value);
+   halo.visible=!close&&(activeBone.region==='ossicles'||activeBone.closeCamera);
    if(halo.visible){const p=closeCenter.clone().sub(center).applyEuler(rotation).add(pivot.position);halo.position.set(p.x,p.y,1500);halo.scale.setScalar(8*2*scale/vh);}
    output.render(scene,camera);
   }
   view(home?0:w*(mobile?.02:.16),10,home?w:w*(mobile?.74:.62),h-20,(activeBone.region==='ossicles'?Math.PI/2:angle)+drift,tilt,mainSize,mainCenter,false);
-  if(!home)view(0,0,closeCanvas.clientWidth,closeCanvas.clientHeight,angle+Math.PI*.65+(reduced?0:now*.00008),tilt-.18,closeSize,closeCenter,true);
+  if(!home)view(0,0,closeCanvas.clientWidth,closeCanvas.clientHeight,(activeBone.module==='muscles'?closeAngle:angle+Math.PI*.65)+(reduced?0:activeBone.module==='muscles'?Math.sin(now*.00008)*.10:now*.00008),tilt-.18,closeSize,closeCenter,true);
  }
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.querySelector('#loading').hidden=false;document.querySelector('#loading').textContent='Görüntü durdu. Sayfayı yenileyerek devam edebilirsiniz.';});
  frame=requestAnimationFrame(draw);
- return {setBone,setTheme(dark){gray.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();red.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
+ return {setBone,setTheme(dark){gray.uniforms.dark.value=dark;faint.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();faint.dispose();red.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
 }

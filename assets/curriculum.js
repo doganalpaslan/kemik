@@ -1,7 +1,11 @@
-import {bones,dayNumber} from './bones.js?v=6478201-20261110T230808604Z';
+import {muscles} from './muscles.js?v=c8cdc56-20261111T001212431Z';
+import {bones,dayNumber} from './bones.js?v=c8cdc56-20261111T001212431Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
+export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
+export const unitsFor=module=>module==='muscles'?muscles:bones;
+export const regionsFor=module=>module==='muscles'?muscleRegions:regions;
 export const levels=['','kolay','orta','zor'];
-export const poolFor=region=>bones.filter(b=>region==='all'||b.curriculumRegion===region);
+export const poolFor=(region,module='bones')=>unitsFor(module).filter(b=>region==='all'||b.curriculumRegion===region);
 export const intervals={1:1,2:3,3:7,4:14,5:30};
 export function addDays(date,days){const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);}
 export function migrateCards(progress,today){
@@ -13,8 +17,8 @@ export function migrateCards(progress,today){
 export function learnedIds(progress={}){return new Set(progress.cards?Object.entries(progress.cards).filter(([,c])=>c.box>=3).map(([id])=>id):Object.values(progress.learned||{}).flat());}
 function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 export function shuffle(items,seed){const a=[...items];let n=hash(seed);for(let i=a.length-1;i>0;i--){n=(Math.imul(n,1664525)+1013904223)>>>0;const j=n%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
-export function dailyBones(date,region='all',progress={}){
- const pool=poolFor(region),cards=progress.cards||{},card=b=>cards[b.id],order=(a,b)=>a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
+export function dailyBones(date,region='all',progress={},module='bones'){
+ const pool=poolFor(region,module),cards=progress.cards||{},card=b=>cards[b.id],order=(a,b)=>a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
  const due=pool.filter(b=>card(b)?.box>0&&card(b).due<=date).sort((a,b)=>card(a).due.localeCompare(card(b).due)||order(a,b)).slice(0,5);
  const fresh=pool.filter(b=>!card(b)?.box).sort(order);
  const selected=[...due,...fresh].slice(0,8),ids=new Set(selected.map(b=>b.id));
@@ -51,7 +55,7 @@ export function reinsert(queue,index,random=Math.random){
  next.splice(position,0,{id:item.id,practice:true});return next;
 }
 export function dueSummary(progress,ids,today){const counts={};for(const id of ids){const due=progress.cards?.[id]?.due;if(due>today)counts[due]=(counts[due]||0)+1;}return Object.entries(counts).sort(([a],[b])=>a.localeCompare(b)).map(([date,count])=>({date,count,days:dayNumber(date)-dayNumber(today)}));}
-export function progressFor(region,progress){const learned=learnedIds(progress),pool=poolFor(region),remaining=pool.filter(b=>!learned.has(b.id));return {count:pool.length-remaining.length,total:pool.length,level:remaining.length?Math.min(...remaining.map(b=>b.level)):3};}
+export function progressFor(region,progress,module='bones'){const learned=learnedIds(progress),pool=poolFor(region,module),remaining=pool.filter(b=>!learned.has(b.id));return {count:pool.length-remaining.length,total:pool.length,level:remaining.length?Math.min(...remaining.map(b=>b.level)):3};}
 
 // Preserve only evidence from completed Latin v4 days. New split units need their own lesson.
 const legacyIds=['frontal','parietal','occipital','temporal','sphenoid','ethmoid','maxilla','mandible','zygomatic','nasal','lacrimal','palatine','concha','vomer','hyoid','atlas','axis','cervical','thoracic','lumbar','sacrum','coccyx','sternum','ribs','clavicle','scapula','humerus','radius','ulna','scaphoid','lunate','triquetral','pisiform','trapezium','trapezoid','capitate','hamate','metacarpals','hand-phalanges','hip','femur','patella','tibia','fibula','talus','calcaneus','navicular','cuboid','cuneiforms','metatarsals','foot-phalanges'];

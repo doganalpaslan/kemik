@@ -1,4 +1,4 @@
-import {normalize} from './bones.js?v=6478201-20261110T230808604Z';
+import {normalize} from './bones.js?v=c8cdc56-20261111T001212431Z';
 
 // Match the answer's whitespace normalization while retaining a typed word boundary.
 // Raw input length would skip ghost letters after repeated spaces.
@@ -8,7 +8,7 @@ export function answerOffset(target,typed){
 }
 // Automatic clues never count as a requested hint.
 export function initialMask(target){
- if(/^(os|ossa|phalanges) /.test(target))return target.split(' ').map((word,i)=>i===0?word:word[0]+'·'.repeat(word.length-1)).join(' ');
+ if(/^(os|ossa|phalanges|m\.|mm\.) /.test(target))return target.split(' ').map((word,i)=>i===0?word:word[0]+'·'.repeat(word.length-1)).join(' ');
  return target[0]+'·'.repeat(target.length-1);
 }
 export function answerHint(target,round,typedLength=0,until=0){

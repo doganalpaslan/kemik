@@ -1502,5 +1502,12 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=6478201-20261110T230808604Z";
-export const answerAliases=(b,mode)=>{const list=mode==='latin'?[b.latin,...b.aliases,b.latin.replace(/^(os|ossa) /,'')]:[b.tr,...b.trAliases||[]];return [...new Set(list.flatMap(s=>mode==='tr'?[s,s.replace(/\s+(kemiği|kemikleri|kemik)$/u,'')]:[s]).map(normalize))];};
+export {dailyBones,roundBones} from "./curriculum.js?v=c8cdc56-20261111T001212431Z";
+export function answerAliases(b,mode){
+ let list;
+ if(mode==='latin'&&b.module==='muscles'){
+  const plural=/^(mm\.|musculi) /.test(b.latin),prefix=plural?'mm.':'m.',full=plural?'musculi':'musculus';
+  list=[b.latin,...b.aliases||[]].flatMap(s=>{const stem=s.replace(/^(musculus|musculi|m\.|mm\.) /,'');return [s,stem,`${prefix} ${stem}`,`${full} ${stem}`]});
+ }else list=mode==='latin'?[b.latin,...b.aliases,b.latin.replace(/^(os|ossa) /,'')]:[b.tr,...b.trAliases||[]];
+ return [...new Set(list.flatMap(s=>mode==='tr'?[s,s.replace(/\s+(kemiği|kemikleri|kemik)$/u,'')]:[s]).map(normalize))];
+}
