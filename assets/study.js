@@ -1,4 +1,4 @@
-import {notesForMuscles} from './muscle-study.js?v=0a46de7-20261111T070253742Z';
+import {notesForMuscles} from './muscle-study.js?v=2a71b56-20261111T074743391Z';
 // Note-to-source mapping: KAYNAKLAR.md. Only notes linked to today’s question units are shown.
 export const clinicalNotes=[
  {

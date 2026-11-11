@@ -1,8 +1,30 @@
-import {muscles} from './muscles.js?v=0a46de7-20261111T070253742Z';
-import {bones,dayNumber} from './bones.js?v=0a46de7-20261111T070253742Z';
+import {muscles} from './muscles.js?v=2a71b56-20261111T074743391Z';
+import {bones,dayNumber} from './bones.js?v=2a71b56-20261111T074743391Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
-export const unitsFor=module=>module==='muscles'?muscles:bones;
+// Landmark definitions and patches are separate chunks; muscle-only startup never imports them.
+export const landmarks=[];
+let landmarkLoad;
+export function loadLandmarks(){return landmarkLoad??=import('./landmarks-upper.js?v=2a71b56-20261111T074743391Z').then(m=>{landmarks.push(...m.landmarks);return landmarks;});}
+export const unitsFor=module=>module==='muscles'?muscles:[...bones,...landmarks];
+export function stageStatus(parent,stage,progress={}){
+ const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);
+ const prerequisite=stage===1||!previous.length?learned.has(parent):previous.filter(b=>learned.has(b.id)).length/previous.length>=.8;
+ const manual=!!progress.unlocks?.[`${parent}:${stage}`];
+ // Stages without predecessors still require the preceding step to be open.
+ const open=manual||(stage===1?prerequisite:stageStatus(parent,stage-1,progress).open&&prerequisite);
+ const pool=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage);
+ return {open,manual,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,required:Math.ceil(previous.length*.8),previousCount:previous.filter(b=>learned.has(b.id)).length};
+}
+export function unlockStage(progress,parent,stage){
+ if(!bones.some(b=>b.id===parent)||![1,2,3].includes(stage))return;
+ // Opening a higher step also opens its prerequisite steps; no cards or credit are created.
+ progress.unlocks??={};for(let n=1;n<=stage;n++)progress.unlocks[`${parent}:${n}`]=true;
+}
+export function ladderFor(region,progress={}){
+ const parents=bones.filter(b=>region==='all'||b.curriculumRegion===region),learned=learnedIds(progress);
+ return {bones:{count:parents.filter(b=>learned.has(b.id)).length,total:parents.length},parents:parents.filter(b=>landmarks.some(l=>l.parentBone===b.id)).map(b=>({id:b.id,latin:b.latin,steps:[1,2,3].map(n=>({stage:n,...stageStatus(b.id,n,progress)}))})),steps:[1,2,3].map(stage=>{const pool=landmarks.filter(b=>b.stage===stage&&(region==='all'||b.curriculumRegion===region));return {stage,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,open:pool.filter(b=>stageStatus(b.parentBone,stage,progress).open).length};})};
+}
 export const regionsFor=module=>module==='muscles'?muscleRegions:regions;
 export const levels=['','kolay','orta','zor'];
 export const poolFor=(region,module='bones')=>unitsFor(module).filter(b=>region==='all'||b.curriculumRegion===region);
@@ -18,7 +40,15 @@ export function learnedIds(progress={}){return new Set(progress.cards?Object.ent
 function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 export function shuffle(items,seed){const a=[...items];let n=hash(seed);for(let i=a.length-1;i>0;i--){n=(Math.imul(n,1664525)+1013904223)>>>0;const j=n%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 export function dailyBones(date,region='all',progress={},module='bones'){
- const pool=poolFor(region,module),cards=progress.cards||{},card=b=>cards[b.id],order=(a,b)=>a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
+ const cards=progress.cards||{},card=b=>cards[b.id];
+ const pool=poolFor(region,module).filter(b=>module==='muscles'||!b.parentBone||card(b)?.box>0||stageStatus(b.parentBone,b.stage,progress).open);
+ const order=(a,b)=>(a.stage||0)-(b.stage||0)||a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
+ if(module!=='muscles'){
+  const due=pool.filter(b=>card(b)?.box>0&&card(b).due<=date).sort((a,b)=>card(a).due.localeCompare(card(b).due)||order(a,b));
+  const highestOverride=parent=>Math.max(0,...[1,2,3].filter(n=>progress.unlocks?.[`${parent}:${n}`]));
+  const fresh=pool.filter(b=>!card(b)?.box&&(b.parentBone?b.stage>=highestOverride(b.parentBone):highestOverride(b.id)===0)).sort(order);
+  return shuffle([...due,...fresh].slice(0,8),`${date}:${region}`);
+ }
  const due=pool.filter(b=>card(b)?.box>0&&card(b).due<=date).sort((a,b)=>card(a).due.localeCompare(card(b).due)||order(a,b)).slice(0,5);
  const fresh=pool.filter(b=>!card(b)?.box).sort(order);
  const selected=[...due,...fresh].slice(0,8),ids=new Set(selected.map(b=>b.id));

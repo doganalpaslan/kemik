@@ -1,10 +1,10 @@
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=0a46de7-20261111T070253742Z';
-import {startPWA,resetProgress} from './pwa.js?v=0a46de7-20261111T070253742Z';
-import {regionsFor,unitsFor,levels,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=0a46de7-20261111T070253742Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=0a46de7-20261111T070253742Z';
-import {BASE_URL} from './config.js?v=0a46de7-20261111T070253742Z';
-import {notesForDay} from './study.js?v=0a46de7-20261111T070253742Z';
-import {GameSound} from './sound.js?v=0a46de7-20261111T070253742Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=2a71b56-20261111T074743391Z';
+import {startPWA,resetProgress} from './pwa.js?v=2a71b56-20261111T074743391Z';
+import {regionsFor,unitsFor,levels,loadLandmarks,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=2a71b56-20261111T074743391Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=2a71b56-20261111T074743391Z';
+import {BASE_URL} from './config.js?v=2a71b56-20261111T074743391Z';
+import {notesForDay} from './study.js?v=2a71b56-20261111T074743391Z';
+import {GameSound} from './sound.js?v=2a71b56-20261111T074743391Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -14,23 +14,38 @@ function write(key,value){memory.set(key,value);try{localStorage.setItem(key,JSO
 let date=localDate();let prefs={...read('gk2:preferences',{upper:false,sound:true}),mode:'latin'};
 const fresh=()=>({round:0,index:0,typed:'',done:false,errors:0,keystrokes:0,correctKeys:0,attempts:0,first:0,misses:{},round3Misses:{},hints:{},between:false,questionErrors:0,round3Errors:0,started:Date.now(),elapsed:0});
 prefs.module=prefs.module==='muscles'?'muscles':'bones';
+if(prefs.module==='bones'){await pwaReady;await loadLandmarks();}
 let regions=regionsFor(prefs.module),units=unitsFor(prefs.module);
 const dailyBones=(date,region,progress)=>selectDaily(date,region,progress,prefs.module);
 const progressFor=(region,progress)=>moduleProgress(region,progress,prefs.module);
 const progressKey=()=>prefs.module==='muscles'?'gk2:curriculum:muscles:v17':'gk2:curriculum:v8';
-const noun=()=>prefs.module==='muscles'?'kas':'kemik';
+const noun=()=>prefs.module==='muscles'?'kas':'yapı';
 const title=()=>prefs.module==='muscles'?'Günün kası':'Günün kemiği';
 prefs.region=regions.some(r=>r.id===prefs.region)?prefs.region:'all';
-let progress=read(progressKey(),{learned:{},history:{}});
+const landmarkKey='gk2:curriculum:landmarks:v22';
+function readProgress(module=prefs.module){
+ const stored=read(module==='muscles'?'gk2:curriculum:muscles:v17':'gk2:curriculum:v8',{});const base=stored&&typeof stored==='object'&&!Array.isArray(stored)?stored:{};
+ if(module==='muscles')return base;
+ const structures=read(landmarkKey,{})||{};
+ return {...base,cards:base.cards?{...base.cards,...structures.cards}:undefined,history:{...base.history,...structures.history},unlocks:structures.unlocks||{}};
+}
+function saveProgress(){
+ if(prefs.module==='muscles'){write(progressKey(),progress);return;}
+ const split=object=>[Object.fromEntries(Object.entries(object||{}).filter(([id])=>!id.startsWith('landmark-'))),Object.fromEntries(Object.entries(object||{}).filter(([id])=>id.startsWith('landmark-')))];
+ const [cards,landmarkCards]=split(progress.cards),[history,landmarkHistory]=split(progress.history);
+ const {unlocks,...base}=progress;write(progressKey(),{...base,cards,history});
+ write(landmarkKey,{cards:landmarkCards,history:landmarkHistory,unlocks});
+}
+let progress=readProgress();
 if(!progress||typeof progress!=='object'||Array.isArray(progress))progress={learned:{},history:{}};
-if(prefs.module==='bones'&&!progress.migratedV4){const records={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith('gk2:v4:'))records[key]=read(key,null);}}catch{}migrateLegacy(progress,records);write(progressKey(),progress);}
-migrateCards(progress,date);
+if(prefs.module==='bones'&&!progress.migratedV4){const records={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith('gk2:v4:'))records[key]=read(key,null);}}catch{}migrateLegacy(progress,records);}
+migrateCards(progress,date);if(prefs.module==='bones')Object.assign(progress.cards,read(landmarkKey,{})?.cards);
 const stateKey=()=>prefs.module==='muscles'?`gk2:muscles:v17:${date}:${prefs.region}`:`gk2:v8:${date}:${prefs.region}`;
 function loadDay(){
  const stored=read(stateKey(),null);
- if(stored&&Array.isArray(stored.units)&&stored.units.length===Math.min(8,units.filter(b=>prefs.region==='all'||b.curriculumRegion===prefs.region).length)&&new Set(stored.units).size===stored.units.length&&stored.units.every(id=>units.some(b=>b.id===id))&&Number.isInteger(stored.round)&&stored.round>=0&&stored.round<=2&&Number.isInteger(stored.index)&&stored.index>=0&&stored.index<(stored.queues?.[stored.round]?.length||8)&&typeof stored.typed==='string'&&stored.misses&&typeof stored.misses==='object')return {...fresh(),...stored};
+ if(stored&&Array.isArray(stored.units)&&stored.units.length>0&&stored.units.length<=8&&new Set(stored.units).size===stored.units.length&&stored.units.every(id=>units.some(b=>b.id===id))&&Number.isInteger(stored.round)&&stored.round>=0&&stored.round<=2&&Number.isInteger(stored.index)&&stored.index>=0&&stored.index<(stored.queues?.[stored.round]?.length||8)&&typeof stored.typed==='string'&&stored.misses&&typeof stored.misses==='object')return {...fresh(),...stored};
  // Preserve old partial days untouched; their question IDs differ from the new curriculum.
- return {...fresh(),units:dailyBones(date,prefs.region,progress).map(b=>b.id)};
+ const selected=dailyBones(date,prefs.region,progress).map(b=>b.id);return {...fresh(),units:selected,done:!selected.length};
 }
 let state=loadDay();
 const dayUnits=()=>state.units.map(id=>units.find(b=>b.id===id));
@@ -117,7 +132,7 @@ const name=b=>prefs.mode==='latin'?b.latin:b.tr;
 
 const aliases=b=>answerAliases(b,prefs.mode);
 const display=s=>prefs.upper?s.toLocaleUpperCase(prefs.mode==='tr'?'tr-TR':'en-US'):s.toLocaleLowerCase(prefs.mode==='tr'?'tr-TR':'en-US');
-function save(){write(stateKey(),state);write(progressKey(),progress);write('gk2:preferences',prefs)}
+function save(){write(stateKey(),state);saveProgress();write('gk2:preferences',prefs)}
 function streak(){const s=read('gk2:streak',{count:0,last:null});return s.last&&(dayNumber(date)-dayNumber(s.last)<=1)?s.count:0;}
 function paint(){
  $('#game-title').textContent=title();document.title=title()+' · DocBrain';$('#game-module').value=prefs.module;$('#home-module').value=prefs.module;
@@ -134,8 +149,8 @@ function paint(){
  if(state.done){$('#phone-input').blur();renderResults();return}
  $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between||prefs.keyboard==='phone';
  $('#keyboard-switch').hidden=!!state.between;
- if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?`${state.units.length} ${noun()}ı gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${prefs.module==='muscles'?'Kaslar':'Kemikler'} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
- const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;write(progressKey(),progress);$('#round').textContent=`Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
+ if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?`${state.units.length} ${prefs.module==='muscles'?'kası':'yapıyı'} gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${prefs.module==='muscles'?'Kaslar':'Yapılar'} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
+ const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;saveProgress();$('#round').textContent=`Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
  renderAnswer();$('#translation').textContent=state.round===1?b.clue:state.round===0?b.tr:'';
  $('#explanation').textContent=state.round===0||submitted?b.fact:'';
  skull?.setBone(b,state.round);buildKeyboard();
@@ -221,7 +236,8 @@ $('#hint').onclick=()=>{act('Tab');if(prefs.keyboard==='phone')focusAnswer()};
 function renderResults(){
  const total=state.keystrokes||1,accuracy=Math.round(state.correctKeys/total*100),first=firstTryPercent(state),wpm=Math.round(state.correctKeys/5/Math.max(state.elapsed/60000,.1));const host=$('#results');host.replaceChildren();
  const add=(tag,text,cls,parent=host)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;parent.append(el);return el};
- add('p',`Gün tamamlandı · ${date}`,'eyebrow');add('h2',`Bugünün ${state.units.length} ${prefs.module==='muscles'?'kasını':'kemiğini'} üç turda çalıştınız.`);
+ if(!state.units.length){add('h2','Bugün için tekrar yok.');add('p','Yeni adım açabilir veya tekrar zamanı geldiğinde dönebilirsiniz.');return;}
+ add('p',`Gün tamamlandı · ${date}`,'eyebrow');add('h2',`Bugünün ${state.units.length} ${prefs.module==='muscles'?'kasını':'yapısını'} üç turda çalıştınız.`);
  const nextDue=dueSummary(progress,state.units,date)[0];
  const nextLabel=nextDue?(nextDue.days===1?'Yarın':`${nextDue.days} gün sonra`):'Planlanmadı';
  const stats=add('div','','stats');for(const [label,val] of [['İlk denemede',`%${first}`],['Sonraki tekrar',nextLabel],['Kelime/dk · isabet',`${wpm} · %${accuracy}`]]){const item=add('div','',null,stats);add('small',label,null,item);add('strong',val,null,item)}
@@ -272,27 +288,47 @@ function homePaint(){
  const started=state.round>0||state.index>0||!!state.typed;
  $('#home-title').replaceChildren(document.createTextNode(title()));const dot=document.createElement('span');dot.className='accent';dot.textContent='.';$('#home-title').append(dot);
  $('.subtitle').textContent=`Her gün en çok sekiz ${noun()}, üç tur. Latince adlarıyla.`;
- $('#home-status').textContent=state.done?`Bugün tamamlandı · yarın yeni ${noun()}lar`:started?'Kaldığınız yer hazır.':`Bugünün ${state.units.length} ${prefs.module==='muscles'?'kası':'kemiği'} hazır.`;
- $('#home-start').textContent=state.done?'Bugünün sonuçlarını gör':started?`Devam et · Tur ${state.round+1} · ${state.index+1} / ${queue().length}`:`Bugünün ${prefs.module==='muscles'?'kaslarına':'kemiklerine'} başla`;
+ $('#home-status').textContent=!state.units.length?'Bugün için tekrar yok. Yeni adım açabilirsiniz.':state.done?`Bugün tamamlandı · yarın yeni ${noun()}lar`:started?'Kaldığınız yer hazır.':`Bugünün ${state.units.length} ${prefs.module==='muscles'?'kası':'yapısı'} hazır.`;
+ $('#home-start').textContent=!state.units.length?'Çalışma durumunu gör':state.done?'Bugünün sonuçlarını gör':started?`Devam et · Tur ${state.round+1} · ${state.index+1} / ${queue().length}`:`Bugünün ${prefs.module==='muscles'?'kaslarına':'yapılarına'} başla`;
  $('#review-day').hidden=!state.done;
  const tomorrow=new Date(date+'T12:00:00');tomorrow.setDate(tomorrow.getDate()+1);const next=tomorrow.toLocaleDateString('sv-SE');
  const due=Object.values(progress.cards||{}).filter(c=>c.box>0&&c.due<=next).length;
  $('#home-stats').textContent=`${streak()} günlük seri · Yarın tekrar: ${due} ${noun()}`;
  for(const module of ['bones','muscles']){
-  const p=module===prefs.module?progress:read(module==='bones'?'gk2:curriculum:v8':'gk2:curriculum:muscles:v17',{}),whole=moduleProgress('all',p,module),muscle=module==='muscles';
+  const p=module===prefs.module?progress:readProgress(module),whole=moduleProgress('all',p,module),muscle=module==='muscles';
   $(`#module-${module}`).classList.toggle('active',module===prefs.module);
   $(`#module-${module} [data-module]`).setAttribute('aria-pressed',String(module===prefs.module));
   $(muscle?'#muscles-progress':'#home-progress').textContent=`${whole.count} / ${whole.total} öğrenildi`;
   const meter=$(muscle?'#muscles-learned-progress':'#learned-progress');meter.value=whole.count;meter.max=whole.total;
   const chips=$(muscle?'#muscles-regions':'#home-regions');chips.replaceChildren();
-  for(const r of regionsFor(module).filter(r=>r.id!=='all')){const count=moduleProgress(r.id,p,module),a=document.createElement('button');a.textContent=`${r.label} · ${count.count} / ${count.total}`;a.onclick=()=>{switchModule(module);regionMenu.querySelector(`[data-region="${r.id}"]`).click();location.hash='/oyun'};chips.append(a)}
+  for(const r of regionsFor(module).filter(r=>r.id!=='all')){
+   const count=moduleProgress(r.id,p,module),a=document.createElement('button');
+   const ladder=module==='bones'?ladderFor(r.id,p):null;
+   a.textContent=ladder?`${r.label} · Kemikler ${ladder.bones.count}/${ladder.bones.total}`:`${r.label} · ${count.count} / ${count.total}`;
+   a.onclick=async()=>{await switchModule(module);regionMenu.querySelector(`[data-region="${r.id}"]`).click();location.hash='/oyun'};chips.append(a);
+   if(ladder){const detail=document.createElement('details');detail.className='bone-ladder';
+    const summary=document.createElement('summary');summary.textContent=r.id==='upper'?'Kemik yapıları · '+ladder.steps.map(s=>`Adım ${s.stage}: ${s.count}/${s.total}${s.open<s.total?(s.stage===1?' · kilitli (kemik kutu ≥ 3)':` · kilitli (Adım ${s.stage-1}’in %80’i)`):''}`).join(' · '):'Kemik yapıları · yakında';detail.append(summary);
+    if(r.id==='upper')for(const step of ladder.steps.filter(s=>s.total&&s.open<s.total)){
+     const skip=document.createElement('button');skip.className='text-button';skip.textContent=`Adım ${step.stage} · Bu adımı zaten biliyorum, aç`;
+     skip.onclick=async()=>{await switchModule('bones');for(const parent of bones.filter(b=>b.curriculumRegion===r.id))unlockStage(progress,parent.id,step.stage);prefs.region=r.id;
+      state=loadDay();if(!state.units.length||!(state.round||state.index||state.typed||state.done))state={...fresh(),units:dailyBones(date,r.id,progress).map(b=>b.id)};
+      save();paint();};detail.append(skip);
+    }
+    for(const parent of ladder.parents){const row=document.createElement('div'),label=document.createElement('strong');label.textContent=parent.latin;row.append(label);
+     for(const step of parent.steps.filter(s=>s.total)){const line=document.createElement('p');line.textContent=`Adım ${step.stage}: ${step.count}/${step.total} · ${step.open?'Açık':step.stage===1||!step.required?'Kilitli · kemik öğrenilmeli (kutu ≥ 3)':`Kilitli · Adım ${step.stage-1} yapılarının %80’i öğrenilmeli`}`;
+      if(!step.open){const open=document.createElement('button');open.className='text-button';open.textContent='Bu adımı zaten biliyorum, aç';open.onclick=async()=>{await switchModule('bones');unlockStage(progress,parent.id,step.stage);if(!state.units.length||!(state.round||state.index||state.typed||state.done)){state={...fresh(),units:dailyBones(date,prefs.region,progress).map(b=>b.id)};}save();homePaint();};line.append(open);}row.append(line);
+     }detail.append(row);
+    }chips.append(detail);
+   }
+  }
  }
 }
-function switchModule(module){
- if(module===prefs.module)return;
+async function switchModule(module){
+ if(module==='bones')await loadLandmarks();
+ if(module===prefs.module){units=unitsFor(module);return;}
  clearTimeout(timer);if(busy){submitted=false;next();}busy=false;submitted=false;save();
  prefs.module=module;regions=regionsFor(module);units=unitsFor(module);prefs.region='all';
- progress=read(progressKey(),{});migrateCards(progress,date);state=loadDay();
+ progress=readProgress();migrateCards(progress,date);if(prefs.module==='bones')Object.assign(progress.cards,read(landmarkKey,{})?.cards);state=loadDay();
  $('#game').classList.remove('transitioning','dissolving');$('#feedback').textContent='';regionMenu.hidden=true;regionButton.setAttribute('aria-expanded','false');
  rebuildRegions();save();paint();if(route==='/')skull?.setBone(heroBone(),0);else focusAnswer();
 }
@@ -309,7 +345,7 @@ for(const id of ['sound','theme','keyboard','case','region'])$(`#setting-${id}`)
 };
 $('#settings-reset').append($('#reset-area'));
 $('#home-help').onclick=()=>$('#instructions').showModal();
-function heroBone(){if(prefs.module==='muscles')return dayUnits()[0];return dayUnits().find(b=>b.region==='skull')||dailyBones(date,'skull',progress)[0]}
+function heroBone(){return dayUnits()[0]||bones.find(b=>prefs.region==='all'||b.curriculumRegion===prefs.region)||bones[0]}
 function applyRoute(focus=true){
  const requested=location.hash.slice(1)||'/';route=['/','/oyun','/ayarlar','/hakkinda'].includes(requested)?requested:'/';
  document.body.dataset.route=route;
@@ -326,7 +362,7 @@ async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=0a46de7-20261111T070253742Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=2a71b56-20261111T074743391Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());
