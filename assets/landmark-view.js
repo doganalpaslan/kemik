@@ -1,5 +1,5 @@
-import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T090133238Z';
-import {regionDistance} from './landmark-primitives.js?v=4665a6d-20261111T090133238Z';
+import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T094636456Z';
+import {regionDistance} from './landmark-primitives.js?v=4665a6d-20261111T094636456Z';
 const patches={};
 // Only the current target's 1–6 primitives are uploaded. Float texture headers:
 // center/type, radii/point count, normal/cosine, base plane, then path points.
@@ -48,16 +48,28 @@ function paintMaterial(data,boneMaterial){
   shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
    float paintWeight=1.0-smoothstep(-paintEdge*.5,paintEdge*.5,paintDistance());
    if(paintWeight<.001)discard;
+   ${data.skull?.cutY?'if(paintPosition.y>'+data.skull.cutY.toFixed(3)+')discard;':''}
+   ${data.skull?.keepSide?'if(paintPosition.x*'+data.skull.keepSide.toFixed(1)+'<0.0)discard;':''}
    diffuseColor.rgb=mix(diffuseColor.rgb,paintRed,paintWeight);`);
  };
- material.customProgramCacheKey=()=> 'landmark-analytic-v26';
+ material.customProgramCacheKey=()=> 'landmark-analytic-v28-'+(data.skull?.cutY??'none')+'-'+(data.skull?.keepSide??0);
  return material;
 }
-export async function landmarkView(b,round,meshes,red,boneMaterial){
+export async function landmarkView(b,round,meshes,red,boneMaterial,glass,isCurrent=()=>true){
  const chunk=b.curriculumRegion==='upper'?'upper':b.curriculumRegion;
  patches[chunk]??=fetch('assets/model/landmarks-'+chunk+'.json'+new URL(import.meta.url).search).then(r=>{if(!r.ok)throw Error('Yapı yüzeyleri yüklenemedi');return r.json()});
- const all=await patches[chunk],data=all[b.id].find(p=>p.side===(round===2?1:-1));
+ const all=await patches[chunk];if(!isCurrent())return null;
+ const data=all[b.id].find(p=>p.side===(round===2?1:-1));
  const parent=meshes.find(m=>m.name===data.mesh),geometry=parent.geometry,position=geometry.attributes.position,index=geometry.index;
+ const cutTest=[data.skull?.cutY?`if(skullPosition.y>${data.skull.cutY.toFixed(3)})discard;`:'',data.skull?.keepSide?`if(skullPosition.x*${data.skull.keepSide.toFixed(1)}<0.0)discard;`:''].join('');
+ boneMaterial.onBeforeCompile=shader=>{
+  if(!cutTest)return;
+  shader.vertexShader='varying vec3 skullPosition;\n'+shader.vertexShader;
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nskullPosition=position;');
+  shader.fragmentShader='varying vec3 skullPosition;\n'+shader.fragmentShader;
+  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\n'+cutTest);
+ };
+ boneMaterial.customProgramCacheKey=()=> 'skull-cut-'+cutTest;boneMaterial.needsUpdate=true;
  const overlay=new THREE.Group(),center=new THREE.Vector3(...data.anchor),normal=new THREE.Vector3(...data.normal);
  const indices=[];
  for(let i=0;i<position.count;i++){
@@ -65,17 +77,30 @@ export async function landmarkView(b,round,meshes,red,boneMaterial){
   if(regionDistance(data.region,v.toArray(),n.toArray())<data.region.edgeMm)indices.push(i);
  }
  const bounds=new THREE.Box3(new THREE.Vector3(...data.bounds[0]),new THREE.Vector3(...data.bounds[1]));
+ const surfaces=[];
  const paintedGeometry=geometry.clone();
- const surface=new THREE.Mesh(paintedGeometry,paintMaterial(data,boneMaterial));surface.renderOrder=2;overlay.add(surface);
+ const surface=new THREE.Mesh(paintedGeometry,paintMaterial(data,boneMaterial));surface.renderOrder=2;overlay.add(surface);surfaces.push(surface);
+ for(const id of data.paintMeshes||[]){if(id===data.mesh)continue;const neighbor=meshes.find(m=>m.name===id);if(!neighbor)continue;
+  const pos=neighbor.geometry.attributes.position,norm=neighbor.geometry.attributes.normal,indices=[];
+  for(let i=0;i<pos.count;i++)if(regionDistance(data.region,new THREE.Vector3().fromBufferAttribute(pos,i).toArray(),new THREE.Vector3().fromBufferAttribute(norm,i).toArray())<data.region.edgeMm)indices.push(i);
+  if(!indices.length)continue;const extra=new THREE.Mesh(neighbor.geometry.clone(),paintMaterial(data,boneMaterial));extra.renderOrder=2;extra.userData.fitIndices=indices;overlay.add(extra);surfaces.push(extra);
+ }
  const length=Math.max(7,Math.min(18,Math.max(...b.placement.radiiMm)*.55)),end=center.clone().addScaledVector(normal,length);
  const pin=new THREE.Mesh(new THREE.CylinderGeometry(.32,.32,length,6),new THREE.MeshBasicMaterial({color:0xd0103a}));pin.position.copy(center).lerp(end,.5);pin.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),normal);pin.userData.leader=true;overlay.add(pin);
  const dot=new THREE.Mesh(new THREE.SphereGeometry(1,8,6),new THREE.MeshBasicMaterial({color:0xd0103a}));dot.position.copy(end);dot.userData.leader=true;overlay.add(dot);
- for(const m of meshes){m.material=m===parent?boneMaterial:m.material;m.renderOrder=m===parent?1:0;m.userData.closeVisible=m===parent;
+ for(const m of meshes){m.material=m===parent?boneMaterial:data.skull?glass:m.material;m.renderOrder=m===parent?1:0;m.userData.closeVisible=m===parent||!!data.skull;
   // The opposite limb has no orienting value when framing one parent bone.
-  m.userData.contextVisible=b.curriculumRegion==='upper'?(m===parent||Math.sign(m.geometry.boundingBox.getCenter(new THREE.Vector3()).x)===data.side)&&!(b.ta2===1156&&m!==parent):m===parent;
+  m.userData.contextVisible=b.curriculumRegion==='skull'?(!/tooth/.test(m.userData.meta?.name||'')&&!(data.skull.hideMandible&&m.name==='52748')&&!(data.skull.view==='inside'&&['52788','52789'].includes(m.name))):b.curriculumRegion==='upper'?(m===parent||Math.sign(m.geometry.boundingBox.getCenter(new THREE.Vector3()).x)===data.side)&&!(b.ta2===1156&&m!==parent):m===parent;
  }
- for(const m of overlay.children){m.userData.contextVisible=true;m.userData.closeVisible=true;}
+ for(const m of overlay.children){m.userData.contextVisible=!b.reviewOnly;m.userData.closeVisible=!b.reviewOnly;if(b.reviewOnly)m.userData.leader=false;}
+ if(b.reviewOnly){indices.length=0;for(let i=0;i<position.count;i++)if(new THREE.Vector3().fromBufferAttribute(position,i).distanceTo(center)<20)indices.push(i);}
  surface.userData.fitIndices=[...new Set(indices)];
+ if(data.opening){
+  const points=data.opening.fill.map(p=>new THREE.Vector3(...p)),middle=new THREE.Vector3();points.forEach(p=>middle.add(p));middle.divideScalar(points.length);
+  const vertices=[];for(let i=0;i<points.length;i++)vertices.push(...middle,...points[i],...points[(i+1)%points.length]);
+  const fillGeometry=new THREE.BufferGeometry();fillGeometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+  const fill=new THREE.Mesh(fillGeometry,new THREE.MeshBasicMaterial({color:0xd0103a,opacity:.16,transparent:true,side:THREE.DoubleSide,depthWrite:false}));fill.renderOrder=3;fill.userData.contextVisible=true;fill.userData.closeVisible=true;overlay.add(fill);
+ }
  const box=geometry.boundingBox.clone(),size=box.getSize(new THREE.Vector3());
  // Long bones: keep the relevant epiphysis and one third of the shaft.
  if(['humerus','radius','ulna','femur','tibia','fibula'].includes(b.parentBone)&&(b.curriculumRegion==='upper'||b.placement.radiiMm[1]<size.y*.12)){
@@ -88,6 +113,8 @@ export async function landmarkView(b,round,meshes,red,boneMaterial){
  if(b.parentBone==='clavicle'){
   const f=(center.x-box.min.x)/size.x;if(f<.33)box.max.x=box.min.x+size.x*.45;else if(f>.67)box.min.x=box.max.x-size.x*.45;
  }
+ if(data.skull?.keepSide){if(data.side<0)box.max.x=0;else box.min.x=0;}
+ if(data.skull){box.intersect(new THREE.Box3().setFromCenterAndSize(center,new THREE.Vector3().setScalar(data.skull.focusMm*2)));}
  const mainIndices=[];for(let i=0;i<position.count;i++)if(box.containsPoint(new THREE.Vector3().fromBufferAttribute(position,i)))mainIndices.push(i);
  overlay.userData.mainFit={position,indices:mainIndices};
  const viewNormal=new THREE.Vector3(...(data.viewNormal||data.normal));
@@ -112,6 +139,6 @@ export async function landmarkView(b,round,meshes,red,boneMaterial){
  if(b.parentBone==='tibia'&&/facies articularis superior/.test(b.latin)){angle=.12;tilt=1.05;}
  // Authored target cameras apply to both renderers and both paired sides.
  if(data.camera){angle=data.camera.angle;tilt=data.camera.tilt;}
- return {overlay,parent,surface,center,box,patchBox:bounds,angle,tilt,closeAngle:data.camera?.closeAngle??(b.ta2===1203?data.side*-.18:angle+.4),closeTilt:data.camera?.closeTilt??(b.ta2===1203?-.08:tilt-.18),side:data.side,triangles:geometry.index.count/3};
+ return {cutY:data.skull?.cutY,overlay,surfaces,parent,surface,center,box,patchBox:bounds,angle,tilt,closeAngle:data.camera?.closeAngle??(b.ta2===1203?data.side*-.18:angle+.4),closeTilt:data.camera?.closeTilt??(b.ta2===1203?-.08:tilt-.18),side:data.side,triangles:geometry.index.count/3};
 }
 export function disposeLandmark(overlay){if(!overlay)return;overlay.traverse(m=>{m.geometry?.dispose();m.material?.userData.paintTexture?.dispose();m.material?.dispose()});}

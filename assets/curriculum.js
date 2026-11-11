@@ -1,15 +1,17 @@
-import {muscles} from './muscles.js?v=4665a6d-20261111T090133238Z';
-import {bones,dayNumber} from './bones.js?v=4665a6d-20261111T090133238Z';
+import {muscles} from './muscles.js?v=4665a6d-20261111T094636456Z';
+import {bones,dayNumber} from './bones.js?v=4665a6d-20261111T094636456Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
 // Landmark definitions and patches are separate chunks; muscle-only startup never imports them.
 export const landmarks=[];
 let landmarkLoad;
-export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=4665a6d-20261111T090133238Z'),import('./landmarks-lower.js?v=4665a6d-20261111T090133238Z'),import('./landmarks-trunk.js?v=4665a6d-20261111T090133238Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
+export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-lower.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-trunk.js?v=4665a6d-20261111T094636456Z'),import('./landmarks-skull.js?v=4665a6d-20261111T094636456Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
 export const unitsFor=module=>module==='muscles'?muscles:[...bones,...landmarks];
 export function stageStatus(parent,stage,progress={}){
  const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);
- const prerequisite=stage===1||!previous.length?learned.has(parent):previous.filter(b=>learned.has(b.id)).length/previous.length>=.8;
+ const skullBones=bones.filter(b=>b.curriculumRegion==='skull');
+ const parentLearned=parent==='skull-regions'?skullBones.filter(b=>learned.has(b.id)).length>=Math.ceil(skullBones.length*.5):learned.has(parent);
+ const prerequisite=stage===1||!previous.length?parentLearned:previous.filter(b=>learned.has(b.id)).length/previous.length>=.8;
  const manual=!!progress.unlocks?.[`${parent}:${stage}`];
  // Stages without predecessors still require the preceding step to be open.
  const open=manual||(stage===1?prerequisite:stageStatus(parent,stage-1,progress).open&&prerequisite);
@@ -17,13 +19,13 @@ export function stageStatus(parent,stage,progress={}){
  return {open,manual,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,required:Math.ceil(previous.length*.8),previousCount:previous.filter(b=>learned.has(b.id)).length};
 }
 export function unlockStage(progress,parent,stage){
- if(!bones.some(b=>b.id===parent)||![1,2,3].includes(stage))return;
+ if((parent!=='skull-regions'&&!bones.some(b=>b.id===parent))||![1,2,3].includes(stage))return;
  // Opening a higher step also opens its prerequisite steps; no cards or credit are created.
  progress.unlocks??={};for(let n=1;n<=stage;n++)progress.unlocks[`${parent}:${n}`]=true;
 }
 export function ladderFor(region,progress={}){
  const parents=bones.filter(b=>region==='all'||b.curriculumRegion===region),learned=learnedIds(progress);
- return {bones:{count:parents.filter(b=>learned.has(b.id)).length,total:parents.length},parents:parents.filter(b=>landmarks.some(l=>l.parentBone===b.id)).map(b=>({id:b.id,latin:b.latin,steps:[1,2,3].map(n=>({stage:n,...stageStatus(b.id,n,progress)}))})),steps:[1,2,3].map(stage=>{const pool=landmarks.filter(b=>b.stage===stage&&(region==='all'||b.curriculumRegion===region));return {stage,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,open:pool.filter(b=>stageStatus(b.parentBone,stage,progress).open).length};})};
+ return {bones:{count:parents.filter(b=>learned.has(b.id)).length,total:parents.length},parents:[...parents,...(region==='skull'||region==='all'?[{id:'skull-regions',latin:'Kafatası bölgeleri · kemiklerin %50’si öğrenilince'}]:[])].filter(b=>landmarks.some(l=>l.parentBone===b.id)).map(b=>({id:b.id,latin:b.latin,steps:[1,2,3].map(n=>({stage:n,...stageStatus(b.id,n,progress)}))})),steps:[1,2,3].map(stage=>{const pool=landmarks.filter(b=>b.stage===stage&&(region==='all'||b.curriculumRegion===region));return {stage,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,open:pool.filter(b=>stageStatus(b.parentBone,stage,progress).open).length};})};
 }
 export const regionsFor=module=>module==='muscles'?muscleRegions:regions;
 export const levels=['','kolay','orta','zor'];

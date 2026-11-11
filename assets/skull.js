@@ -1,6 +1,6 @@
-import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T090133238Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=4665a6d-20261111T090133238Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=4665a6d-20261111T090133238Z';
+import * as THREE from './vendor/three.module.min.js?v=4665a6d-20261111T094636456Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=4665a6d-20261111T094636456Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=4665a6d-20261111T094636456Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -16,11 +16,12 @@ export async function createSkull(canvas){
  const light=new THREE.DirectionalLight(0xffffff,1.6);light.position.set(-3,5,6);scene.add(light);
  const gray=new THREE.ShaderMaterial({
   transparent:true,depthWrite:false,side:THREE.DoubleSide,forceSinglePass:false,
-  uniforms:{dark:{value:false},edgeFade:{value:false},viewSize:{value:new THREE.Vector2()},viewOrigin:{value:new THREE.Vector2()}},
-  vertexShader:`varying vec3 surfaceNormal;
-   void main(){surfaceNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-  fragmentShader:`uniform bool dark;uniform bool edgeFade;uniform vec2 viewSize;uniform vec2 viewOrigin;varying vec3 surfaceNormal;
+  uniforms:{skullCut:{value:100000},dark:{value:false},edgeFade:{value:false},viewSize:{value:new THREE.Vector2()},viewOrigin:{value:new THREE.Vector2()}},
+  vertexShader:`varying vec3 surfaceNormal;varying float rawY;
+   void main(){rawY=position.y;surfaceNormal=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
+  fragmentShader:`uniform float skullCut;varying float rawY;uniform bool dark;uniform bool edgeFade;uniform vec2 viewSize;uniform vec2 viewOrigin;varying vec3 surfaceNormal;
    void main(){
+    if(rawY>skullCut)discard;
     float rim=pow(1.0-abs(normalize(surfaceNormal).z),2.0);
     // Softer dark-theme faces; stronger rims preserve sutures and silhouettes.
     vec3 tint=dark?mix(vec3(0.34),vec3(0.52),rim):mix(vec3(0.18),vec3(0.075),rim);
@@ -119,13 +120,15 @@ export async function createSkull(canvas){
     }
    }
    if(b.module==='landmarks'){
-    const v=await landmarkView(b,r,meshes,red,boneMaterial);
+    const v=await landmarkView(b,r,meshes,red,boneMaterial,contextGlass,()=>token===request);
+    if(!v)return;
     if(token!==request){disposeLandmark(v.overlay);return;}
+    gray.uniforms.skullCut.value=v.cutY??100000;contextGlass.uniforms.skullCut.value=v.cutY??100000;
     landmarkOverlay=v.overlay;root.add(v.overlay);mainBox.copy(v.box);mainBox.expandByScalar(8);mainBox.getCenter(mainCenter);
-    closeBox.copy(v.patchBox);v.patchBox.getCenter(closeCenter);closeTargets=[v.surface];
+    closeBox.copy(v.patchBox);v.patchBox.getCenter(closeCenter);closeTargets=v.surfaces||[v.surface];
     targetAngle=v.angle;targetTilt=v.tilt;angle=targetAngle;tilt=targetTilt;closeAngle=v.closeAngle;landmarkCloseTilt=v.closeTilt;
     canvas.dataset.landmarkSide=String(v.side);canvas.dataset.landmarkTriangles=String(v.triangles);canvas.dataset.parentMesh=v.parent.name;
-   }else{delete canvas.dataset.landmarkSide;delete canvas.dataset.landmarkTriangles;delete canvas.dataset.parentMesh;}
+   }else{gray.uniforms.skullCut.value=100000;contextGlass.uniforms.skullCut.value=100000;boneMaterial.onBeforeCompile=()=>{};boneMaterial.customProgramCacheKey=()=> 'uncut';boneMaterial.needsUpdate=true;delete canvas.dataset.landmarkSide;delete canvas.dataset.landmarkTriangles;delete canvas.dataset.parentMesh;}
    canvas.dataset.contextGroup=profile?headNeckGroup(b.id):'';canvas.dataset.contextMeshes=meshes.filter(m=>m.userData.contextVisible&&!b.meshes.includes(m.name)&&m.userData.kind!=='muscle').map(m=>m.name).join(',');
    canvas.dataset.loading='false';loading.hidden=true;ready=true;
    document.querySelector('.model-note').textContent=b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
