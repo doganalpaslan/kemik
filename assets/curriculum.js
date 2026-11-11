@@ -1,5 +1,5 @@
-import {muscles} from './muscles.js?v=c8cdc56-20261111T001212431Z';
-import {bones,dayNumber} from './bones.js?v=c8cdc56-20261111T001212431Z';
+import {muscles} from './muscles.js?v=6129f71-20261111T001948551Z';
+import {bones,dayNumber} from './bones.js?v=6129f71-20261111T001948551Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
 export const unitsFor=module=>module==='muscles'?muscles:bones;

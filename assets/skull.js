@@ -1,4 +1,5 @@
-import * as THREE from './vendor/three.module.min.js?v=c8cdc56-20261111T001212431Z';
+import * as THREE from './vendor/three.module.min.js?v=6129f71-20261111T001948551Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=6129f71-20261111T001948551Z';
 // Region files are loaded on demand. At most five decoded regions stay in GPU memory.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -31,6 +32,8 @@ export async function createSkull(canvas){
  // Opacity stays one; the transparent queue allows this solid target to render
  // after both glass passes. Depth testing still preserves the target's own shape.
  const faint=gray.clone();faint.fragmentShader=faint.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.13);');
+ const contextGlass=gray.clone();contextGlass.fragmentShader=contextGlass.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.30);');
+ const eyeballGlass=gray.clone();eyeballGlass.fragmentShader=eyeballGlass.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.65);');
  const red=new THREE.MeshStandardMaterial({color:0xd0103a,roughness:.58,metalness:0,transparent:true,opacity:1});
  const halo=new THREE.Mesh(new THREE.RingGeometry(.87,1,64),new THREE.MeshBasicMaterial({color:0xd0103a,transparent:true,opacity:.8,depthTest:false,depthWrite:false}));halo.renderOrder=3;halo.visible=false;scene.add(halo);
  const response=await fetch('assets/model/manifest.json'+new URL(import.meta.url).search);if(!response.ok)throw Error('Model dizini yüklenemedi');const manifest=await response.json();
@@ -50,7 +53,7 @@ export async function createSkull(canvas){
    const source=new Float32Array(buffer,item.offset,item.vertices*3),points=new Float32Array(source.length);
    for(let i=0;i<source.length;i+=3){let x=source[i];if(anatomical&&(region.endsWith('hand')||region.endsWith('foot'))){const center=region.endsWith('hand')?270:100;x=x-Math.sign(x)*center+Math.sign(x)*(region.endsWith('hand')?65:75);}if(sideCenters[Math.sign(x)]!==undefined)x=x-sideCenters[Math.sign(x)]+Math.sign(x)*(region==='hand'?65:75);points[i]=x;points[i+1]=source[i+2];points[i+2]=-source[i+1];}
    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(points,3));g.setIndex(new THREE.BufferAttribute(new Uint16Array(buffer,item.offset+source.byteLength,item.indices),1));g.computeVertexNormals();g.computeBoundingBox();
-   const add=geometry=>{const mesh=new THREE.Mesh(geometry,gray);mesh.name=item.id;mesh.userData.kind=item.kind;mesh.userData.fitIndices=[...new Set(geometry.index.array)];group.add(mesh);};
+   const add=geometry=>{const mesh=new THREE.Mesh(geometry,gray);mesh.name=item.id;mesh.userData.kind=item.kind;mesh.userData.meta=item;mesh.userData.fitIndices=[...new Set(geometry.index.array)];group.add(mesh);};
    // BP3D stores some paired groups in one mesh. Split their triangles at the
    // sagittal plane so the second view can select a single anatomical side.
    if(item.kind==='muscle'&&!['13295','46841'].includes(item.id)&&g.boundingBox.min.x< -2&&g.boundingBox.max.x>2&&Math.abs(g.boundingBox.getCenter(new THREE.Vector3()).x)<2){
@@ -67,13 +70,14 @@ export async function createSkull(canvas){
   if(lastId===`${b.id}:${r}`)return;lastId=`${b.id}:${r}`;activeBone=b;ready=false;const token=++request;canvas.dataset.loading='true';canvas.dataset.bone=b.id;
   const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent=b.module==='muscles'?'Kaslar yükleniyor.':'Kemikler yükleniyor.';
   try{
-   const regions=b.module==='muscles'?[b.context,b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='muscles')));if(token!==request)return;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
+   const profile=b.region?.startsWith('muscles-z-')?headNeckProfiles[headNeckGroup(b.id)]:null;
+   const regions=profile?[...profile.regions,b.region]:b.module==='muscles'?[b.context,b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='muscles')));if(token!==request)return;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
    const whole=new THREE.Box3(),target=new THREE.Box3();
-   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?red:b.module==='muscles'&&m.userData.kind==='muscle'?faint:gray;m.renderOrder=active?2:0;whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
+   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?red:b.module==='muscles'&&m.userData.kind==='muscle'?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
    if(target.isEmpty())throw Error('Hedef ağı bulunamadı');
    whole.getCenter(mainCenter);target.getCenter(closeCenter);mainBox.copy(whole);closeBox.copy(target);
    if(b.module==='muscles'){
-    const extent=target.getSize(new THREE.Vector3()),minimum=b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context];
+    const extent=target.getSize(new THREE.Vector3()),minimum=profile?profile.minimum:b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context];
     mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(Math.max(extent.x*1.4,minimum),Math.max(extent.y*1.4,minimum),Math.max(extent.z*1.4,minimum)));
    }
    const size=whole.getSize(new THREE.Vector3());mainSize=Math.max(size.y,size.x,size.z)*.56;
@@ -110,6 +114,7 @@ export async function createSkull(canvas){
      const score=(maxX-minX)*(maxY-minY);if(score>best){best=score;closeAngle=angle+offset;}
     }
    }
+   canvas.dataset.contextGroup=profile?headNeckGroup(b.id):'';canvas.dataset.contextMeshes=meshes.filter(m=>m.userData.contextVisible&&!b.meshes.includes(m.name)&&m.userData.kind!=='muscle').map(m=>m.name).join(',');
    canvas.dataset.loading='false';loading.hidden=true;ready=true;
    document.querySelector('.model-note').textContent=b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
    canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:b.module==='muscles'?'Sorulan kas kırmızı renkle gösteriliyor.':'Sorulan kemik kırmızı renkle gösteriliyor.');
@@ -147,11 +152,11 @@ export async function createSkull(canvas){
     // At middle-ear scale the surrounding skull stacks into a dark mass.
     // Keep the other ossicles as glass context in the close view.
     g.visible=!close||activeBone.region!=='ossicles'||g===cache.get('ossicles');
-    for(const m of g.children)m.visible=(!close||m.userData.closeVisible)&&(!activeBone.hideContext||activeBone.meshes.includes(m.name));
+    for(const m of g.children)m.visible=m.userData.contextVisible&&(!close||m.userData.closeVisible)&&(!activeBone.hideContext||activeBone.meshes.includes(m.name));
    }
    gray.uniforms.edgeFade.value=activeBone.module==='muscles'||close||['ossicles','knee'].includes(activeBone.region);
    const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
-   faint.uniforms.edgeFade.value=gray.uniforms.edgeFade.value;faint.uniforms.viewSize.value.copy(gray.uniforms.viewSize.value);faint.uniforms.viewOrigin.value.copy(gray.uniforms.viewOrigin.value);
+   for(const material of [faint,contextGlass,eyeballGlass]){material.uniforms.edgeFade.value=gray.uniforms.edgeFade.value;material.uniforms.viewSize.value.copy(gray.uniforms.viewSize.value);material.uniforms.viewOrigin.value.copy(gray.uniforms.viewOrigin.value);}
    halo.visible=!close&&(activeBone.region==='ossicles'||activeBone.closeCamera);
    if(halo.visible){const p=closeCenter.clone().sub(center).applyEuler(rotation).add(pivot.position);halo.position.set(p.x,p.y,1500);halo.scale.setScalar(8*2*scale/vh);}
    output.render(scene,camera);
@@ -161,5 +166,5 @@ export async function createSkull(canvas){
  }
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.querySelector('#loading').hidden=false;document.querySelector('#loading').textContent='Görüntü durdu. Sayfayı yenileyerek devam edebilirsiniz.';});
  frame=requestAnimationFrame(draw);
- return {setBone,setTheme(dark){gray.uniforms.dark.value=dark;faint.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();faint.dispose();red.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
+ return {setBone,setTheme(dark){gray.uniforms.dark.value=dark;faint.uniforms.dark.value=dark;contextGlass.uniforms.dark.value=dark;eyeballGlass.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();faint.dispose();contextGlass.dispose();eyeballGlass.dispose();red.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
 }

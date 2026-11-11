@@ -1,4 +1,4 @@
-import {normalize} from './bones.js?v=c8cdc56-20261111T001212431Z';
+import {normalize} from './bones.js?v=6129f71-20261111T001948551Z';
 
 // Match the answer's whitespace normalization while retaining a typed word boundary.
 // Raw input length would skip ghost letters after repeated spaces.

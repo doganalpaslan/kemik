@@ -3552,8 +3552,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-rectus-superior",
@@ -3580,8 +3579,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-rectus-inferior",
@@ -3608,8 +3606,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-rectus-medialis",
@@ -3636,8 +3633,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-rectus-lateralis",
@@ -3664,8 +3660,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-obliquus-superior",
@@ -3692,8 +3687,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-obliquus-inferior",
@@ -3720,8 +3714,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK519565/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-genioglossus",
@@ -3745,8 +3738,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK507782/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-hyoglossus",
@@ -3770,8 +3762,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK507782/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-palatopharyngeus",
@@ -3795,8 +3786,7 @@ export const muscles = [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-constrictor-pharyngis-superior",
@@ -3822,8 +3812,7 @@ export const muscles = [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-constrictor-pharyngis-medius",
@@ -3849,8 +3838,7 @@ export const muscles = [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-constrictor-pharyngis-inferior",
@@ -3876,8 +3864,7 @@ export const muscles = [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-stylopharyngeus",
@@ -3901,8 +3888,7 @@ export const muscles = [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-cricothyroideus",
@@ -3930,8 +3916,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-cricoarytenoideus-posterior",
@@ -3955,8 +3940,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-cricoarytenoideus-lateralis",
@@ -3980,8 +3964,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-thyroarytenoideus",
@@ -4009,8 +3992,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-arytenoideus-transversus",
@@ -4033,8 +4015,7 @@ export const muscles = [
    "https://www.ncbi.nlm.nih.gov/books/NBK545265/"
   ],
   "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
-  "closeCamera": true,
-  "hideContext": true
+  "closeCamera": true
  },
  {
   "id": "muscle-levator-ani",

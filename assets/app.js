@@ -1,10 +1,10 @@
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent} from './game-logic.js?v=c8cdc56-20261111T001212431Z';
-import {startPWA,resetProgress} from './pwa.js?v=c8cdc56-20261111T001212431Z';
-import {regionsFor,unitsFor,levels,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=c8cdc56-20261111T001212431Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=c8cdc56-20261111T001212431Z';
-import {BASE_URL} from './config.js?v=c8cdc56-20261111T001212431Z';
-import {notesForDay} from './study.js?v=c8cdc56-20261111T001212431Z';
-import {GameSound} from './sound.js?v=c8cdc56-20261111T001212431Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent} from './game-logic.js?v=6129f71-20261111T001948551Z';
+import {startPWA,resetProgress} from './pwa.js?v=6129f71-20261111T001948551Z';
+import {regionsFor,unitsFor,levels,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=6129f71-20261111T001948551Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=6129f71-20261111T001948551Z';
+import {BASE_URL} from './config.js?v=6129f71-20261111T001948551Z';
+import {notesForDay} from './study.js?v=6129f71-20261111T001948551Z';
+import {GameSound} from './sound.js?v=6129f71-20261111T001948551Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -309,7 +309,7 @@ async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=c8cdc56-20261111T001212431Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=6129f71-20261111T001948551Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());
