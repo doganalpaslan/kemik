@@ -871,7 +871,7 @@ export const landmarks = [
    "52735"
   ],
   "clue": "os occipitale · art kafa kondili",
-  "fact": "Atlas'ın fovea articularis superior'u ile art. atlantooccipitalis (evet-hayır hareketi).",
+  "fact": "Atlas’ın fovea articularis superior’u ile art. atlantooccipitalis: baş sallama, ‘evet’ hareketi ve hafif lateral fleksiyon. ‘Hayır’ rotasyonu atlanto-aksiyel eklemdedir.",
   "shape": "patch",
   "anatomicalType": "part",
   "source": "yapilar-taslak.md:108; yapilar-denetim.md applied; Z-Anatomy Occipital condyle.j",
@@ -2554,7 +2554,7 @@ export const landmarks = [
    "52748"
   ],
   "clue": "mandibula · alt çene boynu",
-  "fact": "Kırık sık; n. auriculotemporalis ve a. maxillaris komşu.",
+  "fact": "Kırık sık; n. auriculotemporalis ve a. maxillaris komşu. Fovea pterygoidea’ya m. pterygoideus lateralis tutunur.",
   "shape": "patch",
   "anatomicalType": "part",
   "source": "yapilar-taslak.md:274; yapilar-denetim.md applied; BP3D anatomical definition",
@@ -2854,7 +2854,7 @@ export const landmarks = [
    "52735"
   ],
   "clue": "os occipitale · büyük delik",
-  "fact": "Medulla spinalis–medulla oblongata geçişi, aa. vertebrales, aa. spinales anteriores ve n. accessorius'un spinal kökleri.",
+  "fact": "Medulla spinalis–medulla oblongata geçişi, aa. vertebrales, aa. spinales anteriores ve n. accessorius'un spinal kökleri. Aa. spinales posteriores ve meninksler; membrana tectoria, lig. apicis dentis ve ligg. alaria ilişkileri de önemlidir.",
   "shape": "patch",
   "anatomicalType": "opening",
   "source": "yapilar-taslak.md:103; yapilar-denetim.md applied; full-source geometry/ray audit v29",
@@ -2919,7 +2919,7 @@ export const landmarks = [
    "52739"
   ],
   "clue": "os temporale · juguler delik",
-  "fact": "Ön (sinir) parça: n. IX ve sinus petrosus inferior. Arka (ven) parça: n. X, n. XI, v. jugularis interna, a. meningea posterior.",
+  "fact": "N. IX, X, XI, sinus petrosus inferior, sinus sigmoideus’un v. jugularis interna’ya devamı ve meningeal damarlar geçer (kaynaklara göre bölümlenme değişir). Os temporale ile os occipitale arasındadır.",
   "shape": "patch",
   "anatomicalType": "opening",
   "source": "yapilar-taslak.md:51; yapilar-denetim.md applied; full-source geometry/ray audit v29",
@@ -2951,7 +2951,7 @@ export const landmarks = [
    "52736"
   ],
   "clue": "os sphenoidale · yırtık delik",
-  "fact": "Canlıda fibrokartilaj ile doludur; a. carotis interna buradan geçmez. N. petrosus major üstünden geçer.",
+  "fact": "Os sphenoidale, pars petrosa ossis temporalis ve pars basilaris ossis occipitalis arasındadır. Canlıda kıkırdakla kapalıdır; a. carotis interna üstünden geçer, içinden geçmez.",
   "shape": "patch",
   "anatomicalType": "opening",
   "source": "yapilar-taslak.md:52; yapilar-denetim.md applied; full-source geometry/ray audit v29",

@@ -1,13 +1,13 @@
-import {bones} from './bones.js?v=2d5a341-20261111T153630630Z';
-import {muscles} from './muscles.js?v=2d5a341-20261111T153630630Z';
-import {nerves} from './nerves.js?v=2d5a341-20261111T153630630Z';
-import {vessels} from './vessels.js?v=2d5a341-20261111T153630630Z';
+import {bones} from './bones.js?v=bfbdb39-20261111T155240608Z';
+import {muscles} from './muscles.js?v=bfbdb39-20261111T155240608Z';
+import {nerves} from './nerves.js?v=bfbdb39-20261111T155240608Z';
+import {vessels} from './vessels.js?v=bfbdb39-20261111T155240608Z';
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
 export const muscleRegions=[{id:'all',label:'Tüm kaslar',short:'Tümü'},{id:'head',label:'Baş ve yüz',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'back',label:'Sırt',short:'Sırt'},{id:'chest',label:'Göğüs ve karın duvarı',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'},{id:'perineum',label:'Pelvis ve perine',short:'Perine'}];
 const neurovascularRegions=label=>[{id:'all',label,short:'Tümü'},{id:'head',label:'Baş ve kafa içi',short:'Baş'},{id:'neck',label:'Boyun',short:'Boyun'},{id:'trunk',label:'Göğüs ve karın',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Pelvis ve alt ekstremite',short:'Bacak'}];
 export const landmarks=[];
 let landmarkLoad;
-export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=2d5a341-20261111T153630630Z'),import('./landmarks-lower.js?v=2d5a341-20261111T153630630Z'),import('./landmarks-trunk.js?v=2d5a341-20261111T153630630Z'),import('./landmarks-skull.js?v=2d5a341-20261111T153630630Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
+export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=bfbdb39-20261111T155240608Z'),import('./landmarks-lower.js?v=bfbdb39-20261111T155240608Z'),import('./landmarks-trunk.js?v=bfbdb39-20261111T155240608Z'),import('./landmarks-skull.js?v=bfbdb39-20261111T155240608Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
 // Add a data import and an entry here to register another module throughout the app.
 // Existing progress keys and day prefixes are intentional compatibility contracts.
 export const moduleRegistry={

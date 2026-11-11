@@ -237,7 +237,7 @@ export const landmarks = [
    "13396"
   ],
   "clue": "scapula · karga gagası çıkıntısı",
-  "fact": "Kısa biseps başı ve korakobrakiyal kas buradan başlar.",
+  "fact": "Kısa biseps başı ve korakobrakiyal kas buradan başlar. M. pectoralis minor insertiosu; ligg. coracoclaviculare, coracoacromiale ve coracohumerale tutunur.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1159; Z-Anatomy Startup.blend: Coracoid process.j; yapilar-denetim.md applied (v25)",
   "ta2": 1159,
@@ -527,7 +527,7 @@ export const landmarks = [
    "13396"
   ],
   "clue": "scapula · alt açı",
-  "fact": "Kürek kemiğinin alt ucunu oluşturur.",
+  "fact": "Kürek kemiğinin alt ucunu oluşturur. T7 hizasındadır.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1167; Z-Anatomy Startup.blend: Inferior angle of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1167,
@@ -564,7 +564,7 @@ export const landmarks = [
    "13396"
   ],
   "clue": "scapula · üst açı",
-  "fact": "Levator scapulae üst açı ve komşu medial kenara tutunur.",
+  "fact": "Levator scapulae üst açı ve komşu medial kenara tutunur. T2 hizasındadır.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1156; Z-Anatomy Startup.blend: Superior angle of scapula.j; yapilar-denetim.md applied (v25)",
   "ta2": 1156,
@@ -1387,7 +1387,7 @@ export const landmarks = [
  {
   "id": "landmark-1211",
   "latin": "caput radii",
-  "tr": "ışın kemiği başı",
+  "tr": "döner kemik başı",
   "aliases": [],
   "parentBone": "radius",
   "parentLatin": "radius",
@@ -1400,7 +1400,7 @@ export const landmarks = [
    "23464",
    "23465"
   ],
-  "clue": "radius · ışın kemiği başı",
+  "clue": "radius · döner kemik başı",
   "fact": "Humerus başçığı ve ulna ile eklemleşir.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1211; Z-Anatomy Startup.blend: Head of radius.j; yapilar-denetim.md applied (v25)",
@@ -1417,12 +1417,15 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "surface"
+  "anatomicalType": "surface",
+  "trAliases": [
+   "ışın kemiği başı"
+  ]
  },
  {
   "id": "landmark-1214",
   "latin": "collum radii",
-  "tr": "ışın kemiği boynu",
+  "tr": "döner kemik boynu",
   "aliases": [],
   "parentBone": "radius",
   "parentLatin": "radius",
@@ -1435,7 +1438,7 @@ export const landmarks = [
    "23464",
    "23465"
   ],
-  "clue": "radius · ışın kemiği boynu",
+  "clue": "radius · döner kemik boynu",
   "fact": "Başın hemen distalindeki dar bölgedir.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1214; Z-Anatomy Startup.blend: Neck of radius.j; yapilar-denetim.md applied (v25)",
@@ -1452,12 +1455,15 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "part"
+  "anatomicalType": "part",
+  "trAliases": [
+   "ışın kemiği boynu"
+  ]
  },
  {
   "id": "landmark-1216",
   "latin": "tuberositas radii",
-  "tr": "ışın kemiği pürtüklülüğü",
+  "tr": "döner kemik pürtüklülüğü",
   "aliases": [
    "tuberculum radii"
   ],
@@ -1472,7 +1478,7 @@ export const landmarks = [
    "23464",
    "23465"
   ],
-  "clue": "radius · ışın kemiği pürtüklülüğü",
+  "clue": "radius · döner kemik pürtüklülüğü",
   "fact": "Biseps tendonu buraya tutunur.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1216; Z-Anatomy Startup.blend: Radial tuberosity.j; yapilar-denetim.md applied (v25)",
@@ -1489,7 +1495,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "surface"
+  "anatomicalType": "surface",
+  "trAliases": [
+   "ışın kemiği pürtüklülüğü"
+  ]
  },
  {
   "id": "landmark-1225",
@@ -1526,7 +1535,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "projection"
+  "anatomicalType": "projection",
+  "trAliases": [
+   "radial stiloid çıkıntı"
+  ]
  },
  {
   "id": "landmark-1226",
@@ -1565,7 +1577,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "projection"
+  "anatomicalType": "projection",
+  "trAliases": [
+   "sırt tümseği"
+  ]
  },
  {
   "id": "landmark-1228",
@@ -1602,7 +1617,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "band"
+  "anatomicalType": "band",
+  "trAliases": [
+   "ulnar çentik"
+  ]
  },
  {
   "id": "landmark-1212",
@@ -1639,7 +1657,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "surface"
+  "anatomicalType": "surface",
+  "trAliases": [
+   "radius başının eklem çukurcuğu"
+  ]
  },
  {
   "id": "landmark-1213",
@@ -1676,7 +1697,10 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "surface"
+  "anatomicalType": "surface",
+  "trAliases": [
+   "radius başının eklem çevresi"
+  ]
  },
  {
   "id": "landmark-1231",
@@ -1973,7 +1997,7 @@ export const landmarks = [
  {
   "id": "landmark-1260",
   "latin": "hamulus ossis hamati",
-  "tr": "çengelli kemiğin çengeli",
+  "tr": "çengel kemiğinin çengeli",
   "aliases": [
    "hamulus hamati"
   ],
@@ -1988,7 +2012,7 @@ export const landmarks = [
    "24448",
    "24449"
   ],
-  "clue": "os hamatum · çengelli kemiğin çengeli",
+  "clue": "os hamatum · çengel kemiğinin çengeli",
   "fact": "Guyon kanalının lateral sınırına katılır.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1260; Z-Anatomy Startup.blend: Hook of hamate bone.j; yapilar-denetim.md applied (v25)",
@@ -2005,7 +2029,11 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "projection"
+  "anatomicalType": "projection",
+  "trAliases": [
+   "çengelli kemiğin çengeli",
+   "çengel kemiğinin çengeli"
+  ]
  },
  {
   "id": "landmark-1251",
@@ -2047,7 +2075,7 @@ export const landmarks = [
  {
   "id": "landmark-1256",
   "latin": "tuberculum ossis trapezii",
-  "tr": "trapez kemiği tümseği",
+  "tr": "yamuk kemiği tümseği",
   "aliases": [
    "tuberculum trapezii"
   ],
@@ -2062,7 +2090,7 @@ export const landmarks = [
    "24443",
    "24444"
   ],
-  "clue": "os trapezium · trapez kemiği tümseği",
+  "clue": "os trapezium · yamuk kemiği tümseği",
   "fact": "Fleksör retinakulum bu tümseğe tutunur.",
   "shape": "patch",
   "source": "FIPAT TA2 (2019), Part 2, 1256; Z-Anatomy Startup.blend: Tubercle of trapezium bone.j; yapilar-denetim.md applied (v25)",
@@ -2079,7 +2107,11 @@ export const landmarks = [
    "segmentation": "analytic-primitives-v26"
   },
   "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "projection"
+  "anatomicalType": "projection",
+  "trAliases": [
+   "trapez kemiği tümseği",
+   "yamuk kemiği tümseği"
+  ]
  },
  {
   "id": "landmark-1270",
@@ -2091,7 +2123,7 @@ export const landmarks = [
    "processus styloideus metacarpi III"
   ],
   "parentBone": "metacarpals",
-  "parentLatin": "os tertium metacarpi",
+  "parentLatin": "os metacarpi III",
   "stage": 3,
   "level": 3,
   "module": "landmarks",

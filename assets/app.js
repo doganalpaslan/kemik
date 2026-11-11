@@ -1,11 +1,12 @@
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=2d5a341-20261111T153630630Z';
-import {startPWA,resetProgress} from './pwa.js?v=2d5a341-20261111T153630630Z';
-import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=2d5a341-20261111T153630630Z';
-import {moduleDom} from './module-registry.js?v=2d5a341-20261111T153630630Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=2d5a341-20261111T153630630Z';
-import {BASE_URL} from './config.js?v=2d5a341-20261111T153630630Z';
-import {notesForDay} from './study.js?v=2d5a341-20261111T153630630Z';
-import {GameSound} from './sound.js?v=2d5a341-20261111T153630630Z';
+import {chapters,sections,sectionByNumber,sectionStatus,recommendedSection,dailySection,mergeLumbarProgress} from './course.js?v=bfbdb39-20261111T155240608Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=bfbdb39-20261111T155240608Z';
+import {startPWA,resetProgress} from './pwa.js?v=bfbdb39-20261111T155240608Z';
+import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=bfbdb39-20261111T155240608Z';
+import {moduleDom} from './module-registry.js?v=bfbdb39-20261111T155240608Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=bfbdb39-20261111T155240608Z';
+import {BASE_URL} from './config.js?v=bfbdb39-20261111T155240608Z';
+import {notesForDay} from './study.js?v=bfbdb39-20261111T155240608Z';
+import {GameSound} from './sound.js?v=bfbdb39-20261111T155240608Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -15,23 +16,25 @@ function write(key,value){memory.set(key,value);try{localStorage.setItem(key,JSO
 let date=localDate();let prefs={...read('gk2:preferences',{upper:false,sound:true}),mode:read('gk2:preferences',{}).mode==='tr'?'tr':'latin'};
 const fresh=()=>({round:0,index:0,typed:'',done:false,errors:0,keystrokes:0,correctKeys:0,attempts:0,first:0,misses:{},round3Misses:{},hints:{},between:false,questionErrors:0,round3Errors:0,started:Date.now(),elapsed:0});
 prefs.module=Object.hasOwn(moduleRegistry,prefs.module)?prefs.module:'bones';
-await pwaReady;await loadModule(prefs.module);
+let activeSection=sectionByNumber(new URLSearchParams(location.hash.split('?')[1]||'').get('bolum'));
+if(activeSection)prefs.module=activeSection.module;
+await pwaReady;await loadModule('bones');await loadModule(prefs.module);
 const activeModule=()=>getModule(prefs.module);
 for(const selector of ['#home-module','#game-module']){const select=$(selector);select.replaceChildren(...modules.map(m=>{const option=document.createElement('option');option.value=m.id;option.textContent=m.label;return option}));}
 $('.modules').replaceChildren(...modules.map(m=>{const card=document.createElement('article');card.className='module';card.id='module-'+m.id;const ids=moduleDom(m.id);card.innerHTML=`<div class="module-heading"><h3><button data-module="${m.id}">${m.label}</button></h3><span>Günlük çalışma</span></div><p id="${ids.progress}"></p><progress id="${ids.meter}" max="1" value="0" aria-label="${m.label} öğrenme durumu"></progress><div id="${ids.regions}" class="region-chips"></div>`;return card}));
 let regions=regionsFor(prefs.module),units=unitsFor(prefs.module);
-const dailyBones=(date,region,progress)=>selectDaily(date,region,progress,prefs.module);
+const dailyBones=(date,region,progress)=>activeSection?dailySection(date,activeSection,progress):selectDaily(date,region,progress,prefs.module);
 const progressFor=(region,progress)=>moduleProgress(region,progress,prefs.module);
 const progressKey=()=>activeModule().progressKey;
 const noun=()=>activeModule().noun;
-const title=()=>activeModule().title;
+const title=()=>activeSection?`${activeSection.number} ${activeSection.title}`:activeModule().title;
 prefs.region=regions.some(r=>r.id===prefs.region)?prefs.region:'all';
 const landmarkKey='gk2:curriculum:landmarks:v22';
 function readProgress(module=prefs.module){
  const stored=read(getModule(module).progressKey,{});const base=stored&&typeof stored==='object'&&!Array.isArray(stored)?stored:{};
  if(!getModule(module).staged)return base;
  const structures=read(landmarkKey,{})||{};
- return {...base,cards:base.cards?{...base.cards,...structures.cards}:undefined,history:{...base.history,...structures.history},unlocks:structures.unlocks||{}};
+ return mergeLumbarProgress({...base,cards:base.cards?{...base.cards,...structures.cards}:undefined,history:{...base.history,...structures.history},unlocks:structures.unlocks||{}});
 }
 function saveProgress(){
  if(!activeModule().staged){write(progressKey(),progress);return;}
@@ -43,11 +46,12 @@ function saveProgress(){
 let progress=readProgress();
 if(!progress||typeof progress!=='object'||Array.isArray(progress))progress={learned:{},history:{}};
 if(activeModule().staged&&!progress.migratedV4){const records={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith('gk2:v4:'))records[key]=read(key,null);}}catch{}migrateLegacy(progress,records);}
-migrateCards(progress,date);if(activeModule().staged)Object.assign(progress.cards,read(landmarkKey,{})?.cards);
-const stateKey=()=>`${activeModule().dayPrefix}:${date}:${prefs.region}`;
+migrateCards(progress,date);if(activeModule().staged){Object.assign(progress.cards,read(landmarkKey,{})?.cards);mergeLumbarProgress(progress);}
+const stateKey=()=>activeSection?`gk2:course:v31:${date}:${activeSection.number}`:`${activeModule().dayPrefix}:${date}:${prefs.region}`;
 function loadDay(){
  const stored=read(stateKey(),null);
- if(stored&&Array.isArray(stored.units)&&stored.units.length>0&&stored.units.length<=8&&new Set(stored.units).size===stored.units.length&&stored.units.every(id=>units.some(b=>b.id===id))&&Number.isInteger(stored.round)&&stored.round>=0&&stored.round<=2&&Number.isInteger(stored.index)&&stored.index>=0&&stored.index<(stored.queues?.[stored.round]?.length||8)&&typeof stored.typed==='string'&&stored.misses&&typeof stored.misses==='object')return {...fresh(),...stored};
+ if(stored?.units){stored.units=stored.units.map(id=>id==='landmark-v24-315'?'landmark-v24-353':id);for(const queue of Object.values(stored.queues||{}))for(const item of queue)if(item.id==='landmark-v24-315')item.id='landmark-v24-353';}
+ if(stored&&Array.isArray(stored.units)&&stored.units.length>0&&stored.units.length<=8&&new Set(stored.units).size===stored.units.length&&stored.units.every(id=>units.some(b=>b.id===id)&&(!activeSection||activeSection.items.some(b=>b.id===id)))&&Number.isInteger(stored.round)&&stored.round>=0&&stored.round<=2&&Number.isInteger(stored.index)&&stored.index>=0&&stored.index<(stored.queues?.[stored.round]?.length||8)&&typeof stored.typed==='string'&&stored.misses&&typeof stored.misses==='object')return {...fresh(),...stored};
  // Preserve old partial days untouched; their question IDs differ from the new curriculum.
  const selected=dailyBones(date,prefs.region,progress).map(b=>b.id);return {...fresh(),units:selected,done:!selected.length};
 }
@@ -129,7 +133,7 @@ window.visualViewport?.addEventListener('resize',fitViewport);
 window.visualViewport?.addEventListener('scroll',fitViewport);
 window.addEventListener('resize',fitViewport);fitViewport();
 for(const event of ['pointerdown','keydown'])document.addEventListener(event,()=>sound.unlock(),{capture:true});
-const queue=()=>{state.queues??={};return state.queues[state.round]??=roundBones(date,state.round,dayUnits()).map(b=>({id:b.id,practice:false}));};
+const queue=()=>{state.queues??={};return state.queues[state.round]??=(activeSection?dayUnits():roundBones(date,state.round,dayUnits())).map(b=>({id:b.id,practice:false}));};
 const current=()=>units.find(b=>b.id===queue()[state.index].id);
 const isPractice=()=>!!queue()[state.index].practice;
 const name=b=>prefs.mode==='latin'?b.latin:b.tr;
@@ -139,7 +143,7 @@ const display=s=>prefs.upper?s.toLocaleUpperCase(prefs.mode==='tr'?'tr-TR':'en-U
 function save(){write(stateKey(),state);saveProgress();write('gk2:preferences',prefs)}
 function streak(){const s=read('gk2:streak',{count:0,last:null});return s.last&&(dayNumber(date)-dayNumber(s.last)<=1)?s.count:0;}
 function paint(){
- $('#game-title').textContent=title();document.title=title()+' · DocBrain';$('#game-module').value=prefs.module;$('#home-module').value=prefs.module;
+ document.body.dataset.section=activeSection?'true':'false';$('#game-title').textContent=route==='/'?'İçindekiler':title();document.title=(route==='/'?'İçindekiler':title())+' · DocBrain';$('#game-module').value=prefs.module;$('#home-module').value=prefs.module;$('#game-module').hidden=!!activeSection;$('.region-picker').hidden=!!activeSection;
  $('#game').setAttribute('aria-label',noun()+' adlandırma oyunu');$('#phone-input').setAttribute('aria-label',noun()+' adını yazın');
  $('#region-label').textContent=regions.find(r=>r.id===prefs.region)[matchMedia('(max-width:600px)').matches?'short':'label'];
  document.querySelectorAll('[data-region]').forEach(el=>el.setAttribute('aria-selected',String(el.dataset.region===prefs.region)));
@@ -154,7 +158,7 @@ function paint(){
  $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between||prefs.keyboard==='phone';
  $('#keyboard-switch').hidden=!!state.between;
  if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?`${state.units.length} ${activeModule().accusative} gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${activeModule().label} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
- const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;saveProgress();$('#round').textContent=`Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
+ const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;saveProgress();$('#round').textContent=`${activeSection?'Düzey '+activeSection.items.find(i=>i.id===b.id).tier+' · ':''}Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
  renderAnswer();$('#translation').textContent=state.round===1?b.clue:state.round===0?(prefs.mode==='tr'?b.latin:b.tr):'';
  $('#explanation').textContent=state.round===0||submitted?b.fact:'';
  skull?.setBone(b,state.round);buildKeyboard();
@@ -240,6 +244,7 @@ $('#hint').onclick=()=>{act('Tab');if(prefs.keyboard==='phone')focusAnswer()};
 function renderResults(){
  const total=state.keystrokes||1,accuracy=Math.round(state.correctKeys/total*100),first=firstTryPercent(state),wpm=Math.round(state.correctKeys/5/Math.max(state.elapsed/60000,.1));const host=$('#results');host.replaceChildren();
  const add=(tag,text,cls,parent=host)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;parent.append(el);return el};
+ if(activeSection){const st=sectionStatus(activeSection,progress);add('p',`${activeSection.number} ${activeSection.title} · ${st.count}/${st.total} öğrenildi`);const nextSection=sections[sections.indexOf(activeSection)+1];const link=add('a','İçindekilere dön','text-button');link.href='#/';if(st.complete&&nextSection){const next=add('button',`Önerilen sıradaki bölüm · ${nextSection.number} ${nextSection.title}`,'primary');next.onclick=()=>openSection(nextSection);}}
  if(!state.units.length){add('h2','Bugün için tekrar yok.');add('p','Yeni adım açabilir veya tekrar zamanı geldiğinde dönebilirsiniz.');return;}
  add('p',`Gün tamamlandı · ${date}`,'eyebrow');add('h2',`Bugünün ${state.units.length} ${activeModule().accusative} üç turda çalıştınız.`);
  const nextDue=dueSummary(progress,state.units,date)[0];
@@ -262,6 +267,7 @@ $('#keyboard').addEventListener('click',e=>{const button=e.target.closest('[data
 document.addEventListener('keydown',e=>{if(route!=='/oyun'||document.querySelector('dialog[open]'))return;if(e.target===$('#phone-input')){if(e.key==='Enter'&&!e.isComposing&&!composing&&!pendingComposition){e.preventDefault();act('Enter')}return}if(e.isComposing||$('#instructions').open||e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.closest('nav')||e.target.closest('#results')||e.target.closest('footer')||e.target.closest('#install-hint'))return;if(e.key==='Tab')return;if(e.target.closest('a,button,select,textarea,input')&&['Enter',' '].includes(e.key))return;if(e.key===' '||e.key==='Enter'||e.key==='Backspace'||e.key.length===1){e.preventDefault();act(e.key)}});
 const regionButton=$('#region'),regionMenu=$('#region-menu');
 function rebuildRegions(){regionMenu.replaceChildren();$('#setting-region').replaceChildren();for(const r of regions){const o=document.createElement('option');o.value=r.id;o.textContent=r.label;$('#setting-region').append(o);const option=document.createElement('button');option.type='button';option.role='option';option.dataset.region=r.id;option.textContent=r.label;option.onclick=()=>{
+ if(activeSection){save();activeSection=null;state=loadDay();}
  clearTimeout(timer);if(busy){submitted=false;next();}save();prefs.region=r.id;state=loadDay();busy=false;submitted=false;
  $('#game').classList.remove('transitioning','dissolving');$('#feedback').textContent='';
  regionMenu.hidden=true;regionButton.setAttribute('aria-expanded','false');save();paint();regionButton.focus();
@@ -288,7 +294,25 @@ async function shareResults(button,accuracy){
 function reviewDay(){location.hash='/oyun';requestAnimationFrame(()=>{renderResults();$('#review-cards')?.focus();$('#review-cards')?.scrollIntoView({behavior:'instant'});});}
 $('#review-day').onclick=reviewDay;
 const stage=$('#stage');
+function coursePaint(){
+ const progressByModule=Object.fromEntries(modules.map(m=>[m.id,m.id===prefs.module?progress:readProgress(m.id)]));
+ const recommended=recommendedSection(progressByModule),host=$('#course-recommendation');host.replaceChildren();
+ if(recommended){const st=sectionStatus(recommended,progressByModule[recommended.module]);const copy=document.createElement('p');copy.textContent=`Önerilen bölüm · ${recommended.number} ${recommended.title} · ${st.count}/${st.total} öğrenildi. Düzeyler: ${st.tiers.map(t=>t.tier+' '+(t.open?'açık':'kilitli')).join(' · ')}`;const button=document.createElement('button');button.id='course-continue';button.className='primary';button.textContent='Devam et';button.onclick=()=>openSection(recommended);host.append(copy,button);}else{host.textContent='Tüm bölümler öğrenildi. Tekrar için istediğiniz bölümü açın.';}
+ const list=$('#course-chapters');list.replaceChildren();
+ for(const chapter of chapters){const article=document.createElement('article');article.className='course-chapter';const h=document.createElement('h3');h.textContent=`${chapter.number}. ${chapter.title}`;article.append(h);
+ if(chapter.soon){const p=document.createElement('p');p.className='muted';p.textContent='Yakında';article.append(p);}
+ for(const section of sections.filter(s=>s.number.split('.')[0]===chapter.number)){const st=sectionStatus(section,progressByModule[section.module]),row=document.createElement('div');row.className='course-row';row.dataset.section=section.number;if(section===recommended)row.classList.add('recommended');const a=document.createElement('a');a.href=`#/oyun?bolum=${section.number}`;a.textContent=`${section.number} ${section.title}`;a.onclick=e=>{e.preventDefault();openSection(section)};const detail=document.createElement('span');detail.textContent=`${st.total} yapı · %${st.percent} öğrenildi`;const meter=document.createElement('progress');meter.max=st.total||1;meter.value=st.count;meter.setAttribute('aria-label',`${section.number} ${section.title}: ${st.count}/${st.total} öğrenildi`);row.append(a,detail,meter);article.append(row);}
+ list.append(article);}
+}
+$('#home-start').onclick=()=>{if(activeSection){save();activeSection=null;state=loadDay();save();paint();}};
+async function openSection(section){
+ clearTimeout(timer);if(busy){submitted=false;next();}save();busy=false;submitted=false;
+ await loadModule(section.module);prefs.module=section.module;activeSection=section;regions=regionsFor(prefs.module);units=unitsFor(prefs.module);prefs.region='all';progress=readProgress();migrateCards(progress,date);state=loadDay();rebuildRegions();save();
+ $('#game').classList.remove('transitioning','dissolving');$('#feedback').textContent='';
+ const hash=`#/oyun?bolum=${section.number}`;if(location.hash!==hash)location.hash=hash;applyRoute();
+}
 function homePaint(){
+ coursePaint();
  const started=state.round>0||state.index>0||!!state.typed;
  const lesson=state.units.map(id=>units.find(b=>b.id===id)),onlyBones=lesson.every(b=>b&&!b.parentBone),onlyLandmarks=lesson.every(b=>b?.parentBone);
  const readyNoun=activeModule().staged?(onlyBones?'kemiği':onlyLandmarks?'yapısı':'soru'):activeModule().ready;
@@ -332,11 +356,12 @@ function homePaint(){
  }
 }
 async function switchModule(module){
+ if(activeSection){save();activeSection=null;state=loadDay();}
  await loadModule(module);
- if(module===prefs.module){units=unitsFor(module);return;}
+ if(module===prefs.module){units=unitsFor(module);save();paint();return;}
  clearTimeout(timer);if(busy){submitted=false;next();}busy=false;submitted=false;save();
  prefs.module=module;regions=regionsFor(module);units=unitsFor(module);prefs.region='all';
- progress=readProgress();migrateCards(progress,date);if(activeModule().staged)Object.assign(progress.cards,read(landmarkKey,{})?.cards);state=loadDay();
+ progress=readProgress();migrateCards(progress,date);if(activeModule().staged){Object.assign(progress.cards,read(landmarkKey,{})?.cards);mergeLumbarProgress(progress);}state=loadDay();
  $('#game').classList.remove('transitioning','dissolving');$('#feedback').textContent='';regionMenu.hidden=true;regionButton.setAttribute('aria-expanded','false');
  rebuildRegions();save();paint();if(route==='/')skull?.setBone(heroBone(),0);else focusAnswer();
 }
@@ -356,7 +381,10 @@ $('#settings-reset').append($('#reset-area'));
 $('#home-help').onclick=()=>$('#instructions').showModal();
 function heroBone(){return dayUnits()[0]||bones.find(b=>prefs.region==='all'||b.curriculumRegion===prefs.region)||bones[0]}
 function applyRoute(focus=true){
- const requested=location.hash.slice(1)||'/';route=['/','/oyun','/ayarlar','/hakkinda'].includes(requested)?requested:'/';
+ const raw=location.hash.slice(1)||'/';const requested=raw.split('?')[0];
+ const section=sectionByNumber(new URLSearchParams(raw.split('?')[1]||'').get('bolum'));
+ if(section&&section!==activeSection){openSection(section);return;}
+ route=['/','/oyun','/ayarlar','/hakkinda'].includes(requested)?requested:'/';
  document.body.dataset.route=route;
  $('#home').hidden=route!=='/';$('#settings').hidden=route!=='/ayarlar';$('#about').hidden=route!=='/hakkinda';
  $('#home-link').hidden=route==='/';$('.topbar nav').hidden=route!=='/oyun';
@@ -364,20 +392,20 @@ function applyRoute(focus=true){
  if(route==='/'){homePaint();skull?.setBone(heroBone(),0)}
  if(route==='/ayarlar'){syncSettings();$('#reset-confirmation').hidden=true;$('#reset-progress').hidden=false}
  paint();
- if(focus){const title=$(route==='/'?'#home-title':route==='/ayarlar'?'#settings-title':route==='/hakkinda'?'#about-title':'#answer');title?.focus({preventScroll:true})}
+ if(focus){const title=$(route==='/'?'#contents-title':route==='/ayarlar'?'#settings-title':route==='/hakkinda'?'#about-title':'#answer');title?.focus({preventScroll:true})}
  if(route==='/'||route==='/oyun')loadRenderer();
 }
 async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=2d5a341-20261111T153630630Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=bfbdb39-20261111T155240608Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());
 const steps=[['Tur 1 · Gör ve yaz','Kırmızı yapıyı inceleyin. Adını görerek yazın. Doğru yazınca kendiliğinden geçer.','os frontale'],['Tur 2 · İlk harf ve ipucu','İlk harften hatırlayın. Gerekirse ipucu isteyin.','os f…'],['Tur 3 · Ezberden, öbür taraftan','Kemiği farklı açıdan tanıyın. Adını bu kez ezberden yazın.','…']];let onboardingStep=0;
 function onboardingPaint(){const [title,copy,example]=steps[onboardingStep];$('#onboarding-title').textContent=title;$('#onboarding-copy').textContent=copy;$('#onboarding-example').textContent=example;$('#onboarding-count').textContent=`${onboardingStep+1} / 3`;$('#onboarding-next').textContent=onboardingStep===2?'Hazırım':'Sonraki'}
-function closeOnboarding(){write('gk2:onboarded',true);$('#onboarding').close();$('#home-start').focus()}
+function closeOnboarding(){write('gk2:onboarded',true);$('#onboarding').close();$('#course-continue')?.focus()}
 $('#onboarding-next').onclick=()=>{if(onboardingStep===2)closeOnboarding();else{onboardingStep++;onboardingPaint()}};$('#onboarding-skip').onclick=closeOnboarding;
 $('#onboarding').addEventListener('cancel',e=>{e.preventDefault();closeOnboarding()});
 save();applyRoute(false);document.body.dataset.shellReady='true';

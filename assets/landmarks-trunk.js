@@ -205,40 +205,6 @@ export const landmarks = [
   "anatomicalType": "projection"
  },
  {
-  "id": "landmark-v24-315",
-  "latin": "processus transversus",
-  "tr": "enine çıkıntı",
-  "aliases": [],
-  "parentBone": "lumbar",
-  "parentLatin": "vertebrae lumbales",
-  "stage": 1,
-  "level": 1,
-  "module": "landmarks",
-  "curriculumRegion": "trunk",
-  "region": "trunk",
-  "meshes": [
-   "13074"
-  ],
-  "clue": "vertebrae lumbales · lomber (L3) · enine çıkıntı",
-  "fact": "Kas ve bağ tutunması; torakal omurda fovea costalis processus transversi.",
-  "shape": "patch",
-  "source": "yapilar-taslak.md:315; Z-Anatomy Startup.blend: Transverse process.j; yapilar-denetim.md applied (v25)",
-  "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
-  "placement": {
-   "method": "z-anchor-surface-patch",
-   "object": "Transverse process.j",
-   "anchorVertex": 1,
-   "radiiMm": [
-    5,
-    5,
-    5
-   ],
-   "segmentation": "analytic-primitives-v26"
-  },
-  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy anchors · CC BY-SA 4.0",
-  "anatomicalType": "projection"
- },
- {
   "id": "landmark-v24-316",
   "latin": "processus articularis superior",
   "tr": "üst eklem çıkıntısı",
@@ -811,7 +777,7 @@ export const landmarks = [
    "12522"
   ],
   "clue": "vertebrae cervicales · servikal (C4) · enine çıkıntının ön tüberkülü",
-  "fact": "M. scalenus anterior, m. longus capitis, m. longus colli tutunur.",
+  "fact": "M. scalenus anterior, m. longus capitis, m. longus colli tutunur. C6’da tuberculum caroticum adını alır.",
   "shape": "patch",
   "source": "yapilar-taslak.md:340; Z-Anatomy Startup.blend: Anterior tubercle of transverse process.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -1026,7 +992,7 @@ export const landmarks = [
    "13074"
   ],
   "clue": "vertebrae lumbales · lomber (L3) · kaburgamsı çıkıntı",
-  "fact": "Lomber 'enine çıkıntı' aslında kosta rudimenti; m. quadratus lumborum tutunur.",
+  "fact": "Lomber omurun kostal elemanı olan yan çıkıntısıdır; processus transversus adıyla da anılır. Kas ve bağların tutunma yeridir.",
   "shape": "patch",
   "source": "yapilar-taslak.md:353; Z-Anatomy Startup.blend: Costal part of transverse process.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",

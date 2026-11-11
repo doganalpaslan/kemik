@@ -412,7 +412,7 @@ export const muscles = [
   "tr": "temporoparietal kas",
   "level": 3,
   "clue": "kulak kepçesinin üstünde, saçlı deride",
-  "fact": "İşlev: Kulak kepçesinin hareketine katılır.",
+  "fact": "İşlev: Galea aponeurotica’yı gerer; kulak kepçesini hafifçe kaldırır.",
   "meshes": [
    "46763",
    "46764"
@@ -461,7 +461,10 @@ export const muscles = [
   "module": "muscles",
   "source": "muscles-neck",
   "aliases": [],
-  "angle": 0.15
+  "angle": 0.15,
+  "trAliases": [
+   "göğüs-köprücük-meme kası"
+  ]
  },
  {
   "id": "muscle-scalenus-anterior",
@@ -1716,7 +1719,7 @@ export const muscles = [
   "tr": "diken üstü kas",
   "level": 1,
   "clue": "skapula dikeninin üstündeki çukurda",
-  "fact": "İşlev: Kol abduksiyonunun başlangıcına yardım eder.",
+  "fact": "İşlev: Kol abduksiyonunun başlangıcına yardım eder. Abduksiyonun ilk yaklaşık 15°’sini başlatır; hareket boyunca da aktiftir.",
   "meshes": [
    "32544",
    "32545"
@@ -1832,7 +1835,7 @@ export const muscles = [
   "tr": "kol kası",
   "level": 1,
   "clue": "kolun önünde, bicepsin derininde",
-  "fact": "İşlev: Ön kolun pozisyonundan bağımsız olarak dirseğe fleksiyon yaptırır.",
+  "fact": "İşlev: Ön kolun pozisyonundan bağımsız olarak dirseğe fleksiyon yaptırır. Dirseğin ana ve güçlü fleksörüdür.",
   "meshes": [
    "37668",
    "37669"
@@ -2620,7 +2623,9 @@ export const muscles = [
   "context": "pelvis",
   "module": "muscles",
   "source": "muscles-lower",
-  "aliases": [],
+  "aliases": [
+   "m. obturatorius internus"
+  ],
   "angle": 0.15
  },
  {
@@ -2639,7 +2644,9 @@ export const muscles = [
   "context": "pelvis",
   "module": "muscles",
   "source": "muscles-lower",
-  "aliases": [],
+  "aliases": [
+   "m. obturatorius externus"
+  ],
   "angle": 0.15
  },
  {
@@ -2897,7 +2904,7 @@ export const muscles = [
   "tr": "uyluğun iki başlı kası",
   "level": 1,
   "clue": "uyluğun arka dış yanında",
-  "fact": "İşlev: Dizi büker. Uzun baş kalçayı eğer. Diz bükülüyken bacağa dış rotasyon yaptırır. Uzun baş n. ischiadicus’un tibial bölümü, kısa baş fibular bölümü.",
+  "fact": "İşlev: Dizi büker. Uzun baş kalçaya ekstansiyon yaptırır. Diz bükülüyken bacağa dış rotasyon yaptırır. Uzun baş n. ischiadicus’un tibial bölümü, kısa baş fibular bölümü.",
   "meshes": [
    "45888",
    "45889",
@@ -3138,7 +3145,7 @@ export const muscles = [
   "tr": "diz ardı kası",
   "level": 2,
   "clue": "Diz çukurunun tabanında, tibia arka yüzünde.",
-  "fact": "İşlev: Yük taşıyan dizde femuru dışa döndürerek ekstansiyon kilidini açar.",
+  "fact": "İşlev: Yük taşıyan dizde femuru dışa döndürerek ekstansiyon kilidini açar. N. tibialis tarafından innerve edilir.",
   "meshes": [
    "22591",
    "22592"
@@ -3637,7 +3644,7 @@ export const muscles = [
  },
  {
   "id": "muscle-rectus-lateralis",
-  "latin": "m. rectus lateralis bulbi oculi",
+  "latin": "m. rectus lateralis",
   "tr": "gözün dış düz kası",
   "level": 2,
   "clue": "göz küresinin lateral yüzünde",
@@ -3653,7 +3660,8 @@ export const muscles = [
   "source": "muscles-head",
   "aliases": [
    "m. rectus lateralis",
-   "m. rectus lateralis bulbi"
+   "m. rectus lateralis bulbi",
+   "m. rectus lateralis bulbi oculi"
   ],
   "angle": 0.15,
   "sourceURLs": [
@@ -3664,7 +3672,7 @@ export const muscles = [
  },
  {
   "id": "muscle-obliquus-superior",
-  "latin": "m. obliquus superior bulbi oculi",
+  "latin": "m. obliquus superior",
   "tr": "gözün üst eğik kası",
   "level": 2,
   "clue": "orbitanın üst iç yanında; tendonu trokleadan geçer",
@@ -3680,7 +3688,8 @@ export const muscles = [
   "source": "muscles-head",
   "aliases": [
    "m. obliquus superior",
-   "m. obliquus superior bulbi"
+   "m. obliquus superior bulbi",
+   "m. obliquus superior bulbi oculi"
   ],
   "angle": 0.15,
   "sourceURLs": [
@@ -3691,7 +3700,7 @@ export const muscles = [
  },
  {
   "id": "muscle-obliquus-inferior",
-  "latin": "m. obliquus inferior bulbi oculi",
+  "latin": "m. obliquus inferior",
   "tr": "gözün alt eğik kası",
   "level": 2,
   "clue": "orbitanın ön iç tabanından göz küresinin altına uzanır",
@@ -3707,7 +3716,8 @@ export const muscles = [
   "source": "muscles-head",
   "aliases": [
    "m. obliquus inferior",
-   "m. obliquus inferior bulbi"
+   "m. obliquus inferior bulbi",
+   "m. obliquus inferior bulbi oculi"
   ],
   "angle": 0.15,
   "sourceURLs": [
@@ -3892,7 +3902,7 @@ export const muscles = [
  },
  {
   "id": "muscle-cricothyroideus",
-  "latin": "m. cricothyreoideus",
+  "latin": "m. cricothyroideus",
   "tr": "krikotiroid kas",
   "level": 2,
   "clue": "krikoid arkı ile tiroid kıkırdak arasında",
@@ -3909,7 +3919,8 @@ export const muscles = [
   "module": "muscles",
   "source": "muscles-head",
   "aliases": [
-   "m. cricothyroideus"
+   "m. cricothyroideus",
+   "m. cricothyreoideus"
   ],
   "angle": 0.15,
   "sourceURLs": [
@@ -3968,7 +3979,7 @@ export const muscles = [
  },
  {
   "id": "muscle-thyroarytenoideus",
-  "latin": "m. thyreoarytenoideus",
+  "latin": "m. thyroarytenoideus",
   "tr": "tiroaritenoid kas",
   "level": 3,
   "clue": "tiroid iç yüzü ile aritenoid arasında; vocalis medial bölümüdür Görsel dış ve tiroepiglottik parçaları gösterir; vocalis gösterilmez.",
@@ -3985,7 +3996,8 @@ export const muscles = [
   "module": "muscles",
   "source": "muscles-head",
   "aliases": [
-   "m. thyroarytenoideus"
+   "m. thyroarytenoideus",
+   "m. thyreoarytenoideus"
   ],
   "angle": 0.15,
   "sourceURLs": [

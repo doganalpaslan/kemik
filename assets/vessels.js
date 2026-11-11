@@ -6,11 +6,9 @@ export const vessels = [
   "latin": "aorta ascendens",
   "tr": "çıkan aort",
   "aliases": [
-   "aorta ascendens",
    "çıkan aort"
   ],
   "trAliases": [
-   "aorta ascendens",
    "çıkan aort"
   ],
   "level": 1,
@@ -74,11 +72,9 @@ export const vessels = [
   "latin": "aorta thoracica",
   "tr": "göğüs aortu",
   "aliases": [
-   "aorta thoracica",
    "göğüs aortu"
   ],
   "trAliases": [
-   "aorta thoracica",
    "göğüs aortu"
   ],
   "level": 1,
@@ -108,11 +104,9 @@ export const vessels = [
   "latin": "aorta abdominalis",
   "tr": "karın aortu",
   "aliases": [
-   "aorta abdominalis",
    "karın aortu"
   ],
   "trAliases": [
-   "aorta abdominalis",
    "karın aortu"
   ],
   "level": 1,
@@ -322,14 +316,12 @@ export const vessels = [
    "r. interventricularis anterior",
    "ön karıncıklar arası dal",
    "ramus interventricularis anterior",
-   "LAD",
    "a. interventricularis anterior"
   ],
   "trAliases": [
    "r. interventricularis anterior",
    "ön karıncıklar arası dal",
    "ramus interventricularis anterior",
-   "LAD",
    "a. interventricularis anterior"
   ],
   "level": 2,
@@ -362,14 +354,12 @@ export const vessels = [
    "r. circumflexus",
    "sirkumfleks dal",
    "ramus circumflexus",
-   "LCx",
    "r. circumflexus a. coronariae sinistrae"
   ],
   "trAliases": [
    "r. circumflexus",
    "sirkumfleks dal",
    "ramus circumflexus",
-   "LCx",
    "r. circumflexus a. coronariae sinistrae"
   ],
   "level": 2,
@@ -406,7 +396,7 @@ export const vessels = [
    "truncus coeliacus",
    "çölyak gövde"
   ],
-  "level": 2,
+  "level": 1,
   "curriculumRegion": "trunk",
   "region": "vessels-trunk",
   "context": "trunk",
@@ -455,7 +445,7 @@ export const vessels = [
    "znv-Left_gastric_artery"
   ],
   "clue": "midenin küçük eğriliğine",
-  "fact": "Çölyak gövdenin bir dalıdır.",
+  "fact": "Çölyak gövdenin en küçük dalıdır; küçük eğrilikte a. gastrica dextra ile anastomoz yapar ve özofagus dalları verir.",
   "source": "vessels-trunk",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
@@ -843,15 +833,15 @@ export const vessels = [
   "tr": "ileokolik atardamar",
   "aliases": [
    "a. ileocolica",
-   "kıvrım kör bağırsak atardamarı",
    "arteria ileocolica",
-   "ileokolik atardamar"
+   "ileokolik atardamar",
+   "kıvrım kör bağırsak atardamarı"
   ],
   "trAliases": [
    "a. ileocolica",
-   "kıvrım kör bağırsak atardamarı",
    "arteria ileocolica",
-   "ileokolik atardamar"
+   "ileokolik atardamar",
+   "kıvrım kör bağırsak atardamarı"
   ],
   "level": 2,
   "curriculumRegion": "trunk",
@@ -1613,7 +1603,7 @@ export const vessels = [
    "arteria thoracica interna"
   ],
   "level": 2,
-  "curriculumRegion": "neck",
+  "curriculumRegion": "trunk",
   "region": "vessels-neck",
   "context": "neck",
   "contextRegions": [
@@ -1848,7 +1838,7 @@ export const vessels = [
    "znv-Middle_meningeal_arteryr",
    "znv-Middle_meningeal_arteryl"
   ],
-  "clue": "kafa tabanından dura içine",
+  "clue": "foramen spinosum’dan kafa içine",
   "fact": "Ön dalı pterionun derininden geçer; yaralanması epidural kanamaya yol açabilir.",
   "source": "vessels-head",
   "sourceURLs": [
@@ -2052,15 +2042,15 @@ export const vessels = [
   "tr": "orta serebral atardamar",
   "aliases": [
    "a. cerebri media",
-   "orta beyin atardamarı",
    "arteria cerebri media",
-   "orta serebral atardamar"
+   "orta serebral atardamar",
+   "orta beyin atardamarı"
   ],
   "trAliases": [
    "a. cerebri media",
-   "orta beyin atardamarı",
    "arteria cerebri media",
-   "orta serebral atardamar"
+   "orta serebral atardamar",
+   "orta beyin atardamarı"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -2095,15 +2085,15 @@ export const vessels = [
   "tr": "arka serebral atardamar",
   "aliases": [
    "a. cerebri posterior",
-   "arka beyin atardamarı",
    "arteria cerebri posterior",
-   "arka serebral atardamar"
+   "arka serebral atardamar",
+   "arka beyin atardamarı"
   ],
   "trAliases": [
    "a. cerebri posterior",
-   "arka beyin atardamarı",
    "arteria cerebri posterior",
-   "arka serebral atardamar"
+   "arka serebral atardamar",
+   "arka beyin atardamarı"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -2178,7 +2168,7 @@ export const vessels = [
    "ön birleştirici atardamar",
    "arteria communicans anterior"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -2189,7 +2179,7 @@ export const vessels = [
    "znv-Anterior_communicating_artery"
   ],
   "clue": "iki ön beyin arteri arasında",
-  "fact": "Sağ ve sol anterior serebral arterleri birleştirir.",
+  "fact": "Sağ ve sol anterior serebral arterleri birleştirir. Willis halkasında anevrizmanın en sık yeridir.",
   "source": "vessels-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways"
@@ -2213,7 +2203,7 @@ export const vessels = [
    "arka birleştirici atardamar",
    "arteria communicans posterior"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -2225,7 +2215,7 @@ export const vessels = [
    "znv-Posterior_communicating_arteryl"
   ],
   "clue": "iç karotis ile arka beyin arteri arasında",
-  "fact": "İç karotis ve posterior serebral arter dolaşımlarını birleştirir.",
+  "fact": "İç karotis ve posterior serebral arter dolaşımlarını birleştirir. Anevrizması n. oculomotorius felcine yol açabilir.",
   "source": "vessels-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways"
@@ -2874,7 +2864,7 @@ export const vessels = [
    "znv-Subscapular_arteryr"
   ],
   "clue": "koltuk altının arka duvarına",
-  "fact": "Aksiller arterin büyük bir dalıdır.",
+  "fact": "Aksiller arterin en büyük dalıdır; üçüncü bölümünden çıkar.",
   "source": "vessels-upper",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
@@ -3419,18 +3409,18 @@ export const vessels = [
   "tr": "ortak iliak atardamar",
   "aliases": [
    "a. iliaca communis",
-   "ortak kalça atardamarı",
    "arteria iliaca communis",
-   "ortak iliak atardamar"
+   "ortak iliak atardamar",
+   "ortak kalça atardamarı"
   ],
   "trAliases": [
    "a. iliaca communis",
-   "ortak kalça atardamarı",
    "arteria iliaca communis",
-   "ortak iliak atardamar"
+   "ortak iliak atardamar",
+   "ortak kalça atardamarı"
   ],
   "level": 1,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "vessels-lower",
   "context": "leg",
   "contextRegions": [
@@ -3463,15 +3453,15 @@ export const vessels = [
   "tr": "iç iliak atardamar",
   "aliases": [
    "a. iliaca interna",
-   "iç kalça atardamarı",
    "arteria iliaca interna",
-   "iç iliak atardamar"
+   "iç iliak atardamar",
+   "iç kalça atardamarı"
   ],
   "trAliases": [
    "a. iliaca interna",
-   "iç kalça atardamarı",
    "arteria iliaca interna",
-   "iç iliak atardamar"
+   "iç iliak atardamar",
+   "iç kalça atardamarı"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3507,15 +3497,15 @@ export const vessels = [
   "tr": "dış iliak atardamar",
   "aliases": [
    "a. iliaca externa",
-   "dış kalça atardamarı",
    "arteria iliaca externa",
-   "dış iliak atardamar"
+   "dış iliak atardamar",
+   "dış kalça atardamarı"
   ],
   "trAliases": [
    "a. iliaca externa",
-   "dış kalça atardamarı",
    "arteria iliaca externa",
-   "dış iliak atardamar"
+   "dış iliak atardamar",
+   "dış kalça atardamarı"
   ],
   "level": 1,
   "curriculumRegion": "lower",
@@ -3664,7 +3654,7 @@ export const vessels = [
    "znv-Popliteal_arteryl"
   ],
   "clue": "diz arkasındaki çukurda",
-  "fact": "Femoral arterin devamıdır.",
+  "fact": "Adduktor açıklıktan sonra femoral arterin devamıdır; popliteal çukurun en derin yapısıdır.",
   "source": "vessels-lower",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
@@ -4287,7 +4277,7 @@ export const vessels = [
    "arteria epigastrica inferior"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "vessels-lower",
   "context": "leg",
   "contextRegions": [
@@ -4329,7 +4319,7 @@ export const vessels = [
    "arteria epigastrica superficialis"
   ],
   "level": 3,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "vessels-lower",
   "context": "leg",
   "contextRegions": [
@@ -4359,7 +4349,7 @@ export const vessels = [
  {
   "id": "vessel-a-genus-media",
   "module": "vessels",
-  "latin": "a. genus media",
+  "latin": "a. media genus",
   "tr": "orta diz atardamarı",
   "aliases": [
    "a. genus media",
@@ -4544,7 +4534,7 @@ export const vessels = [
    "üst ana toplardamar",
    "vena cava superior"
   ],
-  "level": 2,
+  "level": 1,
   "curriculumRegion": "trunk",
   "region": "vessels-trunk",
   "context": "trunk",
@@ -4580,7 +4570,7 @@ export const vessels = [
    "alt ana toplardamar",
    "vena cava inferior"
   ],
-  "level": 2,
+  "level": 1,
   "curriculumRegion": "trunk",
   "region": "vessels-trunk",
   "context": "trunk",
@@ -4762,7 +4752,7 @@ export const vessels = [
    "karaciğer kapı toplardamarı",
    "vena portae hepatis"
   ],
-  "level": 2,
+  "level": 1,
   "curriculumRegion": "trunk",
   "region": "vessels-trunk",
   "context": "trunk",
@@ -5594,18 +5584,18 @@ export const vessels = [
   "tr": "ortak iliak toplardamar",
   "aliases": [
    "v. iliaca communis",
-   "ortak kalça toplardamarı",
    "vena iliaca communis",
-   "ortak iliak toplardamar"
+   "ortak iliak toplardamar",
+   "ortak kalça toplardamarı"
   ],
   "trAliases": [
    "v. iliaca communis",
-   "ortak kalça toplardamarı",
    "vena iliaca communis",
-   "ortak iliak toplardamar"
+   "ortak iliak toplardamar",
+   "ortak kalça toplardamarı"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "vessels-lower",
   "context": "leg",
   "contextRegions": [
@@ -5637,15 +5627,15 @@ export const vessels = [
   "tr": "iç iliak toplardamar",
   "aliases": [
    "v. iliaca interna",
-   "iç kalça toplardamarı",
    "vena iliaca interna",
-   "iç iliak toplardamar"
+   "iç iliak toplardamar",
+   "iç kalça toplardamarı"
   ],
   "trAliases": [
    "v. iliaca interna",
-   "iç kalça toplardamarı",
    "vena iliaca interna",
-   "iç iliak toplardamar"
+   "iç iliak toplardamar",
+   "iç kalça toplardamarı"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -5680,15 +5670,15 @@ export const vessels = [
   "tr": "dış iliak toplardamar",
   "aliases": [
    "v. iliaca externa",
-   "dış kalça toplardamarı",
    "vena iliaca externa",
-   "dış iliak toplardamar"
+   "dış iliak toplardamar",
+   "dış kalça toplardamarı"
   ],
   "trAliases": [
    "v. iliaca externa",
-   "dış kalça toplardamarı",
    "vena iliaca externa",
-   "dış iliak toplardamar"
+   "dış iliak toplardamar",
+   "dış kalça toplardamarı"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -6279,7 +6269,7 @@ export const vessels = [
    "sinus cavernosus",
    "kavernöz toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6291,7 +6281,7 @@ export const vessels = [
    "znv-Cavernous_sinusl"
   ],
   "clue": "Türk eyerinin iki yanında",
-  "fact": "İç karotis arteri ve abducens siniri sinüsün içinden geçer.",
+  "fact": "İç karotis arteri ve abducens siniri sinüsün içinden geçer. Dış duvarında III, IV, V1, V2 seyreder.",
   "source": "vessels-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
@@ -6401,7 +6391,7 @@ export const vessels = [
    "znv-Facial_veinr"
   ],
   "clue": "yüzün ön yan bölümünde",
-  "fact": "Derin bağlantıları kafa içi enfeksiyon yayılımı açısından önem taşır.",
+  "fact": "V. ophthalmica superior ve pterigoid pleksus yoluyla kavernöz sinüsle bağlantılıdır; yüzün tehlikeli üçgeni enfeksiyonları buradan yayılabilir.",
   "source": "vessels-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",

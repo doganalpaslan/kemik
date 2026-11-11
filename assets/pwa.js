@@ -1,4 +1,4 @@
-const VERSION='2d5a341-20261111T153630630Z';
+const VERSION='bfbdb39-20261111T155240608Z';
 export function resetProgress(){
  try{
   // Repository history used gk2:DATE, gk2:v2/v4/v8, preferences and streak.

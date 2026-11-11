@@ -88,7 +88,7 @@ export const bones = [
  {
   "id": "sphenoid",
   "latin": "os sphenoidale",
-  "tr": "temel kemik",
+  "tr": "sfenoid kemik",
   "aliases": [
    "sphenoidale",
    "sphenoid"
@@ -102,7 +102,12 @@ export const bones = [
   "fact": "Yunanca sphen, kama demektir. Hipofiz, bu kemiğin sella turcica bölümüne yerleşir.",
   "level": 3,
   "curriculumRegion": "skull",
-  "source": "skull"
+  "source": "skull",
+  "trAliases": [
+   "temel kemik",
+   "kama kemiği",
+   "sfenoid kemik"
+  ]
  },
  {
   "id": "ethmoid",
@@ -523,7 +528,8 @@ export const bones = [
   "clue": "önkolda, başparmak tarafında",
   "trAliases": [
    "önkol dış kemiği",
-   "ön kol dış kemiği"
+   "ön kol dış kemiği",
+   "ışın kemiği"
   ],
   "aliases": [],
   "angle": 0.3,
@@ -1502,7 +1508,7 @@ export const bones = [
 ];
 export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=2d5a341-20261111T153630630Z";
+export {dailyBones,roundBones} from "./curriculum.js?v=bfbdb39-20261111T155240608Z";
 export function answerAliases(b,mode){
  let list;
  if(mode==='latin'&&b.module==='muscles'){

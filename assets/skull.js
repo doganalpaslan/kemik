@@ -1,6 +1,6 @@
-import * as THREE from './vendor/three.module.min.js?v=2d5a341-20261111T153630630Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=2d5a341-20261111T153630630Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=2d5a341-20261111T153630630Z';
+import * as THREE from './vendor/three.module.min.js?v=bfbdb39-20261111T155240608Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=bfbdb39-20261111T155240608Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=bfbdb39-20261111T155240608Z';
 // Region files are loaded on demand. Inactive decoded regions are evicted beyond five; the active context stays loaded.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});

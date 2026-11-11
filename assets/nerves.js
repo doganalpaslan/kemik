@@ -8,14 +8,12 @@ export const nerves = [
   "aliases": [
    "n. olfactorius",
    "koku siniri",
-   "nervus olfactorius",
-   "olfactorius"
+   "nervus olfactorius"
   ],
   "trAliases": [
    "n. olfactorius",
    "koku siniri",
-   "nervus olfactorius",
-   "olfactorius"
+   "nervus olfactorius"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -47,14 +45,12 @@ export const nerves = [
   "aliases": [
    "n. opticus",
    "görme siniri",
-   "nervus opticus",
-   "opticus"
+   "nervus opticus"
   ],
   "trAliases": [
    "n. opticus",
    "görme siniri",
-   "nervus opticus",
-   "opticus"
+   "nervus opticus"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -86,14 +82,12 @@ export const nerves = [
   "aliases": [
    "n. oculomotorius",
    "göz hareket siniri",
-   "nervus oculomotorius",
-   "oculomotorius"
+   "nervus oculomotorius"
   ],
   "trAliases": [
    "n. oculomotorius",
    "göz hareket siniri",
-   "nervus oculomotorius",
-   "oculomotorius"
+   "nervus oculomotorius"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -107,7 +101,7 @@ export const nerves = [
    "znv-Oculomotor_nerve_(III)l"
   ],
   "clue": "orta beyinden göz çukuruna",
-  "fact": "Üçüncü kafa çifti çoğu dış göz kasını ve üst göz kapağını kaldıran kası uyarır.",
+  "fact": "Üçüncü kafa çifti çoğu dış göz kasını ve üst göz kapağını kaldıran kası uyarır. M. sphincter pupillae ve m. ciliaris’e parasempatik lif taşır.",
   "source": "nerves-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -125,14 +119,12 @@ export const nerves = [
   "aliases": [
    "n. trochlearis",
    "makara siniri",
-   "nervus trochlearis",
-   "trochlearis"
+   "nervus trochlearis"
   ],
   "trAliases": [
    "n. trochlearis",
    "makara siniri",
-   "nervus trochlearis",
-   "trochlearis"
+   "nervus trochlearis"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -164,14 +156,12 @@ export const nerves = [
   "aliases": [
    "n. trigeminus",
    "üçüz sinir",
-   "nervus trigeminus",
-   "trigeminus"
+   "nervus trigeminus"
   ],
   "trAliases": [
    "n. trigeminus",
    "üçüz sinir",
-   "nervus trigeminus",
-   "trigeminus"
+   "nervus trigeminus"
   ],
   "level": 1,
   "curriculumRegion": "head",
@@ -204,14 +194,12 @@ export const nerves = [
   "aliases": [
    "n. abducens",
    "uzaklaştırıcı sinir",
-   "nervus abducens",
-   "abducens"
+   "nervus abducens"
   ],
   "trAliases": [
    "n. abducens",
    "uzaklaştırıcı sinir",
-   "nervus abducens",
-   "abducens"
+   "nervus abducens"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -243,16 +231,12 @@ export const nerves = [
   "aliases": [
    "n. facialis",
    "yüz siniri",
-   "nervus facialis",
-   "facialis",
-   "fasiyal sinir"
+   "nervus facialis"
   ],
   "trAliases": [
    "n. facialis",
    "yüz siniri",
-   "nervus facialis",
-   "facialis",
-   "fasiyal sinir"
+   "nervus facialis"
   ],
   "level": 1,
   "curriculumRegion": "head",
@@ -265,7 +249,7 @@ export const nerves = [
    "znv-Facial_nerve_(VII)r",
    "znv-Facial_nerve_(VII)l"
   ],
-  "clue": "kulak çevresinden yüze uzanır",
+  "clue": "foramen stylomastoideum’dan çıkıp parotis içinde dallanır",
   "fact": "Yedinci kafa çifti mimik kaslarının motor siniridir.",
   "source": "nerves-head",
   "sourceURLs": [
@@ -284,14 +268,12 @@ export const nerves = [
   "aliases": [
    "n. vestibulocochlearis",
    "denge ve işitme siniri",
-   "nervus vestibulocochlearis",
-   "vestibulocochlearis"
+   "nervus vestibulocochlearis"
   ],
   "trAliases": [
    "n. vestibulocochlearis",
    "denge ve işitme siniri",
-   "nervus vestibulocochlearis",
-   "vestibulocochlearis"
+   "nervus vestibulocochlearis"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -323,14 +305,12 @@ export const nerves = [
   "aliases": [
    "n. glossopharyngeus",
    "dil yutak siniri",
-   "nervus glossopharyngeus",
-   "glossopharyngeus"
+   "nervus glossopharyngeus"
   ],
   "trAliases": [
    "n. glossopharyngeus",
    "dil yutak siniri",
-   "nervus glossopharyngeus",
-   "glossopharyngeus"
+   "nervus glossopharyngeus"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -364,16 +344,12 @@ export const nerves = [
   "aliases": [
    "n. vagus",
    "gezgin sinir",
-   "nervus vagus",
-   "vagus",
-   "vagus siniri"
+   "nervus vagus"
   ],
   "trAliases": [
    "n. vagus",
    "gezgin sinir",
-   "nervus vagus",
-   "vagus",
-   "vagus siniri"
+   "nervus vagus"
   ],
   "level": 1,
   "curriculumRegion": "head",
@@ -407,14 +383,12 @@ export const nerves = [
   "aliases": [
    "n. accessorius",
    "ek sinir",
-   "nervus accessorius",
-   "accessorius"
+   "nervus accessorius"
   ],
   "trAliases": [
    "n. accessorius",
    "ek sinir",
-   "nervus accessorius",
-   "accessorius"
+   "nervus accessorius"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -449,14 +423,12 @@ export const nerves = [
   "aliases": [
    "n. hypoglossus",
    "dil altı siniri",
-   "nervus hypoglossus",
-   "hypoglossus"
+   "nervus hypoglossus"
   ],
   "trAliases": [
    "n. hypoglossus",
    "dil altı siniri",
-   "nervus hypoglossus",
-   "hypoglossus"
+   "nervus hypoglossus"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -489,14 +461,12 @@ export const nerves = [
   "aliases": [
    "n. ophthalmicus",
    "göz siniri",
-   "nervus ophthalmicus",
-   "ophthalmicus"
+   "nervus ophthalmicus"
   ],
   "trAliases": [
    "n. ophthalmicus",
    "göz siniri",
-   "nervus ophthalmicus",
-   "ophthalmicus"
+   "nervus ophthalmicus"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -529,14 +499,12 @@ export const nerves = [
   "aliases": [
    "n. maxillaris",
    "üst çene siniri",
-   "nervus maxillaris",
-   "maxillaris"
+   "nervus maxillaris"
   ],
   "trAliases": [
    "n. maxillaris",
    "üst çene siniri",
-   "nervus maxillaris",
-   "maxillaris"
+   "nervus maxillaris"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -569,14 +537,12 @@ export const nerves = [
   "aliases": [
    "n. buccalis",
    "yanak siniri",
-   "nervus buccalis",
-   "buccalis"
+   "nervus buccalis"
   ],
   "trAliases": [
    "n. buccalis",
    "yanak siniri",
-   "nervus buccalis",
-   "buccalis"
+   "nervus buccalis"
   ],
   "level": 3,
   "curriculumRegion": "head",
@@ -609,14 +575,12 @@ export const nerves = [
   "aliases": [
    "n. alveolaris inferior",
    "alt diş yuvası siniri",
-   "nervus alveolaris inferior",
-   "alveolaris inferior"
+   "nervus alveolaris inferior"
   ],
   "trAliases": [
    "n. alveolaris inferior",
    "alt diş yuvası siniri",
-   "nervus alveolaris inferior",
-   "alveolaris inferior"
+   "nervus alveolaris inferior"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -649,14 +613,12 @@ export const nerves = [
   "aliases": [
    "n. mentalis",
    "çene ucu siniri",
-   "nervus mentalis",
-   "mentalis"
+   "nervus mentalis"
   ],
   "trAliases": [
    "n. mentalis",
    "çene ucu siniri",
-   "nervus mentalis",
-   "mentalis"
+   "nervus mentalis"
   ],
   "level": 3,
   "curriculumRegion": "head",
@@ -689,14 +651,12 @@ export const nerves = [
   "aliases": [
    "n. mylohyoideus",
    "çene dil kemiği siniri",
-   "nervus mylohyoideus",
-   "mylohyoideus"
+   "nervus mylohyoideus"
   ],
   "trAliases": [
    "n. mylohyoideus",
    "çene dil kemiği siniri",
-   "nervus mylohyoideus",
-   "mylohyoideus"
+   "nervus mylohyoideus"
   ],
   "level": 3,
   "curriculumRegion": "head",
@@ -729,14 +689,12 @@ export const nerves = [
   "aliases": [
    "n. lingualis",
    "dil siniri",
-   "nervus lingualis",
-   "lingualis"
+   "nervus lingualis"
   ],
   "trAliases": [
    "n. lingualis",
    "dil siniri",
-   "nervus lingualis",
-   "lingualis"
+   "nervus lingualis"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -786,7 +744,7 @@ export const nerves = [
    "znv-Chorda_tympanil"
   ],
   "clue": "orta kulaktan dil sinirine",
-  "fact": "Dilin ön üçte ikisinin tat liflerini ve submandibular ile sublingual bezlere giden pregangliyonik parasempatik lifleri taşır.",
+  "fact": "Dilin ön üçte ikisinin tat liflerini ve submandibular ile sublingual bezlere giden preganglionik parasempatik lifleri taşır.",
   "source": "nerves-head",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -804,14 +762,12 @@ export const nerves = [
   "aliases": [
    "n. cochlearis",
    "işitme siniri",
-   "nervus cochlearis",
-   "cochlearis"
+   "nervus cochlearis"
   ],
   "trAliases": [
    "n. cochlearis",
    "işitme siniri",
-   "nervus cochlearis",
-   "cochlearis"
+   "nervus cochlearis"
   ],
   "level": 3,
   "curriculumRegion": "head",
@@ -843,14 +799,12 @@ export const nerves = [
   "aliases": [
    "n. vestibularis",
    "denge siniri",
-   "nervus vestibularis",
-   "vestibularis"
+   "nervus vestibularis"
   ],
   "trAliases": [
    "n. vestibularis",
    "denge siniri",
-   "nervus vestibularis",
-   "vestibularis"
+   "nervus vestibularis"
   ],
   "level": 3,
   "curriculumRegion": "head",
@@ -882,16 +836,12 @@ export const nerves = [
   "aliases": [
    "n. medianus",
    "orta sinir",
-   "nervus medianus",
-   "medianus",
-   "median sinir"
+   "nervus medianus"
   ],
   "trAliases": [
    "n. medianus",
    "orta sinir",
-   "nervus medianus",
-   "medianus",
-   "median sinir"
+   "nervus medianus"
   ],
   "level": 1,
   "curriculumRegion": "upper",
@@ -930,16 +880,12 @@ export const nerves = [
   "aliases": [
    "n. ulnaris",
    "dirsek siniri",
-   "nervus ulnaris",
-   "ulnaris",
-   "ulnar sinir"
+   "nervus ulnaris"
   ],
   "trAliases": [
    "n. ulnaris",
    "dirsek siniri",
-   "nervus ulnaris",
-   "ulnaris",
-   "ulnar sinir"
+   "nervus ulnaris"
   ],
   "level": 1,
   "curriculumRegion": "upper",
@@ -977,18 +923,12 @@ export const nerves = [
   "aliases": [
    "n. radialis",
    "ışınsal sinir",
-   "nervus radialis",
-   "radialis",
-   "radial sinir",
-   "radyal sinir"
+   "nervus radialis"
   ],
   "trAliases": [
    "n. radialis",
    "ışınsal sinir",
-   "nervus radialis",
-   "radialis",
-   "radial sinir",
-   "radyal sinir"
+   "nervus radialis"
   ],
   "level": 1,
   "curriculumRegion": "upper",
@@ -1026,14 +966,12 @@ export const nerves = [
   "aliases": [
    "n. musculocutaneus",
    "kas deri siniri",
-   "nervus musculocutaneus",
-   "musculocutaneus"
+   "nervus musculocutaneus"
   ],
   "trAliases": [
    "n. musculocutaneus",
    "kas deri siniri",
-   "nervus musculocutaneus",
-   "musculocutaneus"
+   "nervus musculocutaneus"
   ],
   "level": 1,
   "curriculumRegion": "upper",
@@ -1070,14 +1008,12 @@ export const nerves = [
   "aliases": [
    "n. axillaris",
    "koltuk altı siniri",
-   "nervus axillaris",
-   "axillaris"
+   "nervus axillaris"
   ],
   "trAliases": [
    "n. axillaris",
    "koltuk altı siniri",
-   "nervus axillaris",
-   "axillaris"
+   "nervus axillaris"
   ],
   "level": 1,
   "curriculumRegion": "upper",
@@ -1114,14 +1050,12 @@ export const nerves = [
   "aliases": [
    "n. thoracicus longus",
    "uzun göğüs siniri",
-   "nervus thoracicus longus",
-   "thoracicus longus"
+   "nervus thoracicus longus"
   ],
   "trAliases": [
    "n. thoracicus longus",
    "uzun göğüs siniri",
-   "nervus thoracicus longus",
-   "thoracicus longus"
+   "nervus thoracicus longus"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1158,14 +1092,12 @@ export const nerves = [
   "aliases": [
    "n. thoracodorsalis",
    "göğüs sırt siniri",
-   "nervus thoracodorsalis",
-   "thoracodorsalis"
+   "nervus thoracodorsalis"
   ],
   "trAliases": [
    "n. thoracodorsalis",
    "göğüs sırt siniri",
-   "nervus thoracodorsalis",
-   "thoracodorsalis"
+   "nervus thoracodorsalis"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1203,14 +1135,12 @@ export const nerves = [
   "aliases": [
    "n. suprascapularis",
    "kürek kemiği üstü siniri",
-   "nervus suprascapularis",
-   "suprascapularis"
+   "nervus suprascapularis"
   ],
   "trAliases": [
    "n. suprascapularis",
    "kürek kemiği üstü siniri",
-   "nervus suprascapularis",
-   "suprascapularis"
+   "nervus suprascapularis"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1247,14 +1177,12 @@ export const nerves = [
   "aliases": [
    "n. dorsalis scapulae",
    "kürek kemiği sırt siniri",
-   "nervus dorsalis scapulae",
-   "dorsalis scapulae"
+   "nervus dorsalis scapulae"
   ],
   "trAliases": [
    "n. dorsalis scapulae",
    "kürek kemiği sırt siniri",
-   "nervus dorsalis scapulae",
-   "dorsalis scapulae"
+   "nervus dorsalis scapulae"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1291,14 +1219,12 @@ export const nerves = [
   "aliases": [
    "n. subclavius",
    "köprücük altı siniri",
-   "nervus subclavius",
-   "subclavius"
+   "nervus subclavius"
   ],
   "trAliases": [
    "n. subclavius",
    "köprücük altı siniri",
-   "nervus subclavius",
-   "subclavius"
+   "nervus subclavius"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1331,20 +1257,16 @@ export const nerves = [
   "id": "nerve-n-pectoralis-medialis",
   "module": "nerves",
   "latin": "n. pectoralis medialis",
-  "tr": "medial pektoral sinir",
+  "tr": "medial göğüs siniri (medial pektoral sinir)",
   "aliases": [
    "n. pectoralis medialis",
-   "iç göğüs siniri",
    "nervus pectoralis medialis",
-   "pectoralis medialis",
-   "medial pektoral sinir"
+   "iç göğüs siniri"
   ],
   "trAliases": [
    "n. pectoralis medialis",
-   "iç göğüs siniri",
    "nervus pectoralis medialis",
-   "pectoralis medialis",
-   "medial pektoral sinir"
+   "iç göğüs siniri"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1377,20 +1299,16 @@ export const nerves = [
   "id": "nerve-n-pectoralis-lateralis",
   "module": "nerves",
   "latin": "n. pectoralis lateralis",
-  "tr": "lateral pektoral sinir",
+  "tr": "lateral göğüs siniri (lateral pektoral sinir)",
   "aliases": [
    "n. pectoralis lateralis",
-   "dış göğüs siniri",
    "nervus pectoralis lateralis",
-   "pectoralis lateralis",
-   "lateral pektoral sinir"
+   "dış göğüs siniri"
   ],
   "trAliases": [
    "n. pectoralis lateralis",
-   "dış göğüs siniri",
    "nervus pectoralis lateralis",
-   "pectoralis lateralis",
-   "lateral pektoral sinir"
+   "dış göğüs siniri"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1427,14 +1345,12 @@ export const nerves = [
   "aliases": [
    "n. subscapularis superior",
    "üst kürek altı siniri",
-   "nervus subscapularis superior",
-   "subscapularis superior"
+   "nervus subscapularis superior"
   ],
   "trAliases": [
    "n. subscapularis superior",
    "üst kürek altı siniri",
-   "nervus subscapularis superior",
-   "subscapularis superior"
+   "nervus subscapularis superior"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1452,7 +1368,7 @@ export const nerves = [
    "znv-Superior_subscapular_nerver"
   ],
   "clue": "skapula ön yüzünün üst bölümüne",
-  "fact": "Subscapularis kasının üst bölümünü uyarır.",
+  "fact": "Subscapularis kasının üst bölümünü uyarır. TA grup adı nn. subscapulares’tir; bu kart grubun üst sinirini gösterir.",
   "source": "nerves-upper",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -1471,14 +1387,12 @@ export const nerves = [
   "aliases": [
    "n. subscapularis inferior",
    "alt kürek altı siniri",
-   "nervus subscapularis inferior",
-   "subscapularis inferior"
+   "nervus subscapularis inferior"
   ],
   "trAliases": [
    "n. subscapularis inferior",
    "alt kürek altı siniri",
-   "nervus subscapularis inferior",
-   "subscapularis inferior"
+   "nervus subscapularis inferior"
   ],
   "level": 2,
   "curriculumRegion": "upper",
@@ -1496,7 +1410,7 @@ export const nerves = [
    "znv-Inferior_subscapular_nervel"
   ],
   "clue": "skapula ön yüzünün alt bölümüne",
-  "fact": "Subscapularis ve teres major kaslarını uyarır.",
+  "fact": "Subscapularis ve teres major kaslarını uyarır. TA grup adı nn. subscapulares’tir; bu kart grubun alt sinirini gösterir.",
   "source": "nerves-upper",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -1515,14 +1429,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus brachii medialis",
    "kolun iç deri siniri",
-   "nervus cutaneus brachii medialis",
-   "cutaneus brachii medialis"
+   "nervus cutaneus brachii medialis"
   ],
   "trAliases": [
    "n. cutaneus brachii medialis",
    "kolun iç deri siniri",
-   "nervus cutaneus brachii medialis",
-   "cutaneus brachii medialis"
+   "nervus cutaneus brachii medialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1559,14 +1471,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus antebrachii medialis",
    "ön kolun iç deri siniri",
-   "nervus cutaneus antebrachii medialis",
-   "cutaneus antebrachii medialis"
+   "nervus cutaneus antebrachii medialis"
   ],
   "trAliases": [
    "n. cutaneus antebrachii medialis",
    "ön kolun iç deri siniri",
-   "nervus cutaneus antebrachii medialis",
-   "cutaneus antebrachii medialis"
+   "nervus cutaneus antebrachii medialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1603,14 +1513,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus antebrachii lateralis",
    "ön kolun dış deri siniri",
-   "nervus cutaneus antebrachii lateralis",
-   "cutaneus antebrachii lateralis"
+   "nervus cutaneus antebrachii lateralis"
   ],
   "trAliases": [
    "n. cutaneus antebrachii lateralis",
    "ön kolun dış deri siniri",
-   "nervus cutaneus antebrachii lateralis",
-   "cutaneus antebrachii lateralis"
+   "nervus cutaneus antebrachii lateralis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1647,14 +1555,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus brachii lateralis superior",
    "kolun üst dış deri siniri",
-   "nervus cutaneus brachii lateralis superior",
-   "cutaneus brachii lateralis superior"
+   "nervus cutaneus brachii lateralis superior"
   ],
   "trAliases": [
    "n. cutaneus brachii lateralis superior",
    "kolun üst dış deri siniri",
-   "nervus cutaneus brachii lateralis superior",
-   "cutaneus brachii lateralis superior"
+   "nervus cutaneus brachii lateralis superior"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1691,14 +1597,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus brachii lateralis inferior",
    "kolun alt dış deri siniri",
-   "nervus cutaneus brachii lateralis inferior",
-   "cutaneus brachii lateralis inferior"
+   "nervus cutaneus brachii lateralis inferior"
   ],
   "trAliases": [
    "n. cutaneus brachii lateralis inferior",
    "kolun alt dış deri siniri",
-   "nervus cutaneus brachii lateralis inferior",
-   "cutaneus brachii lateralis inferior"
+   "nervus cutaneus brachii lateralis inferior"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1735,14 +1639,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus antebrachii posterior",
    "ön kolun arka deri siniri",
-   "nervus cutaneus antebrachii posterior",
-   "cutaneus antebrachii posterior"
+   "nervus cutaneus antebrachii posterior"
   ],
   "trAliases": [
    "n. cutaneus antebrachii posterior",
    "ön kolun arka deri siniri",
-   "nervus cutaneus antebrachii posterior",
-   "cutaneus antebrachii posterior"
+   "nervus cutaneus antebrachii posterior"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1779,14 +1681,12 @@ export const nerves = [
   "aliases": [
    "r. superficialis n. radialis",
    "ışınsal sinirin yüzeyel dalı",
-   "ramus superficialis n. radialis",
-   "superficialis n. radialis"
+   "ramus superficialis n. radialis"
   ],
   "trAliases": [
    "r. superficialis n. radialis",
    "ışınsal sinirin yüzeyel dalı",
-   "ramus superficialis n. radialis",
-   "superficialis n. radialis"
+   "ramus superficialis n. radialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1823,14 +1723,12 @@ export const nerves = [
   "aliases": [
    "r. profundus n. radialis",
    "ışınsal sinirin derin dalı",
-   "ramus profundus n. radialis",
-   "profundus n. radialis"
+   "ramus profundus n. radialis"
   ],
   "trAliases": [
    "r. profundus n. radialis",
    "ışınsal sinirin derin dalı",
-   "ramus profundus n. radialis",
-   "profundus n. radialis"
+   "ramus profundus n. radialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -1862,13 +1760,12 @@ export const nerves = [
  {
   "id": "nerve-n-interosseus-posterior",
   "module": "nerves",
-  "latin": "n. interosseus posterior",
+  "latin": "n. interosseus antebrachii posterior",
   "tr": "arka kemikler arası sinir",
   "aliases": [
    "n. interosseus posterior",
    "arka kemikler arası sinir",
    "nervus interosseus posterior",
-   "interosseus posterior",
    "n. interosseus posterior antebrachii",
    "n. interosseus antebrachii posterior"
   ],
@@ -1876,7 +1773,6 @@ export const nerves = [
    "n. interosseus posterior",
    "arka kemikler arası sinir",
    "nervus interosseus posterior",
-   "interosseus posterior",
    "n. interosseus posterior antebrachii",
    "n. interosseus antebrachii posterior"
   ],
@@ -1910,13 +1806,12 @@ export const nerves = [
  {
   "id": "nerve-n-interosseus-anterior",
   "module": "nerves",
-  "latin": "n. interosseus anterior",
+  "latin": "n. interosseus antebrachii anterior",
   "tr": "ön kemikler arası sinir",
   "aliases": [
    "n. interosseus anterior",
    "ön kemikler arası sinir",
    "nervus interosseus anterior",
-   "interosseus anterior",
    "n. interosseus anterior antebrachii",
    "n. interosseus antebrachii anterior"
   ],
@@ -1924,7 +1819,6 @@ export const nerves = [
    "n. interosseus anterior",
    "ön kemikler arası sinir",
    "nervus interosseus anterior",
-   "interosseus anterior",
    "n. interosseus anterior antebrachii",
    "n. interosseus antebrachii anterior"
   ],
@@ -1963,14 +1857,12 @@ export const nerves = [
   "aliases": [
    "r. palmaris n. mediani",
    "orta sinirin avuç dalı",
-   "ramus palmaris n. mediani",
-   "palmaris n. mediani"
+   "ramus palmaris n. mediani"
   ],
   "trAliases": [
    "r. palmaris n. mediani",
    "orta sinirin avuç dalı",
-   "ramus palmaris n. mediani",
-   "palmaris n. mediani"
+   "ramus palmaris n. mediani"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2008,14 +1900,12 @@ export const nerves = [
   "aliases": [
    "rr. musculares n. mediani",
    "orta sinirin kas dalları",
-   "rami musculares n. mediani",
-   "musculares n. mediani"
+   "rami musculares n. mediani"
   ],
   "trAliases": [
    "rr. musculares n. mediani",
    "orta sinirin kas dalları",
-   "rami musculares n. mediani",
-   "musculares n. mediani"
+   "rami musculares n. mediani"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2052,14 +1942,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales palmares communes n. mediani",
    "orta sinirin ortak avuç parmak sinirleri",
-   "nervi digitales palmares communes n. mediani",
-   "digitales palmares communes n. mediani"
+   "nervi digitales palmares communes n. mediani"
   ],
   "trAliases": [
    "nn. digitales palmares communes n. mediani",
    "orta sinirin ortak avuç parmak sinirleri",
-   "nervi digitales palmares communes n. mediani",
-   "digitales palmares communes n. mediani"
+   "nervi digitales palmares communes n. mediani"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2096,14 +1984,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales palmares proprii n. mediani",
    "orta sinirin özel avuç parmak sinirleri",
-   "nervi digitales palmares proprii n. mediani",
-   "digitales palmares proprii n. mediani"
+   "nervi digitales palmares proprii n. mediani"
   ],
   "trAliases": [
    "nn. digitales palmares proprii n. mediani",
    "orta sinirin özel avuç parmak sinirleri",
-   "nervi digitales palmares proprii n. mediani",
-   "digitales palmares proprii n. mediani"
+   "nervi digitales palmares proprii n. mediani"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2140,14 +2026,12 @@ export const nerves = [
   "aliases": [
    "r. profundus n. ulnaris",
    "dirsek sinirinin derin dalı",
-   "ramus profundus n. ulnaris",
-   "profundus n. ulnaris"
+   "ramus profundus n. ulnaris"
   ],
   "trAliases": [
    "r. profundus n. ulnaris",
    "dirsek sinirinin derin dalı",
-   "ramus profundus n. ulnaris",
-   "profundus n. ulnaris"
+   "ramus profundus n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2185,14 +2069,12 @@ export const nerves = [
   "aliases": [
    "r. superficialis n. ulnaris",
    "dirsek sinirinin yüzeyel dalı",
-   "ramus superficialis n. ulnaris",
-   "superficialis n. ulnaris"
+   "ramus superficialis n. ulnaris"
   ],
   "trAliases": [
    "r. superficialis n. ulnaris",
    "dirsek sinirinin yüzeyel dalı",
-   "ramus superficialis n. ulnaris",
-   "superficialis n. ulnaris"
+   "ramus superficialis n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2230,14 +2112,12 @@ export const nerves = [
   "aliases": [
    "r. dorsalis n. ulnaris",
    "dirsek sinirinin sırt dalı",
-   "ramus dorsalis n. ulnaris",
-   "dorsalis n. ulnaris"
+   "ramus dorsalis n. ulnaris"
   ],
   "trAliases": [
    "r. dorsalis n. ulnaris",
    "dirsek sinirinin sırt dalı",
-   "ramus dorsalis n. ulnaris",
-   "dorsalis n. ulnaris"
+   "ramus dorsalis n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2275,14 +2155,12 @@ export const nerves = [
   "aliases": [
    "r. palmaris n. ulnaris",
    "dirsek sinirinin avuç dalı",
-   "ramus palmaris n. ulnaris",
-   "palmaris n. ulnaris"
+   "ramus palmaris n. ulnaris"
   ],
   "trAliases": [
    "r. palmaris n. ulnaris",
    "dirsek sinirinin avuç dalı",
-   "ramus palmaris n. ulnaris",
-   "palmaris n. ulnaris"
+   "ramus palmaris n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2320,14 +2198,12 @@ export const nerves = [
   "aliases": [
    "rr. musculares n. ulnaris",
    "dirsek sinirinin kas dalları",
-   "rami musculares n. ulnaris",
-   "musculares n. ulnaris"
+   "rami musculares n. ulnaris"
   ],
   "trAliases": [
    "rr. musculares n. ulnaris",
    "dirsek sinirinin kas dalları",
-   "rami musculares n. ulnaris",
-   "musculares n. ulnaris"
+   "rami musculares n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2365,14 +2241,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales dorsales n. ulnaris",
    "dirsek sinirinin sırt parmak dalları",
-   "nervi digitales dorsales n. ulnaris",
-   "digitales dorsales n. ulnaris"
+   "nervi digitales dorsales n. ulnaris"
   ],
   "trAliases": [
    "nn. digitales dorsales n. ulnaris",
    "dirsek sinirinin sırt parmak dalları",
-   "nervi digitales dorsales n. ulnaris",
-   "digitales dorsales n. ulnaris"
+   "nervi digitales dorsales n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2410,14 +2284,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales palmares communes n. ulnaris",
    "dirsek sinirinin ortak avuç parmak dalları",
-   "nervi digitales palmares communes n. ulnaris",
-   "digitales palmares communes n. ulnaris"
+   "nervi digitales palmares communes n. ulnaris"
   ],
   "trAliases": [
    "nn. digitales palmares communes n. ulnaris",
    "dirsek sinirinin ortak avuç parmak dalları",
-   "nervi digitales palmares communes n. ulnaris",
-   "digitales palmares communes n. ulnaris"
+   "nervi digitales palmares communes n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2455,14 +2327,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales palmares proprii n. ulnaris",
    "dirsek sinirinin özel avuç parmak dalları",
-   "nervi digitales palmares proprii n. ulnaris",
-   "digitales palmares proprii n. ulnaris"
+   "nervi digitales palmares proprii n. ulnaris"
   ],
   "trAliases": [
    "nn. digitales palmares proprii n. ulnaris",
    "dirsek sinirinin özel avuç parmak dalları",
-   "nervi digitales palmares proprii n. ulnaris",
-   "digitales palmares proprii n. ulnaris"
+   "nervi digitales palmares proprii n. ulnaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2500,14 +2370,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales dorsales n. radialis",
    "ışınsal sinirin sırt parmak dalları",
-   "nervi digitales dorsales n. radialis",
-   "digitales dorsales n. radialis"
+   "nervi digitales dorsales n. radialis"
   ],
   "trAliases": [
    "nn. digitales dorsales n. radialis",
    "ışınsal sinirin sırt parmak dalları",
-   "nervi digitales dorsales n. radialis",
-   "digitales dorsales n. radialis"
+   "nervi digitales dorsales n. radialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2544,14 +2412,12 @@ export const nerves = [
   "aliases": [
    "rr. musculares n. radialis",
    "ışınsal sinirin kas dalları",
-   "rami musculares n. radialis",
-   "musculares n. radialis"
+   "rami musculares n. radialis"
   ],
   "trAliases": [
    "rr. musculares n. radialis",
    "ışınsal sinirin kas dalları",
-   "rami musculares n. radialis",
-   "musculares n. radialis"
+   "rami musculares n. radialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2588,14 +2454,12 @@ export const nerves = [
   "aliases": [
    "rr. musculares n. axillaris",
    "koltuk altı sinirinin kas dalları",
-   "rami musculares n. axillaris",
-   "musculares n. axillaris"
+   "rami musculares n. axillaris"
   ],
   "trAliases": [
    "rr. musculares n. axillaris",
    "koltuk altı sinirinin kas dalları",
-   "rami musculares n. axillaris",
-   "musculares n. axillaris"
+   "rami musculares n. axillaris"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2632,14 +2496,12 @@ export const nerves = [
   "aliases": [
    "r. anterior n. cutanei antebrachii medialis",
    "ön kol iç deri sinirinin ön dalı",
-   "ramus anterior n. cutanei antebrachii medialis",
-   "anterior n. cutanei antebrachii medialis"
+   "ramus anterior n. cutanei antebrachii medialis"
   ],
   "trAliases": [
    "r. anterior n. cutanei antebrachii medialis",
    "ön kol iç deri sinirinin ön dalı",
-   "ramus anterior n. cutanei antebrachii medialis",
-   "anterior n. cutanei antebrachii medialis"
+   "ramus anterior n. cutanei antebrachii medialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2676,14 +2538,12 @@ export const nerves = [
   "aliases": [
    "r. posterior n. cutanei antebrachii medialis",
    "ön kol iç deri sinirinin arka dalı",
-   "ramus posterior n. cutanei antebrachii medialis",
-   "posterior n. cutanei antebrachii medialis"
+   "ramus posterior n. cutanei antebrachii medialis"
   ],
   "trAliases": [
    "r. posterior n. cutanei antebrachii medialis",
    "ön kol iç deri sinirinin arka dalı",
-   "ramus posterior n. cutanei antebrachii medialis",
-   "posterior n. cutanei antebrachii medialis"
+   "ramus posterior n. cutanei antebrachii medialis"
   ],
   "level": 3,
   "curriculumRegion": "upper",
@@ -2900,7 +2760,7 @@ export const nerves = [
    "znv-Roots_of_brachial_plexusr",
    "znv-Roots_of_brachial_plexusl"
   ],
-  "clue": "boyun omurlarından kola çıkan kökler",
+  "clue": "C5–T1 ön dallarından oluşan, skalen kaslar arasından çıkan kökler",
   "fact": "Brakiyal pleksus tipik olarak C5 ile T1 spinal sinirlerinin ön dallarından oluşur.",
   "source": "nerves-upper",
   "sourceURLs": [
@@ -2921,16 +2781,12 @@ export const nerves = [
    "n. ischiadicus",
    "siyatik sinir",
    "nervus ischiadicus",
-   "ischiadicus",
-   "siyatik",
    "n. sciaticus"
   ],
   "trAliases": [
    "n. ischiadicus",
    "siyatik sinir",
    "nervus ischiadicus",
-   "ischiadicus",
-   "siyatik",
    "n. sciaticus"
   ],
   "level": 1,
@@ -2969,16 +2825,12 @@ export const nerves = [
   "aliases": [
    "n. femoralis",
    "uyluk siniri",
-   "nervus femoralis",
-   "femoralis",
-   "femoral sinir"
+   "nervus femoralis"
   ],
   "trAliases": [
    "n. femoralis",
    "uyluk siniri",
-   "nervus femoralis",
-   "femoralis",
-   "femoral sinir"
+   "nervus femoralis"
   ],
   "level": 1,
   "curriculumRegion": "lower",
@@ -3016,16 +2868,12 @@ export const nerves = [
   "aliases": [
    "n. tibialis",
    "kaval siniri",
-   "nervus tibialis",
-   "tibialis",
-   "tibial sinir"
+   "nervus tibialis"
   ],
   "trAliases": [
    "n. tibialis",
    "kaval siniri",
-   "nervus tibialis",
-   "tibialis",
-   "tibial sinir"
+   "nervus tibialis"
   ],
   "level": 1,
   "curriculumRegion": "lower",
@@ -3064,19 +2912,13 @@ export const nerves = [
    "n. fibularis communis",
    "ortak kamış siniri",
    "nervus fibularis communis",
-   "fibularis communis",
-   "n. peroneus communis",
-   "ortak fibular siniri",
-   "ortak peroneal sinir"
+   "n. peroneus communis"
   ],
   "trAliases": [
    "n. fibularis communis",
    "ortak kamış siniri",
    "nervus fibularis communis",
-   "fibularis communis",
-   "n. peroneus communis",
-   "ortak fibular siniri",
-   "ortak peroneal sinir"
+   "n. peroneus communis"
   ],
   "level": 1,
   "curriculumRegion": "lower",
@@ -3115,7 +2957,7 @@ export const nerves = [
    "n. fibularis superficialis",
    "yüzeyel kamış siniri",
    "nervus fibularis superficialis",
-   "fibularis superficialis",
+   "n. peronei superficialis",
    "n. peroneus superficialis",
    "yüzeyel fibular siniri",
    "yüzeyel peroneal sinir"
@@ -3124,7 +2966,7 @@ export const nerves = [
    "n. fibularis superficialis",
    "yüzeyel kamış siniri",
    "nervus fibularis superficialis",
-   "fibularis superficialis",
+   "n. peronei superficialis",
    "n. peroneus superficialis",
    "yüzeyel fibular siniri",
    "yüzeyel peroneal sinir"
@@ -3166,19 +3008,13 @@ export const nerves = [
    "n. fibularis profundus",
    "derin kamış siniri",
    "nervus fibularis profundus",
-   "fibularis profundus",
-   "n. peroneus profundus",
-   "derin fibular siniri",
-   "derin peroneal sinir"
+   "n. peroneus profundus"
   ],
   "trAliases": [
    "n. fibularis profundus",
    "derin kamış siniri",
    "nervus fibularis profundus",
-   "fibularis profundus",
-   "n. peroneus profundus",
-   "derin fibular siniri",
-   "derin peroneal sinir"
+   "n. peroneus profundus"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3216,17 +3052,15 @@ export const nerves = [
   "aliases": [
    "n. iliohypogastricus",
    "böğür karın altı siniri",
-   "nervus iliohypogastricus",
-   "iliohypogastricus"
+   "nervus iliohypogastricus"
   ],
   "trAliases": [
    "n. iliohypogastricus",
    "böğür karın altı siniri",
-   "nervus iliohypogastricus",
-   "iliohypogastricus"
+   "nervus iliohypogastricus"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "nerves-lower",
   "context": "leg",
   "contextRegions": [
@@ -3260,17 +3094,15 @@ export const nerves = [
   "aliases": [
    "n. ilioinguinalis",
    "böğür kasık siniri",
-   "nervus ilioinguinalis",
-   "ilioinguinalis"
+   "nervus ilioinguinalis"
   ],
   "trAliases": [
    "n. ilioinguinalis",
    "böğür kasık siniri",
-   "nervus ilioinguinalis",
-   "ilioinguinalis"
+   "nervus ilioinguinalis"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "nerves-lower",
   "context": "leg",
   "contextRegions": [
@@ -3304,17 +3136,15 @@ export const nerves = [
   "aliases": [
    "n. genitofemoralis",
    "üreme uyluk siniri",
-   "nervus genitofemoralis",
-   "genitofemoralis"
+   "nervus genitofemoralis"
   ],
   "trAliases": [
    "n. genitofemoralis",
    "üreme uyluk siniri",
-   "nervus genitofemoralis",
-   "genitofemoralis"
+   "nervus genitofemoralis"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "nerves-lower",
   "context": "leg",
   "contextRegions": [
@@ -3330,7 +3160,7 @@ export const nerves = [
    "znv-Genitofemoral_nervel"
   ],
   "clue": "psoas ön yüzünde",
-  "fact": "Genital ve femoral dallara ayrılır.",
+  "fact": "Psoas major’u delip ön yüzünde iner; genital dalı kremaster refleksinin efferent koludur.",
   "source": "nerves-lower",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -3349,14 +3179,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus femoris lateralis",
    "uyluğun dış deri siniri",
-   "nervus cutaneus femoris lateralis",
-   "cutaneus femoris lateralis"
+   "nervus cutaneus femoris lateralis"
   ],
   "trAliases": [
    "n. cutaneus femoris lateralis",
    "uyluğun dış deri siniri",
-   "nervus cutaneus femoris lateralis",
-   "cutaneus femoris lateralis"
+   "nervus cutaneus femoris lateralis"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3393,14 +3221,12 @@ export const nerves = [
   "aliases": [
    "n. saphenus",
    "safen sinir",
-   "nervus saphenus",
-   "saphenus"
+   "nervus saphenus"
   ],
   "trAliases": [
    "n. saphenus",
    "safen sinir",
-   "nervus saphenus",
-   "saphenus"
+   "nervus saphenus"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3438,14 +3264,12 @@ export const nerves = [
   "aliases": [
    "n. obturatorius",
    "tıkayıcı sinir",
-   "nervus obturatorius",
-   "obturatorius"
+   "nervus obturatorius"
   ],
   "trAliases": [
    "n. obturatorius",
    "tıkayıcı sinir",
-   "nervus obturatorius",
-   "obturatorius"
+   "nervus obturatorius"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3482,14 +3306,12 @@ export const nerves = [
   "aliases": [
    "n. gluteus superior",
    "üst kalça siniri",
-   "nervus gluteus superior",
-   "gluteus superior"
+   "nervus gluteus superior"
   ],
   "trAliases": [
    "n. gluteus superior",
    "üst kalça siniri",
-   "nervus gluteus superior",
-   "gluteus superior"
+   "nervus gluteus superior"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3508,7 +3330,7 @@ export const nerves = [
    "znv-Superior_gluteal_nerver"
   ],
   "clue": "piriformis kasının üstünden kalçaya",
-  "fact": "Gluteus medius, minimus ve tensor fasciae latae'yi uyarır; hasarı Trendelenburg bulgusuna yol açabilir.",
+  "fact": "Gluteus medius, gluteus minimus ve tensor fasciae latae’yi uyarır; hasarında Trendelenburg bulgusu pozitif olur.",
   "source": "nerves-lower",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -3527,14 +3349,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus femoris posterior",
    "uyluğun arka deri siniri",
-   "nervus cutaneus femoris posterior",
-   "cutaneus femoris posterior"
+   "nervus cutaneus femoris posterior"
   ],
   "trAliases": [
    "n. cutaneus femoris posterior",
    "uyluğun arka deri siniri",
-   "nervus cutaneus femoris posterior",
-   "cutaneus femoris posterior"
+   "nervus cutaneus femoris posterior"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3572,14 +3392,12 @@ export const nerves = [
   "aliases": [
    "n. pudendus",
    "edep siniri",
-   "nervus pudendus",
-   "pudendus"
+   "nervus pudendus"
   ],
   "trAliases": [
    "n. pudendus",
    "edep siniri",
-   "nervus pudendus",
-   "pudendus"
+   "nervus pudendus"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3616,14 +3434,12 @@ export const nerves = [
   "aliases": [
    "n. suralis",
    "baldır siniri",
-   "nervus suralis",
-   "suralis"
+   "nervus suralis"
   ],
   "trAliases": [
    "n. suralis",
    "baldır siniri",
-   "nervus suralis",
-   "suralis"
+   "nervus suralis"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3661,14 +3477,12 @@ export const nerves = [
   "aliases": [
    "n. plantaris medialis",
    "iç ayak tabanı siniri",
-   "nervus plantaris medialis",
-   "plantaris medialis"
+   "nervus plantaris medialis"
   ],
   "trAliases": [
    "n. plantaris medialis",
    "iç ayak tabanı siniri",
-   "nervus plantaris medialis",
-   "plantaris medialis"
+   "nervus plantaris medialis"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3687,7 +3501,7 @@ export const nerves = [
    "znv-Medial_plantar_nerver"
   ],
   "clue": "ayak tabanının iç yanında",
-  "fact": "Tabanın medial bölümünün ve medial üç buçuk parmağın plantar deri duyusunu taşır.",
+  "fact": "Elde median sinirin karşılığıdır; medial taban derisi ile medial üç buçuk parmağın plantar duyusunu taşır.",
   "source": "nerves-lower",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
@@ -3706,14 +3520,12 @@ export const nerves = [
   "aliases": [
    "n. plantaris lateralis",
    "dış ayak tabanı siniri",
-   "nervus plantaris lateralis",
-   "plantaris lateralis"
+   "nervus plantaris lateralis"
   ],
   "trAliases": [
    "n. plantaris lateralis",
    "dış ayak tabanı siniri",
-   "nervus plantaris lateralis",
-   "plantaris lateralis"
+   "nervus plantaris lateralis"
   ],
   "level": 2,
   "curriculumRegion": "lower",
@@ -3751,14 +3563,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus surae medialis",
    "baldırın iç deri siniri",
-   "nervus cutaneus surae medialis",
-   "cutaneus surae medialis"
+   "nervus cutaneus surae medialis"
   ],
   "trAliases": [
    "n. cutaneus surae medialis",
    "baldırın iç deri siniri",
-   "nervus cutaneus surae medialis",
-   "cutaneus surae medialis"
+   "nervus cutaneus surae medialis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -3797,19 +3607,17 @@ export const nerves = [
    "r. communicans fibularis",
    "kamış siniri birleştirici dalı",
    "ramus communicans fibularis",
-   "communicans fibularis",
    "r. communicans peroneus",
-   "fibular siniri birleştirici dalı",
-   "r. communicans suralis n. fibularis communis"
+   "r. communicans suralis n. fibularis communis",
+   "fibular siniri birleştirici dalı"
   ],
   "trAliases": [
    "r. communicans fibularis",
    "kamış siniri birleştirici dalı",
    "ramus communicans fibularis",
-   "communicans fibularis",
    "r. communicans peroneus",
-   "fibular siniri birleştirici dalı",
-   "r. communicans suralis n. fibularis communis"
+   "r. communicans suralis n. fibularis communis",
+   "fibular siniri birleştirici dalı"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -3848,14 +3656,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus dorsalis medialis",
    "ayağın iç sırt deri siniri",
-   "nervus cutaneus dorsalis medialis",
-   "cutaneus dorsalis medialis"
+   "nervus cutaneus dorsalis medialis"
   ],
   "trAliases": [
    "n. cutaneus dorsalis medialis",
    "ayağın iç sırt deri siniri",
-   "nervus cutaneus dorsalis medialis",
-   "cutaneus dorsalis medialis"
+   "nervus cutaneus dorsalis medialis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -3893,14 +3699,12 @@ export const nerves = [
   "aliases": [
    "n. cutaneus dorsalis intermedius",
    "ayağın ara sırt deri siniri",
-   "nervus cutaneus dorsalis intermedius",
-   "cutaneus dorsalis intermedius"
+   "nervus cutaneus dorsalis intermedius"
   ],
   "trAliases": [
    "n. cutaneus dorsalis intermedius",
    "ayağın ara sırt deri siniri",
-   "nervus cutaneus dorsalis intermedius",
-   "cutaneus dorsalis intermedius"
+   "nervus cutaneus dorsalis intermedius"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -3939,7 +3743,6 @@ export const nerves = [
    "rr. digitales dorsales n. fibularis superficialis",
    "yüzeyel kamış sinirinin sırt parmak dalları",
    "rami digitales dorsales n. fibularis superficialis",
-   "digitales dorsales n. fibularis superficialis",
    "rr. digitales dorsales n. peronei superficialis",
    "yüzeyel fibular sinirinin sırt parmak dalları"
   ],
@@ -3947,7 +3750,6 @@ export const nerves = [
    "rr. digitales dorsales n. fibularis superficialis",
    "yüzeyel kamış sinirinin sırt parmak dalları",
    "rami digitales dorsales n. fibularis superficialis",
-   "digitales dorsales n. fibularis superficialis",
    "rr. digitales dorsales n. peronei superficialis",
    "yüzeyel fibular sinirinin sırt parmak dalları"
   ],
@@ -3988,7 +3790,6 @@ export const nerves = [
    "rr. digitales dorsales n. fibularis profundi",
    "derin kamış sinirinin sırt parmak dalları",
    "rami digitales dorsales n. fibularis profundi",
-   "digitales dorsales n. fibularis profundi",
    "rr. digitales dorsales n. peronei profundi",
    "derin fibular sinirinin sırt parmak dalları"
   ],
@@ -3996,7 +3797,6 @@ export const nerves = [
    "rr. digitales dorsales n. fibularis profundi",
    "derin kamış sinirinin sırt parmak dalları",
    "rami digitales dorsales n. fibularis profundi",
-   "digitales dorsales n. fibularis profundi",
    "rr. digitales dorsales n. peronei profundi",
    "derin fibular sinirinin sırt parmak dalları"
   ],
@@ -4037,7 +3837,6 @@ export const nerves = [
    "rr. musculares n. fibularis profundi",
    "derin kamış sinirinin kas dalları",
    "rami musculares n. fibularis profundi",
-   "musculares n. fibularis profundi",
    "rr. musculares n. peronei profundi",
    "derin fibular sinirinin kas dalları"
   ],
@@ -4045,7 +3844,6 @@ export const nerves = [
    "rr. musculares n. fibularis profundi",
    "derin kamış sinirinin kas dalları",
    "rami musculares n. fibularis profundi",
-   "musculares n. fibularis profundi",
    "rr. musculares n. peronei profundi",
    "derin fibular sinirinin kas dalları"
   ],
@@ -4085,14 +3883,12 @@ export const nerves = [
   "aliases": [
    "n. musculi piriformis",
    "armut kası siniri",
-   "nervus musculi piriformis",
-   "musculi piriformis"
+   "nervus musculi piriformis"
   ],
   "trAliases": [
    "n. musculi piriformis",
    "armut kası siniri",
-   "nervus musculi piriformis",
-   "musculi piriformis"
+   "nervus musculi piriformis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4129,14 +3925,12 @@ export const nerves = [
   "aliases": [
    "n. musculi quadrati femoris",
    "uyluk kare kası siniri",
-   "nervus musculi quadrati femoris",
-   "musculi quadrati femoris"
+   "nervus musculi quadrati femoris"
   ],
   "trAliases": [
    "n. musculi quadrati femoris",
    "uyluk kare kası siniri",
-   "nervus musculi quadrati femoris",
-   "musculi quadrati femoris"
+   "nervus musculi quadrati femoris"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4173,17 +3967,15 @@ export const nerves = [
   "aliases": [
    "r. genitalis n. genitofemoralis",
    "üreme uyluk sinirinin genital dalı",
-   "ramus genitalis n. genitofemoralis",
-   "genitalis n. genitofemoralis"
+   "ramus genitalis n. genitofemoralis"
   ],
   "trAliases": [
    "r. genitalis n. genitofemoralis",
    "üreme uyluk sinirinin genital dalı",
-   "ramus genitalis n. genitofemoralis",
-   "genitalis n. genitofemoralis"
+   "ramus genitalis n. genitofemoralis"
   ],
   "level": 3,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "nerves-lower",
   "context": "leg",
   "contextRegions": [
@@ -4218,14 +4010,12 @@ export const nerves = [
   "aliases": [
    "r. femoralis n. genitofemoralis",
    "üreme uyluk sinirinin uyluk dalı",
-   "ramus femoralis n. genitofemoralis",
-   "femoralis n. genitofemoralis"
+   "ramus femoralis n. genitofemoralis"
   ],
   "trAliases": [
    "r. femoralis n. genitofemoralis",
    "üreme uyluk sinirinin uyluk dalı",
-   "ramus femoralis n. genitofemoralis",
-   "femoralis n. genitofemoralis"
+   "ramus femoralis n. genitofemoralis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4263,14 +4053,12 @@ export const nerves = [
   "aliases": [
    "r. anterior n. obturatorii",
    "tıkayıcı sinirin ön dalı",
-   "ramus anterior n. obturatorii",
-   "anterior n. obturatorii"
+   "ramus anterior n. obturatorii"
   ],
   "trAliases": [
    "r. anterior n. obturatorii",
    "tıkayıcı sinirin ön dalı",
-   "ramus anterior n. obturatorii",
-   "anterior n. obturatorii"
+   "ramus anterior n. obturatorii"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4307,14 +4095,12 @@ export const nerves = [
   "aliases": [
    "r. posterior n. obturatorii",
    "tıkayıcı sinirin arka dalı",
-   "ramus posterior n. obturatorii",
-   "posterior n. obturatorii"
+   "ramus posterior n. obturatorii"
   ],
   "trAliases": [
    "r. posterior n. obturatorii",
    "tıkayıcı sinirin arka dalı",
-   "ramus posterior n. obturatorii",
-   "posterior n. obturatorii"
+   "ramus posterior n. obturatorii"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4351,14 +4137,12 @@ export const nerves = [
   "aliases": [
    "rr. cutanei anteriores n. femoralis",
    "uyluk sinirinin ön deri dalları",
-   "rami cutanei anteriores n. femoralis",
-   "cutanei anteriores n. femoralis"
+   "rami cutanei anteriores n. femoralis"
   ],
   "trAliases": [
    "rr. cutanei anteriores n. femoralis",
    "uyluk sinirinin ön deri dalları",
-   "rami cutanei anteriores n. femoralis",
-   "cutanei anteriores n. femoralis"
+   "rami cutanei anteriores n. femoralis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4396,14 +4180,12 @@ export const nerves = [
   "aliases": [
    "r. infrapatellaris n. sapheni",
    "safen sinirin diz kapağı altı dalı",
-   "ramus infrapatellaris n. sapheni",
-   "infrapatellaris n. sapheni"
+   "ramus infrapatellaris n. sapheni"
   ],
   "trAliases": [
    "r. infrapatellaris n. sapheni",
    "safen sinirin diz kapağı altı dalı",
-   "ramus infrapatellaris n. sapheni",
-   "infrapatellaris n. sapheni"
+   "ramus infrapatellaris n. sapheni"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4441,14 +4223,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales plantares communes n. plantaris medialis",
    "iç taban sinirinin ortak parmak dalları",
-   "nervi digitales plantares communes n. plantaris medialis",
-   "digitales plantares communes n. plantaris medialis"
+   "nervi digitales plantares communes n. plantaris medialis"
   ],
   "trAliases": [
    "nn. digitales plantares communes n. plantaris medialis",
    "iç taban sinirinin ortak parmak dalları",
-   "nervi digitales plantares communes n. plantaris medialis",
-   "digitales plantares communes n. plantaris medialis"
+   "nervi digitales plantares communes n. plantaris medialis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4486,14 +4266,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales plantares proprii n. plantaris medialis",
    "iç taban sinirinin özel parmak dalları",
-   "nervi digitales plantares proprii n. plantaris medialis",
-   "digitales plantares proprii n. plantaris medialis"
+   "nervi digitales plantares proprii n. plantaris medialis"
   ],
   "trAliases": [
    "nn. digitales plantares proprii n. plantaris medialis",
    "iç taban sinirinin özel parmak dalları",
-   "nervi digitales plantares proprii n. plantaris medialis",
-   "digitales plantares proprii n. plantaris medialis"
+   "nervi digitales plantares proprii n. plantaris medialis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4531,14 +4309,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales plantares communes n. plantaris lateralis",
    "dış taban sinirinin ortak parmak dalları",
-   "nervi digitales plantares communes n. plantaris lateralis",
-   "digitales plantares communes n. plantaris lateralis"
+   "nervi digitales plantares communes n. plantaris lateralis"
   ],
   "trAliases": [
    "nn. digitales plantares communes n. plantaris lateralis",
    "dış taban sinirinin ortak parmak dalları",
-   "nervi digitales plantares communes n. plantaris lateralis",
-   "digitales plantares communes n. plantaris lateralis"
+   "nervi digitales plantares communes n. plantaris lateralis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4576,14 +4352,12 @@ export const nerves = [
   "aliases": [
    "nn. digitales plantares proprii n. plantaris lateralis",
    "dış taban sinirinin özel parmak dalları",
-   "nervi digitales plantares proprii n. plantaris lateralis",
-   "digitales plantares proprii n. plantaris lateralis"
+   "nervi digitales plantares proprii n. plantaris lateralis"
   ],
   "trAliases": [
    "nn. digitales plantares proprii n. plantaris lateralis",
    "dış taban sinirinin özel parmak dalları",
-   "nervi digitales plantares proprii n. plantaris lateralis",
-   "digitales plantares proprii n. plantaris lateralis"
+   "nervi digitales plantares proprii n. plantaris lateralis"
   ],
   "level": 3,
   "curriculumRegion": "lower",
@@ -4621,14 +4395,12 @@ export const nerves = [
   "aliases": [
    "nn. intercostales",
    "kaburgalar arası sinirler",
-   "nervi intercostales",
-   "intercostales"
+   "nervi intercostales"
   ],
   "trAliases": [
    "nn. intercostales",
    "kaburgalar arası sinirler",
-   "nervi intercostales",
-   "intercostales"
+   "nervi intercostales"
   ],
   "level": 2,
   "curriculumRegion": "trunk",
@@ -4693,11 +4465,9 @@ export const nerves = [
   "latin": "ganglia trunci sympathici",
   "tr": "sempatik gövde düğümleri",
   "aliases": [
-   "ganglia trunci sympathici",
    "sempatik gövde düğümleri"
   ],
   "trAliases": [
-   "ganglia trunci sympathici",
    "sempatik gövde düğümleri"
   ],
   "level": 3,
@@ -4725,7 +4495,7 @@ export const nerves = [
  {
   "id": "nerve-ganglion-spinale",
   "module": "nerves",
-  "latin": "ganglion spinale",
+  "latin": "ganglion sensorium nervi spinalis",
   "tr": "spinal sinir düğümü",
   "aliases": [
    "ganglion spinale",
@@ -4846,7 +4616,7 @@ export const nerves = [
    "at kuyruğu"
   ],
   "level": 2,
-  "curriculumRegion": "lower",
+  "curriculumRegion": "trunk",
   "region": "nerves-lower",
   "context": "leg",
   "contextRegions": [
@@ -4877,11 +4647,9 @@ export const nerves = [
   "latin": "divisio anterior trunci superioris plexus brachialis",
   "tr": "kol sinir ağı üst gövdesinin ön bölümü",
   "aliases": [
-   "divisio anterior trunci superioris plexus brachialis",
    "kol sinir ağı üst gövdesinin ön bölümü"
   ],
   "trAliases": [
-   "divisio anterior trunci superioris plexus brachialis",
    "kol sinir ağı üst gövdesinin ön bölümü"
   ],
   "level": 3,
@@ -4917,11 +4685,9 @@ export const nerves = [
   "latin": "divisio posterior trunci superioris plexus brachialis",
   "tr": "kol sinir ağı üst gövdesinin arka bölümü",
   "aliases": [
-   "divisio posterior trunci superioris plexus brachialis",
    "kol sinir ağı üst gövdesinin arka bölümü"
   ],
   "trAliases": [
-   "divisio posterior trunci superioris plexus brachialis",
    "kol sinir ağı üst gövdesinin arka bölümü"
   ],
   "level": 3,
@@ -4957,11 +4723,9 @@ export const nerves = [
   "latin": "divisio anterior trunci medii plexus brachialis",
   "tr": "kol sinir ağı orta gövdesinin ön bölümü",
   "aliases": [
-   "divisio anterior trunci medii plexus brachialis",
    "kol sinir ağı orta gövdesinin ön bölümü"
   ],
   "trAliases": [
-   "divisio anterior trunci medii plexus brachialis",
    "kol sinir ağı orta gövdesinin ön bölümü"
   ],
   "level": 3,
@@ -4997,11 +4761,9 @@ export const nerves = [
   "latin": "divisio posterior trunci medii plexus brachialis",
   "tr": "kol sinir ağı orta gövdesinin arka bölümü",
   "aliases": [
-   "divisio posterior trunci medii plexus brachialis",
    "kol sinir ağı orta gövdesinin arka bölümü"
   ],
   "trAliases": [
-   "divisio posterior trunci medii plexus brachialis",
    "kol sinir ağı orta gövdesinin arka bölümü"
   ],
   "level": 3,
@@ -5037,11 +4799,9 @@ export const nerves = [
   "latin": "divisio anterior trunci inferioris plexus brachialis",
   "tr": "kol sinir ağı alt gövdesinin ön bölümü",
   "aliases": [
-   "divisio anterior trunci inferioris plexus brachialis",
    "kol sinir ağı alt gövdesinin ön bölümü"
   ],
   "trAliases": [
-   "divisio anterior trunci inferioris plexus brachialis",
    "kol sinir ağı alt gövdesinin ön bölümü"
   ],
   "level": 3,
@@ -5077,11 +4837,9 @@ export const nerves = [
   "latin": "divisio posterior trunci inferioris plexus brachialis",
   "tr": "kol sinir ağı alt gövdesinin arka bölümü",
   "aliases": [
-   "divisio posterior trunci inferioris plexus brachialis",
    "kol sinir ağı alt gövdesinin arka bölümü"
   ],
   "trAliases": [
-   "divisio posterior trunci inferioris plexus brachialis",
    "kol sinir ağı alt gövdesinin arka bölümü"
   ],
   "level": 3,
@@ -5191,14 +4949,12 @@ export const nerves = [
   "aliases": [
    "n. mandibularis",
    "alt çene siniri",
-   "nervus mandibularis",
-   "mandibularis"
+   "nervus mandibularis"
   ],
   "trAliases": [
    "n. mandibularis",
    "alt çene siniri",
-   "nervus mandibularis",
-   "mandibularis"
+   "nervus mandibularis"
   ],
   "level": 2,
   "curriculumRegion": "head",

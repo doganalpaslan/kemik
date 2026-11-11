@@ -52,7 +52,7 @@ export const landmarks = [
    "16587"
   ],
   "clue": "os coxae · büyük siyatik çentik",
-  "fact": "Kemik çentiği; bağlarla foramen ischiadicum majus oluşur. Suprapiriform: a./v./n. glutea superior; infrapiriform: n. ischiadicus, a./v./n. glutea inferior, n. pudendus, a./v. pudenda interna, n. cutaneus femoris posterior.",
+  "fact": "Kemik çentiği; bağlarla foramen ischiadicum majus oluşur. Suprapiriform: a./v./n. glutea superior; infrapiriform: n. ischiadicus, a./v./n. glutea inferior, n. pudendus, a./v. pudenda interna, n. cutaneus femoris posterior. N. ad m. obturatorium internum ve n. ad m. quadratum femoris de bu bölgeden geçer.",
   "shape": "patch",
   "source": "yapilar-taslak.md:492; Z-Anatomy Startup.blend: Greater sciatic notch.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -159,7 +159,7 @@ export const landmarks = [
    "16587"
   ],
   "clue": "os coxae · ön üst kalça dikeni",
-  "fact": "M. sartorius ve lig. inguinale origo. Palpabl. Kemik grefti ve ölçüm noktası.",
+  "fact": "M. sartorius ve lig. inguinale tutunur. Bacak boyu ölçüm noktasıdır; kemik grefti yakındaki crista iliaca’dan alınır.",
   "shape": "patch",
   "source": "yapilar-taslak.md:496; Z-Anatomy Startup.blend: Anterior superior iliac spine.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -622,7 +622,7 @@ export const landmarks = [
    "16587"
   ],
   "clue": "os coxae · küçük siyatik çentik",
-  "fact": "Lig. sacrospinale ve sacrotuberale ile foramen ischiadicum minus: m. obturatorius internus tendonu, n. pudendus, a./v. pudenda interna (Alcock).",
+  "fact": "Lig. sacrospinale ve sacrotuberale ile foramen ischiadicum minus: m. obturator internus tendonu, n. pudendus, a./v. pudenda interna (Alcock). N. ad m. obturatorium internum buradan geçer; n. ad m. quadratum femoris büyük siyatik açıklıktan çıkar.",
   "shape": "patch",
   "source": "yapilar-taslak.md:513; Z-Anatomy Startup.blend: Lesser sciatic notch.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -902,7 +902,7 @@ export const landmarks = [
    "24475"
   ],
   "clue": "femur · uyluk kemiği boynu",
-  "fact": "Caput ile trokanterler arasında; inklinasyon açısı ~125°. Yaşlıda düşük enerjili kırık. N. ve damarlar kapsül içinde.",
+  "fact": "Retinaküler arterler (başlıca a. circumflexa femoris medialis) boyun boyunca kapsül içinde ilerler; intrakapsüler kırıkta baş avasküler nekroza gidebilir.",
   "shape": "patch",
   "source": "yapilar-taslak.md:527; Z-Anatomy Startup.blend: Neck of femur.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -937,7 +937,7 @@ export const landmarks = [
    "24475"
   ],
   "clue": "femur · büyük trokanter",
-  "fact": "Gluteus medius/minimus ve kısa dış rotatorlar için tutunma alanı; m. obturatorius externus fossa trochanterica’ya tutunur.",
+  "fact": "Gluteus medius/minimus ve kısa dış rotatorlar için tutunma alanı; m. obturator externus fossa trochanterica’ya tutunur.",
   "shape": "patch",
   "source": "yapilar-taslak.md:528; Z-Anatomy Startup.blend: Greater trochanter.j; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
@@ -2934,7 +2934,7 @@ export const landmarks = [
    "24508"
   ],
   "clue": "os metatarsi I · birinci ayak tarağı pürtüğü",
-  "fact": "Tabanda; m. tibialis anterior ve m. fibularis longus insertio.",
+  "fact": "M. fibularis longus buraya tutunur; m. tibialis anterior komşu os cuneiforme mediale ve MT I tabanının iç yüzüne tutunur.",
   "shape": "patch",
   "source": "yapilar-taslak.md:618; BP3D anatomical definition; yapilar-denetim.md applied (v25)",
   "turkishSource": "Açıklayıcı Türkçe; yapilar-denetim.md düzeltmeleri uygulandı.",
