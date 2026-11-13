@@ -1,6 +1,6 @@
-import {bones,dayNumber} from './bones.js?v=bfbdb39-20261111T155240608Z';
-import {getModule,unitsFor,regionsFor,landmarks} from './module-registry.js?v=bfbdb39-20261111T155240608Z';
-export {moduleRegistry,modules,getModule,loadModule,regions,muscleRegions,regionsFor,unitsFor,landmarks,loadLandmarks} from './module-registry.js?v=bfbdb39-20261111T155240608Z';
+import {bones,dayNumber} from './bones.js?v=0276220-20261113T071902680Z';
+import {getModule,unitsFor,regionsFor,landmarks} from './module-registry.js?v=0276220-20261113T071902680Z';
+export {moduleRegistry,modules,getModule,loadModule,regions,muscleRegions,regionsFor,unitsFor,landmarks,loadLandmarks} from './module-registry.js?v=0276220-20261113T071902680Z';
 export function stageStatus(parent,stage,progress={}){
  const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);
  const skullBones=bones.filter(b=>b.curriculumRegion==='skull');
@@ -22,7 +22,9 @@ export function ladderFor(region,progress={}){
  return {bones:{count:parents.filter(b=>learned.has(b.id)).length,total:parents.length},parents:[...parents,...(region==='skull'||region==='all'?[{id:'skull-regions',latin:'Kafatası bölgeleri · kemiklerin %50’si öğrenilince'}]:[])].filter(b=>landmarks.some(l=>l.parentBone===b.id)).map(b=>({id:b.id,latin:b.latin,steps:[1,2,3].map(n=>({stage:n,...stageStatus(b.id,n,progress)}))})),steps:[1,2,3].map(stage=>{const pool=landmarks.filter(b=>b.stage===stage&&(region==='all'||b.curriculumRegion===region));return {stage,total:pool.length,count:pool.filter(b=>learned.has(b.id)).length,open:pool.filter(b=>stageStatus(b.parentBone,stage,progress).open).length};})};
 }
 export const levels=['','kolay','orta','zor'];
-export const poolFor=(region,module='bones')=>unitsFor(module).filter(b=>region==='all'||b.curriculumRegion===region);
+// Text questions are section lessons: their accepted answers are unique within
+// that section. Legacy free-study decks keep their original mesh-only pool.
+export const poolFor=(region,module='bones')=>unitsFor(module).filter(b=>b.kind!=='question'&&(region==='all'||b.curriculumRegion===region));
 export const intervals={1:1,2:3,3:7,4:14,5:30};
 export function addDays(date,days){const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);}
 export function migrateCards(progress,today){
@@ -36,7 +38,8 @@ function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0)
 export function shuffle(items,seed){const a=[...items];let n=hash(seed);for(let i=a.length-1;i>0;i--){n=(Math.imul(n,1664525)+1013904223)>>>0;const j=n%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 export function dailyBones(date,region='all',progress={},module='bones'){
  const cards=progress.cards||{},card=b=>cards[b.id];
- const pool=poolFor(region,module).filter(b=>!getModule(module).staged||!b.parentBone||card(b)?.box>0||stageStatus(b.parentBone,b.stage,progress).open);
+ const candidates=poolFor(region,module);
+ const pool=candidates.filter(b=>(!getModule(module).staged||!b.parentBone||card(b)?.box>0||stageStatus(b.parentBone,b.stage,progress).open)&&(!getModule(module).tiered||poolFor('all',module).filter(p=>p.curriculumRegion===b.curriculumRegion&&p.level<b.level).every(p=>card(p)?.box>=3)));
  const order=(a,b)=>(a.stage||0)-(b.stage||0)||a.level-b.level||pool.indexOf(a)-pool.indexOf(b);
  if(getModule(module).staged){
   const due=pool.filter(b=>card(b)?.box>0&&card(b).due<=date).sort((a,b)=>card(a).due.localeCompare(card(b).due)||order(a,b));
@@ -87,7 +90,7 @@ const legacyIds=['frontal','parietal','occipital','temporal','sphenoid','ethmoid
 export function migrateLegacy(progress,records){
  if(progress.migratedV4)return progress;
  for(const [key,state] of Object.entries(records).sort(([a],[b])=>a.localeCompare(b))){
-  const match=/^gk2:v4:(\d{4}-\d{2}-\d{2}):latin$/.exec(key);
+  const match=/^kemik:v4:(\d{4}-\d{2}-\d{2}):latin$/.exec(key);
   if(!match||!state?.done||state.round!==2||state.index!==7||!state.round3Misses||typeof state.round3Misses!=='object'||Array.isArray(state.round3Misses))continue;
   const date=match[1],start=((dayNumber(date)*8)%51+51)%51;
   for(let i=0;i<8;i++){

@@ -17,7 +17,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Ascending_aorta"
@@ -30,7 +32,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-arcus-aortae",
@@ -51,7 +63,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Aortic_arch"
@@ -64,7 +78,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aorta-thoracica",
@@ -83,7 +107,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Thoracic_aorta"
@@ -96,7 +122,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aorta-abdominalis",
@@ -115,7 +151,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Abdominal_aorta"
@@ -128,7 +166,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-truncus-brachiocephalicus",
@@ -149,7 +197,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Brachiocephalic_trunk"
@@ -162,7 +212,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-truncus-pulmonalis",
@@ -183,7 +243,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Pulmonary_trunk"
@@ -196,7 +258,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aa-pulmonales",
@@ -219,7 +291,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_pulmonary_artery",
@@ -233,7 +307,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-coronaria-dextra",
@@ -256,7 +340,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_coronary_artery"
@@ -269,7 +355,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-coronaria-sinistra",
@@ -292,7 +388,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Left_coronary_artery"
@@ -305,7 +403,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-r-interventricularis-anterior",
@@ -330,7 +438,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Anterior_interventricular_artery"
@@ -343,7 +453,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-r-circumflexus",
@@ -368,7 +488,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Circumflex_artery_of_heart"
@@ -381,7 +503,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-truncus-coeliacus",
@@ -402,7 +534,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Coeliac_trunk"
@@ -416,7 +550,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-gastrica-sinistra",
@@ -439,7 +583,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Left_gastric_artery"
@@ -453,7 +599,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-hepatica-communis",
@@ -476,7 +632,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Common_hepatic_artery"
@@ -490,7 +648,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-hepatica-propria",
@@ -513,7 +681,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Proper_hepatic_artery"
@@ -527,7 +697,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-gastroduodenalis",
@@ -550,7 +730,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Gastroduodenal_artery"
@@ -565,7 +747,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-splenica",
@@ -588,7 +780,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Splenic_artery"
@@ -602,7 +796,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-mesenterica-superior",
@@ -625,7 +829,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Superior_mesenteric_artery"
@@ -639,7 +845,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-mesenterica-inferior",
@@ -662,7 +878,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Inferior_mesenteric_artery"
@@ -676,7 +894,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-renalis",
@@ -699,7 +927,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_renal_artery",
@@ -713,7 +943,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-colica-sinistra",
@@ -736,7 +976,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Left_colic_artery"
@@ -750,7 +992,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aa-sigmoideae",
@@ -773,7 +1025,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Sigmoid_arteries"
@@ -787,7 +1041,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-rectalis-superior",
@@ -810,7 +1074,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Superior_anorectal_artery"
@@ -824,7 +1090,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-ileocolica",
@@ -849,7 +1125,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Ileocolic_artery"
@@ -863,7 +1141,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-appendicularis",
@@ -886,7 +1174,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Appendicular_artery"
@@ -900,7 +1190,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-colica-dextra",
@@ -923,7 +1223,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_colic_artery"
@@ -937,7 +1239,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-colica-media",
@@ -960,7 +1272,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Middle_colic_artery"
@@ -974,7 +1288,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-pancreaticoduodenalis-inferior",
@@ -997,7 +1321,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Inferior_pancreaticoduodenal_artery"
@@ -1011,7 +1337,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-sacralis-mediana",
@@ -1034,7 +1370,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Median_sacral_artery"
@@ -1047,7 +1385,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aa-lumbales",
@@ -1070,7 +1418,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Lumbar_arteriesr",
@@ -1084,7 +1434,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-aa-intercostales-posteriores",
@@ -1107,7 +1467,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Posterior_intercostal_arteriesr",
@@ -1121,7 +1483,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-subcostalis",
@@ -1144,7 +1516,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Subcostal_arteryl",
@@ -1158,7 +1532,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-carotis-communis",
@@ -1199,7 +1583,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-carotis-interna",
@@ -1238,7 +1623,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-carotis-externa",
@@ -1277,7 +1663,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-subclavia",
@@ -1316,7 +1703,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-vertebralis",
@@ -1355,7 +1743,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-truncus-thyrocervicalis",
@@ -1392,7 +1781,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-thyroidea-inferior",
@@ -1431,7 +1821,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-truncus-costocervicalis",
@@ -1468,7 +1859,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-cervicalis-profunda",
@@ -1507,7 +1899,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-suprascapularis",
@@ -1546,7 +1939,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-transversa-cervicis",
@@ -1585,7 +1979,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-a-thoracica-interna",
@@ -1609,7 +2004,9 @@ export const vessels = [
   "contextRegions": [
    "skull",
    "neck",
-   "trunk"
+   "trunk",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Internal_thoracic_arteryl",
@@ -1624,7 +2021,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-facialis",
@@ -1661,7 +2068,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-occipitalis",
@@ -1698,7 +2106,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-pharyngea-ascendens",
@@ -1735,7 +2144,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-temporalis-superficialis",
@@ -1772,7 +2182,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-maxillaris",
@@ -1810,7 +2221,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-meningea-media",
@@ -1847,7 +2259,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-infraorbitalis",
@@ -1884,7 +2297,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-alveolaris-inferior",
@@ -1921,7 +2335,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-ophthalmica",
@@ -1958,7 +2373,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-centralis-retinae",
@@ -1994,7 +2410,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebri-anterior",
@@ -2003,13 +2420,11 @@ export const vessels = [
   "tr": "ön serebral atardamar",
   "aliases": [
    "a. cerebri anterior",
-   "ön beyin atardamarı",
    "arteria cerebri anterior",
    "ön serebral atardamar"
   ],
   "trAliases": [
    "a. cerebri anterior",
-   "ön beyin atardamarı",
    "arteria cerebri anterior",
    "ön serebral atardamar"
   ],
@@ -2033,7 +2448,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebri-media",
@@ -2043,14 +2459,12 @@ export const vessels = [
   "aliases": [
    "a. cerebri media",
    "arteria cerebri media",
-   "orta serebral atardamar",
-   "orta beyin atardamarı"
+   "orta serebral atardamar"
   ],
   "trAliases": [
    "a. cerebri media",
    "arteria cerebri media",
-   "orta serebral atardamar",
-   "orta beyin atardamarı"
+   "orta serebral atardamar"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -2076,7 +2490,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebri-posterior",
@@ -2086,14 +2501,12 @@ export const vessels = [
   "aliases": [
    "a. cerebri posterior",
    "arteria cerebri posterior",
-   "arka serebral atardamar",
-   "arka beyin atardamarı"
+   "arka serebral atardamar"
   ],
   "trAliases": [
    "a. cerebri posterior",
    "arteria cerebri posterior",
-   "arka serebral atardamar",
-   "arka beyin atardamarı"
+   "arka serebral atardamar"
   ],
   "level": 2,
   "curriculumRegion": "head",
@@ -2115,7 +2528,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-basilaris",
@@ -2151,7 +2565,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-communicans-anterior",
@@ -2186,7 +2601,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-communicans-posterior",
@@ -2222,7 +2638,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebelli-superior",
@@ -2258,7 +2675,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebelli-inferior-anterior",
@@ -2294,7 +2712,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-cerebelli-inferior-posterior",
@@ -2330,7 +2749,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-supratrochlearis",
@@ -2366,7 +2786,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-supraorbitalis",
@@ -2402,7 +2823,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-angularis",
@@ -2438,7 +2860,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-labialis-superior",
@@ -2474,7 +2897,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-labialis-inferior",
@@ -2510,7 +2934,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-transversa-faciei",
@@ -2546,7 +2971,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-a-axillaris",
@@ -2587,7 +3013,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-brachialis",
@@ -2628,7 +3055,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-profunda-brachii",
@@ -2669,7 +3097,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-radialis",
@@ -2712,7 +3141,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-ulnaris",
@@ -2755,7 +3185,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-arcus-palmaris-superficialis",
@@ -2793,7 +3224,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-arcus-palmaris-profundus",
@@ -2831,7 +3263,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-subscapularis",
@@ -2872,7 +3305,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-thoracodorsalis",
@@ -2913,7 +3347,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-circumflexa-scapulae",
@@ -2954,7 +3389,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-circumflexa-humeri-posterior",
@@ -2995,7 +3431,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-circumflexa-humeri-anterior",
@@ -3036,7 +3473,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-thoracoacromialis",
@@ -3077,7 +3515,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-thoracica-lateralis",
@@ -3118,7 +3557,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-collateralis-ulnaris-superior",
@@ -3159,7 +3599,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-collateralis-ulnaris-inferior",
@@ -3200,7 +3641,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-interossea-communis",
@@ -3240,7 +3682,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-interossea-posterior",
@@ -3280,7 +3723,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-aa-digitales-palmares-communes",
@@ -3320,7 +3764,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-aa-digitales-palmares-propriae",
@@ -3360,7 +3805,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-aa-metacarpales-palmares",
@@ -3400,7 +3846,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-a-iliaca-communis",
@@ -3429,7 +3876,9 @@ export const vessels = [
    "thigh",
    "knee",
    "leg",
-   "foot"
+   "foot",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Common_iliac_arteryl",
@@ -3444,7 +3893,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-iliaca-interna",
@@ -3488,7 +3947,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-iliaca-externa",
@@ -3532,7 +3992,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-femoralis",
@@ -3577,7 +4038,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-profunda-femoris",
@@ -3620,7 +4082,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-poplitea",
@@ -3662,7 +4125,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-tibialis-anterior",
@@ -3704,7 +4168,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-tibialis-posterior",
@@ -3746,7 +4211,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-fibularis",
@@ -3792,7 +4258,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-dorsalis-pedis",
@@ -3835,7 +4302,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-plantaris-medialis",
@@ -3878,7 +4346,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-plantaris-lateralis",
@@ -3921,7 +4390,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-arcus-plantaris-profundus",
@@ -3962,7 +4432,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-circumflexa-femoris-medialis",
@@ -4005,7 +4476,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-circumflexa-femoris-lateralis",
@@ -4048,7 +4520,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-aa-perforantes",
@@ -4091,7 +4564,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-glutea-superior",
@@ -4133,7 +4607,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-glutea-inferior",
@@ -4175,7 +4650,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-pudenda-interna",
@@ -4217,7 +4693,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-obturatoria",
@@ -4259,7 +4736,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-epigastrica-inferior",
@@ -4286,7 +4764,9 @@ export const vessels = [
    "thigh",
    "knee",
    "leg",
-   "foot"
+   "foot",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Inferior_epigastric_arteryl",
@@ -4301,7 +4781,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-epigastrica-superficialis",
@@ -4328,7 +4818,9 @@ export const vessels = [
    "thigh",
    "knee",
    "leg",
-   "foot"
+   "foot",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Superficial_epigastric_arteryr",
@@ -4344,7 +4836,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-a-genus-media",
@@ -4388,7 +4890,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-a-arcuata",
@@ -4431,7 +4934,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-aa-metatarsales-dorsales",
@@ -4474,7 +4978,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-aa-metatarsales-plantares",
@@ -4517,7 +5022,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-cava-superior",
@@ -4540,7 +5046,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Superior_vena_cava"
@@ -4553,7 +5061,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-cava-inferior",
@@ -4576,7 +5094,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Inferior_vena_cava_(thoracic_part)",
@@ -4590,7 +5110,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-vv-brachiocephalicae",
@@ -4613,7 +5143,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_brachiocephalic_vein",
@@ -4627,7 +5159,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-azygos",
@@ -4650,7 +5192,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Azygos_vein"
@@ -4663,7 +5207,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-hemiazygos",
@@ -4686,7 +5240,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Hemi-azygos_vein"
@@ -4699,7 +5255,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-hemiazygos-accessoria",
@@ -4722,7 +5288,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Accessory_hemi-azygos_vein"
@@ -4735,7 +5303,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-portae-hepatis",
@@ -4758,7 +5336,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Hepatic_portal_vein"
@@ -4771,7 +5351,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-mesenterica-superior",
@@ -4794,7 +5384,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Superior_mesenteric_vein"
@@ -4807,7 +5399,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-mesenterica-inferior",
@@ -4830,7 +5432,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Inferior_mesenteric_vein"
@@ -4843,7 +5447,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-splenica",
@@ -4872,7 +5486,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Splenic_vein"
@@ -4885,7 +5501,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-renalis",
@@ -4908,7 +5534,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_renal_vein",
@@ -4922,7 +5550,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-vv-hepaticae",
@@ -4945,7 +5583,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Hepatic_veins"
@@ -4958,7 +5598,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-vv-pulmonales",
@@ -4981,7 +5631,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Right_superior_pulmonary_vein",
@@ -4997,7 +5649,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-sinus-coronarius",
@@ -5012,13 +5674,15 @@ export const vessels = [
    "sinus coronarius",
    "koroner sinüs"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "trunk",
   "region": "vessels-trunk",
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Coronary_sinus"
@@ -5031,7 +5695,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-cardiaca-magna",
@@ -5054,7 +5728,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Great_cardiac_vein"
@@ -5067,7 +5743,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-cardiaca-media",
@@ -5090,7 +5776,9 @@ export const vessels = [
   "context": "trunk",
   "contextRegions": [
    "trunk",
-   "pelvis"
+   "pelvis",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Middle_cardiac_vein"
@@ -5103,7 +5791,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-jugularis-interna",
@@ -5141,7 +5839,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-v-jugularis-externa",
@@ -5179,7 +5878,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-v-subclavia",
@@ -5217,7 +5917,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-v-jugularis-anterior",
@@ -5255,7 +5956,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 150
  },
  {
   "id": "vessel-v-axillaris",
@@ -5295,7 +5997,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-v-cephalica",
@@ -5335,7 +6038,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-v-basilica",
@@ -5375,7 +6079,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-v-mediana-cubiti",
@@ -5415,7 +6120,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-vv-brachiales",
@@ -5455,7 +6161,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-vv-radiales",
@@ -5495,7 +6202,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-vv-ulnares",
@@ -5535,7 +6243,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-v-mediana-antebrachii",
@@ -5575,7 +6284,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 160
  },
  {
   "id": "vessel-v-iliaca-communis",
@@ -5604,7 +6314,9 @@ export const vessels = [
    "thigh",
    "knee",
    "leg",
-   "foot"
+   "foot",
+   "organs-thorax",
+   "organs-abdomen"
   ],
   "meshes": [
    "znv-Common_iliac_veinr",
@@ -5618,7 +6330,17 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "fadeContext": true,
+  "focusContextMeshes": [
+   "v32-Left_atrium",
+   "v32-Right_atrium",
+   "v32-Left_ventricle",
+   "v32-Right_ventricle",
+   "v32-Kidneyl",
+   "v32-Kidneyr"
+  ],
+  "minimumFrame": 240
  },
  {
   "id": "vessel-v-iliaca-interna",
@@ -5661,7 +6383,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-iliaca-externa",
@@ -5704,7 +6427,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-femoralis",
@@ -5748,7 +6472,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-poplitea",
@@ -5789,7 +6514,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-saphena-magna",
@@ -5833,7 +6559,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-saphena-parva",
@@ -5876,7 +6603,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-v-profunda-femoris",
@@ -5918,7 +6646,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-vv-tibiales-anteriores",
@@ -5959,7 +6688,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-vv-tibiales-posteriores",
@@ -6000,7 +6730,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-vv-fibulares",
@@ -6043,7 +6774,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-arcus-venosus-dorsalis-pedis",
@@ -6082,7 +6814,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 190
  },
  {
   "id": "vessel-sinus-sagittalis-superior",
@@ -6097,7 +6830,7 @@ export const vessels = [
    "sinus sagittalis superior",
    "üst ok toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6116,7 +6849,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-sagittalis-inferior",
@@ -6131,7 +6865,7 @@ export const vessels = [
    "sinus sagittalis inferior",
    "alt ok toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6150,7 +6884,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-rectus",
@@ -6165,7 +6900,7 @@ export const vessels = [
    "sinus rectus",
    "düz toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6184,7 +6919,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-transversus",
@@ -6199,7 +6935,7 @@ export const vessels = [
    "sinus transversus",
    "enine toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6219,7 +6955,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-sigmoideus",
@@ -6234,7 +6971,7 @@ export const vessels = [
    "sinus sigmoideus",
    "S biçimli toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6254,7 +6991,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-cavernosus",
@@ -6269,7 +7007,7 @@ export const vessels = [
    "sinus cavernosus",
    "kavernöz toplardamar sinüsü"
   ],
-  "level": 2,
+  "level": 1,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6290,7 +7028,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-petrosus-superior",
@@ -6305,7 +7044,7 @@ export const vessels = [
    "sinus petrosus superior",
    "üst taşsı toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6326,7 +7065,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-sinus-petrosus-inferior",
@@ -6341,7 +7081,7 @@ export const vessels = [
    "sinus petrosus inferior",
    "alt taşsı toplardamar sinüsü"
   ],
-  "level": 3,
+  "level": 2,
   "curriculumRegion": "head",
   "region": "vessels-head",
   "context": "skull",
@@ -6362,7 +7102,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-v-facialis",
@@ -6399,7 +7140,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-v-retromandibularis",
@@ -6435,7 +7177,8 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  },
  {
   "id": "vessel-v-ophthalmica-superior",
@@ -6472,6 +7215,7 @@ export const vessels = [
   ],
   "closeCamera": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0",
+  "minimumFrame": 120
  }
 ];

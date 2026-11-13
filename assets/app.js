@@ -1,19 +1,19 @@
-import {chapters,sections,sectionByNumber,sectionStatus,recommendedSection,dailySection,mergeLumbarProgress} from './course.js?v=bfbdb39-20261111T155240608Z';
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=bfbdb39-20261111T155240608Z';
-import {startPWA,resetProgress} from './pwa.js?v=bfbdb39-20261111T155240608Z';
-import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=bfbdb39-20261111T155240608Z';
-import {moduleDom} from './module-registry.js?v=bfbdb39-20261111T155240608Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=bfbdb39-20261111T155240608Z';
-import {BASE_URL} from './config.js?v=bfbdb39-20261111T155240608Z';
-import {notesForDay} from './study.js?v=bfbdb39-20261111T155240608Z';
-import {GameSound} from './sound.js?v=bfbdb39-20261111T155240608Z';
+import {chapters,sections,sectionByNumber,sectionStatus,recommendedSection,dailySection,mergeLumbarProgress} from './course.js?v=0276220-20261113T071902680Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=0276220-20261113T071902680Z';
+import {startPWA,resetProgress} from './pwa.js?v=0276220-20261113T071902680Z';
+import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=0276220-20261113T071902680Z';
+import {moduleDom} from './module-registry.js?v=0276220-20261113T071902680Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=0276220-20261113T071902680Z';
+import {BASE_URL} from './config.js?v=0276220-20261113T071902680Z';
+import {notesForDay} from './study.js?v=0276220-20261113T071902680Z';
+import {GameSound} from './sound.js?v=0276220-20261113T071902680Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 const memory=new Map();
 function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??memory.get(key)??fallback}catch{return memory.get(key)??fallback}}
 function write(key,value){memory.set(key,value);try{localStorage.setItem(key,JSON.stringify(value))}catch{$('#storage-note').textContent='Tarayıcı depolaması kullanılamıyor. İlerlemeniz bu oturumda korunur.'}}
-let date=localDate();let prefs={...read('gk2:preferences',{upper:false,sound:true}),mode:read('gk2:preferences',{}).mode==='tr'?'tr':'latin'};
+let date=localDate();let prefs={...read('kemik:preferences',{upper:false,sound:true}),mode:read('kemik:preferences',{}).mode==='tr'?'tr':'latin'};
 const fresh=()=>({round:0,index:0,typed:'',done:false,errors:0,keystrokes:0,correctKeys:0,attempts:0,first:0,misses:{},round3Misses:{},hints:{},between:false,questionErrors:0,round3Errors:0,started:Date.now(),elapsed:0});
 prefs.module=Object.hasOwn(moduleRegistry,prefs.module)?prefs.module:'bones';
 let activeSection=sectionByNumber(new URLSearchParams(location.hash.split('?')[1]||'').get('bolum'));
@@ -29,7 +29,7 @@ const progressKey=()=>activeModule().progressKey;
 const noun=()=>activeModule().noun;
 const title=()=>activeSection?`${activeSection.number} ${activeSection.title}`:activeModule().title;
 prefs.region=regions.some(r=>r.id===prefs.region)?prefs.region:'all';
-const landmarkKey='gk2:curriculum:landmarks:v22';
+const landmarkKey='kemik:curriculum:landmarks:v22';
 function readProgress(module=prefs.module){
  const stored=read(getModule(module).progressKey,{});const base=stored&&typeof stored==='object'&&!Array.isArray(stored)?stored:{};
  if(!getModule(module).staged)return base;
@@ -45,9 +45,9 @@ function saveProgress(){
 }
 let progress=readProgress();
 if(!progress||typeof progress!=='object'||Array.isArray(progress))progress={learned:{},history:{}};
-if(activeModule().staged&&!progress.migratedV4){const records={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith('gk2:v4:'))records[key]=read(key,null);}}catch{}migrateLegacy(progress,records);}
+if(activeModule().staged&&!progress.migratedV4){const records={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith('kemik:v4:'))records[key]=read(key,null);}}catch{}migrateLegacy(progress,records);}
 migrateCards(progress,date);if(activeModule().staged){Object.assign(progress.cards,read(landmarkKey,{})?.cards);mergeLumbarProgress(progress);}
-const stateKey=()=>activeSection?`gk2:course:v31:${date}:${activeSection.number}`:`${activeModule().dayPrefix}:${date}:${prefs.region}`;
+const stateKey=()=>activeSection?`kemik:course:v31:${date}:${activeSection.number}`:`${activeModule().dayPrefix}:${date}:${prefs.region}`;
 function loadDay(){
  const stored=read(stateKey(),null);
  if(stored?.units){stored.units=stored.units.map(id=>id==='landmark-v24-315'?'landmark-v24-353':id);for(const queue of Object.values(stored.queues||{}))for(const item of queue)if(item.id==='landmark-v24-315')item.id='landmark-v24-353';}
@@ -140,8 +140,8 @@ const name=b=>prefs.mode==='latin'?b.latin:b.tr;
 
 const aliases=b=>answerAliases(b,prefs.mode);
 const display=s=>prefs.upper?s.toLocaleUpperCase(prefs.mode==='tr'?'tr-TR':'en-US'):s.toLocaleLowerCase(prefs.mode==='tr'?'tr-TR':'en-US');
-function save(){write(stateKey(),state);saveProgress();write('gk2:preferences',prefs)}
-function streak(){const s=read('gk2:streak',{count:0,last:null});return s.last&&(dayNumber(date)-dayNumber(s.last)<=1)?s.count:0;}
+function save(){write(stateKey(),state);saveProgress();write('kemik:preferences',prefs)}
+function streak(){const s=read('kemik:streak',{count:0,last:null});return s.last&&(dayNumber(date)-dayNumber(s.last)<=1)?s.count:0;}
 function paint(){
  document.body.dataset.section=activeSection?'true':'false';$('#game-title').textContent=route==='/'?'İçindekiler':title();document.title=(route==='/'?'İçindekiler':title())+' · DocBrain';$('#game-module').value=prefs.module;$('#home-module').value=prefs.module;$('#game-module').hidden=!!activeSection;$('.region-picker').hidden=!!activeSection;
  $('#game').setAttribute('aria-label',noun()+' adlandırma oyunu');$('#phone-input').setAttribute('aria-label',noun()+' adını yazın');
@@ -157,10 +157,10 @@ function paint(){
  if(state.done){$('#phone-input').blur();renderResults();return}
  $('#game').classList.toggle('round-ended',!!state.between);$('#round-end').hidden=!state.between;$('#answer-area').hidden=!!state.between;$('#keyboard').hidden=!!state.between||prefs.keyboard==='phone';
  $('#keyboard-switch').hidden=!!state.between;
- if(state.between){$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=state.round===1?`${state.units.length} ${activeModule().accusative} gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${activeModule().label} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
+ if(state.between){const hasQuestions=dayUnits().some(b=>b.kind==='question');$('#round-end-title').textContent=`Tur ${state.round} bitti · ${state.lastRoundSize||8} / ${state.lastRoundSize||8}`;$('#round-end-copy').textContent=hasQuestions?(state.round===1?'Şimdi yanıtlar gizleniyor; ilk harfler ve sorular kalıyor.':'Şimdi yanıtı ezberden yazın; metin soruları görünür kalıyor.'):state.round===1?`${state.units.length} ${activeModule().accusative} gördünüz. Şimdi adlar gizleniyor: ilk harf ve kısa bir ipucu kalıyor.`:`Şimdi ipucu yok. ${activeModule().label} öbür taraftan, ezberden.`;$('#next-round').innerHTML=`${state.round+1}. tura başla <kbd>gir</kbd>`;return}
  const b=current();const card=progress.cards[b.id]??={box:0,due:date,hints:0,errors:0,lastSeen:null};card.lastSeen=date;saveProgress();$('#round').textContent=`${activeSection?'Düzey '+activeSection.items.find(i=>i.id===b.id).tier+' · ':''}Tur ${state.round+1} · ${['Görerek yazın','İlk harften hatırlayın','Diğer taraftan, ezberden yazın'][state.round]} · ${state.index+1} / ${queue().length}`;
- renderAnswer();$('#translation').textContent=state.round===1?b.clue:state.round===0?(prefs.mode==='tr'?b.latin:b.tr):'';
- $('#explanation').textContent=state.round===0||submitted?b.fact:'';
+ renderAnswer();$('#translation').textContent=b.kind==='question'?b.prompt:state.round===1?b.clue:state.round===0?(prefs.mode==='tr'?b.latin:b.tr):'';
+ $('#explanation').textContent=(b.kind!=='question'&&state.round===0)||submitted?b.fact:'';
  skull?.setBone(b,state.round);buildKeyboard();
 }
 const questionKey=()=>`${state.round}:${current().id}${isPractice()?`:practice:${state.index}`:''}`;
@@ -235,7 +235,7 @@ function submit(){
  timer=setTimeout(()=>{submitted=false;$('#game').classList.add(state.index===queue().length-1?'dissolving':'transitioning');timer=setTimeout(()=>{next();$('#game').classList.remove('transitioning','dissolving');},state.index===queue().length-1?540:220)},700);
 }
 function next(){
- state.typed='';state.questionErrors=0;state.index++;if(state.index===queue().length){state.lastRoundSize=queue().length;state.index=0;state.round++;if(state.round<3){state.between=true;sound.play('round');}if(state.round===3){state.round=2;state.index=queue().length-1;state.done=true;sound.play('day');state.elapsed=Date.now()-state.started;const s=read('gk2:streak',{last:null,count:0});if(s.last!==date)write('gk2:streak',{last:date,count:s.last&&dayNumber(date)-dayNumber(s.last)===1?s.count+1:1});}}
+ state.typed='';state.questionErrors=0;state.index++;if(state.index===queue().length){state.lastRoundSize=queue().length;state.index=0;state.round++;if(state.round<3){state.between=true;sound.play('round');}if(state.round===3){state.round=2;state.index=queue().length-1;state.done=true;sound.play('day');state.elapsed=Date.now()-state.started;const s=read('kemik:streak',{last:null,count:0});if(s.last!==date)write('kemik:streak',{last:date,count:s.last&&dayNumber(date)-dayNumber(s.last)===1?s.count+1:1});}}
  busy=false;$('#feedback').textContent='';save();paint();
 }
 function startRound(){if(!state.between)return;state.between=false;save();paint();focusAnswer();}
@@ -399,14 +399,14 @@ async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=bfbdb39-20261111T155240608Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=0276220-20261113T071902680Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());
 const steps=[['Tur 1 · Gör ve yaz','Kırmızı yapıyı inceleyin. Adını görerek yazın. Doğru yazınca kendiliğinden geçer.','os frontale'],['Tur 2 · İlk harf ve ipucu','İlk harften hatırlayın. Gerekirse ipucu isteyin.','os f…'],['Tur 3 · Ezberden, öbür taraftan','Kemiği farklı açıdan tanıyın. Adını bu kez ezberden yazın.','…']];let onboardingStep=0;
 function onboardingPaint(){const [title,copy,example]=steps[onboardingStep];$('#onboarding-title').textContent=title;$('#onboarding-copy').textContent=copy;$('#onboarding-example').textContent=example;$('#onboarding-count').textContent=`${onboardingStep+1} / 3`;$('#onboarding-next').textContent=onboardingStep===2?'Hazırım':'Sonraki'}
-function closeOnboarding(){write('gk2:onboarded',true);$('#onboarding').close();$('#course-continue')?.focus()}
+function closeOnboarding(){write('kemik:onboarded',true);$('#onboarding').close();$('#course-continue')?.focus()}
 $('#onboarding-next').onclick=()=>{if(onboardingStep===2)closeOnboarding();else{onboardingStep++;onboardingPaint()}};$('#onboarding-skip').onclick=closeOnboarding;
 $('#onboarding').addEventListener('cancel',e=>{e.preventDefault();closeOnboarding()});
 save();applyRoute(false);document.body.dataset.shellReady='true';
-if(!read('gk2:onboarded',false)){onboardingPaint();$('#onboarding').showModal()}
+if(!read('kemik:onboarded',false)){onboardingPaint();$('#onboarding').showModal()}

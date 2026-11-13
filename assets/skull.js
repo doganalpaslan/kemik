@@ -1,6 +1,10 @@
-import * as THREE from './vendor/three.module.min.js?v=bfbdb39-20261111T155240608Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=bfbdb39-20261111T155240608Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=bfbdb39-20261111T155240608Z';
+import * as THREE from './vendor/three.module.min.js?v=0276220-20261113T071902680Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=0276220-20261113T071902680Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=0276220-20261113T071902680Z';
+export function modelNote(b){
+ const license=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
+ return [b.meshCaption,license].filter(Boolean).join(' · ');
+}
 // Region files are loaded on demand. Inactive decoded regions are evicted beyond five; the active context stays loaded.
 export async function createSkull(canvas){
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'low-power'});
@@ -78,11 +82,11 @@ export async function createSkull(canvas){
    const profile=b.region?.startsWith('muscles-z-')?headNeckProfiles[headNeckGroup(b.id)]:null;
    const regions=profile?[...profile.regions,b.region]:b.context?[...(b.contextRegions||[b.context]),b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='landmarks'||b.contextRegions?'landmarks':!!b.context)));if(token!==request)return;disposeLandmark(landmarkOverlay);landmarkOverlay=null;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
    const whole=new THREE.Box3(),target=new THREE.Box3();
-   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.context&&['muscle','nerve','vessel'].includes(m.userData.kind)?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
+   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.focusContextMeshes?.includes(m.name)?contextGlass:b.fadeContext||b.context&&['muscle','nerve','vessel','organ','brain'].includes(m.userData.kind)?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
    if(target.isEmpty())throw Error('Hedef ağı bulunamadı');
    whole.getCenter(mainCenter);target.getCenter(closeCenter);mainBox.copy(whole);closeBox.copy(target);
    if(b.context){
-    const extent=target.getSize(new THREE.Vector3()),minimum=profile?profile.minimum:b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context];
+    const extent=target.getSize(new THREE.Vector3()),minimum=b.minimumFrame??(profile?profile.minimum:b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context]);
     mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(Math.max(extent.x*1.4,minimum),Math.max(extent.y*1.4,minimum),Math.max(extent.z*1.4,minimum)));
    }
    const size=whole.getSize(new THREE.Vector3());mainSize=Math.max(size.y,size.x,size.z)*.56;
@@ -141,7 +145,7 @@ export async function createSkull(canvas){
    }else{gray.uniforms.skullCut.value=100000;contextGlass.uniforms.skullCut.value=100000;boneMaterial.onBeforeCompile=()=>{};boneMaterial.customProgramCacheKey=()=> 'uncut';boneMaterial.needsUpdate=true;delete canvas.dataset.landmarkSide;delete canvas.dataset.landmarkTriangles;delete canvas.dataset.parentMesh;}
    canvas.dataset.contextGroup=profile?headNeckGroup(b.id):'';canvas.dataset.contextMeshes=meshes.filter(m=>m.userData.contextVisible&&!b.meshes.includes(m.name)&&m.userData.kind!=='muscle').map(m=>m.name).join(',');
    canvas.dataset.loading='false';loading.hidden=true;ready=true;
-   document.querySelector('.model-note').textContent=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
+   document.querySelector('.model-note').textContent=modelNote(b);
    canvas.setAttribute('aria-label',r===0?`${b.tr} kırmızı renkle gösteriliyor.`:'Sorulan yapı kırmızı renkle gösteriliyor.');
   }catch(error){if(token!==request)return;console.error(error);loading.hidden=false;lastId='';loading.textContent='Model yüklenemedi. Ad ve ipuçlarıyla devam edebilirsiniz. Yenilemek için sayfayı tekrar açın.';canvas.dataset.loading='error';}
  }

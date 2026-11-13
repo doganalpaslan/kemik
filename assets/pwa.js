@@ -1,8 +1,8 @@
-const VERSION='bfbdb39-20261111T155240608Z';
+const VERSION='0276220-20261113T071902680Z';
 export function resetProgress(){
  try{
-  // Repository history used gk2:DATE, gk2:v2/v4/v8, preferences and streak.
-  for(const key of Object.keys(localStorage))if(key.startsWith('gk2:'))localStorage.removeItem(key);
+  // Repository history used kemik:DATE, kemik:v2/v4/v8, preferences and streak.
+  for(const key of Object.keys(localStorage))if(key.startsWith('kemik:'))localStorage.removeItem(key);
   return true;
  }catch{document.querySelector('#storage-note').textContent='İlerleme silinemedi. Tarayıcı depolama iznini kontrol edin.';return false;}
 }
@@ -32,9 +32,9 @@ export async function startPWA(){
 function installHint(){
  const hint=document.querySelector('#install-hint'),copy=document.querySelector('#install-copy'),button=document.querySelector('#install-app');
  const standalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
- const dismissed=()=>{try{return localStorage.getItem('gk2:install-dismissed')==='1'}catch{return false}};
+ const dismissed=()=>{try{return localStorage.getItem('kemik:install-dismissed')==='1'}catch{return false}};
  const hide=()=>{hint.hidden=true;};
- const dismiss=()=>{hide();try{localStorage.setItem('gk2:install-dismissed','1')}catch{}};
+ const dismiss=()=>{hide();try{localStorage.setItem('kemik:install-dismissed','1')}catch{}};
  document.querySelector('#dismiss-install').onclick=dismiss;
  let prompt;
  const ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);

@@ -224,7 +224,7 @@ export const landmarks = [
    "53650"
   ],
   "clue": "maxilla · göz çukuru",
-  "fact": "Yedi gk2: frontale, zygomaticum, maxilla, lacrimale, ethmoidale, sphenoidale, palatinum.",
+  "fact": "Yedi kemik: frontale, zygomaticum, maxilla, lacrimale, ethmoidale, sphenoidale, palatinum.",
   "shape": "patch",
   "anatomicalType": "part",
   "source": "yapilar-taslak.md:25; yapilar-denetim.md applied; BP3D anatomical definition",
