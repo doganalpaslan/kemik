@@ -1,6 +1,7 @@
-import * as THREE from './vendor/three.module.min.js?v=e403ef7-20261113T081331709Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=e403ef7-20261113T081331709Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=e403ef7-20261113T081331709Z';
+import * as THREE from './vendor/three.module.min.js?v=5f66eee-20261113T081548612Z';
+import {hasContextTree,contextTree,disposeContextTree,courseBox} from './neurovascular-context.js?v=5f66eee-20261113T081548612Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=5f66eee-20261113T081548612Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=5f66eee-20261113T081548612Z';
 export function modelNote(b){
  const license=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
  return [b.meshCaption,license].filter(Boolean).join(' · ');
@@ -41,7 +42,8 @@ export async function createSkull(canvas){
  const contextGlass=gray.clone();contextGlass.fragmentShader=contextGlass.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.30);');
  const eyeballGlass=gray.clone();eyeballGlass.fragmentShader=eyeballGlass.fragmentShader.replace('gl_FragColor=vec4(tint,alpha);','gl_FragColor=vec4(tint,alpha*0.65);');
  const boneMaterial=new THREE.MeshStandardMaterial({color:0xeee3cc,roughness:.8});
- let landmarkOverlay=null;
+ let landmarkOverlay=null,treeOverlay=null,showContextTree=true;
+ const treeMaterials=Object.fromEntries(Object.entries({artery:0x883647,vein:0x365c8b,nerve:0xa29358}).map(([key,color])=>[key,new THREE.MeshBasicMaterial({color,transparent:true,opacity:.44,depthWrite:false,side:THREE.DoubleSide,forceSinglePass:true})]));
  const red=new THREE.MeshStandardMaterial({color:0xd0103a,roughness:.58,metalness:0,transparent:true,opacity:1});
  const halo=new THREE.Mesh(new THREE.RingGeometry(.87,1,64),new THREE.MeshBasicMaterial({color:0xd0103a,transparent:true,opacity:.8,depthTest:false,depthWrite:false}));halo.renderOrder=3;halo.visible=false;scene.add(halo);
  const response=await fetch('assets/model/manifest.json'+new URL(import.meta.url).search);if(!response.ok)throw Error('Model dizini yüklenemedi');const manifest=await response.json();
@@ -80,15 +82,17 @@ export async function createSkull(canvas){
   const loading=document.querySelector('#loading');loading.hidden=false;loading.textContent='Anatomi modeli yükleniyor.';
   try{
    const profile=b.region?.startsWith('muscles-z-')?headNeckProfiles[headNeckGroup(b.id)]:null;
-   const regions=profile?[...profile.regions,b.region]:b.context?[...(b.contextRegions||[b.context]),b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='landmarks'||b.contextRegions?'landmarks':!!b.context)));if(token!==request)return;disposeLandmark(landmarkOverlay);landmarkOverlay=null;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
+   const regions=profile?[...profile.regions,b.region]:b.context?[...(b.contextRegions||[b.context]),b.region]:b.region==='ossicles'?['skull','ossicles']:b.region==='arm'?['shoulder','arm','forearm']:b.region==='thigh'?['pelvis','thigh','knee']:b.region==='knee'?['thigh','knee','leg']:[b.region||'skull'];const groups=await Promise.all(regions.map(region=>load(region,b.module==='landmarks'||b.contextRegions?'landmarks':!!b.context)));if(token!==request)return;disposeLandmark(landmarkOverlay);landmarkOverlay=null;disposeContextTree(treeOverlay);treeOverlay=null;root.clear();root.add(...groups);const meshes=groups.flatMap(g=>g.children);
    const whole=new THREE.Box3(),target=new THREE.Box3();
-   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.focusContextMeshes?.includes(m.name)?contextGlass:b.fadeContext||b.context&&['muscle','nerve','vessel','organ','brain'].includes(m.userData.kind)?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
+   for(const m of meshes){const active=b.meshes.includes(m.name);m.material=active?(b.module==='landmarks'?gray:red):b.focusContextMeshes?.includes(m.name)||hasContextTree(b)&&b.curriculumRegion==='head'?contextGlass:b.fadeContext||b.context&&['muscle','nerve','vessel','organ','brain'].includes(m.userData.kind)?faint:profile?(m.userData.meta.contextKind==='eyeball'?eyeballGlass:contextGlass):gray;m.renderOrder=active?2:0;m.userData.contextVisible=hasContextTree(b)&&['vessel','nerve'].includes(m.userData.kind)?active:!profile||active||contextVisible(headNeckGroup(b.id),m.userData.meta);if(m.userData.contextVisible)whole.union(m.geometry.boundingBox);if(active)target.union(m.geometry.boundingBox);}
    if(target.isEmpty())throw Error('Hedef ağı bulunamadı');
+   if(hasContextTree(b)){treeOverlay=contextTree(meshes,b.meshes,treeMaterials);root.add(treeOverlay);canvas.dataset.treeMeshes=meshes.filter(m=>['vessel','nerve'].includes(m.userData.kind)&&!b.meshes.includes(m.name)).map(m=>m.name).join(',');canvas.dataset.treeDraws=String(treeOverlay.children.length);}else{delete canvas.dataset.treeMeshes;delete canvas.dataset.treeDraws;}
    whole.getCenter(mainCenter);target.getCenter(closeCenter);mainBox.copy(whole);closeBox.copy(target);
    if(b.context){
     const extent=target.getSize(new THREE.Vector3()),minimum=b.minimumFrame??(profile?profile.minimum:b.closeCamera?18:{skull:90,neck:100,trunk:180,shoulder:160,arm:150,forearm:130,hand:65,pelvis:170,thigh:170,leg:140,foot:70}[b.context]);
     mainCenter.copy(closeCenter);mainBox.setFromCenterAndSize(mainCenter,new THREE.Vector3(Math.max(extent.x*1.4,minimum),Math.max(extent.y*1.4,minimum),Math.max(extent.z*1.4,minimum)));
    }
+   if(hasContextTree(b)){mainBox.copy(courseBox(b,target,meshes));mainBox.getCenter(mainCenter);}
    const size=whole.getSize(new THREE.Vector3());mainSize=Math.max(size.y,size.x,size.z)*.56;
    // For long paired limbs, provide a full regional context in the main view.
    const ts=target.getSize(new THREE.Vector3());closeSize=Math.max(ts.x,ts.y,ts.z)*.65;
@@ -187,8 +191,8 @@ export async function createSkull(canvas){
    for(const g of root.children){
     // At middle-ear scale the surrounding skull stacks into a dark mass.
     // Keep the other ossicles as glass context in the close view.
-    g.visible=!close||activeBone.region!=='ossicles'||g===cache.get('ossicles');
-    for(const m of g.children)m.visible=m.userData.contextVisible&&(!close||m.userData.closeVisible)&&(!activeBone.hideContext||activeBone.meshes.includes(m.name));
+    g.visible=g===treeOverlay?showContextTree:!close||activeBone.region!=='ossicles'||g===cache.get('ossicles');
+    for(const m of g.children)m.visible=(m.userData.tree?(!close||!closeSide||!m.userData.side||m.userData.side===closeSide):true)&&m.userData.contextVisible&&(!close||m.userData.closeVisible)&&(!activeBone.hideContext||activeBone.meshes.includes(m.name));
    }
    if(activeBone.module==='landmarks'){
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
@@ -203,7 +207,7 @@ export async function createSkull(canvas){
    gray.uniforms.edgeFade.value=!!activeBone.context||close||['ossicles','knee'].includes(activeBone.region);
    const ratio=output.getPixelRatio();gray.uniforms.viewSize.value.set(vw*ratio,vh*ratio);gray.uniforms.viewOrigin.value.set(x*ratio,y*ratio);
    for(const material of [faint,contextGlass,eyeballGlass]){material.uniforms.edgeFade.value=gray.uniforms.edgeFade.value;material.uniforms.viewSize.value.copy(gray.uniforms.viewSize.value);material.uniforms.viewOrigin.value.copy(gray.uniforms.viewOrigin.value);}
-   halo.visible=Boolean(!close&&(activeBone.region==='ossicles'||activeBone.closeCamera&&!activeBone.contextRegions));
+   halo.visible=Boolean(!hasContextTree(activeBone)&&!close&&(activeBone.region==='ossicles'||activeBone.closeCamera&&!activeBone.contextRegions));
    if(halo.visible){const p=closeCenter.clone().sub(center).applyEuler(rotation).add(pivot.position);halo.position.set(p.x,p.y,1500);halo.scale.setScalar(8*2*scale/vh);}
    output.render(scene,camera);
   }
@@ -212,5 +216,5 @@ export async function createSkull(canvas){
  }
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();ready=false;document.querySelector('#loading').hidden=false;document.querySelector('#loading').textContent='Görüntü durdu. Sayfayı yenileyerek devam edebilirsiniz.';});
  frame=requestAnimationFrame(draw);
- return {setBone,setTheme(dark){gray.uniforms.dark.value=dark;faint.uniforms.dark.value=dark;contextGlass.uniforms.dark.value=dark;eyeballGlass.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();faint.dispose();contextGlass.dispose();eyeballGlass.dispose();red.dispose();boneMaterial.dispose();disposeLandmark(landmarkOverlay);halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
+ return {setBone,setContextTree(show){showContextTree=show;canvas.dataset.treeVisible=String(show)},setTheme(dark){gray.uniforms.dark.value=dark;faint.uniforms.dark.value=dark;contextGlass.uniforms.dark.value=dark;eyeballGlass.uniforms.dark.value=dark},dispose(){running=false;cancelAnimationFrame(frame);observer.disconnect();for(const g of cache.values())g.traverse(m=>m.geometry?.dispose());gray.dispose();faint.dispose();contextGlass.dispose();eyeballGlass.dispose();red.dispose();boneMaterial.dispose();disposeLandmark(landmarkOverlay);disposeContextTree(treeOverlay);for(const m of Object.values(treeMaterials))m.dispose();halo.geometry.dispose();halo.material.dispose();renderer.dispose();closeRenderer?.dispose();closeCanvas.remove();}};
 }
