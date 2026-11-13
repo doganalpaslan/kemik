@@ -1,6 +1,6 @@
-import * as THREE from './vendor/three.module.min.js?v=0276220-20261113T072829721Z';
-import {landmarkView,disposeLandmark} from './landmark-view.js?v=0276220-20261113T072829721Z';
-import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=0276220-20261113T072829721Z';
+import * as THREE from './vendor/three.module.min.js?v=7e23d8b-20261113T075044921Z';
+import {landmarkView,disposeLandmark} from './landmark-view.js?v=7e23d8b-20261113T075044921Z';
+import {headNeckGroup,headNeckProfiles,contextVisible} from './head-neck-context.js?v=7e23d8b-20261113T075044921Z';
 export function modelNote(b){
  const license=b.region==='skull'?'BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0':b.modelLicense?b.modelLicense:b.region==='ossicles'?'Z-Anatomy · CC BY-SA 4.0':'BodyParts3D · CC BY-SA 2.1 JP';
  return [b.meshCaption,license].filter(Boolean).join(' · ');

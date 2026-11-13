@@ -4675,6 +4675,156 @@ export const sections = [
     "order": 4
    },
    {
+    "id": "question-5-1-auricula-dextra",
+    "tier": 1,
+    "order": 144
+   },
+   {
+    "id": "question-5-1-auricula-sinistra",
+    "tier": 1,
+    "order": 145
+   },
+   {
+    "id": "question-5-1-crista-terminalis",
+    "tier": 1,
+    "order": 146
+   },
+   {
+    "id": "question-5-1-musculi-pectinati",
+    "tier": 1,
+    "order": 147
+   },
+   {
+    "id": "question-5-1-sinus-venarum",
+    "tier": 1,
+    "order": 148
+   },
+   {
+    "id": "question-5-1-fossa-ovalis",
+    "tier": 1,
+    "order": 149
+   },
+   {
+    "id": "question-5-1-chordae-tendineae",
+    "tier": 1,
+    "order": 150
+   },
+   {
+    "id": "question-5-1-trabeculae-carneae",
+    "tier": 1,
+    "order": 151
+   },
+   {
+    "id": "question-5-1-conus-arteriosus",
+    "tier": 1,
+    "order": 152
+   },
+   {
+    "id": "question-5-1-skeleton-fibrosum-cordis",
+    "tier": 1,
+    "order": 153
+   },
+   {
+    "id": "question-5-1-nodus-sinuatrialis",
+    "tier": 1,
+    "order": 154
+   },
+   {
+    "id": "question-5-1-nodus-atrioventricularis",
+    "tier": 1,
+    "order": 155
+   },
+   {
+    "id": "question-5-1-pericardium-fibrosum",
+    "tier": 1,
+    "order": 156
+   },
+   {
+    "id": "question-5-1-lamina-parietalis-pericardii",
+    "tier": 1,
+    "order": 157
+   },
+   {
+    "id": "question-5-1-epicardium",
+    "tier": 1,
+    "order": 158
+   },
+   {
+    "id": "question-5-1-5",
+    "tier": 1,
+    "order": 159
+   },
+   {
+    "id": "question-5-1-septum-interventriculare",
+    "tier": 1,
+    "order": 160
+   },
+   {
+    "id": "question-5-1-sulcus-coronarius",
+    "tier": 1,
+    "order": 161
+   },
+   {
+    "id": "question-5-1-a-coronaria-dextra",
+    "tier": 1,
+    "order": 162
+   },
+   {
+    "id": "question-5-1-a-coronaria-sinistra",
+    "tier": 1,
+    "order": 163
+   },
+   {
+    "id": "question-5-1-r-interventricularis-anterior",
+    "tier": 1,
+    "order": 164
+   },
+   {
+    "id": "question-5-1-r-circumflexus",
+    "tier": 1,
+    "order": 165
+   },
+   {
+    "id": "question-5-1-r-marginalis-dexter",
+    "tier": 1,
+    "order": 166
+   },
+   {
+    "id": "question-5-1-r-marginalis-sinister",
+    "tier": 1,
+    "order": 167
+   },
+   {
+    "id": "question-5-1-r-nodi-sinuatrialis",
+    "tier": 1,
+    "order": 168
+   },
+   {
+    "id": "question-5-1-r-nodi-atrioventricularis",
+    "tier": 1,
+    "order": 169
+   },
+   {
+    "id": "question-5-1-aort-odag",
+    "tier": 1,
+    "order": 170
+   },
+   {
+    "id": "question-5-1-pulmoner-odak",
+    "tier": 1,
+    "order": 171
+   },
+   {
+    "id": "question-5-1-trikuspit-odak",
+    "tier": 1,
+    "order": 172
+   },
+   {
+    "id": "question-5-1-mitral-odak",
+    "tier": 1,
+    "order": 173
+   },
+   {
     "id": "organs-valva-atrioventricularis-dextra",
     "tier": 2,
     "order": 5
@@ -4698,6 +4848,201 @@ export const sections = [
     "id": "organs-musculus-papillaris-posterior-ventriculi-sinistri",
     "tier": 2,
     "order": 13
+   },
+   {
+    "id": "question-5-1-limbus-fossae-ovalis",
+    "tier": 2,
+    "order": 174
+   },
+   {
+    "id": "question-5-1-vestibulum-aortae",
+    "tier": 2,
+    "order": 175
+   },
+   {
+    "id": "question-5-1-valvula-venae-cavae-inferioris",
+    "tier": 2,
+    "order": 176
+   },
+   {
+    "id": "question-5-1-valvula-sinus-coronarii",
+    "tier": 2,
+    "order": 177
+   },
+   {
+    "id": "question-5-1-trigonum-koch",
+    "tier": 2,
+    "order": 178
+   },
+   {
+    "id": "question-5-1-tendo-todaro",
+    "tier": 2,
+    "order": 179
+   },
+   {
+    "id": "question-5-1-trabecula-septomarginalis",
+    "tier": 2,
+    "order": 180
+   },
+   {
+    "id": "question-5-1-crista-supraventricularis",
+    "tier": 2,
+    "order": 181
+   },
+   {
+    "id": "question-5-1-valvula-foraminis-ovalis",
+    "tier": 2,
+    "order": 182
+   },
+   {
+    "id": "question-5-1-fasciculus-atrioventricularis",
+    "tier": 2,
+    "order": 183
+   },
+   {
+    "id": "question-5-1-crus-dextrum",
+    "tier": 2,
+    "order": 184
+   },
+   {
+    "id": "question-5-1-crus-sinistrum",
+    "tier": 2,
+    "order": 185
+   },
+   {
+    "id": "question-5-1-fibrae-purkinje",
+    "tier": 2,
+    "order": 186
+   },
+   {
+    "id": "question-5-1-plexus-cardiacus",
+    "tier": 2,
+    "order": 187
+   },
+   {
+    "id": "question-5-1-nervus-vagus",
+    "tier": 2,
+    "order": 188
+   },
+   {
+    "id": "question-5-1-4",
+    "tier": 2,
+    "order": 189
+   },
+   {
+    "id": "question-5-1-2",
+    "tier": 2,
+    "order": 190
+   },
+   {
+    "id": "question-5-1-sinus-transversus-pericardii",
+    "tier": 2,
+    "order": 191
+   },
+   {
+    "id": "question-5-1-sinus-obliquus-pericardii",
+    "tier": 2,
+    "order": 192
+   },
+   {
+    "id": "question-5-1-nervus-phrenicus",
+    "tier": 2,
+    "order": 193
+   },
+   {
+    "id": "question-5-1-pericardiocentesis",
+    "tier": 2,
+    "order": 194
+   },
+   {
+    "id": "question-5-1-cuspis-anterior-valvae-mitralis",
+    "tier": 2,
+    "order": 195
+   },
+   {
+    "id": "question-5-1-cuspis-anterior-valvae-tricuspidalis",
+    "tier": 2,
+    "order": 196
+   },
+   {
+    "id": "question-5-1-musculus-papillaris-anterolateralis",
+    "tier": 2,
+    "order": 197
+   },
+   {
+    "id": "question-5-1-r-interventricularis-posterior",
+    "tier": 2,
+    "order": 198
+   },
+   {
+    "id": "question-5-1-sinus-coronarius",
+    "tier": 2,
+    "order": 199
+   },
+   {
+    "id": "question-5-1-v-cardiaca-magna",
+    "tier": 2,
+    "order": 200
+   },
+   {
+    "id": "question-5-1-v-cardiaca-media",
+    "tier": 2,
+    "order": 201
+   },
+   {
+    "id": "question-5-1-v-cardiaca-parva",
+    "tier": 2,
+    "order": 202
+   },
+   {
+    "id": "question-5-1-v-ventriculi-sinistri-posterior",
+    "tier": 2,
+    "order": 203
+   },
+   {
+    "id": "question-5-1-v-obliqua-atrii-sinistri",
+    "tier": 2,
+    "order": 204
+   },
+   {
+    "id": "question-5-1-vv-cardiacae-anteriores",
+    "tier": 2,
+    "order": 205
+   },
+   {
+    "id": "question-5-1-vv-cardiacae-minimae",
+    "tier": 2,
+    "order": 206
+   },
+   {
+    "id": "question-5-1-diastole",
+    "tier": 2,
+    "order": 207
+   },
+   {
+    "id": "question-5-1-tractus-internodales",
+    "tier": 2,
+    "order": 208
+   },
+   {
+    "id": "question-5-1-ostium-sinus-coronarii",
+    "tier": 2,
+    "order": 209
+   },
+   {
+    "id": "question-5-1-ostium-venae-cavae-superioris",
+    "tier": 2,
+    "order": 210
+   },
+   {
+    "id": "question-5-1-ostium-venae-cavae-inferioris",
+    "tier": 2,
+    "order": 211
+   },
+   {
+    "id": "question-5-1-t1-t4",
+    "tier": 2,
+    "order": 212
    },
    {
     "id": "organs-valva-atrioventricularis-sinistra",
@@ -4753,6 +5098,21 @@ export const sections = [
     "id": "organs-cuspis-posterior-valvae-tricuspidalis",
     "tier": 3,
     "order": 139
+   },
+   {
+    "id": "question-5-1-ortner-sendromu",
+    "tier": 3,
+    "order": 213
+   },
+   {
+    "id": "question-5-1-oesophagus",
+    "tier": 3,
+    "order": 214
+   },
+   {
+    "id": "question-5-1-beck-triad",
+    "tier": 3,
+    "order": 215
    }
   ]
  },
@@ -4812,6 +5172,86 @@ export const sections = [
     "order": 24
    },
    {
+    "id": "question-5-2-processus-axillaris",
+    "tier": 1,
+    "order": 216
+   },
+   {
+    "id": "question-5-2-ligamenta-suspensoria-mammae",
+    "tier": 1,
+    "order": 217
+   },
+   {
+    "id": "question-5-2-n-phrenicus",
+    "tier": 1,
+    "order": 218
+   },
+   {
+    "id": "question-5-2-t8",
+    "tier": 1,
+    "order": 219
+   },
+   {
+    "id": "question-5-2-t10",
+    "tier": 1,
+    "order": 220
+   },
+   {
+    "id": "question-5-2-t12",
+    "tier": 1,
+    "order": 221
+   },
+   {
+    "id": "question-5-2-recessus-costodiaphragmaticus",
+    "tier": 1,
+    "order": 222
+   },
+   {
+    "id": "question-5-2-recessus-costomediastinalis",
+    "tier": 1,
+    "order": 223
+   },
+   {
+    "id": "question-5-2-cupula-pleurae",
+    "tier": 1,
+    "order": 224
+   },
+   {
+    "id": "question-5-2-fissura-horizontalis",
+    "tier": 1,
+    "order": 225
+   },
+   {
+    "id": "question-5-2-fissura-obliqua",
+    "tier": 1,
+    "order": 226
+   },
+   {
+    "id": "question-5-2-lingula-pulmonis-sinistri",
+    "tier": 1,
+    "order": 227
+   },
+   {
+    "id": "question-5-2-pneumothorax",
+    "tier": 1,
+    "order": 228
+   },
+   {
+    "id": "question-5-2-haemothorax",
+    "tier": 1,
+    "order": 229
+   },
+   {
+    "id": "question-5-2-carina-tracheae",
+    "tier": 1,
+    "order": 230
+   },
+   {
+    "id": "question-5-2-audit-aspirasyon",
+    "tier": 1,
+    "order": 231
+   },
+   {
     "id": "organs-pleura",
     "tier": 2,
     "order": 21
@@ -4850,6 +5290,121 @@ export const sections = [
     "id": "organs-bronchus-segmentalis-basalis-anteromedialis-sinister",
     "tier": 2,
     "order": 143
+   },
+   {
+    "id": "question-5-2-spatium-interscalenum",
+    "tier": 2,
+    "order": 232
+   },
+   {
+    "id": "question-5-2-v-subclavia",
+    "tier": 2,
+    "order": 233
+   },
+   {
+    "id": "question-5-2-membrana-suprapleuralis",
+    "tier": 2,
+    "order": 234
+   },
+   {
+    "id": "question-5-2-t1",
+    "tier": 2,
+    "order": 235
+   },
+   {
+    "id": "question-5-2-sulcus-costae",
+    "tier": 2,
+    "order": 236
+   },
+   {
+    "id": "question-5-2-spatium-retromammarium",
+    "tier": 2,
+    "order": 237
+   },
+   {
+    "id": "question-5-2-trigonum-lumbocostale",
+    "tier": 2,
+    "order": 238
+   },
+   {
+    "id": "question-5-2-trigonum-sternocostale",
+    "tier": 2,
+    "order": 239
+   },
+   {
+    "id": "question-5-2-ligamentum-arcuatum-mediale",
+    "tier": 2,
+    "order": 240
+   },
+   {
+    "id": "question-5-2-ligamentum-arcuatum-laterale",
+    "tier": 2,
+    "order": 241
+   },
+   {
+    "id": "question-5-2-segmentum-bronchopulmonale",
+    "tier": 2,
+    "order": 242
+   },
+   {
+    "id": "question-5-2-vv-pulmonales",
+    "tier": 2,
+    "order": 243
+   },
+   {
+    "id": "question-5-2-hilum-pulmonis",
+    "tier": 2,
+    "order": 244
+   },
+   {
+    "id": "question-5-2-ligamentum-arcuatum-medianum",
+    "tier": 2,
+    "order": 245
+   },
+   {
+    "id": "question-5-2-8",
+    "tier": 2,
+    "order": 246
+   },
+   {
+    "id": "question-5-2-10",
+    "tier": 2,
+    "order": 247
+   },
+   {
+    "id": "question-5-2-12",
+    "tier": 2,
+    "order": 248
+   },
+   {
+    "id": "question-5-2-aa-bronchiales",
+    "tier": 2,
+    "order": 249
+   },
+   {
+    "id": "question-5-2-a-pulmonalis-sinistra",
+    "tier": 2,
+    "order": 250
+   },
+   {
+    "id": "question-5-2-audit-diyafram-agri",
+    "tier": 2,
+    "order": 251
+   },
+   {
+    "id": "question-5-2-audit-eparterial",
+    "tier": 2,
+    "order": 252
+   },
+   {
+    "id": "question-5-2-audit-aort-hiatus",
+    "tier": 2,
+    "order": 253
+   },
+   {
+    "id": "question-5-2-audit-ozofagus-hiatus",
+    "tier": 2,
+    "order": 254
    },
    {
     "id": "organs-bronchus-segmentalis-basalis-anterior-dexter",
@@ -4940,6 +5495,11 @@ export const sections = [
     "id": "organs-bronchus-segmentalis-superior-sinister",
     "tier": 3,
     "order": 47
+   },
+   {
+    "id": "question-5-2-trigonum-scalenovertebrale",
+    "tier": 3,
+    "order": 255
    }
   ]
  },
@@ -4954,9 +5514,109 @@ export const sections = [
     "order": 49
    },
    {
+    "id": "question-5-3-mediastinum-superius",
+    "tier": 1,
+    "order": 256
+   },
+   {
+    "id": "question-5-3-mediastinum-medium",
+    "tier": 1,
+    "order": 257
+   },
+   {
+    "id": "question-5-3-c6",
+    "tier": 1,
+    "order": 258
+   },
+   {
+    "id": "question-5-3-t11",
+    "tier": 1,
+    "order": 259
+   },
+   {
+    "id": "question-5-3-audit-vagal-on",
+    "tier": 1,
+    "order": 260
+   },
+   {
+    "id": "question-5-3-audit-ductus-son",
+    "tier": 1,
+    "order": 261
+   },
+   {
+    "id": "question-5-3-audit-rekurrens",
+    "tier": 1,
+    "order": 262
+   },
+   {
+    "id": "question-5-3-audit-servikal-darlik",
+    "tier": 1,
+    "order": 263
+   },
+   {
+    "id": "question-5-3-audit-ozofagus-varis",
+    "tier": 1,
+    "order": 264
+   },
+   {
     "id": "organs-thymus",
     "tier": 2,
     "order": 50
+   },
+   {
+    "id": "question-5-3-mediastinum-posterius",
+    "tier": 2,
+    "order": 265
+   },
+   {
+    "id": "question-5-3-mediastinum-anterius",
+    "tier": 2,
+    "order": 266
+   },
+   {
+    "id": "question-5-3-angulus-sterni",
+    "tier": 2,
+    "order": 267
+   },
+   {
+    "id": "question-5-3-musculus-trachealis",
+    "tier": 2,
+    "order": 268
+   },
+   {
+    "id": "question-5-3-a-gastrica-sinistra",
+    "tier": 2,
+    "order": 269
+   },
+   {
+    "id": "question-5-3-arcus-aortae",
+    "tier": 2,
+    "order": 270
+   },
+   {
+    "id": "question-5-3-hiatus-oesophageus",
+    "tier": 2,
+    "order": 271
+   },
+   {
+    "id": "question-5-3-audit-azygos-ark",
+    "tier": 2,
+    "order": 272
+   },
+   {
+    "id": "question-5-3-audit-ductus-capraz",
+    "tier": 2,
+    "order": 273
+   },
+   {
+    "id": "question-5-3-audit-frenik",
+    "tier": 2,
+    "order": 274
+   },
+   {
+    "id": "question-5-3-audit-brons-darlik",
+    "tier": 2,
+    "order": 275
    }
   ]
  },
@@ -5011,6 +5671,326 @@ export const sections = [
     "order": 59
    },
    {
+    "id": "question-5-4-mcburney-noktas",
+    "tier": 1,
+    "order": 276
+   },
+   {
+    "id": "question-5-4-linea-pectinata",
+    "tier": 1,
+    "order": 277
+   },
+   {
+    "id": "question-5-4-a-rectalis-superior",
+    "tier": 1,
+    "order": 278
+   },
+   {
+    "id": "question-5-4-n-rectalis-inferior",
+    "tier": 1,
+    "order": 279
+   },
+   {
+    "id": "question-5-4-cardia",
+    "tier": 1,
+    "order": 280
+   },
+   {
+    "id": "question-5-4-fundus-gastricus",
+    "tier": 1,
+    "order": 281
+   },
+   {
+    "id": "question-5-4-corpus-gastricum",
+    "tier": 1,
+    "order": 282
+   },
+   {
+    "id": "question-5-4-antrum-pyloricum",
+    "tier": 1,
+    "order": 283
+   },
+   {
+    "id": "question-5-4-canalis-pyloricus",
+    "tier": 1,
+    "order": 284
+   },
+   {
+    "id": "question-5-4-curvatura-major",
+    "tier": 1,
+    "order": 285
+   },
+   {
+    "id": "question-5-4-curvatura-minor",
+    "tier": 1,
+    "order": 286
+   },
+   {
+    "id": "question-5-4-incisura-angularis",
+    "tier": 1,
+    "order": 287
+   },
+   {
+    "id": "question-5-4-caecum",
+    "tier": 1,
+    "order": 288
+   },
+   {
+    "id": "question-5-4-flexura-coli-dextra",
+    "tier": 1,
+    "order": 289
+   },
+   {
+    "id": "question-5-4-flexura-coli-sinistra",
+    "tier": 1,
+    "order": 290
+   },
+   {
+    "id": "question-5-4-haustra-coli",
+    "tier": 1,
+    "order": 291
+   },
+   {
+    "id": "question-5-4-appendices-omentales",
+    "tier": 1,
+    "order": 292
+   },
+   {
+    "id": "question-5-4-3",
+    "tier": 1,
+    "order": 293
+   },
+   {
+    "id": "question-5-4-canalis-analis",
+    "tier": 1,
+    "order": 294
+   },
+   {
+    "id": "question-5-4-pars-pylorica",
+    "tier": 1,
+    "order": 295
+   },
+   {
+    "id": "question-5-4-colon-sigmoideum",
+    "tier": 1,
+    "order": 296
+   },
+   {
+    "id": "question-5-4-a-rectalis-inferior",
+    "tier": 1,
+    "order": 297
+   },
+   {
+    "id": "question-5-4-v-rectalis-superior",
+    "tier": 1,
+    "order": 298
+   },
+   {
+    "id": "question-5-4-v-rectalis-inferior",
+    "tier": 1,
+    "order": 299
+   },
+   {
+    "id": "question-5-4-nodi-inguinales-superficiales",
+    "tier": 1,
+    "order": 300
+   },
+   {
+    "id": "question-5-4-audit-sma-sendrom",
+    "tier": 1,
+    "order": 301
+   },
+   {
+    "id": "question-5-4-audit-foregut",
+    "tier": 1,
+    "order": 302
+   },
+   {
+    "id": "question-5-4-audit-midgut",
+    "tier": 1,
+    "order": 303
+   },
+   {
+    "id": "question-5-4-audit-hindgut",
+    "tier": 1,
+    "order": 304
+   },
+   {
+    "id": "question-5-4-l1",
+    "tier": 2,
+    "order": 305
+   },
+   {
+    "id": "question-5-4-l3",
+    "tier": 2,
+    "order": 306
+   },
+   {
+    "id": "question-5-4-l4",
+    "tier": 2,
+    "order": 307
+   },
+   {
+    "id": "question-5-4-l5",
+    "tier": 2,
+    "order": 308
+   },
+   {
+    "id": "question-5-4-musculus-sphincter-ani-internus",
+    "tier": 2,
+    "order": 309
+   },
+   {
+    "id": "question-5-4-musculus-sphincter-ani-externus",
+    "tier": 2,
+    "order": 310
+   },
+   {
+    "id": "question-5-4-columnae-anales",
+    "tier": 2,
+    "order": 311
+   },
+   {
+    "id": "question-5-4-linea-anocutanea",
+    "tier": 2,
+    "order": 312
+   },
+   {
+    "id": "question-5-4-a-splenica",
+    "tier": 2,
+    "order": 313
+   },
+   {
+    "id": "question-5-4-bursa-omentalis",
+    "tier": 2,
+    "order": 314
+   },
+   {
+    "id": "question-5-4-pars-superior-duodeni",
+    "tier": 2,
+    "order": 315
+   },
+   {
+    "id": "question-5-4-pars-descendens-duodeni",
+    "tier": 2,
+    "order": 316
+   },
+   {
+    "id": "question-5-4-pars-horizontalis-duodeni",
+    "tier": 2,
+    "order": 317
+   },
+   {
+    "id": "question-5-4-pars-ascendens-duodeni",
+    "tier": 2,
+    "order": 318
+   },
+   {
+    "id": "question-5-4-papilla-duodeni-major",
+    "tier": 2,
+    "order": 319
+   },
+   {
+    "id": "question-5-4-papilla-duodeni-minor",
+    "tier": 2,
+    "order": 320
+   },
+   {
+    "id": "question-5-4-ampulla-hepatopancreatica",
+    "tier": 2,
+    "order": 321
+   },
+   {
+    "id": "question-5-4-musculus-suspensorius-duodeni",
+    "tier": 2,
+    "order": 322
+   },
+   {
+    "id": "question-5-4-a-gastroduodenalis",
+    "tier": 2,
+    "order": 323
+   },
+   {
+    "id": "question-5-4-noduli-lymphoidei-aggregati",
+    "tier": 2,
+    "order": 324
+   },
+   {
+    "id": "question-5-4-vasa-recta",
+    "tier": 2,
+    "order": 325
+   },
+   {
+    "id": "question-5-4-diverticulum-ilei",
+    "tier": 2,
+    "order": 326
+   },
+   {
+    "id": "question-5-4-valva-ileocaecalis",
+    "tier": 2,
+    "order": 327
+   },
+   {
+    "id": "question-5-4-a-appendicularis",
+    "tier": 2,
+    "order": 328
+   },
+   {
+    "id": "question-5-4-valvulae-anales",
+    "tier": 2,
+    "order": 329
+   },
+   {
+    "id": "question-5-4-sinus-anales",
+    "tier": 2,
+    "order": 330
+   },
+   {
+    "id": "question-5-4-plicae-transversae-recti",
+    "tier": 2,
+    "order": 331
+   },
+   {
+    "id": "question-5-4-ampulla-recti",
+    "tier": 2,
+    "order": 332
+   },
+   {
+    "id": "question-5-4-audit-drummond",
+    "tier": 2,
+    "order": 333
+   },
+   {
+    "id": "question-5-4-audit-griffiths",
+    "tier": 2,
+    "order": 334
+   },
+   {
+    "id": "question-5-4-audit-riolan",
+    "tier": 2,
+    "order": 335
+   },
+   {
+    "id": "question-5-4-audit-sudeck",
+    "tier": 2,
+    "order": 336
+   },
+   {
+    "id": "question-5-4-audit-rektum-periton",
+    "tier": 2,
+    "order": 337
+   },
+   {
+    "id": "question-5-4-audit-orta-rektal-arter",
+    "tier": 2,
+    "order": 338
+   },
+   {
+    "id": "question-5-4-audit-pektinat-lenf",
+    "tier": 2,
+    "order": 339
+   },
+   {
     "id": "organs-taenia-libera",
     "tier": 3,
     "order": 60
@@ -5024,6 +6004,21 @@ export const sections = [
     "id": "organs-taenia-mesocolica",
     "tier": 3,
     "order": 62
+   },
+   {
+    "id": "question-5-4-pancreas-annulare",
+    "tier": 3,
+    "order": 340
+   },
+   {
+    "id": "question-5-4-hirschsprung-hastalg",
+    "tier": 3,
+    "order": 341
+   },
+   {
+    "id": "question-5-4-volvulus-sigmoidei",
+    "tier": 3,
+    "order": 342
    }
   ]
  },
@@ -5056,6 +6051,101 @@ export const sections = [
     "id": "organs-splen",
     "tier": 1,
     "order": 69
+   },
+   {
+    "id": "question-5-5-porta-hepatis",
+    "tier": 1,
+    "order": 343
+   },
+   {
+    "id": "question-5-5-lobus-quadratus",
+    "tier": 1,
+    "order": 344
+   },
+   {
+    "id": "question-5-5-vv-hepaticae",
+    "tier": 1,
+    "order": 345
+   },
+   {
+    "id": "question-5-5-ductus-cysticus",
+    "tier": 1,
+    "order": 346
+   },
+   {
+    "id": "question-5-5-ductus-hepaticus-communis",
+    "tier": 1,
+    "order": 347
+   },
+   {
+    "id": "question-5-5-caput-pancreatis",
+    "tier": 1,
+    "order": 348
+   },
+   {
+    "id": "question-5-5-collum-pancreatis",
+    "tier": 1,
+    "order": 349
+   },
+   {
+    "id": "question-5-5-corpus-pancreatis",
+    "tier": 1,
+    "order": 350
+   },
+   {
+    "id": "question-5-5-cauda-pancreatis",
+    "tier": 1,
+    "order": 351
+   },
+   {
+    "id": "question-5-5-10",
+    "tier": 1,
+    "order": 352
+   },
+   {
+    "id": "question-5-5-fundus-vesicae-biliaris",
+    "tier": 1,
+    "order": 353
+   },
+   {
+    "id": "question-5-5-corpus-vesicae-biliaris",
+    "tier": 1,
+    "order": 354
+   },
+   {
+    "id": "question-5-5-collum-vesicae-biliaris",
+    "tier": 1,
+    "order": 355
+   },
+   {
+    "id": "question-5-5-audit-calot",
+    "tier": 1,
+    "order": 356
+   },
+   {
+    "id": "question-5-5-audit-kistik-kaynak",
+    "tier": 1,
+    "order": 357
+   },
+   {
+    "id": "question-5-5-audit-couinaud",
+    "tier": 1,
+    "order": 358
+   },
+   {
+    "id": "question-5-5-audit-wirsung",
+    "tier": 1,
+    "order": 359
+   },
+   {
+    "id": "question-5-5-audit-oddi",
+    "tier": 1,
+    "order": 360
+   },
+   {
+    "id": "question-5-5-audit-kaput-medusa",
+    "tier": 1,
+    "order": 361
    },
    {
     "id": "organs-ductus-pancreaticus",
@@ -5103,9 +6193,89 @@ export const sections = [
     "order": 77
    },
    {
+    "id": "question-5-5-cantlie-cizgisi",
+    "tier": 2,
+    "order": 362
+   },
+   {
+    "id": "question-5-5-ligamentum-falciforme",
+    "tier": 2,
+    "order": 363
+   },
+   {
+    "id": "question-5-5-ligamentum-teres-hepatis",
+    "tier": 2,
+    "order": 364
+   },
+   {
+    "id": "question-5-5-ligamentum-venosum",
+    "tier": 2,
+    "order": 365
+   },
+   {
+    "id": "question-5-5-area-nuda",
+    "tier": 2,
+    "order": 366
+   },
+   {
+    "id": "question-5-5-plica-spiralis",
+    "tier": 2,
+    "order": 367
+   },
+   {
+    "id": "question-5-5-recessus-hartmann",
+    "tier": 2,
+    "order": 368
+   },
+   {
+    "id": "question-5-5-courvoisier-bulgusu",
+    "tier": 2,
+    "order": 369
+   },
+   {
+    "id": "question-5-5-processus-uncinatus",
+    "tier": 2,
+    "order": 370
+   },
+   {
+    "id": "question-5-5-plexus-coeliacus",
+    "tier": 2,
+    "order": 371
+   },
+   {
+    "id": "question-5-5-kehr-bulgusu",
+    "tier": 2,
+    "order": 372
+   },
+   {
+    "id": "question-5-5-audit-santorini",
+    "tier": 2,
+    "order": 373
+   },
+   {
+    "id": "question-5-5-audit-koledok-parca",
+    "tier": 2,
+    "order": 374
+   },
+   {
     "id": "organs-ductus-pancreaticus-accessorius",
     "tier": 3,
     "order": 68
+   },
+   {
+    "id": "question-5-5-budd-chiari-sendromu",
+    "tier": 3,
+    "order": 375
+   },
+   {
+    "id": "question-5-5-pancreas-divisum",
+    "tier": 3,
+    "order": 376
+   },
+   {
+    "id": "question-5-5-splen-accessorius",
+    "tier": 3,
+    "order": 377
    }
   ]
  },
@@ -5118,6 +6288,66 @@ export const sections = [
     "id": "organs-omentum-majus",
     "tier": 1,
     "order": 78
+   },
+   {
+    "id": "question-5-6-fascia-camper",
+    "tier": 1,
+    "order": 378
+   },
+   {
+    "id": "question-5-6-fascia-scarpa",
+    "tier": 1,
+    "order": 379
+   },
+   {
+    "id": "question-5-6-plica-umbilicalis-mediana",
+    "tier": 1,
+    "order": 380
+   },
+   {
+    "id": "question-5-6-plicae-umbilicales-mediales",
+    "tier": 1,
+    "order": 381
+   },
+   {
+    "id": "question-5-6-plicae-umbilicales-laterales",
+    "tier": 1,
+    "order": 382
+   },
+   {
+    "id": "question-5-6-trigonum-inguinale",
+    "tier": 1,
+    "order": 383
+   },
+   {
+    "id": "question-5-6-bursa-omentalis",
+    "tier": 1,
+    "order": 384
+   },
+   {
+    "id": "question-5-6-foramen-omentale",
+    "tier": 1,
+    "order": 385
+   },
+   {
+    "id": "question-5-6-recessus-hepatorenalis",
+    "tier": 1,
+    "order": 386
+   },
+   {
+    "id": "question-5-6-excavatio-rectouterina",
+    "tier": 1,
+    "order": 387
+   },
+   {
+    "id": "question-5-6-excavatio-rectovesicalis",
+    "tier": 1,
+    "order": 388
+   },
+   {
+    "id": "question-5-6-excavatio-vesicouterina",
+    "tier": 1,
+    "order": 389
    },
    {
     "id": "organs-omentum-minus",
@@ -5133,6 +6363,106 @@ export const sections = [
     "id": "organs-mesoappendix",
     "tier": 2,
     "order": 81
+   },
+   {
+    "id": "question-5-6-linea-arcuata",
+    "tier": 2,
+    "order": 390
+   },
+   {
+    "id": "question-5-6-fascia-transversalis",
+    "tier": 2,
+    "order": 391
+   },
+   {
+    "id": "question-5-6-linea-semilunaris",
+    "tier": 2,
+    "order": 392
+   },
+   {
+    "id": "question-5-6-t10",
+    "tier": 2,
+    "order": 393
+   },
+   {
+    "id": "question-5-6-ligamentum-hepatoduodenale",
+    "tier": 2,
+    "order": 394
+   },
+   {
+    "id": "question-5-6-ligamentum-gastrosplenicum",
+    "tier": 2,
+    "order": 395
+   },
+   {
+    "id": "question-5-6-ligamentum-splenorenale",
+    "tier": 2,
+    "order": 396
+   },
+   {
+    "id": "question-5-6-mesenterium",
+    "tier": 2,
+    "order": 397
+   },
+   {
+    "id": "question-5-6-mesocolon-sigmoideum",
+    "tier": 2,
+    "order": 398
+   },
+   {
+    "id": "question-5-6-linea-alba",
+    "tier": 2,
+    "order": 399
+   },
+   {
+    "id": "question-5-6-fossa-inguinalis-medialis",
+    "tier": 2,
+    "order": 400
+   },
+   {
+    "id": "question-5-6-fossa-inguinalis-lateralis",
+    "tier": 2,
+    "order": 401
+   },
+   {
+    "id": "question-5-6-fossa-supravesicalis",
+    "tier": 2,
+    "order": 402
+   },
+   {
+    "id": "question-5-6-ligamentum-hepatogastricum",
+    "tier": 2,
+    "order": 403
+   },
+   {
+    "id": "question-5-6-ligamentum-gastrocolicum",
+    "tier": 2,
+    "order": 404
+   },
+   {
+    "id": "question-5-6-ligamentum-gastrophrenicum",
+    "tier": 2,
+    "order": 405
+   },
+   {
+    "id": "question-5-6-ligamentum-phrenicocolicum",
+    "tier": 2,
+    "order": 406
+   },
+   {
+    "id": "question-5-6-ligamentum-coronarium",
+    "tier": 2,
+    "order": 407
+   },
+   {
+    "id": "question-5-6-audit-inguinal-on",
+    "tier": 2,
+    "order": 408
+   },
+   {
+    "id": "question-5-6-audit-conjoint",
+    "tier": 2,
+    "order": 409
    }
   ]
  },
@@ -5167,9 +6497,274 @@ export const sections = [
     "order": 87
    },
    {
+    "id": "question-5-7-trigonum-urogenitale",
+    "tier": 1,
+    "order": 410
+   },
+   {
+    "id": "question-5-7-trigonum-anale",
+    "tier": 1,
+    "order": 411
+   },
+   {
+    "id": "question-5-7-diaphragma-pelvis",
+    "tier": 1,
+    "order": 412
+   },
+   {
+    "id": "question-5-7-musculus-puborectalis",
+    "tier": 1,
+    "order": 413
+   },
+   {
+    "id": "question-5-7-junctio-ureterovesicalis",
+    "tier": 1,
+    "order": 414
+   },
+   {
+    "id": "question-5-7-cortex-renalis",
+    "tier": 1,
+    "order": 415
+   },
+   {
+    "id": "question-5-7-medulla-renalis",
+    "tier": 1,
+    "order": 416
+   },
+   {
+    "id": "question-5-7-papilla-renalis",
+    "tier": 1,
+    "order": 417
+   },
+   {
+    "id": "question-5-7-calix-renalis-minor",
+    "tier": 1,
+    "order": 418
+   },
+   {
+    "id": "question-5-7-calix-renalis-major",
+    "tier": 1,
+    "order": 419
+   },
+   {
+    "id": "question-5-7-fascia-renalis",
+    "tier": 1,
+    "order": 420
+   },
+   {
+    "id": "question-5-7-v-renalis",
+    "tier": 1,
+    "order": 421
+   },
+   {
+    "id": "question-5-7-uterus",
+    "tier": 1,
+    "order": 422
+   },
+   {
+    "id": "question-5-7-tuba-uterina",
+    "tier": 1,
+    "order": 423
+   },
+   {
+    "id": "question-5-7-ovarium",
+    "tier": 1,
+    "order": 424
+   },
+   {
+    "id": "question-5-7-vagina",
+    "tier": 1,
+    "order": 425
+   },
+   {
+    "id": "question-5-7-urethra-feminina",
+    "tier": 1,
+    "order": 426
+   },
+   {
+    "id": "question-5-7-junctio-pelviureterica",
+    "tier": 1,
+    "order": 427
+   },
+   {
+    "id": "question-5-7-musculus-pubococcygeus",
+    "tier": 1,
+    "order": 428
+   },
+   {
+    "id": "question-5-7-musculus-iliococcygeus",
+    "tier": 1,
+    "order": 429
+   },
+   {
+    "id": "question-5-7-musculus-coccygeus",
+    "tier": 1,
+    "order": 430
+   },
+   {
+    "id": "question-5-7-hiatus-urogenitalis",
+    "tier": 1,
+    "order": 431
+   },
+   {
+    "id": "question-5-7-capsula-fibrosa-renis",
+    "tier": 1,
+    "order": 432
+   },
+   {
+    "id": "question-5-7-capsula-adiposa",
+    "tier": 1,
+    "order": 433
+   },
+   {
+    "id": "question-5-7-corpus-adiposum-pararenale",
+    "tier": 1,
+    "order": 434
+   },
+   {
+    "id": "question-5-7-pyramis-renalis",
+    "tier": 1,
+    "order": 435
+   },
+   {
+    "id": "question-5-7-columna-renalis",
+    "tier": 1,
+    "order": 436
+   },
+   {
+    "id": "question-5-7-audit-ureter-ucuncu",
+    "tier": 1,
+    "order": 437
+   },
+   {
+    "id": "question-5-7-audit-nutcracker",
+    "tier": 1,
+    "order": 438
+   },
+   {
     "id": "organs-pelvis-renalis",
     "tier": 2,
     "order": 83
+   },
+   {
+    "id": "question-5-7-corpus-perineale",
+    "tier": 2,
+    "order": 439
+   },
+   {
+    "id": "question-5-7-spatium-perinei-superficiale",
+    "tier": 2,
+    "order": 440
+   },
+   {
+    "id": "question-5-7-spatium-perinei-profundum",
+    "tier": 2,
+    "order": 441
+   },
+   {
+    "id": "question-5-7-fossa-ischioanalis",
+    "tier": 2,
+    "order": 442
+   },
+   {
+    "id": "question-5-7-glandula-vestibularis-major",
+    "tier": 2,
+    "order": 443
+   },
+   {
+    "id": "question-5-7-glandula-bulbourethralis",
+    "tier": 2,
+    "order": 444
+   },
+   {
+    "id": "question-5-7-trigonum-vesicae",
+    "tier": 2,
+    "order": 445
+   },
+   {
+    "id": "question-5-7-spatium-retropubicum",
+    "tier": 2,
+    "order": 446
+   },
+   {
+    "id": "question-5-7-ligamentum-umbilicale-medianum",
+    "tier": 2,
+    "order": 447
+   },
+   {
+    "id": "question-5-7-ren-arcuatus",
+    "tier": 2,
+    "order": 448
+   },
+   {
+    "id": "question-5-7-n-subcostalis",
+    "tier": 2,
+    "order": 449
+   },
+   {
+    "id": "question-5-7-v-suprarenalis-dextra",
+    "tier": 2,
+    "order": 450
+   },
+   {
+    "id": "question-5-7-v-suprarenalis-sinistra",
+    "tier": 2,
+    "order": 451
+   },
+   {
+    "id": "question-5-7-apex-vesicae",
+    "tier": 2,
+    "order": 452
+   },
+   {
+    "id": "question-5-7-corpus-vesicae",
+    "tier": 2,
+    "order": 453
+   },
+   {
+    "id": "question-5-7-fundus-vesicae",
+    "tier": 2,
+    "order": 454
+   },
+   {
+    "id": "question-5-7-collum-vesicae",
+    "tier": 2,
+    "order": 455
+   },
+   {
+    "id": "question-5-7-uvula-vesicae",
+    "tier": 2,
+    "order": 456
+   },
+   {
+    "id": "question-5-7-ren-ectopicus",
+    "tier": 2,
+    "order": 457
+   },
+   {
+    "id": "question-5-7-n-iliohypogastricus",
+    "tier": 2,
+    "order": 458
+   },
+   {
+    "id": "question-5-7-n-ilioinguinalis",
+    "tier": 2,
+    "order": 459
+   },
+   {
+    "id": "question-5-7-audit-renal-segment",
+    "tier": 2,
+    "order": 460
+   },
+   {
+    "id": "question-5-7-audit-gonadal-komsu",
+    "tier": 2,
+    "order": 461
+   },
+   {
+    "id": "question-5-7-linea-broedel",
+    "tier": 3,
+    "order": 462
    }
   ]
  },
@@ -5192,6 +6787,221 @@ export const sections = [
     "id": "organs-epididymis",
     "tier": 1,
     "order": 90
+   },
+   {
+    "id": "question-5-8-anulus-inguinalis-profundus",
+    "tier": 1,
+    "order": 463
+   },
+   {
+    "id": "question-5-8-anulus-inguinalis-superficialis",
+    "tier": 1,
+    "order": 464
+   },
+   {
+    "id": "question-5-8-fascia-transversalis",
+    "tier": 1,
+    "order": 465
+   },
+   {
+    "id": "question-5-8-ligamentum-inguinale",
+    "tier": 1,
+    "order": 466
+   },
+   {
+    "id": "question-5-8-funiculus-spermaticus",
+    "tier": 1,
+    "order": 467
+   },
+   {
+    "id": "question-5-8-n-ilioinguinalis",
+    "tier": 1,
+    "order": 468
+   },
+   {
+    "id": "question-5-8-hernia-inguinalis-indirecta",
+    "tier": 1,
+    "order": 469
+   },
+   {
+    "id": "question-5-8-hernia-inguinalis-directa",
+    "tier": 1,
+    "order": 470
+   },
+   {
+    "id": "question-5-8-fascia-spermatica-interna",
+    "tier": 1,
+    "order": 471
+   },
+   {
+    "id": "question-5-8-fascia-spermatica-externa",
+    "tier": 1,
+    "order": 472
+   },
+   {
+    "id": "question-5-8-canalis-femoralis",
+    "tier": 1,
+    "order": 473
+   },
+   {
+    "id": "question-5-8-ligamentum-lacunare",
+    "tier": 1,
+    "order": 474
+   },
+   {
+    "id": "question-5-8-v-femoralis",
+    "tier": 1,
+    "order": 475
+   },
+   {
+    "id": "question-5-8-ligamentum-pectineale",
+    "tier": 1,
+    "order": 476
+   },
+   {
+    "id": "question-5-8-pars-membranacea-urethrae",
+    "tier": 1,
+    "order": 477
+   },
+   {
+    "id": "question-5-8-pars-spongiosa-urethrae",
+    "tier": 1,
+    "order": 478
+   },
+   {
+    "id": "question-5-8-ostium-urethrae-externum",
+    "tier": 1,
+    "order": 479
+   },
+   {
+    "id": "question-5-8-fundus-uteri",
+    "tier": 1,
+    "order": 480
+   },
+   {
+    "id": "question-5-8-corpus-uteri",
+    "tier": 1,
+    "order": 481
+   },
+   {
+    "id": "question-5-8-isthmus-uteri",
+    "tier": 1,
+    "order": 482
+   },
+   {
+    "id": "question-5-8-cervix-uteri",
+    "tier": 1,
+    "order": 483
+   },
+   {
+    "id": "question-5-8-anteversio",
+    "tier": 1,
+    "order": 484
+   },
+   {
+    "id": "question-5-8-anteflexio",
+    "tier": 1,
+    "order": 485
+   },
+   {
+    "id": "question-5-8-ampulla-tubae-uterinae",
+    "tier": 1,
+    "order": 486
+   },
+   {
+    "id": "question-5-8-a-uterina",
+    "tier": 1,
+    "order": 487
+   },
+   {
+    "id": "question-5-8-fornix-vaginae-posterior",
+    "tier": 1,
+    "order": 488
+   },
+   {
+    "id": "question-5-8-a-testicularis",
+    "tier": 1,
+    "order": 489
+   },
+   {
+    "id": "question-5-8-plexus-pampiniformis",
+    "tier": 1,
+    "order": 490
+   },
+   {
+    "id": "question-5-8-scrotum",
+    "tier": 1,
+    "order": 491
+   },
+   {
+    "id": "question-5-8-tunica-vaginalis-testis",
+    "tier": 1,
+    "order": 492
+   },
+   {
+    "id": "question-5-8-infundibulum-tubae-uterinae",
+    "tier": 1,
+    "order": 493
+   },
+   {
+    "id": "question-5-8-isthmus-tubae-uterinae",
+    "tier": 1,
+    "order": 494
+   },
+   {
+    "id": "question-5-8-pars-uterina-tubae",
+    "tier": 1,
+    "order": 495
+   },
+   {
+    "id": "question-5-8-musculus-cremaster",
+    "tier": 1,
+    "order": 496
+   },
+   {
+    "id": "question-5-8-pars-intramuralis-urethrae",
+    "tier": 1,
+    "order": 497
+   },
+   {
+    "id": "question-5-8-pars-prostatica-urethrae",
+    "tier": 1,
+    "order": 498
+   },
+   {
+    "id": "question-5-8-ureter",
+    "tier": 1,
+    "order": 499
+   },
+   {
+    "id": "question-5-8-v-testicularis-dextra",
+    "tier": 1,
+    "order": 500
+   },
+   {
+    "id": "question-5-8-v-testicularis-sinistra",
+    "tier": 1,
+    "order": 501
+   },
+   {
+    "id": "question-5-8-nodi-lymphoidei-lumbales",
+    "tier": 1,
+    "order": 502
+   },
+   {
+    "id": "question-5-8-audit-lenf-skrotum",
+    "tier": 1,
+    "order": 503
+   },
+   {
+    "id": "question-5-8-audit-ereksiyon",
+    "tier": 1,
+    "order": 504
+   },
+   {
+    "id": "question-5-8-audit-ejakulasyon",
+    "tier": 1,
+    "order": 505
    },
    {
     "id": "organs-ductus-deferens",
@@ -5222,6 +7032,236 @@ export const sections = [
     "id": "organs-glans-penis",
     "tier": 2,
     "order": 96
+   },
+   {
+    "id": "question-5-8-hydrocele",
+    "tier": 2,
+    "order": 506
+   },
+   {
+    "id": "question-5-8-varicocele",
+    "tier": 2,
+    "order": 507
+   },
+   {
+    "id": "question-5-8-gubernaculum-testis",
+    "tier": 2,
+    "order": 508
+   },
+   {
+    "id": "question-5-8-zona-peripherica-prostatae",
+    "tier": 2,
+    "order": 509
+   },
+   {
+    "id": "question-5-8-zona-transitionalis-prostatae",
+    "tier": 2,
+    "order": 510
+   },
+   {
+    "id": "question-5-8-zona-centralis-prostatae",
+    "tier": 2,
+    "order": 511
+   },
+   {
+    "id": "question-5-8-colliculus-seminalis",
+    "tier": 2,
+    "order": 512
+   },
+   {
+    "id": "question-5-8-utriculus-prostaticus",
+    "tier": 2,
+    "order": 513
+   },
+   {
+    "id": "question-5-8-fascia-penis-profunda",
+    "tier": 2,
+    "order": 514
+   },
+   {
+    "id": "question-5-8-v-dorsalis-profunda-penis",
+    "tier": 2,
+    "order": 515
+   },
+   {
+    "id": "question-5-8-ligamentum-cardinale",
+    "tier": 2,
+    "order": 516
+   },
+   {
+    "id": "question-5-8-ligamentum-teres-uteri",
+    "tier": 2,
+    "order": 517
+   },
+   {
+    "id": "question-5-8-ligamentum-latum-uteri",
+    "tier": 2,
+    "order": 518
+   },
+   {
+    "id": "question-5-8-ligamentum-suspensorium-ovarii",
+    "tier": 2,
+    "order": 519
+   },
+   {
+    "id": "question-5-8-n-obturatorius",
+    "tier": 2,
+    "order": 520
+   },
+   {
+    "id": "question-5-8-tunica-albuginea-testis",
+    "tier": 2,
+    "order": 521
+   },
+   {
+    "id": "question-5-8-mediastinum-testis",
+    "tier": 2,
+    "order": 522
+   },
+   {
+    "id": "question-5-8-rete-testis",
+    "tier": 2,
+    "order": 523
+   },
+   {
+    "id": "question-5-8-a-ovarica",
+    "tier": 2,
+    "order": 524
+   },
+   {
+    "id": "question-5-8-v-renalis-sinistra",
+    "tier": 2,
+    "order": 525
+   },
+   {
+    "id": "question-5-8-mesometrium",
+    "tier": 2,
+    "order": 526
+   },
+   {
+    "id": "question-5-8-mesosalpinx",
+    "tier": 2,
+    "order": 527
+   },
+   {
+    "id": "question-5-8-mesovarium",
+    "tier": 2,
+    "order": 528
+   },
+   {
+    "id": "question-5-8-ligamentum-uterosacrale",
+    "tier": 2,
+    "order": 529
+   },
+   {
+    "id": "question-5-8-tunica-dartos",
+    "tier": 2,
+    "order": 530
+   },
+   {
+    "id": "question-5-8-torsio-testis",
+    "tier": 2,
+    "order": 531
+   },
+   {
+    "id": "question-5-8-pantaloon-herni",
+    "tier": 2,
+    "order": 532
+   },
+   {
+    "id": "question-5-8-fossa-navicularis",
+    "tier": 2,
+    "order": 533
+   },
+   {
+    "id": "question-5-8-plexus-venosus-prostaticus",
+    "tier": 2,
+    "order": 534
+   },
+   {
+    "id": "question-5-8-ligamentum-suspensorium-penis",
+    "tier": 2,
+    "order": 535
+   },
+   {
+    "id": "question-5-8-a-profunda-penis",
+    "tier": 2,
+    "order": 536
+   },
+   {
+    "id": "question-5-8-ligamentum-ovarii-proprium",
+    "tier": 2,
+    "order": 537
+   },
+   {
+    "id": "question-5-8-clitoris",
+    "tier": 2,
+    "order": 538
+   },
+   {
+    "id": "question-5-8-vestibulum-vaginae",
+    "tier": 2,
+    "order": 539
+   },
+   {
+    "id": "question-5-8-labia-majora",
+    "tier": 2,
+    "order": 540
+   },
+   {
+    "id": "question-5-8-labia-minora",
+    "tier": 2,
+    "order": 541
+   },
+   {
+    "id": "question-5-8-cryptorchismus",
+    "tier": 2,
+    "order": 542
+   },
+   {
+    "id": "question-5-8-caput-epididymidis",
+    "tier": 2,
+    "order": 543
+   },
+   {
+    "id": "question-5-8-corpus-epididymidis",
+    "tier": 2,
+    "order": 544
+   },
+   {
+    "id": "question-5-8-cauda-epididymidis",
+    "tier": 2,
+    "order": 545
+   },
+   {
+    "id": "question-5-8-t10",
+    "tier": 2,
+    "order": 546
+   },
+   {
+    "id": "question-5-8-audit-pudendal-blok",
+    "tier": 2,
+    "order": 547
+   },
+   {
+    "id": "question-5-8-audit-alcock",
+    "tier": 2,
+    "order": 548
+   },
+   {
+    "id": "question-5-8-canalis-nuck",
+    "tier": 3,
+    "order": 549
+   },
+   {
+    "id": "question-5-8-littre-hernisi",
+    "tier": 3,
+    "order": 550
+   },
+   {
+    "id": "question-5-8-richter-hernisi",
+    "tier": 3,
+    "order": 551
    }
   ]
  },
@@ -5259,6 +7299,191 @@ export const sections = [
     "id": "organs-cartilago-thyroidea",
     "tier": 1,
     "order": 111
+   },
+   {
+    "id": "question-5-9-n-trigeminus",
+    "tier": 1,
+    "order": 552
+   },
+   {
+    "id": "question-5-9-n-facialis",
+    "tier": 1,
+    "order": 553
+   },
+   {
+    "id": "question-5-9-dens-molaris-secundus-superior",
+    "tier": 1,
+    "order": 554
+   },
+   {
+    "id": "question-5-9-recessus-sphenoethmoidalis",
+    "tier": 1,
+    "order": 555
+   },
+   {
+    "id": "question-5-9-meatus-nasi-superior",
+    "tier": 1,
+    "order": 556
+   },
+   {
+    "id": "question-5-9-meatus-nasi-medius",
+    "tier": 1,
+    "order": 557
+   },
+   {
+    "id": "question-5-9-plexus-kiesselbach",
+    "tier": 1,
+    "order": 558
+   },
+   {
+    "id": "question-5-9-n-glossopharyngeus",
+    "tier": 1,
+    "order": 559
+   },
+   {
+    "id": "question-5-9-chorda-tympani",
+    "tier": 1,
+    "order": 560
+   },
+   {
+    "id": "question-5-9-n-hypoglossus",
+    "tier": 1,
+    "order": 561
+   },
+   {
+    "id": "question-5-9-vagina-carotica",
+    "tier": 1,
+    "order": 562
+   },
+   {
+    "id": "question-5-9-trigonum-caroticum",
+    "tier": 1,
+    "order": 563
+   },
+   {
+    "id": "question-5-9-cartilago-cricoidea",
+    "tier": 1,
+    "order": 564
+   },
+   {
+    "id": "question-5-9-cartilago-arytenoidea",
+    "tier": 1,
+    "order": 565
+   },
+   {
+    "id": "question-5-9-c6",
+    "tier": 1,
+    "order": 566
+   },
+   {
+    "id": "question-5-9-plexus-pharyngeus",
+    "tier": 1,
+    "order": 567
+   },
+   {
+    "id": "question-5-9-tonsilla-palatina",
+    "tier": 1,
+    "order": 568
+   },
+   {
+    "id": "question-5-9-tonsilla-pharyngea",
+    "tier": 1,
+    "order": 569
+   },
+   {
+    "id": "question-5-9-isthmus-faucium",
+    "tier": 1,
+    "order": 570
+   },
+   {
+    "id": "question-5-9-palatum-durum",
+    "tier": 1,
+    "order": 571
+   },
+   {
+    "id": "question-5-9-arcus-palatoglossus",
+    "tier": 1,
+    "order": 572
+   },
+   {
+    "id": "question-5-9-arcus-palatopharyngeus",
+    "tier": 1,
+    "order": 573
+   },
+   {
+    "id": "question-5-9-n-ophthalmicus",
+    "tier": 1,
+    "order": 574
+   },
+   {
+    "id": "question-5-9-n-maxillaris",
+    "tier": 1,
+    "order": 575
+   },
+   {
+    "id": "question-5-9-n-mandibularis",
+    "tier": 1,
+    "order": 576
+   },
+   {
+    "id": "question-5-9-a-facialis",
+    "tier": 1,
+    "order": 577
+   },
+   {
+    "id": "question-5-9-v-facialis",
+    "tier": 1,
+    "order": 578
+   },
+   {
+    "id": "question-5-9-concha-nasalis-inferior",
+    "tier": 1,
+    "order": 579
+   },
+   {
+    "id": "question-5-9-vomer",
+    "tier": 1,
+    "order": 580
+   },
+   {
+    "id": "question-5-9-a-thyroidea-superior",
+    "tier": 1,
+    "order": 581
+   },
+   {
+    "id": "question-5-9-audit-tek-abduktor",
+    "tier": 1,
+    "order": 582
+   },
+   {
+    "id": "question-5-9-audit-tiroglossal",
+    "tier": 1,
+    "order": 583
+   },
+   {
+    "id": "question-5-9-audit-santral-fasiyal",
+    "tier": 1,
+    "order": 584
+   },
+   {
+    "id": "question-5-9-audit-krikotiroid-istisna",
+    "tier": 1,
+    "order": 585
+   },
+   {
+    "id": "question-5-9-audit-ust-laringeal-dis",
+    "tier": 1,
+    "order": 586
+   },
+   {
+    "id": "question-5-9-audit-rekurrens",
+    "tier": 1,
+    "order": 587
+   },
+   {
+    "id": "question-5-9-audit-periferik-fasiyal",
+    "tier": 1,
+    "order": 588
    },
    {
     "id": "organs-glandula-parathyroidea-superior",
@@ -5321,9 +7546,469 @@ export const sections = [
     "order": 115
    },
    {
+    "id": "question-5-9-modiolus",
+    "tier": 2,
+    "order": 589
+   },
+   {
+    "id": "question-5-9-v-retromandibularis",
+    "tier": 2,
+    "order": 590
+   },
+   {
+    "id": "question-5-9-a-carotis-externa",
+    "tier": 2,
+    "order": 591
+   },
+   {
+    "id": "question-5-9-ganglion-oticum",
+    "tier": 2,
+    "order": 592
+   },
+   {
+    "id": "question-5-9-n-petrosus-minor",
+    "tier": 2,
+    "order": 593
+   },
+   {
+    "id": "question-5-9-n-auriculotemporalis",
+    "tier": 2,
+    "order": 594
+   },
+   {
+    "id": "question-5-9-frey-sendromu",
+    "tier": 2,
+    "order": 595
+   },
+   {
+    "id": "question-5-9-musculus-temporalis",
+    "tier": 2,
+    "order": 596
+   },
+   {
+    "id": "question-5-9-linea-temporalis-superior",
+    "tier": 2,
+    "order": 597
+   },
+   {
+    "id": "question-5-9-arcus-zygomaticus",
+    "tier": 2,
+    "order": 598
+   },
+   {
+    "id": "question-5-9-ramus-mandibulae",
+    "tier": 2,
+    "order": 599
+   },
+   {
+    "id": "question-5-9-plexus-pterygoideus",
+    "tier": 2,
+    "order": 600
+   },
+   {
+    "id": "question-5-9-a-maxillaris",
+    "tier": 2,
+    "order": 601
+   },
+   {
+    "id": "question-5-9-ligamentum-sphenomandibulare",
+    "tier": 2,
+    "order": 602
+   },
+   {
+    "id": "question-5-9-n-lingualis",
+    "tier": 2,
+    "order": 603
+   },
+   {
+    "id": "question-5-9-foramen-rotundum",
+    "tier": 2,
+    "order": 604
+   },
+   {
+    "id": "question-5-9-canalis-pterygoideus",
+    "tier": 2,
+    "order": 605
+   },
+   {
+    "id": "question-5-9-canalis-palatovaginalis",
+    "tier": 2,
+    "order": 606
+   },
+   {
+    "id": "question-5-9-foramen-sphenopalatinum",
+    "tier": 2,
+    "order": 607
+   },
+   {
+    "id": "question-5-9-fissura-orbitalis-inferior",
+    "tier": 2,
+    "order": 608
+   },
+   {
+    "id": "question-5-9-fissura-pterygomaxillaris",
+    "tier": 2,
+    "order": 609
+   },
+   {
+    "id": "question-5-9-canalis-palatinus-major",
+    "tier": 2,
+    "order": 610
+   },
+   {
+    "id": "question-5-9-ganglion-pterygopalatinum",
+    "tier": 2,
+    "order": 611
+   },
+   {
+    "id": "question-5-9-sinus-maxillaris",
+    "tier": 2,
+    "order": 612
+   },
+   {
+    "id": "question-5-9-sinus-sphenoidalis",
+    "tier": 2,
+    "order": 613
+   },
+   {
+    "id": "question-5-9-foramen-caecum-linguae",
+    "tier": 2,
+    "order": 614
+   },
+   {
+    "id": "question-5-9-sulcus-terminalis-linguae",
+    "tier": 2,
+    "order": 615
+   },
+   {
+    "id": "question-5-9-papillae-filiformes",
+    "tier": 2,
+    "order": 616
+   },
+   {
+    "id": "question-5-9-papillae-vallatae",
+    "tier": 2,
+    "order": 617
+   },
+   {
+    "id": "question-5-9-caruncula-sublingualis",
+    "tier": 2,
+    "order": 618
+   },
+   {
+    "id": "question-5-9-v-palatina-externa",
+    "tier": 2,
+    "order": 619
+   },
+   {
+    "id": "question-5-9-r-tonsillaris-a-facialis",
+    "tier": 2,
+    "order": 620
+   },
+   {
+    "id": "question-5-9-lamina-superficialis-fasciae-cervicalis",
+    "tier": 2,
+    "order": 621
+   },
+   {
+    "id": "question-5-9-lamina-praetrachealis",
+    "tier": 2,
+    "order": 622
+   },
+   {
+    "id": "question-5-9-lamina-praevertebralis",
+    "tier": 2,
+    "order": 623
+   },
+   {
+    "id": "question-5-9-spatium-periculosum",
+    "tier": 2,
+    "order": 624
+   },
+   {
+    "id": "question-5-9-ansa-cervicalis",
+    "tier": 2,
+    "order": 625
+   },
+   {
+    "id": "question-5-9-truncus-sympathicus",
+    "tier": 2,
+    "order": 626
+   },
+   {
+    "id": "question-5-9-trigonum-submentale",
+    "tier": 2,
+    "order": 627
+   },
+   {
+    "id": "question-5-9-trigonum-submandibulare",
+    "tier": 2,
+    "order": 628
+   },
+   {
+    "id": "question-5-9-trigonum-musculare",
+    "tier": 2,
+    "order": 629
+   },
+   {
+    "id": "question-5-9-n-accessorius",
+    "tier": 2,
+    "order": 630
+   },
+   {
+    "id": "question-5-9-trigonum-omoclaviculare",
+    "tier": 2,
+    "order": 631
+   },
+   {
+    "id": "question-5-9-isthmus-glandulae-thyroideae",
+    "tier": 2,
+    "order": 632
+   },
+   {
+    "id": "question-5-9-lobus-pyramidalis",
+    "tier": 2,
+    "order": 633
+   },
+   {
+    "id": "question-5-9-a-thyroidea-inferior",
+    "tier": 2,
+    "order": 634
+   },
+   {
+    "id": "question-5-9-ligamentum-cricothyroideum-medianum",
+    "tier": 2,
+    "order": 635
+   },
+   {
+    "id": "question-5-9-membrana-quadrangularis",
+    "tier": 2,
+    "order": 636
+   },
+   {
+    "id": "question-5-9-rima-glottidis",
+    "tier": 2,
+    "order": 637
+   },
+   {
+    "id": "question-5-9-plica-vestibularis",
+    "tier": 2,
+    "order": 638
+   },
+   {
+    "id": "question-5-9-plica-vocalis",
+    "tier": 2,
+    "order": 639
+   },
+   {
+    "id": "question-5-9-recessus-pharyngeus",
+    "tier": 2,
+    "order": 640
+   },
+   {
+    "id": "question-5-9-recessus-piriformis",
+    "tier": 2,
+    "order": 641
+   },
+   {
+    "id": "question-5-9-zenker-divertikulu",
+    "tier": 2,
+    "order": 642
+   },
+   {
+    "id": "question-5-9-glottis",
+    "tier": 2,
+    "order": 643
+   },
+   {
+    "id": "question-5-9-papillae-fungiformes",
+    "tier": 2,
+    "order": 644
+   },
+   {
+    "id": "question-5-9-papillae-foliatae",
+    "tier": 2,
+    "order": 645
+   },
+   {
+    "id": "question-5-9-musculus-masseter",
+    "tier": 2,
+    "order": 646
+   },
+   {
+    "id": "question-5-9-musculus-buccinator",
+    "tier": 2,
+    "order": 647
+   },
+   {
+    "id": "question-5-9-lamina-lateralis-processus-pterygoidei",
+    "tier": 2,
+    "order": 648
+   },
+   {
+    "id": "question-5-9-foramen-spinosum",
+    "tier": 2,
+    "order": 649
+   },
+   {
+    "id": "question-5-9-n-alveolaris-inferior",
+    "tier": 2,
+    "order": 650
+   },
+   {
+    "id": "question-5-9-n-buccalis",
+    "tier": 2,
+    "order": 651
+   },
+   {
+    "id": "question-5-9-hiatus-semilunaris",
+    "tier": 2,
+    "order": 652
+   },
+   {
+    "id": "question-5-9-bulla-ethmoidalis",
+    "tier": 2,
+    "order": 653
+   },
+   {
+    "id": "question-5-9-n-ethmoidalis-anterior",
+    "tier": 2,
+    "order": 654
+   },
+   {
+    "id": "question-5-9-n-nasopalatinus",
+    "tier": 2,
+    "order": 655
+   },
+   {
+    "id": "question-5-9-musculus-tensor-veli-palatini",
+    "tier": 2,
+    "order": 656
+   },
+   {
+    "id": "question-5-9-musculus-levator-veli-palatini",
+    "tier": 2,
+    "order": 657
+   },
+   {
+    "id": "question-5-9-musculus-palatoglossus",
+    "tier": 2,
+    "order": 658
+   },
+   {
+    "id": "question-5-9-musculus-palatopharyngeus",
+    "tier": 2,
+    "order": 659
+   },
+   {
+    "id": "question-5-9-musculus-uvulae",
+    "tier": 2,
+    "order": 660
+   },
+   {
+    "id": "question-5-9-4",
+    "tier": 2,
+    "order": 661
+   },
+   {
+    "id": "question-5-9-3",
+    "tier": 2,
+    "order": 662
+   },
+   {
+    "id": "question-5-9-cartilago-corniculata",
+    "tier": 2,
+    "order": 663
+   },
+   {
+    "id": "question-5-9-cartilago-cuneiformis",
+    "tier": 2,
+    "order": 664
+   },
+   {
+    "id": "question-5-9-conus-elasticus",
+    "tier": 2,
+    "order": 665
+   },
+   {
+    "id": "question-5-9-vestibulum-laryngis",
+    "tier": 2,
+    "order": 666
+   },
+   {
+    "id": "question-5-9-ventriculus-laryngis",
+    "tier": 2,
+    "order": 667
+   },
+   {
+    "id": "question-5-9-audit-sistrunk",
+    "tier": 2,
+    "order": 668
+   },
+   {
+    "id": "question-5-9-audit-ust-laringeal-ic",
+    "tier": 2,
+    "order": 669
+   },
+   {
+    "id": "question-5-9-audit-parotis-dal-sayi",
+    "tier": 2,
+    "order": 670
+   },
+   {
     "id": "organs-glandula-parotidea-accessoria",
     "tier": 3,
     "order": 102
+   },
+   {
+    "id": "question-5-9-corpus-adiposum-buccae",
+    "tier": 3,
+    "order": 671
+   },
+   {
+    "id": "question-5-9-adenoma-pleomorphum",
+    "tier": 3,
+    "order": 672
+   },
+   {
+    "id": "question-5-9-angiofibroma-nasopharyngeum",
+    "tier": 3,
+    "order": 673
+   },
+   {
+    "id": "question-5-9-20",
+    "tier": 3,
+    "order": 674
+   },
+   {
+    "id": "question-5-9-32",
+    "tier": 3,
+    "order": 675
+   },
+   {
+    "id": "question-5-9-spatium-suprasternale",
+    "tier": 3,
+    "order": 676
+   },
+   {
+    "id": "question-5-9-ludwig-anjini",
+    "tier": 3,
+    "order": 677
+   },
+   {
+    "id": "question-5-9-ligamentum-berry",
+    "tier": 3,
+    "order": 678
+   },
+   {
+    "id": "question-5-9-spatium-reinke",
+    "tier": 3,
+    "order": 679
+   },
+   {
+    "id": "question-5-9-pott-tumoru",
+    "tier": 3,
+    "order": 680
    }
   ]
  },
@@ -5361,6 +8046,121 @@ export const sections = [
     "id": "organs-cochlea",
     "tier": 1,
     "order": 130
+   },
+   {
+    "id": "question-5-10-meatus-nasi-inferior",
+    "tier": 1,
+    "order": 681
+   },
+   {
+    "id": "question-5-10-tegmen-tympani",
+    "tier": 1,
+    "order": 682
+   },
+   {
+    "id": "question-5-10-musculus-stapedius",
+    "tier": 1,
+    "order": 683
+   },
+   {
+    "id": "question-5-10-musculus-tensor-tympani",
+    "tier": 1,
+    "order": 684
+   },
+   {
+    "id": "question-5-10-corpus-ciliare",
+    "tier": 1,
+    "order": 685
+   },
+   {
+    "id": "question-5-10-choroidea",
+    "tier": 1,
+    "order": 686
+   },
+   {
+    "id": "question-5-10-pupilla",
+    "tier": 1,
+    "order": 687
+   },
+   {
+    "id": "question-5-10-discus-nervi-optici",
+    "tier": 1,
+    "order": 688
+   },
+   {
+    "id": "question-5-10-macula-lutea",
+    "tier": 1,
+    "order": 689
+   },
+   {
+    "id": "question-5-10-camera-posterior-bulbi",
+    "tier": 1,
+    "order": 690
+   },
+   {
+    "id": "question-5-10-auricula",
+    "tier": 1,
+    "order": 691
+   },
+   {
+    "id": "question-5-10-meatus-acusticus-externus",
+    "tier": 1,
+    "order": 692
+   },
+   {
+    "id": "question-5-10-cavitas-tympani",
+    "tier": 1,
+    "order": 693
+   },
+   {
+    "id": "question-5-10-punctum-lacrimale",
+    "tier": 1,
+    "order": 694
+   },
+   {
+    "id": "question-5-10-musculus-sphincter-pupillae",
+    "tier": 1,
+    "order": 695
+   },
+   {
+    "id": "question-5-10-musculus-dilatator-pupillae",
+    "tier": 1,
+    "order": 696
+   },
+   {
+    "id": "question-5-10-fovea-centralis",
+    "tier": 1,
+    "order": 697
+   },
+   {
+    "id": "question-5-10-audit-argyll",
+    "tier": 1,
+    "order": 698
+   },
+   {
+    "id": "question-5-10-audit-kornea-afferent",
+    "tier": 1,
+    "order": 699
+   },
+   {
+    "id": "question-5-10-audit-kornea-efferent",
+    "tier": 1,
+    "order": 700
+   },
+   {
+    "id": "question-5-10-audit-rinne",
+    "tier": 1,
+    "order": 701
+   },
+   {
+    "id": "question-5-10-audit-weber",
+    "tier": 1,
+    "order": 702
+   },
+   {
+    "id": "question-5-10-audit-horner",
+    "tier": 1,
+    "order": 703
    },
    {
     "id": "organs-sclera",
@@ -5408,6 +8208,231 @@ export const sections = [
     "order": 132
    },
    {
+    "id": "question-5-10-lamina-orbitalis-ethmoidalis",
+    "tier": 2,
+    "order": 704
+   },
+   {
+    "id": "question-5-10-anulus-tendineus-communis",
+    "tier": 2,
+    "order": 705
+   },
+   {
+    "id": "question-5-10-musculus-obliquus-inferior",
+    "tier": 2,
+    "order": 706
+   },
+   {
+    "id": "question-5-10-ganglion-ciliare",
+    "tier": 2,
+    "order": 707
+   },
+   {
+    "id": "question-5-10-musculus-tarsalis-superior",
+    "tier": 2,
+    "order": 708
+   },
+   {
+    "id": "question-5-10-chalazion",
+    "tier": 2,
+    "order": 709
+   },
+   {
+    "id": "question-5-10-hordeolum",
+    "tier": 2,
+    "order": 710
+   },
+   {
+    "id": "question-5-10-promontorium-tympani",
+    "tier": 2,
+    "order": 711
+   },
+   {
+    "id": "question-5-10-fenestra-vestibuli",
+    "tier": 2,
+    "order": 712
+   },
+   {
+    "id": "question-5-10-fenestra-cochleae",
+    "tier": 2,
+    "order": 713
+   },
+   {
+    "id": "question-5-10-aditus-ad-antrum",
+    "tier": 2,
+    "order": 714
+   },
+   {
+    "id": "question-5-10-eminentia-pyramidalis",
+    "tier": 2,
+    "order": 715
+   },
+   {
+    "id": "question-5-10-trigonum-suprameatale",
+    "tier": 2,
+    "order": 716
+   },
+   {
+    "id": "question-5-10-perilympha",
+    "tier": 2,
+    "order": 717
+   },
+   {
+    "id": "question-5-10-endolympha",
+    "tier": 2,
+    "order": 718
+   },
+   {
+    "id": "question-5-10-maculae",
+    "tier": 2,
+    "order": 719
+   },
+   {
+    "id": "question-5-10-cristae-ampullares",
+    "tier": 2,
+    "order": 720
+   },
+   {
+    "id": "question-5-10-organum-spirale",
+    "tier": 2,
+    "order": 721
+   },
+   {
+    "id": "question-5-10-helicotrema",
+    "tier": 2,
+    "order": 722
+   },
+   {
+    "id": "question-5-10-sinus-venosus-sclerae",
+    "tier": 2,
+    "order": 723
+   },
+   {
+    "id": "question-5-10-musculus-ciliaris",
+    "tier": 2,
+    "order": 724
+   },
+   {
+    "id": "question-5-10-a-centralis-retinae",
+    "tier": 2,
+    "order": 725
+   },
+   {
+    "id": "question-5-10-utriculus",
+    "tier": 2,
+    "order": 726
+   },
+   {
+    "id": "question-5-10-sacculus",
+    "tier": 2,
+    "order": 727
+   },
+   {
+    "id": "question-5-10-ductus-cochlearis",
+    "tier": 2,
+    "order": 728
+   },
+   {
+    "id": "question-5-10-canaliculus-lacrimalis-superior",
+    "tier": 2,
+    "order": 729
+   },
+   {
+    "id": "question-5-10-canaliculus-lacrimalis-inferior",
+    "tier": 2,
+    "order": 730
+   },
+   {
+    "id": "question-5-10-musculus-rectus-superior",
+    "tier": 2,
+    "order": 731
+   },
+   {
+    "id": "question-5-10-musculus-rectus-inferior",
+    "tier": 2,
+    "order": 732
+   },
+   {
+    "id": "question-5-10-musculus-obliquus-superior",
+    "tier": 2,
+    "order": 733
+   },
+   {
+    "id": "question-5-10-glandulae-tarsales",
+    "tier": 2,
+    "order": 734
+   },
+   {
+    "id": "question-5-10-glandulae-ciliares",
+    "tier": 2,
+    "order": 735
+   },
+   {
+    "id": "question-5-10-glandulae-sebaceae",
+    "tier": 2,
+    "order": 736
+   },
+   {
+    "id": "question-5-10-n-petrosus-major",
+    "tier": 2,
+    "order": 737
+   },
+   {
+    "id": "question-5-10-n-zygomaticus",
+    "tier": 2,
+    "order": 738
+   },
+   {
+    "id": "question-5-10-n-lacrimalis",
+    "tier": 2,
+    "order": 739
+   },
+   {
+    "id": "question-5-10-scala-vestibuli",
+    "tier": 2,
+    "order": 740
+   },
+   {
+    "id": "question-5-10-scala-tympani",
+    "tier": 2,
+    "order": 741
+   },
+   {
+    "id": "question-5-10-umbo-membranae-tympanicae",
+    "tier": 2,
+    "order": 742
+   },
+   {
+    "id": "question-5-10-pars-flaccida",
+    "tier": 2,
+    "order": 743
+   },
+   {
+    "id": "question-5-10-pars-tensa",
+    "tier": 2,
+    "order": 744
+   },
+   {
+    "id": "question-5-10-glaucoma-anguli-aperti",
+    "tier": 2,
+    "order": 745
+   },
+   {
+    "id": "question-5-10-glaucoma-anguli-clausi",
+    "tier": 2,
+    "order": 746
+   },
+   {
+    "id": "question-5-10-audit-horner-pancoast",
+    "tier": 2,
+    "order": 747
+   },
+   {
+    "id": "question-5-10-audit-horner-karotis",
+    "tier": 2,
+    "order": 748
+   },
+   {
     "id": "organs-canaliculus-lacrimalis",
     "tier": 3,
     "order": 127
@@ -5431,6 +8456,11 @@ export const sections = [
     "id": "organs-ligamentum-suspensorium-bulbi",
     "tier": 3,
     "order": 142
+   },
+   {
+    "id": "question-5-10-saccus-endolymphaticus",
+    "tier": 3,
+    "order": 749
    }
   ]
  },
@@ -5518,6 +8548,46 @@ export const sections = [
     "id": "brain-gyrus-et-sulcus-paracentralis",
     "tier": 1,
     "order": 162
+   },
+   {
+    "id": "question-6-1-4",
+    "tier": 1,
+    "order": 182
+   },
+   {
+    "id": "question-6-1-3-1-2",
+    "tier": 1,
+    "order": 183
+   },
+   {
+    "id": "question-6-1-44-45",
+    "tier": 1,
+    "order": 184
+   },
+   {
+    "id": "question-6-1-22",
+    "tier": 1,
+    "order": 185
+   },
+   {
+    "id": "question-6-1-41-42",
+    "tier": 1,
+    "order": 186
+   },
+   {
+    "id": "question-6-1-17",
+    "tier": 1,
+    "order": 187
+   },
+   {
+    "id": "question-6-1-a-cerebri-anterior",
+    "tier": 1,
+    "order": 188
+   },
+   {
+    "id": "question-6-1-a-cerebri-media",
+    "tier": 1,
+    "order": 189
    },
    {
     "id": "brain-pars-orbitalis-gyri-frontalis-inferioris",
@@ -5645,6 +8715,36 @@ export const sections = [
     "order": 161
    },
    {
+    "id": "question-6-1-8",
+    "tier": 2,
+    "order": 190
+   },
+   {
+    "id": "question-6-1-39",
+    "tier": 2,
+    "order": 191
+   },
+   {
+    "id": "question-6-1-40",
+    "tier": 2,
+    "order": 192
+   },
+   {
+    "id": "question-6-1-gerstmann-sendromu",
+    "tier": 2,
+    "order": 193
+   },
+   {
+    "id": "question-6-1-hemineglect",
+    "tier": 2,
+    "order": 194
+   },
+   {
+    "id": "question-6-1-fasciculus-arcuatus",
+    "tier": 2,
+    "order": 195
+   },
+   {
     "id": "brain-polus-temporalis",
     "tier": 3,
     "order": 39
@@ -5738,6 +8838,21 @@ export const sections = [
     "id": "brain-gyrus-subcentralis-et-sulci",
     "tier": 3,
     "order": 172
+   },
+   {
+    "id": "question-6-1-prosopagnosia",
+    "tier": 3,
+    "order": 196
+   },
+   {
+    "id": "question-6-1-anton-sendromu",
+    "tier": 3,
+    "order": 197
+   },
+   {
+    "id": "question-6-1-balint-sendromu",
+    "tier": 3,
+    "order": 198
    }
   ]
  },
@@ -5760,6 +8875,31 @@ export const sections = [
     "id": "brain-medulla-oblongata",
     "tier": 1,
     "order": 50
+   },
+   {
+    "id": "question-6-2-sulcus-basilaris",
+    "tier": 1,
+    "order": 199
+   },
+   {
+    "id": "question-6-2-sulcus-bulbopontinus",
+    "tier": 1,
+    "order": 200
+   },
+   {
+    "id": "question-6-2-audit-aica",
+    "tier": 1,
+    "order": 201
+   },
+   {
+    "id": "question-6-2-audit-asa",
+    "tier": 1,
+    "order": 202
+   },
+   {
+    "id": "question-6-2-audit-willis",
+    "tier": 1,
+    "order": 203
    },
    {
     "id": "brain-basis-pedunculi-cerebri",
@@ -5790,6 +8930,91 @@ export const sections = [
     "id": "brain-oliva",
     "tier": 2,
     "order": 56
+   },
+   {
+    "id": "question-6-2-decussatio-pyramidum",
+    "tier": 2,
+    "order": 204
+   },
+   {
+    "id": "question-6-2-tuberculum-gracile",
+    "tier": 2,
+    "order": 205
+   },
+   {
+    "id": "question-6-2-tuberculum-cuneatum",
+    "tier": 2,
+    "order": 206
+   },
+   {
+    "id": "question-6-2-obex",
+    "tier": 2,
+    "order": 207
+   },
+   {
+    "id": "question-6-2-weber-sendromu",
+    "tier": 2,
+    "order": 208
+   },
+   {
+    "id": "question-6-2-benedikt-sendromu",
+    "tier": 2,
+    "order": 209
+   },
+   {
+    "id": "question-6-2-parinaud-sendromu",
+    "tier": 2,
+    "order": 210
+   },
+   {
+    "id": "question-6-2-millard-gubler-sendromu",
+    "tier": 2,
+    "order": 211
+   },
+   {
+    "id": "question-6-2-foville-sendromu",
+    "tier": 2,
+    "order": 212
+   },
+   {
+    "id": "question-6-2-locked-in-sendromu",
+    "tier": 2,
+    "order": 213
+   },
+   {
+    "id": "question-6-2-wallenberg-sendromu",
+    "tier": 2,
+    "order": 214
+   },
+   {
+    "id": "question-6-2-dejerine-sendromu",
+    "tier": 2,
+    "order": 215
+   },
+   {
+    "id": "question-6-2-ophthalmoplegia-internuclearis",
+    "tier": 2,
+    "order": 216
+   },
+   {
+    "id": "question-6-2-lemniscus-medialis",
+    "tier": 2,
+    "order": 217
+   },
+   {
+    "id": "question-6-2-fasciculus-longitudinalis-medialis",
+    "tier": 2,
+    "order": 218
+   },
+   {
+    "id": "question-6-2-nuclei-raphes",
+    "tier": 2,
+    "order": 219
+   },
+   {
+    "id": "question-6-2-bir-bucuk-sendromu",
+    "tier": 3,
+    "order": 220
    }
   ]
  },
@@ -5814,6 +9039,16 @@ export const sections = [
     "order": 59
    },
    {
+    "id": "question-6-3-dysmetria",
+    "tier": 1,
+    "order": 221
+   },
+   {
+    "id": "question-6-3-dysdiadochokinesia",
+    "tier": 1,
+    "order": 222
+   },
+   {
     "id": "brain-flocculus",
     "tier": 2,
     "order": 60
@@ -5827,6 +9062,81 @@ export const sections = [
     "id": "brain-pedunculus-cerebellaris-superior",
     "tier": 2,
     "order": 62
+   },
+   {
+    "id": "question-6-3-nucleus-dentatus",
+    "tier": 2,
+    "order": 223
+   },
+   {
+    "id": "question-6-3-nucleus-emboliformis",
+    "tier": 2,
+    "order": 224
+   },
+   {
+    "id": "question-6-3-nucleus-globosus",
+    "tier": 2,
+    "order": 225
+   },
+   {
+    "id": "question-6-3-nucleus-fastigii",
+    "tier": 2,
+    "order": 226
+   },
+   {
+    "id": "question-6-3-pedunculus-cerebellaris-medius",
+    "tier": 2,
+    "order": 227
+   },
+   {
+    "id": "question-6-3-pedunculus-cerebellaris-inferior",
+    "tier": 2,
+    "order": 228
+   },
+   {
+    "id": "question-6-3-fissura-prima",
+    "tier": 2,
+    "order": 229
+   },
+   {
+    "id": "question-6-3-fissura-posterolateralis",
+    "tier": 2,
+    "order": 230
+   },
+   {
+    "id": "question-6-3-vestibulocerebellum",
+    "tier": 2,
+    "order": 231
+   },
+   {
+    "id": "question-6-3-spinocerebellum",
+    "tier": 2,
+    "order": 232
+   },
+   {
+    "id": "question-6-3-cerebrocerebellum",
+    "tier": 2,
+    "order": 233
+   },
+   {
+    "id": "question-6-3-fissura-horizontalis",
+    "tier": 2,
+    "order": 234
+   },
+   {
+    "id": "question-6-3-lobus-anterior-cerebelli",
+    "tier": 2,
+    "order": 235
+   },
+   {
+    "id": "question-6-3-lobus-posterior-cerebelli",
+    "tier": 2,
+    "order": 236
+   },
+   {
+    "id": "question-6-3-lobus-flocculonodularis",
+    "tier": 2,
+    "order": 237
    },
    {
     "id": "brain-lingula-cerebelli",
@@ -5951,6 +9261,101 @@ export const sections = [
     "order": 179
    },
    {
+    "id": "question-6-4-cutis",
+    "tier": 1,
+    "order": 238
+   },
+   {
+    "id": "question-6-4-galea-aponeurotica",
+    "tier": 1,
+    "order": 239
+   },
+   {
+    "id": "question-6-4-pericranium",
+    "tier": 1,
+    "order": 240
+   },
+   {
+    "id": "question-6-4-foramen-interventriculare",
+    "tier": 1,
+    "order": 241
+   },
+   {
+    "id": "question-6-4-apertura-mediana",
+    "tier": 1,
+    "order": 242
+   },
+   {
+    "id": "question-6-4-aperturae-laterales",
+    "tier": 1,
+    "order": 243
+   },
+   {
+    "id": "question-6-4-granulationes-arachnoideae",
+    "tier": 1,
+    "order": 244
+   },
+   {
+    "id": "question-6-4-500",
+    "tier": 1,
+    "order": 245
+   },
+   {
+    "id": "question-6-4-150",
+    "tier": 1,
+    "order": 246
+   },
+   {
+    "id": "question-6-4-dura-mater-cranialis",
+    "tier": 1,
+    "order": 247
+   },
+   {
+    "id": "question-6-4-arachnoidea-mater",
+    "tier": 1,
+    "order": 248
+   },
+   {
+    "id": "question-6-4-pia-mater",
+    "tier": 1,
+    "order": 249
+   },
+   {
+    "id": "question-6-4-falx-cerebelli",
+    "tier": 1,
+    "order": 250
+   },
+   {
+    "id": "question-6-4-diaphragma-sellae",
+    "tier": 1,
+    "order": 251
+   },
+   {
+    "id": "question-6-4-haematoma-epidurale",
+    "tier": 1,
+    "order": 252
+   },
+   {
+    "id": "question-6-4-haematoma-subdurale",
+    "tier": 1,
+    "order": 253
+   },
+   {
+    "id": "question-6-4-haemorrhagia-subarachnoidea",
+    "tier": 1,
+    "order": 254
+   },
+   {
+    "id": "question-6-4-audit-danger-triangle",
+    "tier": 1,
+    "order": 255
+   },
+   {
+    "id": "question-6-4-audit-kavernoz-ic",
+    "tier": 1,
+    "order": 256
+   },
+   {
     "id": "brain-plexus-choroideus",
     "tier": 2,
     "order": 83
@@ -5999,6 +9404,221 @@ export const sections = [
     "id": "brain-sinus-petrosus-inferior",
     "tier": 2,
     "order": 181
+   },
+   {
+    "id": "question-6-4-tela-subaponeurotica",
+    "tier": 2,
+    "order": 257
+   },
+   {
+    "id": "question-6-4-n-supratrochlearis",
+    "tier": 2,
+    "order": 258
+   },
+   {
+    "id": "question-6-4-n-supraorbitalis",
+    "tier": 2,
+    "order": 259
+   },
+   {
+    "id": "question-6-4-n-zygomaticotemporalis",
+    "tier": 2,
+    "order": 260
+   },
+   {
+    "id": "question-6-4-n-auriculotemporalis",
+    "tier": 2,
+    "order": 261
+   },
+   {
+    "id": "question-6-4-n-occipitalis-minor",
+    "tier": 2,
+    "order": 262
+   },
+   {
+    "id": "question-6-4-n-auricularis-magnus",
+    "tier": 2,
+    "order": 263
+   },
+   {
+    "id": "question-6-4-n-occipitalis-major",
+    "tier": 2,
+    "order": 264
+   },
+   {
+    "id": "question-6-4-n-occipitalis-tertius",
+    "tier": 2,
+    "order": 265
+   },
+   {
+    "id": "question-6-4-a-ophthalmica",
+    "tier": 2,
+    "order": 266
+   },
+   {
+    "id": "question-6-4-a-carotis-externa",
+    "tier": 2,
+    "order": 267
+   },
+   {
+    "id": "question-6-4-colliculus-facialis",
+    "tier": 2,
+    "order": 268
+   },
+   {
+    "id": "question-6-4-trigonum-nervi-hypoglossi",
+    "tier": 2,
+    "order": 269
+   },
+   {
+    "id": "question-6-4-trigonum-nervi-vagi",
+    "tier": 2,
+    "order": 270
+   },
+   {
+    "id": "question-6-4-area-postrema",
+    "tier": 2,
+    "order": 271
+   },
+   {
+    "id": "question-6-4-locus-caeruleus",
+    "tier": 2,
+    "order": 272
+   },
+   {
+    "id": "question-6-4-sulcus-limitans",
+    "tier": 2,
+    "order": 273
+   },
+   {
+    "id": "question-6-4-cisterna-cerebellomedullaris",
+    "tier": 2,
+    "order": 274
+   },
+   {
+    "id": "question-6-4-cisterna-lumbalis",
+    "tier": 2,
+    "order": 275
+   },
+   {
+    "id": "question-6-4-cisterna-interpeduncularis",
+    "tier": 2,
+    "order": 276
+   },
+   {
+    "id": "question-6-4-cisterna-quadrigeminalis",
+    "tier": 2,
+    "order": 277
+   },
+   {
+    "id": "question-6-4-hydrocephalus-noncommunicans",
+    "tier": 2,
+    "order": 278
+   },
+   {
+    "id": "question-6-4-hydrocephalus-communicans",
+    "tier": 2,
+    "order": 279
+   },
+   {
+    "id": "question-6-4-normal-basncl-hidrosefali",
+    "tier": 2,
+    "order": 280
+   },
+   {
+    "id": "question-6-4-kernohan-centigi",
+    "tier": 2,
+    "order": 281
+   },
+   {
+    "id": "question-6-4-herniatio-tonsillaris",
+    "tier": 2,
+    "order": 282
+   },
+   {
+    "id": "question-6-4-herniatio-subfalcina",
+    "tier": 2,
+    "order": 283
+   },
+   {
+    "id": "question-6-4-v-magna-cerebri",
+    "tier": 2,
+    "order": 284
+   },
+   {
+    "id": "question-6-4-vv-cerebri-internae",
+    "tier": 2,
+    "order": 285
+   },
+   {
+    "id": "question-6-4-confluens-sinuum",
+    "tier": 2,
+    "order": 286
+   },
+   {
+    "id": "question-6-4-sinus-occipitalis",
+    "tier": 2,
+    "order": 287
+   },
+   {
+    "id": "question-6-4-sinus-sphenoparietalis",
+    "tier": 2,
+    "order": 288
+   },
+   {
+    "id": "question-6-4-tela-subcutanea",
+    "tier": 2,
+    "order": 289
+   },
+   {
+    "id": "question-6-4-aa-supratrochleares",
+    "tier": 2,
+    "order": 290
+   },
+   {
+    "id": "question-6-4-aa-supraorbitales",
+    "tier": 2,
+    "order": 291
+   },
+   {
+    "id": "question-6-4-a-temporalis-superficialis",
+    "tier": 2,
+    "order": 292
+   },
+   {
+    "id": "question-6-4-a-auricularis-posterior",
+    "tier": 2,
+    "order": 293
+   },
+   {
+    "id": "question-6-4-a-occipitalis",
+    "tier": 2,
+    "order": 294
+   },
+   {
+    "id": "question-6-4-area-vestibularis",
+    "tier": 2,
+    "order": 295
+   },
+   {
+    "id": "question-6-4-striae-medullares-ventriculi-quarti",
+    "tier": 2,
+    "order": 296
+   },
+   {
+    "id": "question-6-4-v-anastomotica-superior",
+    "tier": 3,
+    "order": 297
+   },
+   {
+    "id": "question-6-4-v-anastomotica-inferior",
+    "tier": 3,
+    "order": 298
+   },
+   {
+    "id": "question-6-4-v-basalis",
+    "tier": 3,
+    "order": 299
    }
   ]
  },
@@ -6031,6 +9651,96 @@ export const sections = [
     "id": "brain-crus-anterius-capsulae-internae",
     "tier": 2,
     "order": 92
+   },
+   {
+    "id": "question-6-5-crus-posterius-capsulae-internae",
+    "tier": 2,
+    "order": 300
+   },
+   {
+    "id": "question-6-5-genu-capsulae-internae",
+    "tier": 2,
+    "order": 301
+   },
+   {
+    "id": "question-6-5-pars-retrolentiformis",
+    "tier": 2,
+    "order": 302
+   },
+   {
+    "id": "question-6-5-pars-sublentiformis",
+    "tier": 2,
+    "order": 303
+   },
+   {
+    "id": "question-6-5-fasciculus-uncinatus",
+    "tier": 2,
+    "order": 304
+   },
+   {
+    "id": "question-6-5-cingulum",
+    "tier": 2,
+    "order": 305
+   },
+   {
+    "id": "question-6-5-rostrum-corporis-callosi",
+    "tier": 2,
+    "order": 306
+   },
+   {
+    "id": "question-6-5-genu-corporis-callosi",
+    "tier": 2,
+    "order": 307
+   },
+   {
+    "id": "question-6-5-truncus-corporis-callosi",
+    "tier": 2,
+    "order": 308
+   },
+   {
+    "id": "question-6-5-splenium-corporis-callosi",
+    "tier": 2,
+    "order": 309
+   },
+   {
+    "id": "question-6-5-capsula-externa",
+    "tier": 2,
+    "order": 310
+   },
+   {
+    "id": "question-6-5-capsula-extrema",
+    "tier": 2,
+    "order": 311
+   },
+   {
+    "id": "question-6-5-claustrum",
+    "tier": 2,
+    "order": 312
+   },
+   {
+    "id": "question-6-5-corona-radiata",
+    "tier": 2,
+    "order": 313
+   },
+   {
+    "id": "question-6-5-radiatio-optica",
+    "tier": 2,
+    "order": 314
+   },
+   {
+    "id": "question-6-5-ansa-meyer",
+    "tier": 2,
+    "order": 315
+   },
+   {
+    "id": "question-6-5-a-choroidea-anterior",
+    "tier": 2,
+    "order": 316
+   },
+   {
+    "id": "question-6-5-aa-lenticulostriatae",
+    "tier": 2,
+    "order": 317
    },
    {
     "id": "brain-substantia-alba-telencephali",
@@ -6100,6 +9810,151 @@ export const sections = [
     "order": 104
    },
    {
+    "id": "question-6-6-nucleus-subthalamicus",
+    "tier": 2,
+    "order": 318
+   },
+   {
+    "id": "question-6-6-substantia-nigra",
+    "tier": 2,
+    "order": 319
+   },
+   {
+    "id": "question-6-6-huntington-hastalg",
+    "tier": 2,
+    "order": 320
+   },
+   {
+    "id": "question-6-6-wilson-hastalg",
+    "tier": 2,
+    "order": 321
+   },
+   {
+    "id": "question-6-6-nucleus-ventralis-posterolateralis",
+    "tier": 2,
+    "order": 322
+   },
+   {
+    "id": "question-6-6-nucleus-ventralis-posteromedialis",
+    "tier": 2,
+    "order": 323
+   },
+   {
+    "id": "question-6-6-nucleus-anterior-thalami",
+    "tier": 2,
+    "order": 324
+   },
+   {
+    "id": "question-6-6-nucleus-mediodorsalis-thalami",
+    "tier": 2,
+    "order": 325
+   },
+   {
+    "id": "question-6-6-pulvinar",
+    "tier": 2,
+    "order": 326
+   },
+   {
+    "id": "question-6-6-adhaesio-interthalamica",
+    "tier": 2,
+    "order": 327
+   },
+   {
+    "id": "question-6-6-nucleus-supraopticus",
+    "tier": 2,
+    "order": 328
+   },
+   {
+    "id": "question-6-6-nucleus-paraventricularis",
+    "tier": 2,
+    "order": 329
+   },
+   {
+    "id": "question-6-6-nucleus-suprachiasmaticus",
+    "tier": 2,
+    "order": 330
+   },
+   {
+    "id": "question-6-6-nucleus-ventromedialis",
+    "tier": 2,
+    "order": 331
+   },
+   {
+    "id": "question-6-6-area-hypothalamica-lateralis",
+    "tier": 2,
+    "order": 332
+   },
+   {
+    "id": "question-6-6-nucleus-arcuatus",
+    "tier": 2,
+    "order": 333
+   },
+   {
+    "id": "question-6-6-infundibulum",
+    "tier": 2,
+    "order": 334
+   },
+   {
+    "id": "question-6-6-tuber-cinereum",
+    "tier": 2,
+    "order": 335
+   },
+   {
+    "id": "question-6-6-lamina-terminalis",
+    "tier": 2,
+    "order": 336
+   },
+   {
+    "id": "question-6-6-corpus-striatum",
+    "tier": 2,
+    "order": 337
+   },
+   {
+    "id": "question-6-6-nucleus-accumbens",
+    "tier": 2,
+    "order": 338
+   },
+   {
+    "id": "question-6-6-nucleus-hypothalamicus-anterior",
+    "tier": 2,
+    "order": 339
+   },
+   {
+    "id": "question-6-6-nucleus-hypothalamicus-posterior",
+    "tier": 2,
+    "order": 340
+   },
+   {
+    "id": "question-6-6-pars-distalis",
+    "tier": 2,
+    "order": 341
+   },
+   {
+    "id": "question-6-6-pars-intermedia",
+    "tier": 2,
+    "order": 342
+   },
+   {
+    "id": "question-6-6-pars-tuberalis",
+    "tier": 2,
+    "order": 343
+   },
+   {
+    "id": "question-6-6-pars-nervosa",
+    "tier": 2,
+    "order": 344
+   },
+   {
+    "id": "question-6-6-pars-compacta",
+    "tier": 2,
+    "order": 345
+   },
+   {
+    "id": "question-6-6-pars-reticulata",
+    "tier": 2,
+    "order": 346
+   },
+   {
     "id": "brain-habenula",
     "tier": 3,
     "order": 105
@@ -6108,6 +9963,26 @@ export const sections = [
     "id": "brain-stria-medullaris-thalami",
     "tier": 3,
     "order": 106
+   },
+   {
+    "id": "question-6-6-dejerine-roussy-sendromu",
+    "tier": 3,
+    "order": 347
+   },
+   {
+    "id": "question-6-6-organum-vasculosum",
+    "tier": 3,
+    "order": 348
+   },
+   {
+    "id": "question-6-6-organum-subfornicale",
+    "tier": 3,
+    "order": 349
+   },
+   {
+    "id": "question-6-6-eminentia-mediana",
+    "tier": 3,
+    "order": 350
    }
   ]
  },
@@ -6125,6 +10000,36 @@ export const sections = [
     "id": "brain-chiasma-opticum",
     "tier": 1,
     "order": 115
+   },
+   {
+    "id": "question-6-7-audit-bitemporal",
+    "tier": 1,
+    "order": 351
+   },
+   {
+    "id": "question-6-7-audit-trakt-alan",
+    "tier": 1,
+    "order": 352
+   },
+   {
+    "id": "question-6-7-audit-unkal",
+    "tier": 1,
+    "order": 353
+   },
+   {
+    "id": "question-6-7-audit-papez",
+    "tier": 1,
+    "order": 354
+   },
+   {
+    "id": "question-6-7-audit-korsakoff",
+    "tier": 1,
+    "order": 355
+   },
+   {
+    "id": "question-6-7-audit-pca",
+    "tier": 1,
+    "order": 356
    },
    {
     "id": "brain-amygdala",
@@ -6155,6 +10060,61 @@ export const sections = [
     "id": "brain-tractus-opticus",
     "tier": 2,
     "order": 116
+   },
+   {
+    "id": "question-6-7-gyrus-dentatus",
+    "tier": 2,
+    "order": 357
+   },
+   {
+    "id": "question-6-7-uncus",
+    "tier": 2,
+    "order": 358
+   },
+   {
+    "id": "question-6-7-area-entorhinalis",
+    "tier": 2,
+    "order": 359
+   },
+   {
+    "id": "question-6-7-tractus-mammillothalamicus",
+    "tier": 2,
+    "order": 360
+   },
+   {
+    "id": "question-6-7-kluver-bucy-sendromu",
+    "tier": 2,
+    "order": 361
+   },
+   {
+    "id": "question-6-7-lemniscus-lateralis",
+    "tier": 2,
+    "order": 362
+   },
+   {
+    "id": "question-6-7-corpus-geniculatum-mediale",
+    "tier": 2,
+    "order": 363
+   },
+   {
+    "id": "question-6-7-nucleus-tractus-solitarii",
+    "tier": 2,
+    "order": 364
+   },
+   {
+    "id": "question-6-7-lobulus-parietalis-inferior",
+    "tier": 2,
+    "order": 365
+   },
+   {
+    "id": "question-6-7-area-subcallosa",
+    "tier": 2,
+    "order": 366
+   },
+   {
+    "id": "question-6-7-audit-parietal-alan",
+    "tier": 2,
+    "order": 367
    },
    {
     "id": "brain-nuclei-septales",
@@ -6194,6 +10154,11 @@ export const sections = [
     "order": 123
    },
    {
+    "id": "question-6-8-audit-isik-cift",
+    "tier": 1,
+    "order": 368
+   },
+   {
     "id": "brain-nucleus-accessorius-nervi-oculomotorii",
     "tier": 2,
     "order": 119
@@ -6229,6 +10194,81 @@ export const sections = [
     "order": 129
    },
    {
+    "id": "question-6-8-nucleus-mesencephalicus-trigemini",
+    "tier": 2,
+    "order": 369
+   },
+   {
+    "id": "question-6-8-nucleus-principalis-trigemini",
+    "tier": 2,
+    "order": 370
+   },
+   {
+    "id": "question-6-8-nucleus-spinalis-trigemini",
+    "tier": 2,
+    "order": 371
+   },
+   {
+    "id": "question-6-8-nucleus-motorius-trigemini",
+    "tier": 2,
+    "order": 372
+   },
+   {
+    "id": "question-6-8-serotonin",
+    "tier": 2,
+    "order": 373
+   },
+   {
+    "id": "question-6-8-noradrenaline",
+    "tier": 2,
+    "order": 374
+   },
+   {
+    "id": "question-6-8-dopamine",
+    "tier": 2,
+    "order": 375
+   },
+   {
+    "id": "question-6-8-acetylcholine",
+    "tier": 2,
+    "order": 376
+   },
+   {
+    "id": "question-6-8-gse",
+    "tier": 2,
+    "order": 377
+   },
+   {
+    "id": "question-6-8-sve",
+    "tier": 2,
+    "order": 378
+   },
+   {
+    "id": "question-6-8-gve",
+    "tier": 2,
+    "order": 379
+   },
+   {
+    "id": "question-6-8-sva",
+    "tier": 2,
+    "order": 380
+   },
+   {
+    "id": "question-6-8-gva",
+    "tier": 2,
+    "order": 381
+   },
+   {
+    "id": "question-6-8-gsa",
+    "tier": 2,
+    "order": 382
+   },
+   {
+    "id": "question-6-8-ssa",
+    "tier": 2,
+    "order": 383
+   },
+   {
     "id": "brain-nucleus-salivatorius-superior",
     "tier": 3,
     "order": 127
@@ -6252,6 +10292,16 @@ export const sections = [
     "id": "brain-nucleus-nervi-accessorii",
     "tier": 3,
     "order": 132
+   },
+   {
+    "id": "question-6-8-nucleus-basalis-meynert",
+    "tier": 3,
+    "order": 384
+   },
+   {
+    "id": "question-6-8-area-tegmentalis-ventralis",
+    "tier": 3,
+    "order": 385
    }
   ]
  },
@@ -6289,6 +10339,26 @@ export const sections = [
     "id": "brain-medulla-spinalis",
     "tier": 1,
     "order": 173
+   },
+   {
+    "id": "question-6-9-babinski-bulgusu",
+    "tier": 1,
+    "order": 386
+   },
+   {
+    "id": "question-6-9-fasciculatio",
+    "tier": 1,
+    "order": 387
+   },
+   {
+    "id": "question-6-9-audit-arka-capraz",
+    "tier": 1,
+    "order": 388
+   },
+   {
+    "id": "question-6-9-audit-piramidal-capraz",
+    "tier": 1,
+    "order": 389
    },
    {
     "id": "brain-tractus-corticospinalis-anterior",
@@ -6356,6 +10426,101 @@ export const sections = [
     "order": 153
    },
    {
+    "id": "question-6-9-commissura-alba-anterior",
+    "tier": 2,
+    "order": 390
+   },
+   {
+    "id": "question-6-9-fibrae-arcuatae-internae",
+    "tier": 2,
+    "order": 391
+   },
+   {
+    "id": "question-6-9-substantia-gelatinosa",
+    "tier": 2,
+    "order": 392
+   },
+   {
+    "id": "question-6-9-brown-sequard-sendromu",
+    "tier": 2,
+    "order": 393
+   },
+   {
+    "id": "question-6-9-syringomyelia",
+    "tier": 2,
+    "order": 394
+   },
+   {
+    "id": "question-6-9-subakut-kombine-dejenerasyon",
+    "tier": 2,
+    "order": 395
+   },
+   {
+    "id": "question-6-9-tabes-dorsalis",
+    "tier": 2,
+    "order": 396
+   },
+   {
+    "id": "question-6-9-amyotrophic-lateral-sclerosis",
+    "tier": 2,
+    "order": 397
+   },
+   {
+    "id": "question-6-9-poliomyelitis",
+    "tier": 2,
+    "order": 398
+   },
+   {
+    "id": "question-6-9-anterior-spinal-arter-sendromu",
+    "tier": 2,
+    "order": 399
+   },
+   {
+    "id": "question-6-9-a-spinalis-anterior",
+    "tier": 2,
+    "order": 400
+   },
+   {
+    "id": "question-6-9-aa-spinales-posteriores",
+    "tier": 2,
+    "order": 401
+   },
+   {
+    "id": "question-6-9-a-radicularis-magna",
+    "tier": 2,
+    "order": 402
+   },
+   {
+    "id": "question-6-9-conus-medullaris",
+    "tier": 2,
+    "order": 403
+   },
+   {
+    "id": "question-6-9-filum-terminale",
+    "tier": 2,
+    "order": 404
+   },
+   {
+    "id": "question-6-9-intumescentia-cervicalis",
+    "tier": 2,
+    "order": 405
+   },
+   {
+    "id": "question-6-9-intumescentia-lumbosacralis",
+    "tier": 2,
+    "order": 406
+   },
+   {
+    "id": "question-6-9-audit-clarke",
+    "tier": 2,
+    "order": 407
+   },
+   {
+    "id": "question-6-9-audit-cift-capraz",
+    "tier": 2,
+    "order": 408
+   },
+   {
     "id": "brain-nucleus-intermediomedialis",
     "tier": 3,
     "order": 150
@@ -6404,6 +10569,21 @@ export const sections = [
     "id": "brain-processus-reticularis-spinalis",
     "tier": 3,
     "order": 160
+   },
+   {
+    "id": "question-6-9-ix",
+    "tier": 3,
+    "order": 409
+   },
+   {
+    "id": "question-6-9-santral-kord-sendromu",
+    "tier": 3,
+    "order": 410
+   },
+   {
+    "id": "question-6-9-friedreich-ataksisi",
+    "tier": 3,
+    "order": 411
    }
   ]
  }

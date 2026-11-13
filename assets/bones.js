@@ -1506,9 +1506,16 @@ export const bones = [
   "trAliases": []
  }
 ];
-export const normalize = s => s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
+// Only all-numeric lists discard separators/connectors. Anatomical names retain
+// their punctuation, so abbreviations and existing aliases keep their identity.
+export const normalize = s => {
+ const value=s.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
+ const numeric=value.replace(/[\p{P}\p{S}]/gu,' ').replace(/\b(?:ve|and|ile)\b/g,' ').replace(/\s+/g,' ').trim();
+ if (/^\d+(?: \d+)+$/.test(numeric)) return numeric;
+ return value;
+};
 export function dayNumber(date){const [y,m,d]=date.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000);}
-export {dailyBones,roundBones} from "./curriculum.js?v=0276220-20261113T072829721Z";
+export {dailyBones,roundBones} from "./curriculum.js?v=7e23d8b-20261113T075044921Z";
 export function answerAliases(b,mode){
  let list;
  if(mode==='latin'&&b.module==='muscles'){
