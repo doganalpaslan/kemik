@@ -1,6 +1,6 @@
-import {bones,dayNumber} from './bones.js?v=7e23d8b-20261113T075044921Z';
-import {getModule,unitsFor,regionsFor,landmarks} from './module-registry.js?v=7e23d8b-20261113T075044921Z';
-export {moduleRegistry,modules,getModule,loadModule,regions,muscleRegions,regionsFor,unitsFor,landmarks,loadLandmarks} from './module-registry.js?v=7e23d8b-20261113T075044921Z';
+import {bones,dayNumber} from './bones.js?v=5c47c08-20261113T075743347Z';
+import {getModule,unitsFor,regionsFor,landmarks} from './module-registry.js?v=5c47c08-20261113T075743347Z';
+export {moduleRegistry,modules,getModule,loadModule,regions,muscleRegions,regionsFor,unitsFor,landmarks,loadLandmarks} from './module-registry.js?v=5c47c08-20261113T075743347Z';
 export function stageStatus(parent,stage,progress={}){
  const learned=learnedIds(progress),previous=landmarks.filter(b=>b.parentBone===parent&&b.stage===stage-1);
  const skullBones=bones.filter(b=>b.curriculumRegion==='skull');

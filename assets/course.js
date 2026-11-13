@@ -1,6 +1,6 @@
-import {chapters,sections} from './course-data.js?v=7e23d8b-20261113T075044921Z';
-import {unitsFor} from './module-registry.js?v=7e23d8b-20261113T075044921Z';
-import {learnedIds} from './curriculum.js?v=7e23d8b-20261113T075044921Z';
+import {chapters,sections} from './course-data.js?v=5c47c08-20261113T075743347Z';
+import {unitsFor} from './module-registry.js?v=5c47c08-20261113T075743347Z';
+import {learnedIds} from './curriculum.js?v=5c47c08-20261113T075743347Z';
 export {chapters,sections};
 export const sectionByNumber=number=>sections.find(s=>s.number===number);
 export function sectionUnits(section){const index=new Map(unitsFor(section.module).map(b=>[b.id,b]));return section.items.map(item=>({...index.get(item.id),tier:item.tier,textbookOrder:item.order}));}

@@ -1,4 +1,4 @@
-import {normalize} from './bones.js?v=7e23d8b-20261113T075044921Z';
+import {normalize} from './bones.js?v=5c47c08-20261113T075743347Z';
 
 // A complete alias waits for Enter if it could still become a longer alias.
 export function shouldAutoSubmit(typed,aliases){

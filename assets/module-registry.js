@@ -1,10 +1,10 @@
-import {bones} from './bones.js?v=7e23d8b-20261113T075044921Z';
-import {muscles} from './muscles.js?v=7e23d8b-20261113T075044921Z';
-import {nerves} from './nerves.js?v=7e23d8b-20261113T075044921Z';
-import {vessels} from './vessels.js?v=7e23d8b-20261113T075044921Z';
-import {organs} from './organs.js?v=7e23d8b-20261113T075044921Z';
-import {brain} from './brain.js?v=7e23d8b-20261113T075044921Z';
-import {questions} from './viscera-questions.js?v=7e23d8b-20261113T075044921Z';
+import {bones} from './bones.js?v=5c47c08-20261113T075743347Z';
+import {muscles} from './muscles.js?v=5c47c08-20261113T075743347Z';
+import {nerves} from './nerves.js?v=5c47c08-20261113T075743347Z';
+import {vessels} from './vessels.js?v=5c47c08-20261113T075743347Z';
+import {organs} from './organs.js?v=5c47c08-20261113T075743347Z';
+import {brain} from './brain.js?v=5c47c08-20261113T075743347Z';
+import {questions} from './viscera-questions.js?v=5c47c08-20261113T075743347Z';
 const organUnits=[...organs,...questions.filter(b=>b.module==='organs')];
 const brainUnits=[...brain,...questions.filter(b=>b.module==='brain')];
 export const regions=[{id:'all',label:'Tüm iskelet',short:'Tümü'},{id:'skull',label:'Kafatası',short:'Kafa'},{id:'trunk',label:'Omurga ve göğüs',short:'Gövde'},{id:'upper',label:'Üst ekstremite',short:'Kol'},{id:'lower',label:'Alt ekstremite',short:'Bacak'}];
@@ -14,7 +14,7 @@ const organRegions=[{id:'all',label:'Tüm organlar',short:'Tümü'},{id:'thorax'
 const brainRegions=[{id:'all',label:'Tüm beyin yapıları',short:'Tümü'},{id:'surface',label:'Loblar ve beyin yüzeyi',short:'Yüzey'},{id:'stem',label:'Beyin sapı ve çekirdekleri',short:'Sap'},{id:'cerebellum',label:'Beyincik',short:'Beyincik'},{id:'csf',label:'Karıncıklar ve zarlar',short:'BOS'},{id:'deep',label:'Derin yapılar',short:'Derin'},{id:'spinal',label:'Omurilik yolları',short:'Omurilik'}];
 export const landmarks=[];
 let landmarkLoad;
-export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=7e23d8b-20261113T075044921Z'),import('./landmarks-lower.js?v=7e23d8b-20261113T075044921Z'),import('./landmarks-trunk.js?v=7e23d8b-20261113T075044921Z'),import('./landmarks-skull.js?v=7e23d8b-20261113T075044921Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
+export function loadLandmarks(){return landmarkLoad??=Promise.all([import('./landmarks-upper.js?v=5c47c08-20261113T075743347Z'),import('./landmarks-lower.js?v=5c47c08-20261113T075743347Z'),import('./landmarks-trunk.js?v=5c47c08-20261113T075743347Z'),import('./landmarks-skull.js?v=5c47c08-20261113T075743347Z')]).then(chunks=>{landmarks.push(...chunks.flatMap(m=>m.landmarks));return landmarks;});}
 // Add a data import and an entry here to register another module throughout the app.
 // Existing progress keys and day prefixes are intentional compatibility contracts.
 export const moduleRegistry={
