@@ -199,8 +199,8 @@ export const organs = [
    "triküspit kapak",
    "sağ atriyoventriküler kapak"
   ],
-  "level": 2,
-  "tier": 2,
+  "level": 1,
+  "tier": 1,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -210,11 +210,12 @@ export const organs = [
   ],
   "meshes": [
    "v32-Inferior_leaflet_of_right_atrioventricular_valve",
-   "v32-Septal_leaflet_of_right_atrioventricular_valve"
+   "v32-Septal_leaflet_of_right_atrioventricular_valve",
+   "v32-FJ2421"
   ],
   "clue": "sağ atriyum ile sağ ventrikül arasındaki üç yaprakçıklı kapak",
   "fact": "Triküspit kapağın ön, arka ve septal üç yaprakçığı vardır; en büyüğü ön yaprakçıktır.",
-  "meshCaption": "Arka ve septal yaprakçıklar gösterilir; ön yaprakçık kaynakta bulunmaz.",
+  "meshCaption": "Ön, arka ve septal yaprakçıklar birlikte gösterilir.",
   "source": "organs-5.1",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
@@ -223,7 +224,7 @@ export const organs = [
   "minimumFrame": 210,
   "fadeContext": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0"
  },
  {
   "id": "organs-valva-atrioventricularis-sinistra",
@@ -233,21 +234,15 @@ export const organs = [
   "aliases": [
    "mitral kapak",
    "biküspit kapak",
-   "sol atriyoventriküler kapak",
-   "mitral kapağın arka yaprakçığı",
-   "mitral kapağın posterior yaprakçığı",
-   "cuspis posterior valvae mitralis"
+   "sol atriyoventriküler kapak"
   ],
   "trAliases": [
    "mitral kapak",
    "biküspit kapak",
-   "sol atriyoventriküler kapak",
-   "mitral kapağın arka yaprakçığı",
-   "mitral kapağın posterior yaprakçığı",
-   "cuspis posterior valvae mitralis"
+   "sol atriyoventriküler kapak"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 1,
+  "tier": 1,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -256,11 +251,12 @@ export const organs = [
    "trunk"
   ],
   "meshes": [
-   "v32-Posterior_leaflet_of_left_atrioventricular_valve"
+   "v32-Posterior_leaflet_of_left_atrioventricular_valve",
+   "v32-FJ2420"
   ],
   "clue": "sol atriyum ile sol ventrikül arasındaki iki yaprakçıklı kapak",
   "fact": "Mitral kapak ön ve arka iki yaprakçıklıdır; ön yaprakçık aort kapağıyla fibröz devamlılık gösterir. Arka yaprakçık kısa ama geniş tabanlıdır; Carpentier P1–P3 dilimlerine ayrılır ve prolapsus en sık P2'de görülür.",
-  "meshCaption": "Yalnız arka yaprakçık gösterilir.",
+  "meshCaption": "Ön ve arka yaprakçıklar birlikte gösterilir.",
   "source": "organs-5.1",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
@@ -269,7 +265,7 @@ export const organs = [
   "minimumFrame": 210,
   "fadeContext": true,
   "angle": 0.15,
-  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP / Z-Anatomy · CC BY-SA 4.0"
  },
  {
   "id": "organs-valva-aortae",
@@ -284,8 +280,8 @@ export const organs = [
    "aort kapağı",
    "aortik kapak"
   ],
-  "level": 2,
-  "tier": 2,
+  "level": 1,
+  "tier": 1,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -321,8 +317,8 @@ export const organs = [
   "trAliases": [
    "pulmoner kapak"
   ],
-  "level": 2,
-  "tier": 2,
+  "level": 1,
+  "tier": 1,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -358,8 +354,8 @@ export const organs = [
   "trAliases": [
    "triküspit kapağın septal yaprakçığı"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -428,8 +424,8 @@ export const organs = [
   "trAliases": [
    "sağ ventrikül arka papiller kası"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -463,8 +459,8 @@ export const organs = [
   "trAliases": [
    "sağ ventrikül septal papiller kası"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -4913,8 +4909,8 @@ export const organs = [
   "trAliases": [
    "pulmoner kapağın ön yarımay kapakçığı"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -4948,8 +4944,8 @@ export const organs = [
   "trAliases": [
    "pulmoner kapağın sağ yarımay kapakçığı"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -4983,8 +4979,8 @@ export const organs = [
   "trAliases": [
    "pulmoner kapağın sol yarımay kapakçığı"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -5020,8 +5016,8 @@ export const organs = [
    "aort kapağının sağ koroner kapakçığı",
    "valvula coronaria dextra"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -5057,8 +5053,8 @@ export const organs = [
    "aort kapağının sol koroner kapakçığı",
    "valvula coronaria sinistra"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -5096,8 +5092,8 @@ export const organs = [
    "valvula non coronaria",
    "valvula noncoronaria"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -5131,8 +5127,8 @@ export const organs = [
   "trAliases": [
    "triküspit kapağın arka yaprakçığı"
   ],
-  "level": 3,
-  "tier": 3,
+  "level": 2,
+  "tier": 2,
   "section": "5.1",
   "curriculumRegion": "thorax",
   "region": "organs-thorax",
@@ -5294,6 +5290,704 @@ export const organs = [
   "source": "organs-5.2",
   "sourceURLs": [
    "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-a-coronaria-dextra",
+  "module": "organs",
+  "latin": "a. coronaria dextra",
+  "tr": "sağ koroner atardamar",
+  "aliases": [
+   "sağ koroner arter",
+   "a. coronaria dextra",
+   "sağ koroner atardamar",
+   "arteria coronaria dextra"
+  ],
+  "trAliases": [
+   "sağ koroner arter",
+   "a. coronaria dextra",
+   "sağ koroner atardamar",
+   "arteria coronaria dextra"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Right_coronary_artery"
+  ],
+  "clue": "Sağ atriyoventriküler olukta seyreden koroner ana damar",
+  "fact": "Sağ koroner arter sağ koroner olukta ilerler ve sağ dominant dolaşımda posterior interventriküler dalı verir.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-a-coronaria-sinistra",
+  "module": "organs",
+  "latin": "a. coronaria sinistra",
+  "tr": "sol koroner atardamar",
+  "aliases": [
+   "sol koroner arter",
+   "a. coronaria sinistra",
+   "sol koroner atardamar",
+   "arteria coronaria sinistra"
+  ],
+  "trAliases": [
+   "sol koroner arter",
+   "a. coronaria sinistra",
+   "sol koroner atardamar",
+   "arteria coronaria sinistra"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Left_coronary_artery"
+  ],
+  "clue": "Pulmoner trunkus ile sol aurikula arasından geçen kısa koroner ana damar",
+  "fact": "Sol koroner arter anterior interventriküler ve sirkumfleks dallara ayrılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-r-interventricularis-anterior",
+  "module": "organs",
+  "latin": "r. interventricularis anterior",
+  "tr": "ön karıncıklar arası dal",
+  "aliases": [
+   "LAD",
+   "ön interventriküler dal",
+   "r. interventricularis anterior",
+   "ön karıncıklar arası dal",
+   "ramus interventricularis anterior",
+   "a. interventricularis anterior"
+  ],
+  "trAliases": [
+   "LAD",
+   "ön interventriküler dal",
+   "r. interventricularis anterior",
+   "ön karıncıklar arası dal",
+   "ramus interventricularis anterior",
+   "a. interventricularis anterior"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Anterior_interventricular_artery"
+  ],
+  "clue": "Ön interventriküler olukta ilerleyip septumun ön üçte ikisini besleyen koroner dal",
+  "fact": "LAD sol ventrikül ön duvarını, apeksi ve septumun ön üçte ikisini besler.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-r-circumflexus",
+  "module": "organs",
+  "latin": "r. circumflexus",
+  "tr": "sirkumfleks dal",
+  "aliases": [
+   "ramus circumflexus",
+   "sirkumfleks dal",
+   "r. circumflexus",
+   "r. circumflexus a. coronariae sinistrae"
+  ],
+  "trAliases": [
+   "ramus circumflexus",
+   "sirkumfleks dal",
+   "r. circumflexus",
+   "r. circumflexus a. coronariae sinistrae"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Circumflex_artery_of_heart"
+  ],
+  "clue": "Sol atriyoventriküler olukta ilerleyip lateral ventrikül duvarını besleyen dal",
+  "fact": "Sirkumfleks dal sol atriyoventriküler olukta ilerleyip lateral sol ventrikülü besler ve sol dominant dolaşımda posterior interventriküler dalı verir.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-cuspis-anterior-valvae-mitralis",
+  "module": "organs",
+  "latin": "cuspis anterior valvae mitralis",
+  "tr": "mitral kapağın ön yaprakçığı",
+  "aliases": [
+   "cuspis aortica"
+  ],
+  "trAliases": [
+   "cuspis aortica"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FJ2420"
+  ],
+  "clue": "Sol atriyoventriküler kapağın aortik devamlılık gösteren yaprakçığı",
+  "fact": "Mitral kapağın anterior yaprakçığı aortik yaprakçık olarak da adlandırılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "question-5-1-cuspis-anterior-valvae-tricuspidalis",
+  "module": "organs",
+  "latin": "cuspis anterior valvae tricuspidalis",
+  "tr": "triküspit kapağın ön yaprakçığı",
+  "aliases": [],
+  "trAliases": [],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FJ2421"
+  ],
+  "clue": "Sağ atriyoventriküler kapağın en geniş yaprakçığı",
+  "fact": "Triküspit kapağın anterior yaprakçığı kapağın en büyük yaprakçığıdır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "question-5-1-musculus-papillaris-anterolateralis",
+  "module": "organs",
+  "latin": "musculus papillaris anterior ventriculi sinistri",
+  "tr": "sol ventrikülün ön papiller kası",
+  "aliases": [
+   "musculus papillaris anterolateralis",
+   "m. papillaris anterior ventriculi sinistri",
+   "anterolateral papiller kas"
+  ],
+  "trAliases": [
+   "musculus papillaris anterolateralis",
+   "m. papillaris anterior ventriculi sinistri",
+   "anterolateral papiller kas"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA9352nsn"
+  ],
+  "clue": "Sol ventrikülde posteromedial grubun karşısındaki papiller kas grubu",
+  "fact": "Sol ventrikülün anterolateral ve posteromedial papiller kas grupları korda tendinealarla mitral yaprakçıklara bağlanır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "question-5-1-r-interventricularis-posterior",
+  "module": "organs",
+  "latin": "r. interventricularis posterior",
+  "tr": "arka interventriküler dal",
+  "aliases": [
+   "PDA"
+  ],
+  "trAliases": [
+   "PDA"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA3840nsn"
+  ],
+  "clue": "Hangi arterden çıktığı koroner dominansı belirleyen dal",
+  "fact": "Koroner dominans posterior interventriküler dalı veren arterle tanımlanır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "question-5-1-sinus-coronarius",
+  "module": "organs",
+  "latin": "sinus coronarius",
+  "tr": "koroner sinüs",
+  "aliases": [
+   "koroner sinüs",
+   "sinus coronarius"
+  ],
+  "trAliases": [
+   "koroner sinüs",
+   "sinus coronarius"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Coronary_sinus"
+  ],
+  "clue": "Arka atriyoventriküler olukta ilerleyip kalp venlerini sağ atriyuma taşıyan kanal",
+  "fact": "Koroner sinüs kalbin venöz kanının büyük bölümünü sağ atriyuma boşaltır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-v-cardiaca-magna",
+  "module": "organs",
+  "latin": "v. cardiaca magna",
+  "tr": "büyük kalp toplardamarı",
+  "aliases": [
+   "büyük kalp veni",
+   "v. cardiaca magna",
+   "büyük kalp toplardamarı",
+   "vena cardiaca magna"
+  ],
+  "trAliases": [
+   "büyük kalp veni",
+   "v. cardiaca magna",
+   "büyük kalp toplardamarı",
+   "vena cardiaca magna"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Great_cardiac_vein"
+  ],
+  "clue": "Ön interventriküler dal ile birlikte seyreden kalp veni",
+  "fact": "Büyük kalp veni ön interventriküler olukta LAD ile yükselip sol koroner olukta sirkumfleksle ilerleyerek koroner sinüse katılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-v-cardiaca-media",
+  "module": "organs",
+  "latin": "v. cardiaca media",
+  "tr": "orta kalp toplardamarı",
+  "aliases": [
+   "orta kalp veni",
+   "v. cardiaca media",
+   "orta kalp toplardamarı",
+   "vena cardiaca media"
+  ],
+  "trAliases": [
+   "orta kalp veni",
+   "v. cardiaca media",
+   "orta kalp toplardamarı",
+   "vena cardiaca media"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Middle_cardiac_vein"
+  ],
+  "clue": "Arka interventriküler dal ile birlikte seyreden kalp veni",
+  "fact": "Orta kalp veni arka interventriküler olukta ilerleyerek koroner sinüse dökülür.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-vv-cardiacae-anteriores",
+  "module": "organs",
+  "latin": "vv. cardiacae anteriores",
+  "tr": "ön kalp venleri",
+  "aliases": [
+   "vv. ventriculi dextri anteriores",
+   "ön kalp venleri"
+  ],
+  "trAliases": [
+   "vv. ventriculi dextri anteriores",
+   "ön kalp venleri"
+  ],
+  "level": 3,
+  "tier": 3,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA71567"
+  ],
+  "clue": "Koroner sinüse uğramadan sağ atriyuma açılan ön yüz venleri",
+  "fact": "Ön kalp venleri sağ atriyuma doğrudan dökülür.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+   "https://www.aats.org/tsra-primer-cardiac-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "organs-cuspis-posterior-valvae-mitralis",
+  "module": "organs",
+  "latin": "cuspis posterior valvae mitralis",
+  "tr": "mitral kapağın arka yaprakçığı",
+  "aliases": [
+   "mitral kapağın posterior yaprakçığı"
+  ],
+  "trAliases": [
+   "mitral kapağın posterior yaprakçığı"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Posterior_leaflet_of_left_atrioventricular_valve"
+  ],
+  "clue": "sol atriyoventriküler kapağın duvar tarafındaki kısa ama geniş tabanlı yaprakçığı",
+  "fact": "Arka yaprakçık kısa ama geniş tabanlıdır; Carpentier P1–P3 dilimlerine ayrılır ve prolapsus en sık P2'de görülür.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "question-5-1-r-marginalis-dexter",
+  "module": "organs",
+  "latin": "r. marginalis dexter",
+  "tr": "sağ kenar dalı",
+  "aliases": [
+   "ramus marginalis dexter",
+   "sağ marjinal dal"
+  ],
+  "trAliases": [
+   "ramus marginalis dexter",
+   "sağ marjinal dal"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA3818"
+  ],
+  "clue": "sağ ventrikülün keskin kenarı boyunca ilerleyen dal",
+  "fact": "Sağ koroner arterden çıkar ve sağ ventrikül duvarını besler.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "organs-r-posterolateralis-dexter",
+  "module": "organs",
+  "latin": "r. posterolateralis dexter",
+  "tr": "sağ posterolateral dal",
+  "aliases": [
+   "ramus posterolateralis dexter"
+  ],
+  "trAliases": [
+   "ramus posterolateralis dexter"
+  ],
+  "level": 3,
+  "tier": 3,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA76994"
+  ],
+  "clue": "sağ koroner dolaşımın kalbin arka ve yan yüzüne uzanan dalı",
+  "fact": "Sağ koroner arterin posterolateral dalı ventrikül duvarına dağılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "question-5-1-v-ventriculi-sinistri-posterior",
+  "module": "organs",
+  "latin": "vv. ventriculi sinistri posteriores",
+  "tr": "sol ventrikülün arka toplardamarları",
+  "aliases": [
+   "venae ventriculi sinistri posteriores",
+   "sol ventrikülün arka venleri",
+   "v. posterior ventriculi sinistri",
+   "v. ventriculi sinistri posterior",
+   "vv. posteriores ventriculi sinistri",
+   "sol ventrikülün arka veni"
+  ],
+  "trAliases": [
+   "venae ventriculi sinistri posteriores",
+   "sol ventrikülün arka venleri",
+   "v. posterior ventriculi sinistri",
+   "v. ventriculi sinistri posterior",
+   "vv. posteriores ventriculi sinistri",
+   "sol ventrikülün arka veni"
+  ],
+  "level": 2,
+  "tier": 2,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-FMA76751"
+  ],
+  "clue": "sol karıncığın diyafragmatik yüzünden kanı toplayan venler",
+  "fact": "Sol ventrikülün arka venleri koroner sinüse açılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "BodyParts3D · CC BY-SA 2.1 JP"
+ },
+ {
+  "id": "organs-aorta-ascendens",
+  "module": "organs",
+  "latin": "aorta ascendens",
+  "tr": "çıkan aort",
+  "aliases": [
+   "çıkan aort"
+  ],
+  "trAliases": [
+   "çıkan aort"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Ascending_aorta"
+  ],
+  "clue": "sol ventrikülden başlayıp yukarı uzanan ana damar",
+  "fact": "Sağ ve sol koroner arterler çıkan aortun başlangıcından çıkar.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+  ],
+  "closeCamera": true,
+  "minimumFrame": 210,
+  "fadeContext": true,
+  "angle": 0.15,
+  "modelLicense": "Z-Anatomy · CC BY-SA 4.0"
+ },
+ {
+  "id": "organs-truncus-pulmonalis",
+  "module": "organs",
+  "latin": "truncus pulmonalis",
+  "tr": "akciğer atardamar gövdesi",
+  "aliases": [
+   "akciğer atardamar gövdesi"
+  ],
+  "trAliases": [
+   "akciğer atardamar gövdesi"
+  ],
+  "level": 1,
+  "tier": 1,
+  "section": "5.1",
+  "curriculumRegion": "thorax",
+  "region": "organs-thorax",
+  "context": "trunk",
+  "contextRegions": [
+   "trunk"
+  ],
+  "meshes": [
+   "v32-Pulmonary_trunk"
+  ],
+  "clue": "sağ karıncıktan çıkan ve iki akciğere ayrılan damar gövdesi",
+  "fact": "Sağ ve sol pulmoner arterlere ayrılır.",
+  "source": "organs-5.1",
+  "sourceURLs": [
+   "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
   ],
   "closeCamera": true,
   "minimumFrame": 210,

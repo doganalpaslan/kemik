@@ -1,4 +1,4 @@
-const VERSION='fdc32ed-20261113T080359420Z';
+const VERSION='e403ef7-20261113T081331709Z';
 export function resetProgress(){
  try{
   // Repository history used kemik:DATE, kemik:v2/v4/v8, preferences and streak.

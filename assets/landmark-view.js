@@ -1,5 +1,5 @@
-import * as THREE from './vendor/three.module.min.js?v=fdc32ed-20261113T080359420Z';
-import {regionDistance} from './landmark-primitives.js?v=fdc32ed-20261113T080359420Z';
+import * as THREE from './vendor/three.module.min.js?v=e403ef7-20261113T081331709Z';
+import {regionDistance} from './landmark-primitives.js?v=e403ef7-20261113T081331709Z';
 const patches={};
 // Only the current target's 1–6 primitives are uploaded. Float texture headers:
 // center/type, radii/point count, normal/cosine, base plane, then path points.

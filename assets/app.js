@@ -1,12 +1,12 @@
-import {chapters,sections,sectionByNumber,sectionStatus,recommendedSection,dailySection,mergeLumbarProgress} from './course.js?v=fdc32ed-20261113T080359420Z';
-import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=fdc32ed-20261113T080359420Z';
-import {startPWA,resetProgress} from './pwa.js?v=fdc32ed-20261113T080359420Z';
-import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=fdc32ed-20261113T080359420Z';
-import {moduleDom} from './module-registry.js?v=fdc32ed-20261113T080359420Z';
-import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=fdc32ed-20261113T080359420Z';
-import {BASE_URL} from './config.js?v=fdc32ed-20261113T080359420Z';
-import {notesForDay} from './study.js?v=fdc32ed-20261113T080359420Z';
-import {GameSound} from './sound.js?v=fdc32ed-20261113T080359420Z';
+import {chapters,sections,sectionByNumber,sectionStatus,recommendedSection,dailySection,mergeLumbarProgress} from './course.js?v=e403ef7-20261113T081331709Z';
+import {answerOffset,answerHint,nextHintUntil,resultStatus,firstTryPercent,shouldAutoSubmit} from './game-logic.js?v=e403ef7-20261113T081331709Z';
+import {startPWA,resetProgress} from './pwa.js?v=e403ef7-20261113T081331709Z';
+import {regionsFor,unitsFor,levels,getModule,loadModule,modules,moduleRegistry,ladderFor,unlockStage,dailyBones as selectDaily,roundBones,recordGrade,progressFor as moduleProgress,migrateLegacy,migrateCards,reinsert,dueSummary} from './curriculum.js?v=e403ef7-20261113T081331709Z';
+import {moduleDom} from './module-registry.js?v=e403ef7-20261113T081331709Z';
+import {bones,normalize,dayNumber,answerAliases} from './bones.js?v=e403ef7-20261113T081331709Z';
+import {BASE_URL} from './config.js?v=e403ef7-20261113T081331709Z';
+import {notesForDay} from './study.js?v=e403ef7-20261113T081331709Z';
+import {GameSound} from './sound.js?v=e403ef7-20261113T081331709Z';
 const pwaReady=startPWA();
 const $=s=>document.querySelector(s);
 const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -426,7 +426,7 @@ async function loadRenderer(){
  if(skullStarted)return;skullStarted=true;
  // Two frames let the useful home content paint before parsing Three.js.
  requestAnimationFrame(()=>requestAnimationFrame(async()=>{try{
- await pwaReady;const {createSkull}=await import('./skull.js?v=fdc32ed-20261113T080359420Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
+ await pwaReady;const {createSkull}=await import('./skull.js?v=e403ef7-20261113T081331709Z');skull=await createSkull($('#skull'));paintPreferences();if(route==='/')await skull.setBone(heroBone(),0);else paint();document.body.dataset.ready='true';
  }catch{ $('#loading').hidden=false;$('#loading').classList.add('error');$('#loading').textContent='3B görünüm açılamadı. Ad ve ipuçlarıyla çalışmaya devam edebilirsiniz.';document.body.dataset.ready='error';}}));
 }
 window.addEventListener('hashchange',()=>applyRoute());

@@ -1121,3 +1121,24 @@ Geometri: [Z-Anatomy](https://github.com/LluisV/Z-Anatomy/tree/PC-Version/Resour
 | brain-sinus-cavernosus | sinus cavernosus | [Kaynak 1](https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways), [Kaynak 2](https://www.ncbi.nlm.nih.gov/books/NBK482257/), [Kaynak 3](https://www.ncbi.nlm.nih.gov/books/NBK459244/) |
 | brain-sinus-petrosus-superior | sinus petrosus superior | [Kaynak 1](https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways), [Kaynak 2](https://www.ncbi.nlm.nih.gov/books/NBK482257/), [Kaynak 3](https://www.ncbi.nlm.nih.gov/books/NBK459244/) |
 | brain-sinus-petrosus-inferior | sinus petrosus inferior | [Kaynak 1](https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways), [Kaynak 2](https://www.ncbi.nlm.nih.gov/books/NBK482257/), [Kaynak 3](https://www.ncbi.nlm.nih.gov/books/NBK459244/) |
+
+
+## Task 35 · Kalp parçaları (BodyParts3D 4.0 / 3.0)
+
+BodyParts3D, © The Database Center for Life Science (DBCLS), [CC BY-SA 2.1 Japan](https://creativecommons.org/licenses/by-sa/2.1/jp/). Türetilmiş yüzeyler `organs-thorax.bin` içinde aynı lisansla dağıtılır. [4.0 OBJ arşivi](https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_BP3D_4.0_obj_99.zip); [3.0 STL aynası, sabit ref](https://github.com/Kevin-Mattheus-Moerman/BodyParts3D/tree/f0eeb6e843380cfe6b83797cf8c3e1af74de5e61).
+
+4.0 OBJ: z +10,15 mm; 3.0 STL: birim dönüşüm. BP3D 3.0 koordinatları hazırlama akışında mm olarak doğrudan paketlenir; görüntüleyici mevcut eksen dönüşümünü uygular. Köşeler birleştirilir; ince yüzeyler %0,01 hata sınırı ve LockBorder ile sadeleştirilir, Float32/Uint16 paketlenir. FJ2418 yalnız kayıt kontrolüdür, hedef olarak kullanılmaz. FJ2418 → FMA9352nsn yüzey alanı ağırlıklı merkez farkı **0.069818 mm** (<0,5 mm). Yeni geometri çizilmez; HuBMAP kullanılmaz.
+
+| Dosya | FMA / rol | SHA256 | Dönüşüm (mm) |
+|---|---|---|---|
+| bp3d4/FJ2420.obj | FMA7242 | `859e44dbbc0e66eb64da60eff23afba5c4bba1a9b6aaf260d075502c0f3c4f44` | [0, 0, 10.15] |
+| bp3d4/FJ2421.obj | FMA7238 | `ab4d65a190910effcffa60cb5522359756504edb45b9dd312971083cb70c3af7` | [0, 0, 10.15] |
+| FMA9352nsn.stl | FMA9352nsn | `9c881e0cc650b690288d7d5814c324bd1f888c61d0c48ebb7ac767e08d665618` | [0, 0, 0] |
+| FMA3840nsn.stl | FMA3840nsn | `4ed012404d7796f4245991dbeafcef7704c051b969e8cee8c6f32d352063eb0b` | [0, 0, 0] |
+| FMA3818.stl | FMA3818 | `8051eabb657122c11672c033e97e27a42c9e05213654dcdba5fada5c36fe9591` | [0, 0, 0] |
+| FMA76994.stl | FMA76994 | `aaa23cf3637eda7d08bd5102cf1324050806c658a7c1862de299294f533403d4` | [0, 0, 0] |
+| FMA71567.stl | FMA71567 | `514806aee1f1ccb70037913eae0d54d3d00b17b97bda5fbc88690f6bb0942e6c` | [0, 0, 0] |
+| FMA76751.stl | FMA76751 | `1c29635b820858b0a792f3c74d140b0a900fadd0dc47470c2c074ee974a71a1e` | [0, 0, 0] |
+| bp3d4/FJ2418.obj | FMA7265 (yalnız referans) | `e462c4455225f7d99845af95988ca2d9885144fbb3f7567610ca5635ca3a3dbc` | [0, 0, 10.15] |
+
+`bp3d-tree.json` SHA256: `9666a89ddc6735411dcd6dcf20791b1e7cf66bfa5680155074c1551a1aee08ac`. Tam kaynak URL’leri, Git blobları ve dönüşümler `scripts/data/viscera-provenance.json` içindedir. Çevrimdışı yeniden üretim: `SOURCE_DIR=kaynak-onbellek npm run viscera:prepare`; eski yüzeyler mevcut paketlerden, yeni kalp yüzeyleri doğrulanan ham önbellekten alınır. Task 35 girdileri silinmez.
